@@ -1,0 +1,112 @@
+"'Main Screen' As screen":
+    Fill: =RGBA(244, 244, 244, 1)
+
+    Icon1 As icon.Add:
+        Color: =theme.AppColor
+        Height: =60
+        Icon: =Icon.Add
+        Width: =60
+        X: =580
+        Y: =86
+        ZIndex: =7
+
+    grp_Header_MS As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =7
+
+        Rectangle1_3 As rectangle:
+            Fill: =theme.AppColor
+            Height: =86
+            OnSelect: =
+            Width: =552
+            X: =88
+            ZIndex: =1
+
+        Image1 As image:
+            Height: =86
+            Image: =RecProc
+            Width: =88
+            ZIndex: =2
+
+        Image14_2 As image:
+            Height: =60
+            HoverBorderColor: =ColorFade(Image14_2.BorderColor, 20%)
+            HoverFill: =ColorFade(Image14_2.Fill, 20%)
+            Image: =User().Image
+            OnSelect: =
+            PressedBorderColor: =ColorFade(Image14_2.BorderColor, -20%)
+            PressedFill: =ColorFade(Image14_2.Fill, -20%)
+            RadiusBottomLeft: =60
+            RadiusBottomRight: =60
+            RadiusTopLeft: =60
+            RadiusTopRight: =60
+            Width: =60
+            X: =569
+            Y: =13
+            ZIndex: =5
+
+        Label1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =83
+            PaddingLeft: =20
+            Size: =21
+            Text: ="Procurement Requisition"
+            Width: =377
+            X: =88
+            Y: =1
+            ZIndex: =6
+
+    Label2 As label:
+        Align: =Align.Right
+        Color: =theme.AppColor
+        Font: =Font.Lato
+        Height: =37
+        Size: =14
+        Text: ="Add New Requisition"
+        Width: =185
+        X: =396
+        Y: =97
+        ZIndex: =8
+
+    TextInput1 As text:
+        BorderThickness: =0
+        Default: =User().FullName
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        Height: =60
+        HintText: ="Requested By"
+        Size: =18
+        Width: =316
+        X: =39
+        Y: =271
+        ZIndex: =10
+
+    DatePicker1 As datepicker:
+        BorderThickness: =0
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        Height: =60
+        IconBackground: =theme.AppColor
+        Size: =21
+        Width: =224
+        X: =376
+        Y: =271
+        ZIndex: =11
+
+    Label2_1 As label:
+        Align: =Align.Center
+        Color: =theme.AppColor
+        Font: =Font.Lato
+        Height: =37
+        Size: =14
+        Text: |-
+            ="Requisition No: 700"
+        Width: =561
+        X: =39
+        Y: =218
+        ZIndex: =12
+
