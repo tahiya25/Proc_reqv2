@@ -95,6 +95,7 @@
   "ScreenOrder": [
     "Main Screen",
     "CheckRun Screen",
-    "Check Run Details Screen"
+    "Check Run Details Screen",
+    "Screen1"
   ]
 }
