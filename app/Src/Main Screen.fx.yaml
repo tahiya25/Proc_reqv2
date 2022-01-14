@@ -68,7 +68,7 @@
         Size: =14
         Text: ="Add New Requisition"
         Width: =185
-        X: =396
+        X: =388
         Y: =97
         ZIndex: =8
 
@@ -101,6 +101,7 @@
         Align: =Align.Center
         Color: =theme.AppColor
         Font: =Font.Lato
+        FontWeight: =Bold
         Height: =37
         Size: =14
         Text: |-
@@ -109,4 +110,19 @@
         X: =39
         Y: =218
         ZIndex: =12
+
+    rdProcType As radio:
+        Color: =theme.AppColor
+        Default: ="Library"
+        Font: =Font.Lato
+        Height: =104
+        Items: =["Library","Free Form"]
+        Layout: =Layout.Horizontal
+        RadioBorderColor: =theme.AppColor
+        RadioSelectionFill: =theme.AppColor
+        Size: =21
+        Width: =512
+        X: =69
+        Y: =350
+        ZIndex: =13
 
