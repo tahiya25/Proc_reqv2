@@ -1,0 +1,17 @@
+Screen1 As screen:
+    Fill: =RGBA(244, 244, 244, 1)
+
+    Rectangle1_3 As rectangle:
+        Fill: =theme.AppColor
+        Height: =86
+        OnSelect: =
+        Width: =1075
+        X: =291
+        ZIndex: =1
+
+    Image1_2 As image:
+        Height: =128
+        Image: ='IPC Resiliency Partners Transparent Logo'
+        Width: =291
+        ZIndex: =2
+
