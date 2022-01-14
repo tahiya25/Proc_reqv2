@@ -1,0 +1,72 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =Set(
+            theme,
+            {
+                AppColorText:"#005c99",
+                GradientText:"#99d6ff",
+                AppColor:ColorValue("#005c99"),
+                LightGray: RGBA(
+                    245,
+                    245,
+                    245,
+                    1
+                ),
+                Gray: RGBA(
+                    193,
+                    204,
+                    215,
+                    1
+                ),
+                LightBlue: RGBA(
+                    196,
+                    240,
+                    255,
+                    1
+                ),
+                Blue: RGBA(
+                    81,
+                    168,
+                    238,
+                    1
+                ),
+                DarkBlue: RGBA(
+                    82,
+                    119,
+                    191,
+                    1
+                ),
+                Dark: RGBA(
+                    27,
+                    20,
+                    12,
+                    1
+                ),
+                Orange: RGBA(
+                    242,
+                    91,
+                    34,
+                    1
+                ),
+                SecondaryGreen: ColorValue("#cee0d4"),
+                Red: Red,
+                DarkerBlue: RGBA(
+                    9,
+                    33,
+                    98,
+                    1
+                )
+            }
+        );
+        
+        If(!IsBlank(Param("ID")),
+        Set(varItem, LookUp('Cash Requirement HTML', Title = Param("ID")
+        )))
+    StartScreen: |-
+        =If(
+            !IsBlank(Param("ID")) ,
+            
+            'Check Run Details Screen','Main Screen'
+        )
+

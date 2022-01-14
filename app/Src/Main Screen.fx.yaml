@@ -1,0 +1,261 @@
+"'Main Screen' As screen":
+    Fill: =RGBA(244, 244, 244, 1)
+    Width: =
+
+    Rectangle1_1 As rectangle:
+        Fill: =theme.AppColor
+        Height: =86
+        OnSelect: =
+        Width: =1075
+        X: =291
+        ZIndex: =1
+
+    lblHeader_HS As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: |-
+            =ColorValue("#0086b3")
+        Font: =Font.Lato
+        Height: =86
+        Size: =18
+        Text: ="Check RUN Tool "
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Image1 As image:
+        Height: =128
+        Image: ='IPC Resiliency Partners Transparent Logo'
+        Width: =291
+        ZIndex: =3
+
+    Image3 As image:
+        Height: =75
+        Image: ='Iovino IT-01'
+        Width: =254
+        X: =1102
+        Y: =686
+        ZIndex: =4
+
+    "galCheckRuns As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =303
+        Items: ='Cash Requirement HTML'
+        Layout: =Layout.Vertical
+        OnSelect: =Set(varCurrentCheck, ThisItem)
+        TemplateFill: =White
+        TemplateSize: =95
+        Width: =1321
+        WrapCount: =2
+        X: =30
+        Y: =150
+        ZIndex: =5
+
+        RecName As label:
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.Lato
+            Height: =24
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: =ThisItem.FileName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =563
+            X: =73
+            Y: =20
+            ZIndex: =1
+
+        Octagon1 As octagon:
+            Fill: |-
+                =ColorValue("#47805E")
+            Height: =46
+            OnSelect: =Select(Parent)
+            Width: =48
+            X: =8
+            Y: =10
+            ZIndex: =2
+
+        RecId As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =36
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =42
+            X: =8
+            Y: =20
+            ZIndex: =3
+
+        RecName_1 As label:
+            Font: =Font.Lato
+            Height: =27
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.CreatedDate
+            VerticalAlign: =VerticalAlign.Top
+            Width: =106
+            X: =73
+            Y: =62
+            ZIndex: =4
+
+        RecName_2 As label:
+            Align: =Center
+            Font: =Font.Lato
+            FontWeight: =Semibold
+            Height: =20
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.Status.Value
+            VerticalAlign: =VerticalAlign.Top
+            Width: =84
+            X: =563
+            ZIndex: =5
+
+        Rectangle1 As rectangle:
+            Fill: |-
+                =Switch(ThisItem.Status.Value,
+                    "New",ColorValue("#D5E7F5"),
+                    "App process",ColorValue("#9B6D1B"),
+                    "Sent to AP", ColorValue("#4F811D")
+                    )
+            Height: =5
+            OnSelect: =Select(Parent)
+            Width: =84
+            X: =563
+            Y: =20
+            ZIndex: =6
+
+        grpGotoRec As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =9
+
+            imgGoToRec As image:
+                Height: =42
+                Image: =CheckRun
+                OnSelect: =
+                Visible: =ThisItem.IsSelected
+                Width: =33
+                X: =603
+                Y: =44
+                ZIndex: =7
+
+            btnGoToRec As button:
+                BorderThickness: =0
+                Color: =Transparent
+                DisabledColor: =Transparent
+                DisabledFill: =Transparent
+                DisplayMode: =
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =Transparent
+                FocusedBorderThickness: =0
+                Height: =42
+                HoverBorderColor: =Transparent
+                HoverColor: =Transparent
+                HoverFill: =Transparent
+                OnSelect: |
+                    =Navigate('Check Run Details Screen',ScreenTransition.Cover)
+                PressedBorderColor: =Transparent
+                PressedColor: =Transparent
+                PressedFill: =Transparent
+                Text: =""
+                Tooltip: ="Save Change Records"
+                Width: =42
+                X: =594
+                Y: =47
+                ZIndex: =8
+
+    Image14 As image:
+        Height: =45
+        HoverBorderColor: =ColorFade(Image14.BorderColor, 20%)
+        HoverFill: =ColorFade(Image14.Fill, 20%)
+        Image: =User().Image
+        OnSelect: =
+        PressedBorderColor: =ColorFade(Image14.BorderColor, -20%)
+        PressedFill: =ColorFade(Image14.Fill, -20%)
+        RadiusBottomLeft: =60
+        RadiusBottomRight: =60
+        RadiusTopLeft: =60
+        RadiusTopRight: =60
+        Width: =44
+        X: =1307
+        Y: =18
+        ZIndex: =7
+
+    Label1 As label:
+        Font: =Font.Lato
+        Height: =273
+        Size: =10
+        Text: =varCurrentCheck.Timeline
+        Visible: =varShowTimeline
+        Width: =649
+        X: =30
+        Y: =488
+        ZIndex: =11
+
+    grpTimeline As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =11
+
+        imgTimeline As image:
+            Height: =40
+            Image: =Timeline
+            Width: =40
+            X: =855
+            Y: =23
+            ZIndex: =6
+
+        lblTimeline As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Size: =10
+            Text: =If(varShowTimeline,"Hide Timeline","Show Timeline")
+            X: =895
+            Y: =23
+            ZIndex: =8
+
+        btnTimeline As button:
+            BorderThickness: =0
+            Color: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =Transparent
+            FocusedBorderThickness: =0
+            Height: =87
+            HoverBorderColor: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: |
+                =If(varShowTimeline,Set(varShowTimeline,false),Set(varShowTimeline,true))
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Width: =159
+            X: =855
+            ZIndex: =9
+

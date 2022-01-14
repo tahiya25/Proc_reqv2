@@ -1,0 +1,35 @@
+{
+  "039d57f1-238d-4998-b0e4-4a42d4a64578": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/348a480dd44049d89c3c0e16a214f39b",
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1539/1.0.1539.2620/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://judlauent.sharepoint.com/sites/FinanceAdmin": {
+        "dataSources": {
+          "Cash Requirement HTML": {
+            "tableName": "c0882017-09a2-4f67-9db4-a16e07aeedb3"
+          },
+          "Cash Requirements": {
+            "tableName": "b429e739-e2cf-4958-8228-5a017210dd5b"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Cash Requirement HTML",
+      "Cash Requirements"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "039d57f1-238d-4998-b0e4-4a42d4a64578"
+  }
+}

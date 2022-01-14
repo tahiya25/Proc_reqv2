@@ -1,0 +1,52 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2021-12-22T17:50:14.1560000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "{Attachments}": "Attachments",
+      "{Attachments}@odata.type": "{Attachments} ({Attachments}@odata.type)",
+      "{FilenameWithExtension}": "File name with extension",
+      "{FullPath}": "Full Path",
+      "{HasAttachments}": "Has attachments",
+      "{Identifier}": "Identifier",
+      "{IsFolder}": "IsFolder",
+      "{Link}": "Link to item",
+      "{ModerationComment}": "Comments associated with the content approval of this list item",
+      "{ModerationStatus}": "Content approval status",
+      "{Name}": "Name",
+      "{Path}": "Folder path",
+      "{Thumbnail}": "Thumbnail",
+      "{TriggerWindowEndToken}": "Trigger Window End Token",
+      "{TriggerWindowStartToken}": "Trigger Window Start Token",
+      "{VersionNumber}": "Version number",
+      "Amt": "Amt",
+      "Author": "Created By",
+      "Author#Claims": "Created By Claims",
+      "ComplianceAssetId": "Compliance Asset Id",
+      "Created": "Created",
+      "Due_x0020_Date": "Due Date",
+      "Editor": "Modified By",
+      "Editor#Claims": "Modified By Claims",
+      "FileIDNumber": "FileIDNumber",
+      "ID": "ID",
+      "Inv_x0020_Series_x0020_Code": "Inv Series Code",
+      "Invoice_x0020_No": "Invoice No",
+      "Job_x0020_No": "Job No",
+      "Modified": "Modified",
+      "Partner_x0020_Name": "Partner Name",
+      "PrimaryKey": "PrimaryKey",
+      "Title": "Company Code",
+      "Vendor_x0020_Code": "Vendor Code"
+    },
+    "DatasetName": "https://judlauent.sharepoint.com/sites/FinanceAdmin",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Cash Requirements",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

@@ -1,0 +1,216 @@
+"'Check Run Details Screen' As screen":
+    Fill: =RGBA(244, 244, 244, 1)
+
+    Rectangle1_2 As rectangle:
+        Fill: =theme.AppColor
+        Height: =86
+        OnSelect: =
+        Width: =1075
+        X: =291
+        ZIndex: =1
+
+    Image1_1 As image:
+        Height: =128
+        Image: ='IPC Resiliency Partners Transparent Logo'
+        Width: =291
+        ZIndex: =2
+
+    galCheckRunDetails As gallery.galleryVertical:
+        Height: =530
+        Items: |-
+            =If(
+                !IsBlank(Param("ID")),
+                Filter(
+                    'Cash Requirements',
+                    FileIDNumber = Value(Param("ID"))
+                ),
+                Filter(
+                    'Cash Requirements',
+                    FileIDNumber = Value(varCurrentCheck.Title)
+                )
+            )
+        Layout: =Layout.Vertical
+        TemplateFill: =White
+        TemplateSize: =43
+        Width: =1038
+        X: =170
+        Y: =180
+        ZIndex: =3
+
+        Label3 As label:
+            Font: =Font.Lato
+            Height: =23
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: =ThisItem.Title
+            Width: =75
+            X: =5
+            Y: =10
+            ZIndex: =1
+
+        Label3_1 As label:
+            Font: =Font.Lato
+            Height: =23
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: |
+                =ThisItem.Job_x0020_No
+            Width: =75
+            X: =80
+            Y: =10
+            ZIndex: =2
+
+        Label3_2 As label:
+            Color: =RGBA(50, 86, 160, 1)
+            Font: =Font.Lato
+            FontWeight: =Semibold
+            Height: =23
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: |
+                =ThisItem.Vendor_x0020_Code
+            Width: =75
+            X: =166
+            Y: =10
+            ZIndex: =3
+
+        Label3_3 As label:
+            Font: =Font.Lato
+            Height: =23
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: |
+                =Proper(ThisItem.Partner_x0020_Name)
+            Width: =279
+            X: =241
+            Y: =10
+            ZIndex: =4
+
+        Label3_4 As label:
+            Font: =Font.Lato
+            Height: =23
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: |
+                =ThisItem.Invoice_x0020_No
+            Width: =153
+            X: =520
+            Y: =10
+            ZIndex: =5
+
+        Label3_5 As label:
+            Font: =Font.Lato
+            Height: =23
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: |
+                =Text(ThisItem.Amt,"[$-en-US]$###,###")
+            Width: =153
+            X: =684
+            Y: =10
+            ZIndex: =6
+
+        Label3_6 As label:
+            Font: =Font.Lato
+            Height: =23
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: |
+                =ThisItem.Due_x0020_Date
+            Width: =106
+            X: =829
+            Y: =10
+            ZIndex: =7
+
+    Label4 As label:
+        Font: =Font.'Lato Black'
+        Size: =10
+        Text: ="Company"
+        Width: =70
+        X: =178
+        Y: =140
+        ZIndex: =6
+
+    grpTotalCheckRun As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =6
+
+        lblTimeline_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            FontWeight: =Semibold
+            Height: =46
+            Size: =14
+            Text: |-
+                ="Total Check Run   " & Text(Sum(galCheckRunDetails.AllItems,Amt),"[$-en-US]$###,###") & " - Total Invoices: " & CountRows(galCheckRunDetails.AllItems)
+            Width: =449
+            X: =759
+            Y: =20
+            ZIndex: =4
+
+        Image9 As image:
+            Height: =35
+            Image: =TotalCheckRun
+            Width: =57
+            X: =702
+            Y: =25
+            ZIndex: =5
+
+    Label4_1 As label:
+        Font: =Font.'Lato Black'
+        Size: =10
+        Text: ="Job"
+        Width: =78
+        X: =248
+        Y: =140
+        ZIndex: =7
+
+    Label4_2 As label:
+        Font: =Font.'Lato Black'
+        Size: =10
+        Text: ="Partner Code and Name"
+        Width: =340
+        X: =326
+        Y: =140
+        ZIndex: =8
+
+    Label4_3 As label:
+        Font: =Font.'Lato Black'
+        Size: =10
+        Text: ="Invoice No"
+        Width: =153
+        X: =673
+        Y: =140
+        ZIndex: =9
+
+    Label4_4 As label:
+        Font: =Font.'Lato Black'
+        Size: =10
+        Text: ="Invoice Amount"
+        Width: =153
+        X: =826
+        Y: =140
+        ZIndex: =10
+
+    Label4_5 As label:
+        Font: =Font.'Lato Black'
+        Size: =10
+        Text: ="Invoice Date"
+        Width: =153
+        X: =1010
+        Y: =140
+        ZIndex: =11
+
+    Icon1 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =45
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Main Screen')
+        Width: =45
+        X: =303
+        Y: =21
+        ZIndex: =12
+
