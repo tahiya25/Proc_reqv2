@@ -94,6 +94,7 @@
   },
   "ScreenOrder": [
     "Main Screen",
-    "Library Screen"
+    "Library Screen",
+    "Requisition Screen"
   ]
 }

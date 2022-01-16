@@ -1,0 +1,206 @@
+"'Requisition Screen' As screen":
+    Fill: =RGBA(244, 244, 244, 1)
+
+    galRequisitions As gallery.galleryVertical:
+        Height: =290
+        Items: =ReqHeader
+        Layout: =Layout.Vertical
+        TemplateFill: =White
+        TemplateSize: =67
+        Y: =180
+        ZIndex: =4
+
+        lblItemNo_1 As label:
+            Align: =Center
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.Title
+            Width: =99
+            X: =4
+            Y: =12
+            ZIndex: =1
+
+        lblDescription_1 As label:
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.JobNo
+            Tooltip: =
+            Width: =148
+            Wrap: =false
+            X: =103
+            Y: =12
+            ZIndex: =2
+
+        lblWM_1 As label:
+            Align: =Center
+            Color: =theme.AppColor
+            Font: =Font.Lato
+            FontWeight: =Semibold
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.'Created By'.DisplayName
+            Width: =214
+            X: =240
+            Y: =12
+            ZIndex: =3
+
+        lblItemNo_2 As label:
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =Text(ThisItem.Created,ShortDate)
+            Width: =151
+            X: =454
+            Y: =12
+            ZIndex: =4
+
+        Rectangle1_6 As rectangle:
+            Fill: =theme.AppColor
+            Height: =67
+            OnSelect: =
+            Visible: =ThisItem.IsSelected
+            Width: =14
+            X: =616
+            ZIndex: =5
+
+    grp_Header_RS As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =4
+
+        Rectangle1_5 As rectangle:
+            Fill: =theme.AppColor
+            Height: =86
+            OnSelect: =
+            Width: =552
+            X: =88
+            ZIndex: =1
+
+        Image1_2 As image:
+            Height: =86
+            Image: =RecProc
+            Width: =88
+            ZIndex: =2
+
+        Label1_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =83
+            PaddingLeft: =20
+            Size: =21
+            Text: ="Requisitions"
+            Width: =377
+            X: =88
+            Y: =1
+            ZIndex: =3
+
+    Rectangle1_7 As rectangle:
+        Fill: =theme.AppColor
+        Height: =11
+        OnSelect: =
+        Width: =640
+        Y: =470
+        ZIndex: =5
+
+    galReqDetails As gallery.galleryVertical:
+        Height: =497
+        Items: =ReqDetails
+        Layout: =Layout.Vertical
+        TemplateFill: =White
+        TemplateSize: =102
+        Y: =481
+        ZIndex: =6
+
+        lblItemNo_3 As label:
+            Align: =Center
+            Font: =Font.Lato
+            Height: =77
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: =ThisItem.Title
+            Width: =99
+            X: =4
+            Y: =12
+            ZIndex: =1
+
+        lblDescription_2 As label:
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.Quantity
+            Tooltip: =
+            Width: =52
+            Wrap: =false
+            X: =114
+            Y: =12
+            ZIndex: =2
+
+        lblWM_2 As label:
+            Align: =Center
+            Font: =Font.Lato
+            FontWeight: =Normal
+            Height: =77
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =Proper(ThisItem.ItemDescription)
+            Width: =236
+            X: =218
+            Y: =12
+            ZIndex: =3
+
+        lblItemNo_4 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: =ThisItem.Vendor
+            Width: =161
+            X: =454
+            Y: =12
+            ZIndex: =4
+
+        lblDescription_3 As label:
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.UOM
+            Tooltip: =
+            Width: =52
+            Wrap: =false
+            X: =166
+            Y: =12
+            ZIndex: =5
+
+        lblDescription_4 As label:
+            Font: =Font.Lato
+            FontWeight: =Semibold
+            Height: =37
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.CostCode
+            Tooltip: =
+            Width: =144
+            Wrap: =false
+            X: =471
+            Y: =60
+            ZIndex: =6
+
+        lblDescription_6 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            FontWeight: =Semibold
+            Height: =37
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Date Required'
+            Tooltip: =
+            Width: =79
+            Wrap: =false
+            X: =120
+            Y: =60
+            ZIndex: =8
+

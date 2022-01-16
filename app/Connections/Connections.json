@@ -12,6 +12,12 @@
     "datasets": {
       "https://judlauent.sharepoint.com/sites/ITLanding/newRandD": {
         "dataSources": {
+          "ReqDetails": {
+            "tableName": "c2d13f83-e979-48f8-89d1-6afb060ca23a"
+          },
+          "ReqHeader": {
+            "tableName": "c54e232a-c908-44fd-96cc-73f160a7231a"
+          },
           "TCReqLibrary": {
             "tableName": "30775306-a5d0-4da7-9ff7-63c66ad5b24c"
           }
@@ -19,7 +25,9 @@
       }
     },
     "dataSources": [
-      "TCReqLibrary"
+      "TCReqLibrary",
+      "ReqDetails",
+      "ReqHeader"
     ],
     "dependencies": {},
     "dependents": [],
