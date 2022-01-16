@@ -2,13 +2,19 @@
   "ComponentIndexes": {},
   "ControlUniqueIds": {
     "App": 1,
+    "btnReset": 40,
     "DatePicker1": 12,
+    "dd_Revision": 38,
     "galleryTemplate1": 22,
     "galLibraryItems": 21,
+    "Group3": 43,
     "grp_Header_LS": 20,
     "grp_Header_MS": 14,
+    "grpSearch": 36,
+    "icnAddItems": 30,
+    "icnSave": 41,
+    "icnSearch": 33,
     "Icon1": 8,
-    "Icon1_1": 30,
     "Image1": 4,
     "Image1_1": 16,
     "Image14_2": 7,
@@ -16,17 +22,22 @@
     "Label1_1": 18,
     "Label2": 9,
     "Label2_1": 10,
-    "Label3": 28,
-    "Label3_1": 29,
+    "lblDescription": 29,
+    "lblItemNo": 28,
+    "lblReset": 39,
+    "lblWM": 34,
     "Library Screen": 15,
     "Main Screen": 3,
     "rdProcType": 13,
     "Rectangle1_3": 5,
     "Rectangle1_4": 17,
-    "TextInput1": 11
+    "TextInput1": 11,
+    "txtDescriptionEntry": 37,
+    "txtItemNoEntry": 35,
+    "txtSearchLibrary": 32
   },
   "FunctionParamsInvariantScripts": {},
-  "HeaderLastSavedDateTimeUTC": "01/16/2022 12:36:36",
+  "HeaderLastSavedDateTimeUTC": "01/16/2022 13:11:23",
   "LocalDatabaseReferencesAsEmpty": false,
   "LocalResourceFileNames": {
     "RecProc": "fc4bcfc2-5661-4822-9055-95628c37eab0.png"
@@ -38,11 +49,20 @@
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
   "OrderDataSource": {
+    "ComboBoxSample": 3,
     "CustomGallerySample": 1,
     "RadioSample": 0,
     "TCReqLibrary": 2
   },
   "OrderGroupControls": {
+    "Group3": {
+      "btnReset": 3,
+      "dd_Revision": 1,
+      "icnSave": 2,
+      "lblReset": 4,
+      "txtDescriptionEntry": 5,
+      "txtItemNoEntry": 0
+    },
     "grp_Header_LS": {
       "Image1_1": 0,
       "Label1_1": 2,
@@ -53,10 +73,16 @@
       "Image14_2": 3,
       "Label1": 2,
       "Rectangle1_3": 1
+    },
+    "grpSearch": {
+      "icnSearch": 0,
+      "txtSearchLibrary": 1
     }
   },
   "OrderTemplate": {},
   "OrderXMLTemplate": {
+    "button": 9,
+    "combobox": 8,
     "datepicker": 5,
     "gallery": 7,
     "icon": 3,
@@ -68,13 +94,19 @@
   },
   "PublishOrderIndices": {
     "App": 0,
+    "btnReset": 27,
     "DatePicker1": 9,
-    "galleryTemplate1": 16,
-    "galLibraryItems": 15,
+    "dd_Revision": 26,
+    "galleryTemplate1": 20,
+    "galLibraryItems": 19,
+    "Group3": 25,
     "grp_Header_LS": 12,
     "grp_Header_MS": 1,
+    "grpSearch": 17,
+    "icnAddItems": 15,
+    "icnSave": 29,
+    "icnSearch": 18,
     "Icon1": 5,
-    "Icon1_1": 5,
     "Image1": 0,
     "Image1_1": 11,
     "Image14_2": 4,
@@ -82,14 +114,19 @@
     "Label1_1": 14,
     "Label2": 6,
     "Label2_1": 7,
-    "Label3": 17,
-    "Label3_1": 18,
+    "lblDescription": 22,
+    "lblItemNo": 21,
+    "lblReset": 28,
+    "lblWM": 23,
     "Library Screen": 0,
     "Main Screen": 0,
     "rdProcType": 10,
     "Rectangle1_3": 2,
     "Rectangle1_4": 13,
-    "TextInput1": 8
+    "TextInput1": 8,
+    "txtDescriptionEntry": 30,
+    "txtItemNoEntry": 24,
+    "txtSearchLibrary": 16
   },
   "ResourcesJsonIndices": {
     "Image-RecProc": 0,
@@ -99,15 +136,17 @@
   "VolatileProperties": {
     "AnalysisLoadTime": 0.1301948,
     "ControlCount": {
+      "button": 1,
+      "combobox": 1,
       "datepicker": 1,
       "group": 2,
       "icon": 2,
       "image": 4,
-      "label": 5,
+      "label": 7,
       "radio": 1,
       "rectangle": 2,
       "screen": 1,
-      "text": 1
+      "text": 4
     },
     "DeserializationLoadTime": 3.2558978,
     "ErrorCount": 0

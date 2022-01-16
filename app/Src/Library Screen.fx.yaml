@@ -2,15 +2,18 @@
     Fill: =RGBA(244, 244, 244, 1)
 
     galLibraryItems As gallery.galleryVertical:
-        Height: =934
-        Items: =TCReqLibrary
+        Height: =If(varShowLib, 649,929)
+        Items: |-
+            =  
+                Filter( TCReqLibrary,
+                      IsBlank(txtSearchLibrary.Text) || StartsWith(Name1, txtSearchLibrary.Text ))
         Layout: =Layout.Vertical
         TemplateFill: =White
         TemplateSize: =67
-        Y: =202
+        Y: =207
         ZIndex: =1
 
-        Label3 As label:
+        lblItemNo As label:
             Align: =Center
             Font: =Font.Lato
             OnSelect: =Select(Parent)
@@ -21,22 +24,37 @@
             Y: =12
             ZIndex: =1
 
-        Label3_1 As label:
+        lblDescription As label:
             Font: =Font.Lato
             OnSelect: =Select(Parent)
             Size: =16
             Text: =Proper(ThisItem.Name1)
             Tooltip: =Proper(ThisItem.Name1)
             Width: =424
+            Wrap: =false
             X: =103
             Y: =12
             ZIndex: =2
 
-    Icon1_1 As icon.Add:
-        Color: =RGBA(255, 255, 255, 1)
+        lblWM As label:
+            Align: =Center
+            Color: =theme.AppColor
+            Font: =Font.Lato
+            FontWeight: =Semibold
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.'WM*'
+            Width: =80
+            X: =539
+            Y: =12
+            ZIndex: =3
+
+    icnAddItems As icon.Add:
+        Color: =If(varShowLib, Red,Green)
         Height: =60
-        Icon: =Icon.Add
+        Icon: =If(varShowLib, Icon.Cancel,Icon.Add)
         OnSelect: =If(varShowLib, Set(varShowLib, false),Set(varShowLib, true))
+        Tooltip: =If(varShowLib, "Close Entry","Add new Item")
         Width: =60
         X: =568
         Y: =13
@@ -69,9 +87,150 @@
             Height: =83
             PaddingLeft: =20
             Size: =21
-            Text: ="Procurement Requisition"
+            Text: ="Library Items"
             Width: =377
             X: =88
             Y: =1
             ZIndex: =4
+
+    grpSearch As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =9
+
+        txtSearchLibrary As text:
+            BorderThickness: =0
+            Default: =
+            FocusedBorderThickness: =0
+            Font: =Font.Lato
+            Height: =60
+            HintText: ="Search Library"
+            PaddingLeft: =65
+            Size: =18
+            Width: =462
+            X: =42
+            Y: =107
+            ZIndex: =6
+
+        icnSearch As icon.Search:
+            Color: =RGBA(128, 128, 128, 1)
+            Height: =50
+            Icon: =Icon.Search
+            Width: =50
+            X: =42
+            Y: =112
+            ZIndex: =7
+
+    Group3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        txtItemNoEntry As text:
+            Align: =Align.Center
+            BorderThickness: =0
+            Default: =
+            FocusedBorderThickness: =0
+            Font: =Font.Lato
+            Height: =60
+            HintText: ="Item No"
+            Size: =18
+            Visible: =varShowLib
+            Width: =129
+            X: =28
+            Y: =876
+            ZIndex: =8
+
+        txtDescriptionEntry As text:
+            BorderThickness: =0
+            Default: =
+            FocusedBorderThickness: =0
+            Font: =Font.Lato
+            Height: =150
+            HintText: ="Description"
+            Mode: =TextMode.MultiLine
+            Size: =18
+            Visible: =varShowLib
+            Width: =575
+            X: =28
+            Y: =953
+            ZIndex: =9
+
+        dd_Revision As combobox:
+            BorderColor: =
+            BorderThickness: =0
+            ChevronBackground: |-
+                =ColorValue("#0086b3")
+            DefaultSelectedItems: =
+            DisplayFields: =["Value"]
+            DisplayMode: =
+            FocusedBorderThickness: =0
+            Font: =Font.Lato
+            Height: =60
+            HoverBorderColor: =ColorFade(dd_Revision.BorderColor, 15%)
+            IsSearchable: =false
+            Items: =["EA","LS","LF","BX","MB"]
+            OnChange: =
+            PressedBorderColor: =dd_Revision.HoverBorderColor
+            SearchFields: =["Value"]
+            SearchItems: =[]
+            SelectMultiple: =false
+            Size: =11
+            Tooltip: =
+            Visible: =varShowLib
+            Width: =176
+            X: =173
+            Y: =876
+            ZIndex: =10
+
+        lblReset As label:
+            Color: =theme.AppColor
+            Font: =Font.Lato
+            Height: =45
+            PaddingLeft: =50
+            Size: =18
+            Text: ="Save Item"
+            Visible: =varShowLib
+            Width: =209
+            X: =371
+            Y: =882
+            ZIndex: =11
+
+        btnReset As button:
+            BorderThickness: =0
+            Color: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =Transparent
+            FocusedBorderThickness: =0
+            Height: =60
+            HoverBorderColor: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: =
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Visible: =varShowLib
+            Width: =193
+            X: =375
+            Y: =876
+            ZIndex: =12
+
+        icnSave As icon.Save:
+            Height: =40
+            Icon: =Icon.Save
+            Visible: =varShowLib
+            Width: =40
+            X: =375
+            Y: =884
+            ZIndex: =13
 

@@ -4,9 +4,9 @@ App As appinfo:
         =Set(
             theme,
             {
-                AppColorText:"#005c99",
+                AppColorText:"#0086b3",
                 GradientText:"#99d6ff",
-                AppColor:ColorValue("#005c99"),
+                AppColor:ColorValue("#0086b3"),
                 LightGray: RGBA(
                     245,
                     245,
