@@ -2,35 +2,52 @@
   "ComponentIndexes": {},
   "ControlUniqueIds": {
     "App": 1,
-    "DatePicker1": 16,
-    "grp_Header_MS": 10,
-    "Icon1": 11,
+    "DatePicker1": 12,
+    "galleryTemplate1": 22,
+    "galLibraryItems": 21,
+    "grp_Header_LS": 20,
+    "grp_Header_MS": 14,
+    "Icon1": 8,
+    "Icon1_1": 30,
     "Image1": 4,
-    "Image14_2": 8,
-    "Label1": 9,
-    "Label2": 12,
-    "Label2_1": 17,
+    "Image1_1": 16,
+    "Image14_2": 7,
+    "Label1": 6,
+    "Label1_1": 18,
+    "Label2": 9,
+    "Label2_1": 10,
+    "Label3": 28,
+    "Label3_1": 29,
+    "Library Screen": 15,
     "Main Screen": 3,
-    "rdProcType": 19,
+    "rdProcType": 13,
     "Rectangle1_3": 5,
-    "TextInput1": 15
+    "Rectangle1_4": 17,
+    "TextInput1": 11
   },
   "FunctionParamsInvariantScripts": {},
-  "HeaderLastSavedDateTimeUTC": "01/14/2022 21:34:31",
+  "HeaderLastSavedDateTimeUTC": "01/16/2022 12:36:36",
   "LocalDatabaseReferencesAsEmpty": false,
   "LocalResourceFileNames": {
     "RecProc": "fc4bcfc2-5661-4822-9055-95628c37eab0.png"
   },
   "LocalResourceRootPaths": {
-    "RecProc": "https://docserverpwaprodeus.blob.core.windows.net/5186245f-8f4e-443e-96b4-d6e01b6a0674-1/resource/76a7486b-d059-4f2c-b62b-9fbefd4b13eb.png?sv=2017-04-17&sr=b&sig=kaQfSovSYb%2FGTYE2NhIZ8COPQjSMWWPlkliLLHcy3Z0%3D&spr=https&se=2022-01-15T21%3A01%3A00Z&sp=r"
+    "RecProc": "https://docserverpwaprodwus.blob.core.windows.net/a864aa43-3af2-4142-9109-37318c5eff70-1/resource/Assets0Images0fc4bcfc2-5661-4822-9055-95628c37eab0.png?sv=2017-04-17&sr=b&sig=PVt%2BpRe7Bjf0n5jvPK%2FxaGI%2Fyl%2B%2FFfxnQGE0n%2BJs82Q%3D&spr=https&se=2022-01-17T12%3A40%3A52Z&sp=r"
   },
   "OldLogoFileName": "ld3njuu4.jpg",
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
   "OrderDataSource": {
-    "RadioSample": 0
+    "CustomGallerySample": 1,
+    "RadioSample": 0,
+    "TCReqLibrary": 2
   },
   "OrderGroupControls": {
+    "grp_Header_LS": {
+      "Image1_1": 0,
+      "Label1_1": 2,
+      "Rectangle1_4": 1
+    },
     "grp_Header_MS": {
       "Image1": 0,
       "Image14_2": 3,
@@ -41,6 +58,7 @@
   "OrderTemplate": {},
   "OrderXMLTemplate": {
     "datepicker": 5,
+    "gallery": 7,
     "icon": 3,
     "image": 0,
     "label": 2,
@@ -51,16 +69,26 @@
   "PublishOrderIndices": {
     "App": 0,
     "DatePicker1": 9,
+    "galleryTemplate1": 16,
+    "galLibraryItems": 15,
+    "grp_Header_LS": 12,
     "grp_Header_MS": 1,
     "Icon1": 5,
+    "Icon1_1": 5,
     "Image1": 0,
+    "Image1_1": 11,
     "Image14_2": 4,
     "Label1": 3,
+    "Label1_1": 14,
     "Label2": 6,
     "Label2_1": 7,
+    "Label3": 17,
+    "Label3_1": 18,
+    "Library Screen": 0,
     "Main Screen": 0,
     "rdProcType": 10,
     "Rectangle1_3": 2,
+    "Rectangle1_4": 13,
     "TextInput1": 8
   },
   "ResourcesJsonIndices": {
@@ -69,12 +97,19 @@
   },
   "TemplateVersions": {},
   "VolatileProperties": {
-    "AnalysisLoadTime": 0.0216054,
+    "AnalysisLoadTime": 0.1301948,
     "ControlCount": {
-      "image": 3,
-      "label": 2,
-      "rectangle": 1
+      "datepicker": 1,
+      "group": 2,
+      "icon": 2,
+      "image": 4,
+      "label": 5,
+      "radio": 1,
+      "rectangle": 2,
+      "screen": 1,
+      "text": 1
     },
+    "DeserializationLoadTime": 3.2558978,
     "ErrorCount": 0
   }
 }

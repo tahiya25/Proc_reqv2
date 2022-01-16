@@ -93,6 +93,7 @@
     "UserLocale": "en-US"
   },
   "ScreenOrder": [
-    "Main Screen"
+    "Main Screen",
+    "Library Screen"
   ]
 }
