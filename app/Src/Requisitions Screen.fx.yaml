@@ -10,7 +10,7 @@
         ShowScrollbar: =false
         TemplateFill: =Transparent
         TemplateSize: =790
-        Width: =630
+        Width: =631
         X: =6
         Y: =105
         ZIndex: =1
@@ -436,6 +436,25 @@
             Y: =12
             ZIndex: =23
 
+    Image2 As image:
+        Height: =65
+        Image: |-
+            ="data:image/svg+xml," & 
+             EncodeUrl(
+                "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+              <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+               <path fill='White'
+            d='M128 1280v128h1792v-128h-1792zM128 1920h1792v-128h-1792v128zM128 768v128h1792v-128h-1792zM128 256v128h1792v-128h-1792z' />
+              </g>
+            
+            </svg>"
+            )
+        OnSelect: =If(varShowMenu, Set(varShowMenu, false),Set(varShowMenu, true))
+        Width: =71
+        X: =553
+        Y: =16
+        ZIndex: =5
+
     grp_Header_RS_1 As group:
         Height: =5
         Width: =5
@@ -455,6 +474,7 @@
         Image1_3 As image:
             Height: =86
             Image: =RecProc
+            OnSelect: =Back()
             Width: =88
             Y: =6
             ZIndex: =3
@@ -470,4 +490,14 @@
             X: =176
             Y: =7
             ZIndex: =4
+
+    rctMenu As rectangle:
+        Fill: |-
+            =ColorValue("#ccf5ff")
+        Height: =1044
+        Visible: =varShowMenu
+        Width: =101
+        X: =538
+        Y: =92
+        ZIndex: =6
 

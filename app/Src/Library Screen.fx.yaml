@@ -93,6 +93,7 @@
         Image1_1 As image:
             Height: =86
             Image: =RecProc
+            OnSelect: =Back()
             Width: =88
             ZIndex: =2
 
