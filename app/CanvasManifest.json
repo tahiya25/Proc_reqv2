@@ -93,8 +93,8 @@
     "UserLocale": "en-US"
   },
   "ScreenOrder": [
-    "Main Screen",
     "Requisitions Screen",
+    "Main Screen",
     "Library Screen",
     "Messages Screen"
   ]
