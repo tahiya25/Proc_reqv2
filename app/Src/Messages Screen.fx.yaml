@@ -1,0 +1,37 @@
+"'Messages Screen' As screen":
+    Fill: =RGBA(244, 244, 244, 1)
+
+    grp_Header_LS_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =4
+
+        Rectangle1_5 As rectangle:
+            Fill: =theme.AppColor
+            Height: =86
+            OnSelect: =
+            Width: =552
+            X: =88
+            ZIndex: =1
+
+        Image1_2 As image:
+            Height: =86
+            Image: =RecProc
+            Width: =88
+            ZIndex: =2
+
+        Label1_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =83
+            PaddingLeft: =20
+            Size: =21
+            Text: |-
+                ="Messages regarding Requisition No: " & currentReq
+            Width: =552
+            X: =88
+            Y: =1
+            ZIndex: =3
+
