@@ -94,6 +94,46 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Requisitions Screen.galRequisitions.Label5.Tooltip"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Requisitions Screen.galRequisitions.Label5.Tooltip",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 52,
+                  "charOffset": 15,
+                  "snippet": {
+                    "text": "CountRows(Filter(ReqMessages, ReqId=ThisItem.Title))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Tooltip",
+                "module": "Requisitions Screen",
+                "type": "Requisitions Screen.galRequisitions.Label5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Requisitions Screen.galRequisitions.Image10.Visible"
                 }
               ],
@@ -112,6 +152,46 @@
               },
               "properties": {
                 "member": "Visible",
+                "module": "Requisitions Screen",
+                "type": "Requisitions Screen.galRequisitions.Image10"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Requisitions Screen.galRequisitions.Image10.Tooltip"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Requisitions Screen.galRequisitions.Image10.Tooltip",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 52,
+                  "charOffset": 15,
+                  "snippet": {
+                    "text": "CountRows(Filter(ReqMessages, ReqId=ThisItem.Title))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Tooltip",
                 "module": "Requisitions Screen",
                 "type": "Requisitions Screen.galRequisitions.Image10"
               }

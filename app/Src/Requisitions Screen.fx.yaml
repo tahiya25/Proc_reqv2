@@ -409,6 +409,7 @@
                 
                 </svg>"
                 )
+            Tooltip: ="There are " & CountRows(Filter(ReqMessages, ReqId=ThisItem.Title)) & "message(s) for this req. "
             Visible: =If(CountRows(Filter(ReqMessages, ReqId=ThisItem.Title))>0,true,false)
             Width: =35
             X: =76
@@ -426,6 +427,7 @@
             PaddingTop: =0
             Size: =14
             Text: =CountRows(Filter(ReqMessages, ReqId=ThisItem.Title))
+            Tooltip: ="There are " & CountRows(Filter(ReqMessages, ReqId=ThisItem.Title)) & "message(s) for this req. "
             Visible: =If(CountRows(Filter(ReqMessages, ReqId=ThisItem.Title))>0,true,false)
             Width: =35
             X: =76
