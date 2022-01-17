@@ -5,6 +5,7 @@
         Height: =290
         Items: =ReqHeader
         Layout: =Layout.Vertical
+        OnSelect: =Set(varThisReq, ThisItem)
         TemplateFill: =White
         TemplateSize: =67
         Y: =180
@@ -12,7 +13,9 @@
 
         lblItemNo_1 As label:
             Align: =Center
+            Color: =theme.AppColor
             Font: =Font.Lato
+            FontWeight: =Semibold
             OnSelect: =Select(Parent)
             Size: =18
             Text: =ThisItem.Title
@@ -35,13 +38,14 @@
 
         lblWM_1 As label:
             Align: =Center
-            Color: =theme.AppColor
             Font: =Font.Lato
-            FontWeight: =Semibold
+            FontWeight: =Normal
             OnSelect: =Select(Parent)
-            Size: =18
-            Text: =ThisItem.'Created By'.DisplayName
+            Size: =14
+            Text: =Proper(ThisItem.DeliveryLoc)
+            Tooltip: =ThisItem.DeliveryLoc
             Width: =214
+            Wrap: =false
             X: =240
             Y: =12
             ZIndex: =3
@@ -108,7 +112,7 @@
 
     galReqDetails As gallery.galleryVertical:
         Height: =497
-        Items: =ReqDetails
+        Items: =Filter(ReqDetails, ReqID=varThisReq.Title)
         Layout: =Layout.Vertical
         TemplateFill: =White
         TemplateSize: =102
@@ -198,7 +202,7 @@
             Size: =12
             Text: =ThisItem.'Date Required'
             Tooltip: =
-            Width: =79
+            Width: =98
             Wrap: =false
             X: =120
             Y: =60

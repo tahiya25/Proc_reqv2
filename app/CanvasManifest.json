@@ -95,6 +95,7 @@
   "ScreenOrder": [
     "Main Screen",
     "Library Screen",
-    "Requisition Screen"
+    "Requisition Screen",
+    "Admin Screen"
   ]
 }

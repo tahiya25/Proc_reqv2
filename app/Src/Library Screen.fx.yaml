@@ -16,8 +16,9 @@
         lblItemNo As label:
             Align: =Center
             Font: =Font.Lato
+            FontWeight: =Semibold
             OnSelect: =Select(Parent)
-            Size: =18
+            Size: =12
             Text: =ThisItem.'Item Code*'
             Width: =99
             X: =4
@@ -30,7 +31,7 @@
             Size: =16
             Text: =Proper(ThisItem.Name1)
             Tooltip: =Proper(ThisItem.Name1)
-            Width: =424
+            Width: =409
             Wrap: =false
             X: =103
             Y: =12
@@ -45,9 +46,23 @@
             Size: =18
             Text: =ThisItem.'WM*'
             Width: =80
-            X: =539
+            X: =482
             Y: =12
             ZIndex: =3
+
+        Icon2 As icon.ExpandView:
+            Color: =theme.AppColor
+            Height: =40
+            Icon: |-
+                =
+                If(varShowDescription, Icon.CollapseView,Icon.ExpandView)
+            OnSelect: =If(varShowDescription, Set(varShowDescription, false),Set(varShowDescription, true))
+            Tooltip: ="Click to see description"
+            Visible: =ThisItem.IsSelected
+            Width: =40
+            X: =574
+            Y: =12
+            ZIndex: =4
 
     icnAddItems As icon.Add:
         Color: =If(varShowLib, Red,Green)
@@ -137,7 +152,7 @@
             FocusedBorderThickness: =0
             Font: =Font.Lato
             Height: =60
-            HintText: ="Item No"
+            HintText: ="Item Code"
             Size: =18
             Visible: =varShowLib
             Width: =129

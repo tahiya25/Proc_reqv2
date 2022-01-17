@@ -1,0 +1,278 @@
+"'Admin Screen' As screen":
+    Fill: =RGBA(244, 244, 244, 1)
+
+    "Gallery4 As gallery.'BrowseLayout_Flexible_NewsFeed_ver4.0'":
+        Fill: =White
+        Height: =1031
+        Items: =ReqHeader
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplateFill: =White
+        TemplatePadding: =0
+        TemplateSize: =744
+        Y: =105
+        ZIndex: =1
+
+        Title5 As label:
+            Font: =Font.Lato
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Requisition No: " & ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =Parent.TemplateWidth - Image6.Width - 80
+            X: =32
+            Y: =51
+            ZIndex: =1
+
+        Gallery5 As gallery.variableTemplateHeightGallery:
+            Height: =CountRows(Gallery5.AllItems)*Gallery5.TemplateHeight
+            Items: =Filter(ReqDetails,ReqID=ThisItem.Title)
+            Layout: =Layout.Vertical
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =32
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Y: =251
+            ZIndex: =1
+
+            Label4 As label:
+                Font: =Font.Lato
+                Height: =31
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.Title
+                Tooltip: =ThisItem.Title
+                Width: =116
+                Wrap: =false
+                X: =4
+                Y: =4
+                ZIndex: =1
+
+            Label4_1 As label:
+                Font: =Font.Lato
+                Height: =31
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.Vendor
+                Tooltip: =ThisItem.Vendor
+                Width: =218
+                Wrap: =false
+                X: =138
+                Y: =4
+                ZIndex: =2
+
+            Label4_2 As label:
+                Font: =Font.Lato
+                Height: =31
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.Quantity
+                Tooltip: =ThisItem.Title
+                Width: =66
+                Wrap: =false
+                X: =375
+                Y: =4
+                ZIndex: =3
+
+            Label4_3 As label:
+                Font: =Font.Lato
+                Height: =31
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.UOM
+                Tooltip: =ThisItem.Title
+                Width: =66
+                Wrap: =false
+                X: =441
+                Y: =4
+                ZIndex: =4
+
+            Label4_4 As label:
+                Font: =Font.Lato
+                Height: =35
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.CostCode
+                Tooltip: =ThisItem.CostCode
+                Width: =108
+                Wrap: =false
+                X: =507
+                ZIndex: =5
+
+        Body4 As label:
+            AutoHeight: =true
+            Font: =Font.Lato
+            Height: =Self.Size * 4
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.JobNo
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =Title5.Width
+            X: =32
+            Y: =95
+            ZIndex: =2
+
+        Image6 As image:
+            Height: =80
+            Image: =ThisItem.'Created By'.Picture
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =80
+            RadiusBottomRight: =80
+            RadiusTopLeft: =80
+            RadiusTopRight: =80
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =80
+            X: =541
+            Y: =68
+            ZIndex: =3
+
+        Body4_1 As label:
+            AutoHeight: =true
+            Font: =Font.Lato
+            Height: =Self.Size * 4
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =Proper(ThisItem.DeliveryLoc)
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =Title5.Width
+            X: =32
+            Y: =127
+            ZIndex: =5
+
+        Body4_2 As label:
+            Font: =Font.Lato
+            Height: =24
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =Text(ThisItem.Created,ShortDate)
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =147
+            X: =474
+            Y: =199
+            ZIndex: =6
+
+        Body4_3 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            Height: =24
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: =ThisItem.Status.Value
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =103
+            X: =53
+            Y: =186
+            ZIndex: =7
+
+        Rectangle2 As rectangle:
+            Fill: |-
+                =Switch(ThisItem.Status.Value,"Pending",ColorValue("#006080"),"Coded",ColorValue("#e64d00"),"Processed",ColorValue("#009933"))
+            Height: =13
+            OnSelect: =Select(Parent)
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =103
+            X: =53
+            Y: =210
+            ZIndex: =8
+
+        Button1 As button:
+            BorderThickness: =0
+            Fill: =theme.AppColor
+            FocusedBorderThickness: =0
+            Font: =Font.Lato
+            Height: =49
+            HoverFill: |-
+                =ColorValue("#004d66")
+            OnSelect: =If(varShowId=ThisItem.ID, Set(varShowId,0) , Set(varShowId,ThisItem.ID))
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =16
+            Text: |-
+                ="Requisition No: " & ThisItem.Title
+            Width: =Parent.Width
+            ZIndex: =9
+
+        icnExpand As icon.ExpandView:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =35
+            Icon: =Icon.ExpandView
+            OnSelect: =
+            Tooltip: ="Click to see description"
+            Visible: =Switch(varShowId,0,true,ThisItem.ID,false)
+            Width: =35
+            X: =581
+            Y: =6
+            ZIndex: =10
+
+        icnCollapse As icon.ExpandView:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =35
+            Icon: =Icon.CollapseView
+            OnSelect: =
+            Tooltip: ="Click to see description"
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =35
+            X: =581
+            Y: =6
+            ZIndex: =11
+
+    grp_Header_RS_1 As group:
+        Height: =5
+        Width: =5
+        X: =88
+        Y: =6
+        ZIndex: =5
+
+        Rectangle1_8 As rectangle:
+            Fill: =theme.AppColor
+            Height: =86
+            OnSelect: =
+            Width: =552
+            X: =88
+            Y: =6
+            ZIndex: =2
+
+        Image1_3 As image:
+            Height: =86
+            Image: =RecProc
+            Width: =88
+            Y: =6
+            ZIndex: =3
+
+        Label1_3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =83
+            PaddingLeft: =20
+            Size: =21
+            Text: ="Requisitions"
+            Width: =377
+            X: =176
+            Y: =7
+            ZIndex: =4
+
