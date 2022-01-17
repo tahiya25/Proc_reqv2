@@ -1,5 +1,6 @@
 "'Requisitions Screen' As screen":
-    Fill: =RGBA(244, 244, 244, 1)
+    Fill: |-
+        =ColorValue("#ccf5ff")
 
     "galRequisitions As gallery.'BrowseLayout_Flexible_NewsFeed_ver4.0'":
         Fill: =White
@@ -9,7 +10,8 @@
         ShowScrollbar: =false
         TemplateFill: =Transparent
         TemplateSize: =790
-        Width: =636
+        Width: =630
+        X: =6
         Y: =105
         ZIndex: =1
 
