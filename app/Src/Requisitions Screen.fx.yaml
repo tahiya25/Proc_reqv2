@@ -9,6 +9,7 @@
         ShowScrollbar: =false
         TemplateFill: =Transparent
         TemplateSize: =790
+        Width: =636
         Y: =105
         ZIndex: =1
 
@@ -444,7 +445,7 @@
             Fill: =theme.AppColor
             Height: =86
             OnSelect: =
-            Width: =552
+            Width: =548
             X: =88
             Y: =6
             ZIndex: =2
