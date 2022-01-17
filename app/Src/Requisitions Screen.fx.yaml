@@ -8,8 +8,7 @@
         Layout: =Layout.Vertical
         ShowScrollbar: =false
         TemplateFill: =Transparent
-        TemplatePadding: =0
-        TemplateSize: =744
+        TemplateSize: =790
         Y: =105
         ZIndex: =1
 
@@ -27,7 +26,7 @@
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =Parent.TemplateWidth - Image6.Width - 80
             X: =32
-            Y: =51
+            Y: =80
             ZIndex: =1
 
         galReqDetails As gallery.variableTemplateHeightGallery:
@@ -38,7 +37,7 @@
             TemplatePadding: =0
             TemplateSize: =34
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
-            Y: =251
+            Y: =291
             ZIndex: =1
 
             Label4 As label:
@@ -118,7 +117,7 @@
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =40
             X: =552
-            Y: =74
+            Y: =127
             ZIndex: =3
 
         Body4_1 As label:
@@ -134,7 +133,7 @@
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =486
             X: =32
-            Y: =116
+            Y: =153
             ZIndex: =5
 
         Body4_2 As label:
@@ -150,7 +149,7 @@
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =147
             X: =474
-            Y: =199
+            Y: =244
             ZIndex: =6
 
         Body4_3 As label:
@@ -169,8 +168,8 @@
             VerticalAlign: =VerticalAlign.Top
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =103
-            X: =53
-            Y: =186
+            X: =32
+            Y: =228
             ZIndex: =7
 
         Rectangle2 As rectangle:
@@ -180,8 +179,8 @@
             OnSelect: =Select(Parent)
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =103
-            X: =53
-            Y: =210
+            X: =32
+            Y: =252
             ZIndex: =8
 
         Button1 As button:
@@ -189,7 +188,7 @@
             Fill: =theme.AppColor
             FocusedBorderThickness: =0
             Font: =Font.Lato
-            Height: =49
+            Height: =74
             HoverFill: |-
                 =ColorValue("#004d66")
             OnSelect: =If(varShowId=ThisItem.ID, Set(varShowId,0) , Set(varShowId,ThisItem.ID))
@@ -197,7 +196,7 @@
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
-            Size: =16
+            Size: =20
             Text: |-
                 ="Requisition No: " & ThisItem.Title
             Width: =Parent.Width
@@ -205,26 +204,26 @@
 
         icnExpand As icon.ExpandView:
             Color: =RGBA(255, 255, 255, 1)
-            Height: =35
+            Height: =50
             Icon: =Icon.ExpandView
             OnSelect: =
             Tooltip: ="Click to see description"
             Visible: =Switch(varShowId,0,true,ThisItem.ID,false)
-            Width: =35
-            X: =581
-            Y: =6
+            Width: =50
+            X: =571
+            Y: =13
             ZIndex: =10
 
         icnCollapse As icon.ExpandView:
             Color: =RGBA(255, 255, 255, 1)
-            Height: =35
+            Height: =50
             Icon: =Icon.CollapseView
             OnSelect: =
             Tooltip: ="Click to see description"
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
-            Width: =35
-            X: =581
-            Y: =6
+            Width: =50
+            X: =571
+            Y: =13
             ZIndex: =11
 
         Body4_4 As label:
@@ -241,7 +240,7 @@
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =Title5.Width
             X: =32
-            Y: =85
+            Y: =122
             ZIndex: =12
 
         Body4_5 As label:
@@ -259,8 +258,8 @@
             VerticalAlign: =VerticalAlign.Top
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =103
-            X: =53
-            Y: =158
+            X: =32
+            Y: =200
             ZIndex: =13
 
         Rectangle2_1 As rectangle:
@@ -270,7 +269,7 @@
             OnSelect: =Select(Parent)
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =Parent.Width
-            Y: =238
+            Y: =289
             ZIndex: =14
 
         Image6_1 As image:
@@ -280,7 +279,7 @@
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =40
             X: =552
-            Y: =135
+            Y: =188
             ZIndex: =15
 
         Body4_6 As label:
@@ -299,7 +298,7 @@
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =103
             X: =518
-            Y: =50
+            Y: =103
             ZIndex: =16
 
         Body4_7 As label:
@@ -318,22 +317,22 @@
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =103
             X: =518
-            Y: =116
+            Y: =169
             ZIndex: =17
 
         Rectangle2_2 As rectangle:
             Fill: |-
                 =Switch(ThisItem.Status.Value,"Pending",ColorValue("#006080"),"Coded",ColorValue("#e64d00"),"Processed",ColorValue("#009933"))
-            Height: =35
+            Height: =50
             OnSelect: =Select(Parent)
             Visible: =Switch(varShowId,0,true,ThisItem.ID,false)
-            Width: =35
-            X: =15
-            Y: =6
+            Width: =50
+            X: =24
+            Y: =13
             ZIndex: =18
 
         Image6_2 As image:
-            Height: =30
+            Height: =50
             Image: |-
                 ="data:image/svg+xml," & 
                  EncodeUrl(
@@ -347,28 +346,28 @@
                 )
             OnSelect: =Select(Parent)
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
-            Width: =30
-            X: =305
-            Y: =159
+            Width: =50
+            X: =234
+            Y: =212
             ZIndex: =19
 
         Body4_8 As label:
             Color: =theme.AppColor
             Font: =Font.Lato
             FontWeight: =Lighter
-            Height: =33
+            Height: =53
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =11
+            Size: =14
             Text: ="Send Message to Proc"
             VerticalAlign: =VerticalAlign.Top
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
-            Width: =103
-            X: =342
-            Y: =157
+            Width: =121
+            X: =293
+            Y: =209
             ZIndex: =20
 
         btnSave_1 As button:
@@ -391,13 +390,13 @@
             Text: =""
             Tooltip: ="Save Change Records"
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
-            Width: =167
-            X: =278
-            Y: =147
+            Width: =185
+            X: =229
+            Y: =199
             ZIndex: =21
 
         Image10 As image:
-            Height: =41
+            Height: =50
             Image: |-
                 ="data:image/svg+xml," & 
                  EncodeUrl(
@@ -411,27 +410,27 @@
                 )
             Tooltip: ="There are " & CountRows(Filter(ReqMessages, ReqId=ThisItem.Title)) & "message(s) for this req. "
             Visible: =If(CountRows(Filter(ReqMessages, ReqId=ThisItem.Title))>0,true,false)
-            Width: =35
-            X: =76
-            Y: =4
+            Width: =50
+            X: =85
+            Y: =11
             ZIndex: =22
 
         Label5 As label:
             Align: =Align.Center
             Font: =Font.Lato
             FontWeight: =Semibold
-            Height: =35
+            Height: =45
             OnSelect: =Select(Parent)
             PaddingBottom: =3
             PaddingLeft: =3
             PaddingTop: =0
-            Size: =14
+            Size: =18
             Text: =CountRows(Filter(ReqMessages, ReqId=ThisItem.Title))
             Tooltip: ="There are " & CountRows(Filter(ReqMessages, ReqId=ThisItem.Title)) & "message(s) for this req. "
             Visible: =If(CountRows(Filter(ReqMessages, ReqId=ThisItem.Title))>0,true,false)
-            Width: =35
-            X: =76
-            Y: =5
+            Width: =50
+            X: =85
+            Y: =12
             ZIndex: =23
 
     grp_Header_RS_1 As group:

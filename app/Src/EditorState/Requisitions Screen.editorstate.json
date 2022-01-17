@@ -71,7 +71,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Body4_1",
-    "ParentIndex": 11,
+    "ParentIndex": 10,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -891,7 +891,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Body4_4",
-    "ParentIndex": 10,
+    "ParentIndex": 8,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -1176,7 +1176,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Body4_5",
-    "ParentIndex": 16,
+    "ParentIndex": 15,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -1461,7 +1461,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Body4_6",
-    "ParentIndex": 7,
+    "ParentIndex": 9,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -2038,7 +2038,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Body4_8",
-    "ParentIndex": 15,
+    "ParentIndex": 16,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -3281,7 +3281,14 @@
       },
       "WrapCount",
       "TemplateSize",
-      "TemplatePadding",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "TemplatePadding",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "Layout",
       "Transition",
       "LoadingSpinner",
@@ -4517,7 +4524,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "%TemplateBrowseGalleryImage.ID%",
     "Name": "Image6",
-    "ParentIndex": 9,
+    "ParentIndex": 11,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -7170,7 +7177,14 @@
         "IsLockable": false,
         "NameMapSourceSchema": "?"
       },
-      "Width",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "Width",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
@@ -7947,7 +7961,14 @@
         "IsLockable": false,
         "NameMapSourceSchema": "?"
       },
-      "Height",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "Height",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "OnSelect",
       "ZIndex",
       "BorderThickness",
@@ -8209,7 +8230,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "%TemplateBrowseGalleryTitle.ID%",
     "Name": "Title5",
-    "ParentIndex": 8,
+    "ParentIndex": 7,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
