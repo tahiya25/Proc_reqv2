@@ -7,7 +7,7 @@
         Items: =ReqHeader
         Layout: =Layout.Vertical
         ShowScrollbar: =false
-        TemplateFill: =White
+        TemplateFill: =Transparent
         TemplatePadding: =0
         TemplateSize: =744
         Y: =105
@@ -384,7 +384,7 @@
             HoverBorderColor: =Transparent
             HoverColor: =Transparent
             HoverFill: =Transparent
-            OnSelect: =Set(currentReq, ThisItem.Title);Navigate('Messages Screen')
+            OnSelect: =Set(currentReq, ThisItem);Navigate('Messages Screen')
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent
@@ -395,6 +395,42 @@
             X: =278
             Y: =147
             ZIndex: =21
+
+        Image10 As image:
+            Height: =41
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='White'
+                d='M2048 1920v-1408h-1317l-475 -475v475h-256v1408h2048z' />
+                  </g>
+                
+                </svg>"
+                )
+            Visible: =If(CountRows(Filter(ReqMessages, ReqId=ThisItem.Title))>0,true,false)
+            Width: =35
+            X: =76
+            Y: =4
+            ZIndex: =22
+
+        Label5 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            FontWeight: =Semibold
+            Height: =35
+            OnSelect: =Select(Parent)
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingTop: =0
+            Size: =14
+            Text: =CountRows(Filter(ReqMessages, ReqId=ThisItem.Title))
+            Visible: =If(CountRows(Filter(ReqMessages, ReqId=ThisItem.Title))>0,true,false)
+            Width: =35
+            X: =76
+            Y: =5
+            ZIndex: =23
 
     grp_Header_RS_1 As group:
         Height: =5

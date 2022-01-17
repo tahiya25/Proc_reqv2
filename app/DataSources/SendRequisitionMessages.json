@@ -1,0 +1,9 @@
+[
+  {
+    "AddinConnectorId": "87b32dbb-c05c-41db-9218-da0f5cfe3806",
+    "AddinId": "6d1f157d-95bf-406d-b65d-cfd3240f724e",
+    "Name": "SendRequisitionMessages",
+    "ServiceKind": "AddinWadl",
+    "Type": "ServiceInfo"
+  }
+]
