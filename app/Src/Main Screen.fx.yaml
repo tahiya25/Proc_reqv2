@@ -261,11 +261,35 @@
 
         txtGalPartNo As text:
             BorderThickness: =0
-            Default: =""
+            Default: =ThisItem.Title
             FocusedBorderThickness: =0
             Font: =Font.Lato
             Height: =60
             HintText: ="Part No"
+            OnChange: |-
+                =If(ThisItem.ID in colReqDetails.ID,
+                Update(colReqDetails,
+                LookUp(colReqDetails,ID=ThisItem.ID),
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        }),
+                Collect(colReqDetails,
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        })
+                )        
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -291,7 +315,30 @@
             HoverBorderColor: =ColorFade(drpgalVendor.BorderColor, 15%)
             HoverFill: =RGBA(242, 242, 242,1)
             Items: =["Vendor 1", "Vendor 2"]
-            OnChange: =
+            OnChange: |-
+                =If(ThisItem.ID in colReqDetails.ID,
+                Update(colReqDetails,
+                LookUp(colReqDetails,ID=ThisItem.ID),
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        }),
+                Collect(colReqDetails,
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        })
+                )        
             PressedBorderColor: =drpgalVendor.HoverBorderColor
             PressedFill: =theme.AppColor
             SelectionFill: =theme.AppColor
@@ -308,6 +355,30 @@
             Font: =Font.Lato
             Height: =60
             HintText: ="Quantity"
+            OnChange: |-
+                =If(ThisItem.ID in colReqDetails.ID,
+                Update(colReqDetails,
+                LookUp(colReqDetails,ID=ThisItem.ID),
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        }),
+                Collect(colReqDetails,
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        })
+                )        
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -333,7 +404,30 @@
             HoverBorderColor: =ColorFade(drpgalUOM.BorderColor, 15%)
             HoverFill: =RGBA(242, 242, 242,1)
             Items: =["Each", "LF"]
-            OnChange: =
+            OnChange: |-
+                =If(ThisItem.ID in colReqDetails.ID,
+                Update(colReqDetails,
+                LookUp(colReqDetails,ID=ThisItem.ID),
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        }),
+                Collect(colReqDetails,
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        })
+                )        
             PressedBorderColor: =drpgalUOM.HoverBorderColor
             PressedFill: =theme.AppColor
             SelectionFill: =theme.AppColor
@@ -345,11 +439,35 @@
 
         txtGalDescription As text:
             BorderThickness: =0
-            Default: =""
+            Default: =ThisItem.ItemDescription
             FocusedBorderThickness: =0
             Font: =Font.Lato
             Height: =60
             HintText: ="Description"
+            OnChange: |-
+                =If(ThisItem.ID in colReqDetails.ID,
+                Update(colReqDetails,
+                LookUp(colReqDetails,ID=ThisItem.ID),
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        }),
+                Collect(colReqDetails,
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        })
+                )        
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -366,6 +484,30 @@
             Font: =Font.Lato
             Height: =60
             IconBackground: =theme.AppColor
+            OnChange: |-
+                =If(ThisItem.ID in colReqDetails.ID,
+                Update(colReqDetails,
+                LookUp(colReqDetails,ID=ThisItem.ID),
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        }),
+                Collect(colReqDetails,
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        })
+                )        
             Size: =21
             Width: =224
             X: =5
@@ -380,6 +522,30 @@
             Font: =Font.Lato
             Height: =60
             HintText: =""
+            OnChange: |-
+                =If(ThisItem.ID in colReqDetails.ID,
+                Update(colReqDetails,
+                LookUp(colReqDetails,ID=ThisItem.ID),
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        }),
+                Collect(colReqDetails,
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        })
+                )        
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -398,6 +564,30 @@
             Font: =Font.Lato
             Height: =60
             HintText: ="Cost Code"
+            OnChange: |-
+                =If(ThisItem.ID in colReqDetails.ID,
+                Update(colReqDetails,
+                LookUp(colReqDetails,ID=ThisItem.ID),
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        }),
+                Collect(colReqDetails,
+                    {
+                        ID:ThisItem.ID,
+                        Title:txtGalPartNo.Text,
+                        Vendor:drpgalVendor.Selected.Value,
+                        UOM:drpgalUOM.Selected.Value,
+                        Quantity:txtGalQty.Text,
+                        ItemDescription:txtGalDescription.Text,
+                        Required:txtGalRequired.Text
+                        })
+                )        
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -491,7 +681,7 @@
         HintText: ="Job  No"
         Size: =18
         Width: =182
-        X: =203
+        X: =195
         Y: =249
         ZIndex: =26
 
@@ -561,4 +751,143 @@
             X: =345
             Y: =421
             ZIndex: =25
+
+    CB_Responsible As combobox:
+        BorderColor: =theme.LightBlue
+        BorderThickness: =1
+        ChevronBackground: =theme.AppColor
+        DisplayFields: =["DisplayName","JobTitle","Picture"]
+        FocusedBorderThickness: =0
+        Height: =60
+        InputTextPlaceholder: =
+        IsSearchable: =false
+        Items: =Choices(ReqHeader.Approver)
+        OnChange: =
+        SearchFields: =["DisplayName"]
+        SearchItems: =[]
+        SelectMultiple: =false
+        Size: =11
+        Width: =210
+        X: =405
+        Y: =249
+        ZIndex: =30
+
+    grpSave As group:
+        Height: =5
+        Width: =5
+        X: =-1225
+        Y: =40
+        ZIndex: =30
+
+        imgGradient_3 As image:
+            DisplayMode: =
+            FocusedBorderColor: =imgGradient_3.BorderColor
+            FocusedBorderThickness: =0
+            Height: =80
+            HoverBorderColor: =ColorFade(imgGradient_3.BorderColor, 20%)
+            HoverFill: =Transparent
+            Image: |-
+                ="data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg'
+                     xmlns:xlink='http://www.w3.org/1999/xlink'> width='" & imgGradient_3.Width & "' height='" & imgGradient_3.Height & ">
+                  <defs>
+                    <linearGradient id='linear-gradient' x1='0.5' x2='0.5' y2='1' gradientUnits='objectBoundingBox'>
+                      <stop offset='0' stop-color='" & theme.AppColorText & "'/>
+                      <stop offset='1' stop-color='" & theme.GradientText & "'/>
+                    </linearGradient>
+                  </defs>
+                  <rect id='Rectangle_1' data-name='Rectangle 1' width='" & imgGradient_3.Width & "' height='" & imgGradient_3.Height & "' rx='10' fill='url(#linear-gradient)'/>
+                </svg>")
+            OnSelect: |-
+                =If(
+                    CountRows(colReqDetails) > 0,
+                    Patch(
+                        ReqDetails,
+                        colReqDetails
+                    );
+                    Notify(
+                        "Success",
+                        NotificationType.Success
+                    )
+                );
+                Clear(colReqDetails)
+            PressedBorderColor: =ColorFade(imgGradient_3.BorderColor, -20%)
+            PressedFill: =Transparent
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Tooltip: ="Save Change Records"
+            Width: =80
+            X: =535
+            Y: =1039
+            ZIndex: =27
+
+        Icon1_9 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledFill: =Transparent
+            DisplayMode: =
+            FocusedBorderColor: =Icon1_9.BorderColor
+            FocusedBorderThickness: =0
+            Height: =50
+            HoverBorderColor: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            Icon: =Icon.Save
+            OnSelect: |-
+                =If(
+                    CountRows(colReqDetails) > 0,
+                    Patch(
+                        ReqDetails,
+                        colReqDetails
+                    );
+                    Notify(
+                        "Success",
+                        NotificationType.Success
+                    )
+                );
+                Clear(colReqDetails)
+            PressedBorderColor: =ColorFade(Icon1_9.BorderColor, -20%)
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Tooltip: ="Save Change Records"
+            Width: =50
+            X: =550
+            Y: =1054
+            ZIndex: =28
+
+        btnSave As button:
+            Color: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =Transparent
+            FocusedBorderThickness: =0
+            Height: =80
+            HoverBorderColor: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: |-
+                =If(
+                    CountRows(colReqDetails) > 0,
+                    Patch(
+                        ReqDetails,
+                        colReqDetails
+                    );
+                    Notify(
+                        "Success",
+                        NotificationType.Success
+                    )
+                );
+                Clear(colReqDetails)
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Width: =80
+            X: =535
+            Y: =1033
+            ZIndex: =29
 
