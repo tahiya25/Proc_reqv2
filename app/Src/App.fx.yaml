@@ -59,6 +59,8 @@ App As appinfo:
                 )
             }
         );
+        ClearCollect(colReqDetails, ShowColumns(Table(Defaults(ReqDetails)),"ID","Quantity","Vendor","Title","ItemDescription","CostCode","DateRequired","Required"));
+        Clear(colReqDetails);
     StartScreen: |-
         =If(
             !IsBlank(Param("ID")) ,    
