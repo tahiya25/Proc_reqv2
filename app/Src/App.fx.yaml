@@ -59,5 +59,9 @@ App As appinfo:
                 )
             }
         );
-    StartScreen: =
+    StartScreen: |-
+        =If(
+            !IsBlank(Param("ID")) ,    
+            'Current Req Screen','Main Screen'
+        )
 

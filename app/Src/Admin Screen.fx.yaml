@@ -14,7 +14,6 @@
             OnSelect: =
             Width: =548
             X: =88
-            Y: =6
             ZIndex: =1
 
         Image1_6 As image:
@@ -22,7 +21,6 @@
             Image: =RecProc
             OnSelect: =Back()
             Width: =88
-            Y: =6
             ZIndex: =2
 
         Label1_4 As label:
@@ -34,6 +32,6 @@
             Text: ="Requisitions"
             Width: =377
             X: =176
-            Y: =7
+            Y: =1
             ZIndex: =3
 
