@@ -30,7 +30,7 @@
         Image1_1 As image:
             Height: =86
             Image: =RecProc
-            OnSelect: =Back()
+            OnSelect: =Navigate('Main Screen')
             Width: =88
             ZIndex: =2
 
@@ -233,7 +233,7 @@
             Y: =882
             ZIndex: =11
 
-        btnReset As button:
+        btnSaveLibRec As button:
             BorderThickness: =0
             Color: =Transparent
             DisabledColor: =Transparent
@@ -246,7 +246,18 @@
             HoverBorderColor: =Transparent
             HoverColor: =Transparent
             HoverFill: =Transparent
-            OnSelect: =
+            OnSelect: |-
+                =Patch(TCReqLibrary, Defaults(TCReqLibrary),
+                
+                {
+                    Title:txtItemNoEntry.Text,
+                    Name1:Left(txtDescriptionEntry.Text,50),
+                    Description:txtDescriptionEntry.Text,
+                    'WM*':dd_Revision.Selected.Value
+                });
+                
+                Reset(txtItemNoEntry);Reset(txtDescriptionEntry);Reset(dd_Revision);
+                Set(varShowLib,false)
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent

@@ -874,19 +874,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Library Screen.btnReset.FocusedBorderThickness"
+                  "fullyQualifiedName": "Library Screen.btnSaveLibRec.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Library Screen.btnReset.FocusedBorderThickness",
+                  "fullyQualifiedName": "Library Screen.btnSaveLibRec.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "Library Screen",
-                "type": "Library Screen.btnReset"
+                "type": "Library Screen.btnSaveLibRec"
               }
             }
           ],
