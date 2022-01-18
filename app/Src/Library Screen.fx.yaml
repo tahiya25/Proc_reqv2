@@ -1,69 +1,6 @@
 "'Library Screen' As screen":
     Fill: =RGBA(244, 244, 244, 1)
 
-    galLibraryItems As gallery.galleryVertical:
-        Height: =If(varShowLib, 649,929)
-        Items: |-
-            =  
-                Filter( TCReqLibrary,
-                      IsBlank(txtSearchLibrary.Text) || StartsWith(Name1, txtSearchLibrary.Text ))
-        Layout: =Layout.Vertical
-        TemplateFill: =White
-        TemplateSize: =67
-        Y: =207
-        ZIndex: =1
-
-        lblItemNo As label:
-            Align: =Center
-            Font: =Font.Lato
-            FontWeight: =Semibold
-            OnSelect: =Select(Parent)
-            Size: =12
-            Text: =ThisItem.'Item Code*'
-            Width: =99
-            X: =4
-            Y: =12
-            ZIndex: =1
-
-        lblDescription As label:
-            Font: =Font.Lato
-            OnSelect: =Select(Parent)
-            Size: =16
-            Text: =Proper(ThisItem.Name1)
-            Tooltip: =Proper(ThisItem.Name1)
-            Width: =409
-            Wrap: =false
-            X: =103
-            Y: =12
-            ZIndex: =2
-
-        lblWM As label:
-            Align: =Center
-            Color: =theme.AppColor
-            Font: =Font.Lato
-            FontWeight: =Semibold
-            OnSelect: =Select(Parent)
-            Size: =18
-            Text: =ThisItem.'WM*'
-            Width: =80
-            X: =482
-            Y: =12
-            ZIndex: =3
-
-        Icon2 As icon.ExpandView:
-            Color: =theme.AppColor
-            Height: =40
-            Icon: |-
-                =
-                If(varShowDescription, Icon.CollapseView,Icon.ExpandView)
-            OnSelect: =If(varShowDescription, Set(varShowDescription, false),Set(varShowDescription, true))
-            Tooltip: ="Click to see description"
-            Visible: =ThisItem.IsSelected
-            Width: =40
-            X: =574
-            Y: =12
-            ZIndex: =4
-
     icnAddItems As icon.Add:
         Color: =If(varShowLib, Red,Green)
         Height: =60
@@ -109,35 +46,115 @@
             Y: =1
             ZIndex: =4
 
-    grpSearch As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =9
+    galLibraryItems As gallery.variableTemplateHeightGallery:
+        Height: =If(varShowLib, 640,957)
+        Items: |-
+            =    Filter( TCReqLibrary,
+                      IsBlank(txtSearchLibrary.Text) || StartsWith(Name1, txtSearchLibrary.Text ))
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplateSize: =228
+        Y: =179
+        ZIndex: =14
 
-        txtSearchLibrary As text:
+        lblDescription_3 As label:
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =Proper(ThisItem.Name1)
+            Tooltip: =Proper(ThisItem.Name1)
+            Visible: =Switch(varShowLibId,0,false,ThisItem.ID,true)
+            Width: =379
+            Wrap: =false
+            Y: =74
+            ZIndex: =2
+
+        lblWM_1 As label:
+            Align: =Center
+            Color: =theme.AppColor
+            Font: =Font.Lato
+            FontWeight: =Semibold
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.'WM*'
+            Width: =80
+            X: =490
+            Y: =12
+            ZIndex: =3
+
+        Button1_1 As button:
+            Align: =Align.Left
             BorderThickness: =0
-            Default: =
+            Fill: =theme.AppColor
             FocusedBorderThickness: =0
             Font: =Font.Lato
-            Height: =60
-            HintText: ="Search Library"
-            PaddingLeft: =65
-            Size: =18
-            Width: =462
-            X: =42
-            Y: =107
+            Height: =74
+            HoverFill: |-
+                =ColorValue("#004d66")
+            OnSelect: =If(varShowLibId=ThisItem.ID, Set(varShowLibId,0) , Set(varShowLibId,ThisItem.ID))
+            PaddingLeft: =15
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =16
+            Text: |-
+                ="Item No: " & ThisItem.Title & " - " & Proper(ThisItem.Name1)
+            Width: =630
+            ZIndex: =4
+
+        icnExpand_Lib As icon.ExpandView:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =50
+            Icon: =Icon.ExpandView
+            OnSelect: =
+            Tooltip: ="Click to see description"
+            Visible: =Switch(varShowLibId,0,true,ThisItem.ID,false)
+            Width: =50
+            X: =570
+            Y: =12
+            ZIndex: =5
+
+        icnCollapse_Lib As icon.ExpandView:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =50
+            Icon: =Icon.CollapseView
+            OnSelect: =
+            Tooltip: ="Click to see description"
+            Visible: =Switch(varShowLibId,0,false,ThisItem.ID,true)
+            Width: =50
+            X: =570
+            Y: =12
             ZIndex: =6
 
-        icnSearch As icon.Search:
-            Color: =RGBA(128, 128, 128, 1)
-            Height: =50
-            Icon: =Icon.Search
-            Width: =50
-            X: =42
-            Y: =112
+        lblDescription_4 As label:
+            Color: =RGBA(153, 153, 153, 1)
+            Font: =Font.Lato
+            Height: =111
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =Proper(ThisItem.Description)
+            Tooltip: =Proper(ThisItem.Name1)
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowLibId,0,false,ThisItem.ID,true)
+            Width: =630
+            Wrap: =false
+            Y: =114
             ZIndex: =7
+
+        lblDescription_5 As label:
+            Align: =Center
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.'WM*'
+            Tooltip: =Proper(ThisItem.Name1)
+            Visible: =Switch(varShowLibId,0,false,ThisItem.ID,true)
+            Width: =85
+            Wrap: =false
+            X: =544
+            Y: =74
+            ZIndex: =8
 
     Group3 As group:
         Height: =5
@@ -249,4 +266,34 @@
             X: =375
             Y: =884
             ZIndex: =13
+
+    grpSearch As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =17
+
+        txtSearchLibrary As text:
+            BorderThickness: =0
+            Default: =
+            FocusedBorderThickness: =0
+            Font: =Font.Lato
+            Height: =60
+            HintText: ="Search Library"
+            PaddingLeft: =65
+            Size: =18
+            Width: =462
+            X: =91
+            Y: =107
+            ZIndex: =15
+
+        icnSearch As icon.Search:
+            Color: =RGBA(128, 128, 128, 1)
+            Height: =50
+            Icon: =Icon.Search
+            Width: =50
+            X: =91
+            Y: =112
+            ZIndex: =16
 
