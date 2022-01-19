@@ -96,7 +96,7 @@
 
     rdProcType As radio:
         Color: =theme.AppColor
-        Default: ="Library"
+        Default: ="Free Form"
         Font: =Font.Lato
         Height: =104
         Items: =["Library","Free Form"]
