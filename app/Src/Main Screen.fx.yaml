@@ -136,8 +136,7 @@
         Height: =505
         Items: =Filter(ReqDetails,ReqID=txtReqNoEnter.Text)
         Layout: =Layout.Vertical
-        TemplateFill: |-
-            =ColorValue("#ccf5ff")
+        TemplateFill: =Transparent
         TemplateSize: =207
         Y: =519
         ZIndex: =18
@@ -477,9 +476,16 @@
             RadiusTopRight: =0
             Size: =18
             Width: =204
-            X: =231
+            X: =234
             Y: =136
             ZIndex: =8
+
+        Rectangle1 As rectangle:
+            Fill: =theme.AppColor
+            Height: =4
+            Width: =Parent.Width
+            Y: =202
+            ZIndex: =9
 
     grpGTReq_MS As group:
         Height: =5
