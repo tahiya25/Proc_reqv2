@@ -156,6 +156,17 @@
             Y: =74
             ZIndex: =8
 
+        chkSelectItem As checkbox:
+            BorderColor: =White
+            CheckmarkFill: =theme.AppColor
+            FocusedBorderThickness: =0
+            Height: =62
+            Size: =21
+            Text: =""
+            Width: =75
+            X: =483
+            ZIndex: =9
+
     Group3 As group:
         Height: =5
         Width: =5

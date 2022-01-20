@@ -50,26 +50,12 @@
                 Height: =30
                 OnSelect: =Select(Parent)
                 Size: =16
-                Text: =ThisItem.Title
-                Tooltip: =ThisItem.Title
-                Width: =134
+                Text: =Proper(ThisItem.ItemDescription)
+                Tooltip: =Proper(ThisItem.ItemDescription)
+                Width: =371
                 Wrap: =false
                 X: =4
                 ZIndex: =1
-
-            Label4_1 As label:
-                Fill: |-
-                    =ColorValue("#F4F4F4")
-                Font: =Font.Lato
-                Height: =30
-                OnSelect: =Select(Parent)
-                Size: =16
-                Text: =ThisItem.Vendor
-                Tooltip: =ThisItem.Vendor
-                Width: =237
-                Wrap: =false
-                X: =138
-                ZIndex: =2
 
             Label4_2 As label:
                 Fill: |-
@@ -80,7 +66,7 @@
                 Size: =16
                 Text: =ThisItem.Quantity
                 Tooltip: =ThisItem.Title
-                Width: =66
+                Width: =63
                 Wrap: =false
                 X: =375
                 ZIndex: =3
@@ -94,9 +80,9 @@
                 Size: =16
                 Text: =ThisItem.UOM
                 Tooltip: =ThisItem.Title
-                Width: =66
+                Width: =54
                 Wrap: =false
-                X: =441
+                X: =438
                 ZIndex: =4
 
             Label4_4 As label:
@@ -110,7 +96,7 @@
                 Tooltip: =ThisItem.CostCode
                 Width: =133
                 Wrap: =false
-                X: =507
+                X: =492
                 ZIndex: =5
 
         Image6 As image:
@@ -433,7 +419,7 @@
             Visible: =If(CountRows(Filter(ReqMessages, ReqId=ThisItem.Title))>0,true,false)
             Width: =50
             X: =85
-            Y: =12
+            Y: =11
             ZIndex: =23
 
     Image2 As image:
