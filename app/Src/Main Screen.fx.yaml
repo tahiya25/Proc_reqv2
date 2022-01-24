@@ -88,6 +88,7 @@
         Height: =104
         Items: =["Library","Free Form"]
         Layout: =Layout.Horizontal
+        OnChange: =Set(varValue, Self.Selected.Value)
         RadioBorderColor: =theme.AppColor
         RadioSelectionFill: =theme.AppColor
         Size: =21
@@ -294,7 +295,8 @@
                     JobNo:txtRJobNoEnter.Text
                 }
                 );
-                Patch(ReqDetails,Defaults(ReqDetails),{Title:""})
+                Patch(ReqDetails,Defaults(ReqDetails),{Title:""});
+                If(varValue="Library",Navigate('Library Screen'))
             PaddingLeft: =50
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
@@ -349,8 +351,8 @@
             HoverColor: =theme.AppColor
             HoverFill: |-
                 =ColorFade(ColorValue("#ccf5ff"),.70)
-            OnSelect: |-
-                =Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1)})
+            OnSelect: |
+                =Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1)});
             PaddingLeft: =50
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
@@ -1157,7 +1159,7 @@
                 
                 </svg>"
                 )
-            OnSelect: =Remove('Work Track',ThisItem)
+            OnSelect: =Remove(ReqDetails,ThisItem)
             Visible: =ThisItem.ID in colReqDetails.ID
             Width: =20
             X: =595

@@ -161,6 +161,21 @@
             CheckmarkFill: =theme.AppColor
             FocusedBorderThickness: =0
             Height: =62
+            OnCheck: |-
+                =Set(varReqDetailsIRec,Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1)}));
+                Collect(colReqDetails,
+                    {
+                        ID:varReqDetailsIRec.ID,
+                        Title:ThisItem.'Item Code*',
+                        Vendor:ThisItem.Manufacturer,
+                        UOM:ThisItem.'WM*',
+                        Quantity:"0",
+                        ItemDescription: ThisItem.Name1,
+                        DateRequired:Now(),
+                        Required:"No",
+                        CostCode:" ",
+                        Category:" "
+                        })
             Size: =21
             Text: =""
             Width: =75
