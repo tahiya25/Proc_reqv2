@@ -99,7 +99,7 @@
             RadiusTopRight: =0
             Size: =16
             Text: |-
-                ="Item No: " & ThisItem.Title & " - " & Proper(ThisItem.Name1)
+                ="Item No: " & ThisItem.'Item Code*' & " - " & Proper(ThisItem.Name1)
             Width: =630
             ZIndex: =4
 
@@ -130,7 +130,7 @@
         lblDescription_4 As label:
             Color: =RGBA(153, 153, 153, 1)
             Font: =Font.Lato
-            Height: =111
+            Height: =71
             OnSelect: =Select(Parent)
             Size: =16
             Text: =Proper(ThisItem.Description)
@@ -166,6 +166,69 @@
             Width: =75
             X: =483
             ZIndex: =9
+
+        lblDescription_6 As label:
+            Color: =RGBA(153, 153, 153, 1)
+            Font: =Font.Lato
+            Height: =43
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =Proper(ThisItem.Manufacturer)
+            Tooltip: =Proper(ThisItem.Name1)
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowLibId,0,false,ThisItem.ID,true)
+            Width: =167
+            Wrap: =false
+            Y: =185
+            ZIndex: =10
+
+        lblDescription_7 As label:
+            Color: =RGBA(153, 153, 153, 1)
+            Font: =Font.Lato
+            Height: =43
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.ItemType
+            Tooltip: =Proper(ThisItem.Name1)
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowLibId,0,false,ThisItem.ID,true)
+            Width: =122
+            Wrap: =false
+            X: =167
+            Y: =185
+            ZIndex: =11
+
+        lblDescription_8 As label:
+            Color: =RGBA(153, 153, 153, 1)
+            Font: =Font.Lato
+            Height: =43
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.MaterialType
+            Tooltip: =Proper(ThisItem.Name1)
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowLibId,0,false,ThisItem.ID,true)
+            Width: =149
+            Wrap: =false
+            X: =289
+            Y: =185
+            ZIndex: =12
+
+        lblDescription_9 As label:
+            Color: =RGBA(153, 153, 153, 1)
+            Font: =Font.Lato
+            Height: =43
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.Dimensions
+            Tooltip: =Proper(ThisItem.Name1)
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowLibId,0,false,ThisItem.ID,true)
+            Width: =225
+            Wrap: =false
+            X: =403
+            Y: =185
+            ZIndex: =13
 
     Group3 As group:
         Height: =5
@@ -261,7 +324,7 @@
                 =Patch(TCReqLibrary, Defaults(TCReqLibrary),
                 
                 {
-                    Title:txtItemNoEntry.Text,
+                    'Item Code*':txtItemNoEntry.Text,
                     Name1:Left(txtDescriptionEntry.Text,50),
                     Description:txtDescriptionEntry.Text,
                     'WM*':dd_Revision.Selected.Value

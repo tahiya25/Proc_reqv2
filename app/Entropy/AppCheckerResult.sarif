@@ -214,12 +214,12 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.imd_DelRec_1.OnSelect"
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.imd_DelRec_1.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.imd_DelRec_1.OnSelect",
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.imd_DelRec_1.OnSelect",
                   "relativeAddress": 0
                 },
                 "region": {
@@ -232,8 +232,8 @@
               },
               "properties": {
                 "member": "OnSelect",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery5.imd_DelRec_1"
+                "module": "Main Screen",
+                "type": "Main Screen.galAvailableReqItems.imd_DelRec_1"
               }
             }
           ],
@@ -251,12 +251,12 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.imd_DelRec_1.OnSelect"
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.imd_DelRec_1.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.imd_DelRec_1.OnSelect",
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.imd_DelRec_1.OnSelect",
                   "relativeAddress": 0
                 },
                 "region": {
@@ -269,8 +269,8 @@
               },
               "properties": {
                 "member": "OnSelect",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery5.imd_DelRec_1"
+                "module": "Main Screen",
+                "type": "Main Screen.galAvailableReqItems.imd_DelRec_1"
               }
             }
           ],
@@ -288,12 +288,12 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.imd_DelRec_1.OnSelect"
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.imd_DelRec_1.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.imd_DelRec_1.OnSelect",
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.imd_DelRec_1.OnSelect",
                   "relativeAddress": 0
                 },
                 "region": {
@@ -306,8 +306,8 @@
               },
               "properties": {
                 "member": "OnSelect",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery5.imd_DelRec_1"
+                "module": "Main Screen",
+                "type": "Main Screen.galAvailableReqItems.imd_DelRec_1"
               }
             }
           ],
@@ -1198,19 +1198,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.rdProcType_1.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.rdSelectReqFillMethod.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.rdProcType_1.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.rdSelectReqFillMethod.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.rdProcType_1"
+                "module": "Main Screen",
+                "type": "Main Screen.rdSelectReqFillMethod"
               }
             }
           ],
@@ -1228,19 +1228,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.rdProcType_1.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.rdSelectReqFillMethod.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.rdProcType_1.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.rdSelectReqFillMethod.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.rdProcType_1"
+                "module": "Main Screen",
+                "type": "Main Screen.rdSelectReqFillMethod"
               }
             }
           ],
@@ -1317,19 +1317,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.txtRJobNoEnter_1.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.txtRJobNoEnter.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.txtRJobNoEnter_1.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.txtRJobNoEnter.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.txtRJobNoEnter_1"
+                "module": "Main Screen",
+                "type": "Main Screen.txtRJobNoEnter"
               }
             }
           ],
@@ -1347,19 +1347,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.txtRJobNoEnter_1.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.txtRJobNoEnter.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.txtRJobNoEnter_1.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.txtRJobNoEnter.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.txtRJobNoEnter_1"
+                "module": "Main Screen",
+                "type": "Main Screen.txtRJobNoEnter"
               }
             }
           ],
@@ -1377,19 +1377,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.CB_Responsible_1.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.CB_Responsible.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.CB_Responsible_1.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.CB_Responsible.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.CB_Responsible_1"
+                "module": "Main Screen",
+                "type": "Main Screen.CB_Responsible"
               }
             }
           ],
@@ -1407,19 +1407,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.CB_Responsible_1.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.CB_Responsible.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.CB_Responsible_1.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.CB_Responsible.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.CB_Responsible_1"
+                "module": "Main Screen",
+                "type": "Main Screen.CB_Responsible"
               }
             }
           ],
@@ -1437,19 +1437,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.txtDeliveryLocEnter_1.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.txtDeliveryLocEnter.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.txtDeliveryLocEnter_1.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.txtDeliveryLocEnter.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.txtDeliveryLocEnter_1"
+                "module": "Main Screen",
+                "type": "Main Screen.txtDeliveryLocEnter"
               }
             }
           ],
@@ -1467,19 +1467,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.txtDeliveryLocEnter_1.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.txtDeliveryLocEnter.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.txtDeliveryLocEnter_1.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.txtDeliveryLocEnter.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.txtDeliveryLocEnter_1"
+                "module": "Main Screen",
+                "type": "Main Screen.txtDeliveryLocEnter"
               }
             }
           ],
@@ -1497,19 +1497,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.btnSave_7.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.btnSave_7.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.btnSave_7.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.btnSave_7.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.btnSave_7"
+                "module": "Main Screen",
+                "type": "Main Screen.btnSave_7"
               }
             }
           ],
@@ -1527,19 +1527,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.btnSave_8.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.btnSave_8.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.btnSave_8.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.btnSave_8.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.btnSave_8"
+                "module": "Main Screen",
+                "type": "Main Screen.btnSave_8"
               }
             }
           ],
@@ -1557,19 +1557,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalCat.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalCat.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalCat.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalCat.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.drpgalCat"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.drpgalCat"
               }
             }
           ],
@@ -1587,19 +1587,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalCat.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalCat.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalCat.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalCat.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.drpgalCat"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.drpgalCat"
               }
             }
           ],
@@ -1617,19 +1617,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalUOM.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalUOM.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalUOM.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalUOM.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.drpgalUOM"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.drpgalUOM"
               }
             }
           ],
@@ -1647,19 +1647,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalUOM.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalUOM.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalUOM.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalUOM.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.drpgalUOM"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.drpgalUOM"
               }
             }
           ],
@@ -1677,19 +1677,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalCostCode.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalCostCode.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalCostCode.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalCostCode.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.drpgalCostCode"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.drpgalCostCode"
               }
             }
           ],
@@ -1707,19 +1707,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalCostCode.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalCostCode.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalCostCode.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalCostCode.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.drpgalCostCode"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.drpgalCostCode"
               }
             }
           ],
@@ -1737,19 +1737,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.txtGalQty.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.txtGalQty.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.txtGalQty.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.txtGalQty.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.txtGalQty"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.txtGalQty"
               }
             }
           ],
@@ -1767,19 +1767,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.txtGalQty.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.txtGalQty.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.txtGalQty.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.txtGalQty.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.txtGalQty"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.txtGalQty"
               }
             }
           ],
@@ -1797,19 +1797,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalVendor.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalVendor.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalVendor.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalVendor.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.drpgalVendor"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.drpgalVendor"
               }
             }
           ],
@@ -1827,19 +1827,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalVendor.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalVendor.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalVendor.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalVendor.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.drpgalVendor"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.drpgalVendor"
               }
             }
           ],
@@ -1857,19 +1857,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.txtGalDescription.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.txtGalDescription.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.txtGalDescription.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.txtGalDescription.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.txtGalDescription"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.txtGalDescription"
               }
             }
           ],
@@ -1887,19 +1887,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.txtGalDescription.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.txtGalDescription.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.txtGalDescription.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.txtGalDescription.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.txtGalDescription"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.txtGalDescription"
               }
             }
           ],
@@ -1917,19 +1917,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.txtGalPartNo.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.txtGalPartNo.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.txtGalPartNo.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.txtGalPartNo.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.txtGalPartNo"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.txtGalPartNo"
               }
             }
           ],
@@ -1947,19 +1947,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.txtGalPartNo.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.txtGalPartNo.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.txtGalPartNo.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.txtGalPartNo.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.txtGalPartNo"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.txtGalPartNo"
               }
             }
           ],
@@ -1977,19 +1977,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.btnSave_9.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.btnSave_9.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.btnSave_9.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.btnSave_9.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.btnSave_9"
+                "module": "Main Screen",
+                "type": "Main Screen.btnSave_9"
               }
             }
           ],
@@ -2007,19 +2007,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.btnSave_10.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.btnSave_10.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.btnSave_10.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.btnSave_10.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.btnSave_10"
+                "module": "Main Screen",
+                "type": "Main Screen.btnSave_10"
               }
             }
           ],
@@ -2037,19 +2037,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.btnSave_11.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.btnSave_11.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.btnSave_11.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.btnSave_11.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.btnSave_11"
+                "module": "Main Screen",
+                "type": "Main Screen.btnSave_11"
               }
             }
           ],
@@ -2067,19 +2067,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.imgGradient_4.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.imgGradient_4.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.imgGradient_4.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.imgGradient_4.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.imgGradient_4"
+                "module": "Main Screen",
+                "type": "Main Screen.imgGradient_4"
               }
             }
           ],
@@ -2097,19 +2097,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.imgGradient_4.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.imgGradient_4.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.imgGradient_4.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.imgGradient_4.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.imgGradient_4"
+                "module": "Main Screen",
+                "type": "Main Screen.imgGradient_4"
               }
             }
           ],
@@ -2127,19 +2127,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.imgGradient_4.TabIndex"
+                  "fullyQualifiedName": "Main Screen.imgGradient_4.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.imgGradient_4.TabIndex",
+                  "fullyQualifiedName": "Main Screen.imgGradient_4.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.imgGradient_4"
+                "module": "Main Screen",
+                "type": "Main Screen.imgGradient_4"
               }
             }
           ],
@@ -2157,19 +2157,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Icon1_10.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.Icon1_10.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Icon1_10.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.Icon1_10.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Icon1_10"
+                "module": "Main Screen",
+                "type": "Main Screen.Icon1_10"
               }
             }
           ],
@@ -2187,19 +2187,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Icon1_10.TabIndex"
+                  "fullyQualifiedName": "Main Screen.Icon1_10.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Icon1_10.TabIndex",
+                  "fullyQualifiedName": "Main Screen.Icon1_10.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Icon1_10"
+                "module": "Main Screen",
+                "type": "Main Screen.Icon1_10"
               }
             }
           ],
@@ -2217,19 +2217,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Icon1_10.FocusedBorderThickness"
+                  "fullyQualifiedName": "Main Screen.Icon1_10.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Icon1_10.FocusedBorderThickness",
+                  "fullyQualifiedName": "Main Screen.Icon1_10.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Icon1_10"
+                "module": "Main Screen",
+                "type": "Main Screen.Icon1_10"
               }
             }
           ],
@@ -2607,409 +2607,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen.rdProcType.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.imd_DelRec.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen.rdProcType.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Main Screen",
-                "type": "Main Screen.rdProcType"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.rdProcType.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.rdProcType.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen",
-                "type": "Main Screen.rdProcType"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.txtReqNoEnter.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.txtReqNoEnter.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Main Screen",
-                "type": "Main Screen.txtReqNoEnter"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.txtReqNoEnter.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.txtReqNoEnter.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen",
-                "type": "Main Screen.txtReqNoEnter"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.txtRJobNoEnter.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.txtRJobNoEnter.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Main Screen",
-                "type": "Main Screen.txtRJobNoEnter"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.txtRJobNoEnter.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.txtRJobNoEnter.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen",
-                "type": "Main Screen.txtRJobNoEnter"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.CB_Responsible.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.CB_Responsible.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Main Screen",
-                "type": "Main Screen.CB_Responsible"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.CB_Responsible.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.CB_Responsible.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen",
-                "type": "Main Screen.CB_Responsible"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.txtDeliveryLocEnter.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.txtDeliveryLocEnter.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Main Screen",
-                "type": "Main Screen.txtDeliveryLocEnter"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.txtDeliveryLocEnter.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.txtDeliveryLocEnter.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen",
-                "type": "Main Screen.txtDeliveryLocEnter"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.btnSave_5.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.btnSave_5.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen",
-                "type": "Main Screen.btnSave_5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.btnSave_6.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.btnSave_6.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen",
-                "type": "Main Screen.btnSave_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.Gallery1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.Gallery1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Main Screen",
-                "type": "Main Screen.Gallery1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.Gallery1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.Gallery1.TabIndex",
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.imd_DelRec.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Main Screen",
-                "type": "Main Screen.Gallery1"
+                "type": "Main Screen.galAvailableReqItems.imd_DelRec"
               }
             }
           ],
@@ -3027,19 +2637,199 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.imd_DelRec.TabIndex"
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.imd_DelRec.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.imd_DelRec.TabIndex",
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.imd_DelRec.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Main Screen",
+                "type": "Main Screen.galAvailableReqItems.imd_DelRec"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalReq.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalReq.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.drpgalReq"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalReq.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.drpgalReq.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.drpgalReq"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.dpDalReqDate.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.dpDalReqDate.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.dpDalReqDate"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.dpDalReqDate.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.dpDalReqDate.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems.dpDalReqDate"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Main Screen",
+                "type": "Main Screen.galAvailableReqItems"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Main Screen.galAvailableReqItems.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery5.imd_DelRec"
+                "module": "Main Screen",
+                "type": "Main Screen.galAvailableReqItems"
               }
             }
           ],
@@ -3051,486 +2841,6 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.imd_DelRec.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.imd_DelRec.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery5.imd_DelRec"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalReq.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalReq.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.drpgalReq"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalReq.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.drpgalReq.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.drpgalReq"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.dpDalReqDate.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.dpDalReqDate.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.dpDalReqDate"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.dpDalReqDate.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.dpDalReqDate.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4.dpDalReqDate"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery5.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.btnSave.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.btnSave.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen",
-                "type": "Main Screen.btnSave"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.btnSave_3.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.btnSave_3.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen",
-                "type": "Main Screen.btnSave_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.btnSave_4.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.btnSave_4.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen",
-                "type": "Main Screen.btnSave_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.imgGradient_3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.imgGradient_3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Main Screen",
-                "type": "Main Screen.imgGradient_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.imgGradient_3.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.imgGradient_3.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen",
-                "type": "Main Screen.imgGradient_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.imgGradient_3.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.imgGradient_3.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Main Screen",
-                "type": "Main Screen.imgGradient_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.Icon1_9.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.Icon1_9.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Main Screen",
-                "type": "Main Screen.Icon1_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.Icon1_9.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.Icon1_9.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Main Screen",
-                "type": "Main Screen.Icon1_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Main Screen.Icon1_9.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Main Screen.Icon1_9.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Main Screen",
-                "type": "Main Screen.Icon1_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 6
         },
         {
           "locations": [
@@ -3687,19 +2997,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Image2_2.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.imgShowCurrentReqDetails.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Image2_2.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.imgShowCurrentReqDetails.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Image2_2"
+                "module": "Main Screen",
+                "type": "Main Screen.imgShowCurrentReqDetails"
               }
             }
           ],
@@ -3717,19 +3027,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Image2_2.TabIndex"
+                  "fullyQualifiedName": "Main Screen.imgShowCurrentReqDetails.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Image2_2.TabIndex",
+                  "fullyQualifiedName": "Main Screen.imgShowCurrentReqDetails.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Image2_2"
+                "module": "Main Screen",
+                "type": "Main Screen.imgShowCurrentReqDetails"
               }
             }
           ],
@@ -3777,19 +3087,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.AccessibleLabel"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.AccessibleLabel",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems"
               }
             }
           ],
@@ -3807,19 +3117,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.TabIndex"
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Main Screen_1.Gallery4.TabIndex",
+                  "fullyQualifiedName": "Main Screen.galAddReqItems.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
-                "module": "Main Screen_1",
-                "type": "Main Screen_1.Gallery4"
+                "module": "Main Screen",
+                "type": "Main Screen.galAddReqItems"
               }
             }
           ],
