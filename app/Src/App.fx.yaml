@@ -59,7 +59,7 @@ App As appinfo:
                 )
             }
         );
-        ClearCollect(colReqDetails, ShowColumns(Table(Defaults(ReqDetails)),"ID","Quantity","Vendor","UOM","Title","ItemDescription","CostCode","DateRequired","Required"));
+        ClearCollect(colReqDetails, ShowColumns(Table(Defaults(ReqDetails)),"ID","Quantity","Vendor","UOM","Title","ItemDescription","CostCode","DateRequired","Required","Category"));
         Clear(colReqDetails);
     StartScreen: |-
         =If(

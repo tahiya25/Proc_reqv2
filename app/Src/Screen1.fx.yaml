@@ -1,0 +1,19 @@
+Screen1 As screen:
+
+    Gallery3 As gallery.galleryVertical:
+        Height: =202
+        Items: =Choices(ReqHeader.Approver)
+        Layout: =Layout.Vertical
+        TemplateSize: =70
+        ZIndex: =1
+
+        Label6 As label:
+            Height: =48
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.DisplayName
+            Width: =293
+            X: =4
+            Y: =8
+            ZIndex: =1
+
