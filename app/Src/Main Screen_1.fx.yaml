@@ -355,10 +355,11 @@
             FocusedBorderThickness: =0
             Height: =94
             HoverBorderColor: =Transparent
-            HoverColor: =Transparent
-            HoverFill: =Transparent
+            HoverColor: =theme.AppColor
+            HoverFill: |-
+                =ColorFade(ColorValue("#ccf5ff"),.70)
             OnSelect: |-
-                =Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:Text(NewReqAdded.ID +1)})
+                =Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:txtRJobNoEnter_1.Text & "-" &    Text(NewReqAdded.ID +1)})
             PaddingLeft: =50
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
@@ -543,9 +544,7 @@
             </svg>"
             )
         OnSelect: =If(varShowNewReqDetails, Set(varShowNewReqDetails, false),Set(varShowNewReqDetails, true))
-        Tooltip: |-
-            =
-            If(varShowNewReqDetails, "Hide Details","Show Req Details")
+        Tooltip: =If(varShowNewReqDetails, "Hide Details","Show Req Details")
         Width: =71
         X: =563
         Y: =97
@@ -553,16 +552,16 @@
 
     Gallery4 As gallery.galleryVertical:
         Height: =464
-        Items: =Filter(ReqDetails,ReqID=txtReqNoEnter.Text)
+        Items: =SortByColumns(Filter(ReqDetails,ReqID=txtRJobNoEnter_1.Text & "-" &    Text(NewReqAdded.ID +1)),"ID",Descending)
         Layout: =Layout.Vertical
+        ShowScrollbar: =false
         TemplateSize: =443
         Y: =572
         ZIndex: =36
 
         txtGalPartNo As text:
-            Align: =Align.Center
             BorderThickness: =0
-            Default: =""
+            Default: =ThisItem.Title
             FocusedBorderThickness: =0
             Font: =Font.Lato
             Height: =60
@@ -610,11 +609,12 @@
 
         txtGalDescription As text:
             BorderThickness: =0
-            Default: =""
+            Default: =ThisItem.ItemDescription
             FocusedBorderThickness: =0
             Font: =Font.Lato
             Height: =115
             HintText: ="Description"
+            Mode: =TextMode.MultiLine
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -651,7 +651,7 @@
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Size: =18
-            Width: =600
+            Width: =576
             X: =30
             Y: =117
             ZIndex: =2
@@ -662,7 +662,7 @@
             BorderThickness: =0
             ChevronBackground: =theme.AppColor
             ChevronHoverBackground: =theme.AppColor
-            Default: =
+            Default: =ThisItem.Vendor
             FocusedBorderColor: =drpgalVendor.BorderColor
             FocusedBorderThickness: =0
             Font: =Font.Lato
@@ -713,11 +713,11 @@
 
         txtGalQty As text:
             BorderThickness: =0
-            Default: =""
+            Default: =ThisItem.Quantity
             FocusedBorderThickness: =0
             Font: =Font.Lato
             Height: =60
-            HintText: ="Quantity"
+            HintText: =""
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -765,7 +765,7 @@
             BorderThickness: =0
             ChevronBackground: =theme.AppColor
             ChevronHoverBackground: =theme.AppColor
-            Default: =
+            Default: =ThisItem.UOM
             FocusedBorderColor: =drpgalUOM.BorderColor
             FocusedBorderThickness: =0
             Font: =Font.Lato
@@ -820,7 +820,7 @@
             BorderThickness: =0
             ChevronBackground: =theme.AppColor
             ChevronHoverBackground: =theme.AppColor
-            Default: =
+            Default: =ThisItem.CostCode
             FocusedBorderColor: =drpgalCostCode.BorderColor
             FocusedBorderThickness: =0
             Font: =Font.Lato
@@ -875,7 +875,7 @@
             BorderThickness: =0
             ChevronBackground: =theme.AppColor
             ChevronHoverBackground: =theme.AppColor
-            Default: =
+            Default: =ThisItem.Category
             FocusedBorderColor: =drpgalCat.BorderColor
             FocusedBorderThickness: =0
             Font: =Font.Lato
@@ -883,7 +883,7 @@
             Height: =60
             HoverBorderColor: =ColorFade(drpgalCat.BorderColor, 15%)
             HoverFill: =RGBA(242, 242, 242,1)
-            Items: =["Each", "LF"]
+            Items: =["M", "C"]
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -926,6 +926,7 @@
 
         dpDalReqDate As datepicker:
             BorderThickness: =0
+            DefaultDate: =ThisItem.'Date Required'
             FocusedBorderThickness: =0
             Font: =Font.Lato
             Height: =60
@@ -973,7 +974,7 @@
             BorderThickness: =0
             ChevronBackground: =theme.AppColor
             ChevronHoverBackground: =theme.AppColor
-            Default: ="No"
+            Default: =ThisItem.Required
             FocusedBorderColor: =drpgalReq.BorderColor
             FocusedBorderThickness: =0
             Font: =Font.Lato
@@ -1101,4 +1102,74 @@
             X: =228
             Y: =12
             ZIndex: =19
+
+    Gallery5 As gallery.galleryVertical:
+        Height: =261
+        Items: =SortByColumns(Filter(ReqDetails,ReqID=txtRJobNoEnter_1.Text & "-" &    Text(NewReqAdded.ID +1)),"ID",Descending)
+        Layout: =Layout.Vertical
+        TemplateFill: =White
+        TemplateSize: =44
+        Visible: =varShowNewReqDetails
+        Y: =205
+        ZIndex: =37
+
+        Label8 As label:
+            Height: =34
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.Title
+            Width: =148
+            Y: =4
+            ZIndex: =1
+
+        Label8_1 As label:
+            Height: =34
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.ItemDescription
+            Tooltip: =ThisItem.ItemDescription
+            Width: =334
+            Wrap: =false
+            X: =153
+            Y: =4
+            ZIndex: =2
+
+        imd_DelRec As image:
+            Height: =30
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='" & theme.AppColorText & "'
+                d='M1792 1664h-128v-1472q0 -40 -15 -75t-41 -61t-61 -41t-75 -15h-1024q-40 0 -75 15t-61 41t-41 61t-15 75v1472h-128v128h512v128q0 27 10 50t27.5 40.5t40.5 27.5t50 10h384q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50v-128h512v-128zM768 1792h384v128h-384v-128zM1536 1664h-1152v-1472q0 -26 19 -45t45 -19h1024q26 0 45 19t19 45v1472zM768 384h-128v1024h128v-1024zM1024 384h-128v1024h128v-1024zM1280 384h-128v1024h128v-1024z' />
+                  </g>
+                
+                </svg>"
+                )
+            OnSelect: =Remove(ReqDetails,ThisItem)
+            Width: =30
+            X: =545
+            Y: =8
+            ZIndex: =3
+
+        imd_DelRec_1 As image:
+            Height: =20
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill=' Red'
+                d='M1884 0h-1891l946 1991zM263 171h1351l-675 1422zM1024 1195v-555h-171v555h171zM853 512h171v-171h-171v171z' />
+                  </g>
+                
+                </svg>"
+                )
+            OnSelect: =Remove('Work Track',ThisItem)
+            Visible: =ThisItem.ID in colReqDetails.ID
+            Width: =20
+            X: =595
+            Y: =13
+            ZIndex: =4
 
