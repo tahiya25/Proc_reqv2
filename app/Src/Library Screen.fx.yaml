@@ -1,5 +1,6 @@
 "'Library Screen' As screen":
     Fill: =RGBA(244, 244, 244, 1)
+    OnVisible: =Set(varReset, false)
 
     icnAddItems As icon.Add:
         Color: =If(varShowLib, Red,Green)
@@ -10,7 +11,7 @@
         Width: =60
         X: =568
         Y: =13
-        ZIndex: =5
+        ZIndex: =4
 
     grp_Header_LS As group:
         Height: =5
@@ -44,7 +45,7 @@
             Width: =377
             X: =88
             Y: =1
-            ZIndex: =4
+            ZIndex: =3
 
     galLibraryItems As gallery.variableTemplateHeightGallery:
         Height: =If(varShowLib, 640,957)
@@ -55,7 +56,7 @@
         ShowScrollbar: =false
         TemplateSize: =228
         Y: =179
-        ZIndex: =14
+        ZIndex: =11
 
         lblDescription_3 As label:
             Font: =Font.Lato
@@ -159,6 +160,7 @@
         chkSelectItem As checkbox:
             BorderColor: =White
             CheckmarkFill: =theme.AppColor
+            Default: =varReset
             FocusedBorderThickness: =0
             Height: =62
             OnCheck: |-
@@ -245,6 +247,63 @@
             Y: =185
             ZIndex: =13
 
+    rctMenu_5 As rectangle:
+        Fill: |-
+            =ColorValue("#ccf5ff")
+        Height: =332
+        Visible: =varShowLibrary
+        Width: =640
+        Y: =86
+        ZIndex: =12
+
+    Image2_1 As image:
+        Height: =65
+        Image: |-
+            ="data:image/svg+xml," & 
+             EncodeUrl(
+                "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+              <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+               <path fill='" & theme.AppColorText &"'
+            d='M128 1280v128h1792v-128h-1792zM128 1920h1792v-128h-1792v128zM128 768v128h1792v-128h-1792zM128 256v128h1792v-128h-1792z' />
+              </g>
+            
+            </svg>"
+            )
+        OnSelect: =If(varShowLibrary, Set(varShowLibrary, false),Set(varShowLibrary, true))
+        Tooltip: |-
+            =
+            If(varShowLibrary, "Hide Filter Pane","Show Filter Pane")
+        Width: =71
+        X: =562
+        Y: =107
+        ZIndex: =13
+
+    drpgalUOM_4 As dropdown:
+        AllowEmptySelection: =true
+        BorderColor: =theme.LightBlue
+        BorderThickness: =0
+        ChevronBackground: =theme.AppColor
+        ChevronHoverBackground: =theme.AppColor
+        Default: =
+        FocusedBorderColor: =drpgalUOM_4.BorderColor
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        FontWeight: =Normal
+        Height: =60
+        HoverBorderColor: =ColorFade(drpgalUOM_4.BorderColor, 15%)
+        HoverFill: =RGBA(242, 242, 242,1)
+        Items: =["Each", "LF"]
+        OnChange: =
+        PressedBorderColor: =drpgalUOM_4.HoverBorderColor
+        PressedFill: =theme.AppColor
+        SelectionFill: =theme.AppColor
+        Size: =18
+        Visible: =varShowLibrary
+        Width: =225
+        X: =28
+        Y: =149
+        ZIndex: =14
+
     Group3 As group:
         Height: =5
         Width: =5
@@ -265,7 +324,7 @@
             Width: =129
             X: =28
             Y: =876
-            ZIndex: =8
+            ZIndex: =5
 
         txtDescriptionEntry As text:
             BorderThickness: =0
@@ -280,7 +339,7 @@
             Width: =575
             X: =28
             Y: =953
-            ZIndex: =9
+            ZIndex: =6
 
         dd_Revision As combobox:
             BorderColor: =
@@ -307,7 +366,7 @@
             Width: =176
             X: =173
             Y: =876
-            ZIndex: =10
+            ZIndex: =7
 
         lblReset As label:
             Color: =theme.AppColor
@@ -320,7 +379,7 @@
             Width: =209
             X: =371
             Y: =882
-            ZIndex: =11
+            ZIndex: =8
 
         btnSaveLibRec As button:
             BorderThickness: =0
@@ -356,7 +415,7 @@
             Width: =193
             X: =375
             Y: =876
-            ZIndex: =12
+            ZIndex: =9
 
         icnSave As icon.Save:
             Height: =40
@@ -365,64 +424,7 @@
             Width: =40
             X: =375
             Y: =884
-            ZIndex: =13
-
-    rctMenu_5 As rectangle:
-        Fill: |-
-            =ColorValue("#ccf5ff")
-        Height: =332
-        Visible: =varShowLibrary
-        Width: =640
-        Y: =86
-        ZIndex: =17
-
-    Image2_1 As image:
-        Height: =65
-        Image: |-
-            ="data:image/svg+xml," & 
-             EncodeUrl(
-                "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
-              <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
-               <path fill='" & theme.AppColorText &"'
-            d='M128 1280v128h1792v-128h-1792zM128 1920h1792v-128h-1792v128zM128 768v128h1792v-128h-1792zM128 256v128h1792v-128h-1792z' />
-              </g>
-            
-            </svg>"
-            )
-        OnSelect: =If(varShowLibrary, Set(varShowLibrary, false),Set(varShowLibrary, true))
-        Tooltip: |-
-            =
-            If(varShowLibrary, "Hide Filter Pane","Show Filter Pane")
-        Width: =71
-        X: =562
-        Y: =107
-        ZIndex: =18
-
-    drpgalUOM_4 As dropdown:
-        AllowEmptySelection: =true
-        BorderColor: =theme.LightBlue
-        BorderThickness: =0
-        ChevronBackground: =theme.AppColor
-        ChevronHoverBackground: =theme.AppColor
-        Default: =
-        FocusedBorderColor: =drpgalUOM_4.BorderColor
-        FocusedBorderThickness: =0
-        Font: =Font.Lato
-        FontWeight: =Normal
-        Height: =60
-        HoverBorderColor: =ColorFade(drpgalUOM_4.BorderColor, 15%)
-        HoverFill: =RGBA(242, 242, 242,1)
-        Items: =["Each", "LF"]
-        OnChange: =
-        PressedBorderColor: =drpgalUOM_4.HoverBorderColor
-        PressedFill: =theme.AppColor
-        SelectionFill: =theme.AppColor
-        Size: =18
-        Visible: =varShowLibrary
-        Width: =225
-        X: =28
-        Y: =149
-        ZIndex: =19
+            ZIndex: =10
 
     Label2_4 As label:
         Color: =theme.AppColor
@@ -434,7 +436,7 @@
         Width: =129
         X: =28
         Y: =112
-        ZIndex: =20
+        ZIndex: =15
 
     drpgalUOM_5 As dropdown:
         AllowEmptySelection: =true
@@ -460,7 +462,7 @@
         Width: =225
         X: =28
         Y: =246
-        ZIndex: =21
+        ZIndex: =16
 
     Label2_5 As label:
         Color: =theme.AppColor
@@ -472,7 +474,7 @@
         Width: =225
         X: =28
         Y: =209
-        ZIndex: =22
+        ZIndex: =17
 
     drpgalUOM_6 As dropdown:
         AllowEmptySelection: =true
@@ -498,7 +500,7 @@
         Width: =225
         X: =282
         Y: =246
-        ZIndex: =23
+        ZIndex: =18
 
     Label2_6 As label:
         Color: =theme.AppColor
@@ -510,7 +512,7 @@
         Width: =225
         X: =282
         Y: =209
-        ZIndex: =24
+        ZIndex: =19
 
     grpSearch As group:
         Height: =5
@@ -536,7 +538,7 @@
             Width: =573
             X: =30
             Y: =328
-            ZIndex: =25
+            ZIndex: =20
 
         icnSearch As icon.Search:
             Color: =RGBA(128, 128, 128, 1)
@@ -546,5 +548,78 @@
             Width: =50
             X: =36
             Y: =333
-            ZIndex: =26
+            ZIndex: =21
+
+    grpSaveReqDetails As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =31
+
+        Label1 As label:
+            Color: =theme.AppColor
+            Font: =Font.Lato
+            Size: =18
+            Text: ="Save Req Details"
+            Visible: =CountRows(colReqDetails) > 0
+            Width: =197
+            X: =124
+            Y: =119
+            ZIndex: =22
+
+        Image1 As image:
+            Height: =50
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='" & theme.AppColorText &  "'
+                d='M256 1536h640v-128h-640v128zM1408 1280v-128h-1152v128h1152zM1408 1024v-128h-1152v128h1152zM1408 768v-128h-1152v128h1152zM256 384v128h926l-128 -128h-798zM128 128h1027l128 -128h-1283v2048h1115l549 -549v-862l-128 -128v899h-512v512h-896v-1792zM1152 1829v-293h293zM1939 685l90 -90l-557 -558l-269 270l90 90l179 -178z' />
+                  </g>
+                
+                </svg>"
+                )
+            Visible: =CountRows(colReqDetails) > 0
+            Width: =50
+            X: =67
+            Y: =112
+            ZIndex: =23
+
+        btnSave_12 As button:
+            Color: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =Transparent
+            FocusedBorderThickness: =0
+            Height: =65
+            HoverBorderColor: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: |-
+                =If(
+                    CountRows(colReqDetails) > 0,
+                    Patch(
+                        ReqDetails,
+                        colReqDetails
+                    );
+                    Notify(
+                        "Success",
+                        NotificationType.Success
+                    )
+                );
+                Navigate('Main Screen')
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Visible: =CountRows(colReqDetails) > 0
+            Width: =347
+            X: =28
+            Y: =107
+            ZIndex: =24
 
