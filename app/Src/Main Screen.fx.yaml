@@ -275,91 +275,6 @@
         Y: =511
         ZIndex: =24
 
-    rctCurrentReqItems As rectangle:
-        Fill: |-
-            =ColorValue("#ccf5ff")
-        Height: =453
-        Visible: =varShowNewReqDetails
-        Width: =640
-        Y: =89
-        ZIndex: =25
-
-    imgShowCurrentReqDetails As image:
-        Height: =65
-        Image: |-
-            ="data:image/svg+xml," & 
-             EncodeUrl(
-                "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
-              <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
-               <path fill='" & theme.AppColorText &"'
-            d='M128 1280v128h1792v-128h-1792zM128 1920h1792v-128h-1792v128zM128 768v128h1792v-128h-1792zM128 256v128h1792v-128h-1792z' />
-              </g>
-            
-            </svg>"
-            )
-        OnSelect: =If(varShowNewReqDetails, Set(varShowNewReqDetails, false),Set(varShowNewReqDetails, true))
-        Tooltip: =If(varShowNewReqDetails, "Hide Details","Show Req Details")
-        Width: =71
-        X: =563
-        Y: =97
-        ZIndex: =26
-
-    grp_AddREqDetails As group:
-        Height: =5
-        Width: =5
-        X: =20
-        Y: =20
-        ZIndex: =26
-
-        btnSave_8 As button:
-            BorderThickness: =0
-            Color: =theme.AppColor
-            DisabledColor: =Transparent
-            DisabledFill: =Transparent
-            DisplayMode: =
-            Fill: |-
-                =ColorValue("#ccf5ff")
-            FocusedBorderColor: =Transparent
-            FocusedBorderThickness: =0
-            Height: =94
-            HoverBorderColor: =Transparent
-            HoverColor: =theme.AppColor
-            HoverFill: |-
-                =ColorFade(ColorValue("#ccf5ff"),.70)
-            OnSelect: |
-                =Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1)});
-            PaddingLeft: =50
-            PressedBorderColor: =Transparent
-            PressedColor: =Transparent
-            PressedFill: =Transparent
-            Size: =20
-            Text: ="Add Details"
-            Tooltip: ="Save Change Records"
-            Visible: =And(!IsBlank(txtDeliveryLocEnter) ,!IsBlank(txtRJobNoEnter) )
-            Width: =262
-            X: =321
-            Y: =405
-            ZIndex: =21
-
-        Image8_4 As image:
-            Height: =60
-            Image: |-
-                ="data:image/svg+xml," & 
-                 EncodeUrl(
-                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
-                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
-                   <path fill='" & theme.AppColorText & "'
-                d='M256 1536v-128h-128v128h128zM256 1280v-128h-128v128h128zM256 1024v-128h-128v128h128zM256 768v-128h-128v128h128zM256 512v-128h-128v128h128zM128 256h128v-128h-128v128zM256 0v128h128v-128h-128zM512 0v128h128v-128h-128zM256 1920h-128v128h128v-128zM512 2048v-128h-128v128h128zM768 2048v-128h-128v128h128zM1024 2048v-128h-128v128h128zM1280 2048v-128h-128v128h128zM1536 2048v-128h-128v128h128zM1664 1792h-128v128h128v-128zM1536 1536v128h128v-128h-128zM256 1792v-128h-128v128h128zM1920 1280q26 0 49.5 -10t41 -27.5t27.5 -41t10 -49.5v-1152h-1115l-165 165v987q0 26 10 49.5t27.5 41t41 27.5t49.5 10h1024zM1152 1152v-384h512v384h-512zM1664 128v256h-512v-256h128v128h128v-128h256zM1920 128v1024h-128v-512h-768v512h-128v-933l91 -91h37v384h768v-384h128z' />
-                  </g>
-                
-                </svg>"
-                )
-            Visible: =And(!IsBlank(txtDeliveryLocEnter) ,!IsBlank(txtRJobNoEnter) )
-            Width: =60
-            X: =332
-            Y: =422
-            ZIndex: =22
-
     galAddReqItems As gallery.galleryVertical:
         Height: =464
         Items: =SortByColumns(Filter(ReqDetails,ReqID=txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1)),"ID",Descending)
@@ -367,7 +282,7 @@
         ShowScrollbar: =false
         TemplateSize: =443
         Y: =572
-        ZIndex: =27
+        ZIndex: =25
 
         txtGalPartNo As text:
             BorderThickness: =0
@@ -921,7 +836,7 @@
         TemplateSize: =44
         Visible: =varShowNewReqDetails
         Y: =205
-        ZIndex: =28
+        ZIndex: =26
 
         Label8 As label:
             Height: =34
@@ -983,6 +898,62 @@
             Y: =13
             ZIndex: =4
 
+    grp_AddREqDetails As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =26
+
+        btnSave_8 As button:
+            BorderThickness: =0
+            Color: =theme.AppColor
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: |-
+                =ColorValue("#ccf5ff")
+            FocusedBorderColor: =Transparent
+            FocusedBorderThickness: =0
+            Height: =94
+            HoverBorderColor: =Transparent
+            HoverColor: =theme.AppColor
+            HoverFill: |-
+                =ColorFade(ColorValue("#ccf5ff"),.70)
+            OnSelect: |
+                =Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1)});
+            PaddingLeft: =50
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Size: =20
+            Text: ="Add Details"
+            Tooltip: ="Save Change Records"
+            Visible: =And(!IsBlank(txtDeliveryLocEnter) ,!IsBlank(txtRJobNoEnter) )
+            Width: =262
+            X: =321
+            Y: =405
+            ZIndex: =21
+
+        Image8_4 As image:
+            Height: =60
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='" & theme.AppColorText & "'
+                d='M256 1536v-128h-128v128h128zM256 1280v-128h-128v128h128zM256 1024v-128h-128v128h128zM256 768v-128h-128v128h128zM256 512v-128h-128v128h128zM128 256h128v-128h-128v128zM256 0v128h128v-128h-128zM512 0v128h128v-128h-128zM256 1920h-128v128h128v-128zM512 2048v-128h-128v128h128zM768 2048v-128h-128v128h128zM1024 2048v-128h-128v128h128zM1280 2048v-128h-128v128h128zM1536 2048v-128h-128v128h128zM1664 1792h-128v128h128v-128zM1536 1536v128h128v-128h-128zM256 1792v-128h-128v128h128zM1920 1280q26 0 49.5 -10t41 -27.5t27.5 -41t10 -49.5v-1152h-1115l-165 165v987q0 26 10 49.5t27.5 41t41 27.5t49.5 10h1024zM1152 1152v-384h512v384h-512zM1664 128v256h-512v-256h128v128h128v-128h256zM1920 128v1024h-128v-512h-768v512h-128v-933l91 -91h37v384h768v-384h128z' />
+                  </g>
+                
+                </svg>"
+                )
+            Visible: =And(!IsBlank(txtDeliveryLocEnter) ,!IsBlank(txtRJobNoEnter) )
+            Width: =60
+            X: =332
+            Y: =422
+            ZIndex: =22
+
     lblPartNo_1 As label:
         Color: =RGBA(179, 179, 179, 1)
         Height: =31
@@ -992,7 +963,7 @@
         Width: =103
         X: =10
         Y: =174
-        ZIndex: =29
+        ZIndex: =27
 
     lblPartNo_2 As label:
         Color: =RGBA(179, 179, 179, 1)
@@ -1003,7 +974,7 @@
         Width: =305
         X: =160
         Y: =174
-        ZIndex: =30
+        ZIndex: =28
 
     grpSaveReq As group:
         Height: =5
@@ -1124,6 +1095,47 @@
             Y: =1033
             ZIndex: =19
 
+    rctCurrentReqItems As rectangle:
+        Fill: |-
+            =ColorValue("#ccf5ff")
+        Height: =453
+        Visible: =varShowNewReqDetails
+        Width: =640
+        Y: =89
+        ZIndex: =31
+
+    imgShowCurrentReqDetails As image:
+        Height: =65
+        Image: |-
+            ="data:image/svg+xml," & 
+             EncodeUrl(
+                "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+              <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+               <path fill='" & theme.AppColorText &"'
+            d='M128 1280v128h1792v-128h-1792zM128 1920h1792v-128h-1792v128zM128 768v128h1792v-128h-1792zM128 256v128h1792v-128h-1792z' />
+              </g>
+            
+            </svg>"
+            )
+        OnSelect: =If(varShowNewReqDetails, Set(varShowNewReqDetails, false),Set(varShowNewReqDetails, true))
+        Tooltip: =If(varShowNewReqDetails, "Hide Details","Show Req Details")
+        Width: =71
+        X: =563
+        Y: =97
+        ZIndex: =32
+
+    Label3 As label:
+        Align: =Align.Center
+        Color: =RGBA(184, 0, 0, 1)
+        Height: =70
+        Size: =21
+        Text: ="No Requisition Details available !"
+        Visible: =And(varShowNewReqDetails , CountRows(colReqDetails)=0)
+        Width: =560
+        X: =40
+        Y: =185
+        ZIndex: =33
+
     grpAddReq As group:
         Height: =5
         Width: =5
@@ -1159,7 +1171,7 @@
             Width: =170
             X: =119
             Y: =417
-            ZIndex: =31
+            ZIndex: =29
 
         btnSave_7 As button:
             BorderColor: =theme.AppColor
@@ -1207,5 +1219,5 @@
             Width: =262
             X: =39
             Y: =405
-            ZIndex: =32
+            ZIndex: =30
 
