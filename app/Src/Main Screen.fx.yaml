@@ -108,7 +108,7 @@
         Width: =576
         X: =39
         Y: =324
-        ZIndex: =16
+        ZIndex: =15
 
     txtRJobNoEnter As text:
         Align: =Align.Center
@@ -126,7 +126,7 @@
         Width: =182
         X: =39
         Y: =249
-        ZIndex: =17
+        ZIndex: =16
 
     grpGTReq_MS As group:
         Height: =5
@@ -151,7 +151,7 @@
             Width: =50
             X: =52
             Y: =1048
-            ZIndex: =10
+            ZIndex: =9
 
         Label3_2 As label:
             Color: =theme.AppColor
@@ -161,7 +161,7 @@
             Width: =148
             X: =19
             Y: =1098
-            ZIndex: =11
+            ZIndex: =10
 
         btnSave_10 As button:
             BorderThickness: =0
@@ -184,7 +184,7 @@
             Tooltip: ="Save Change Records"
             Width: =167
             Y: =1039
-            ZIndex: =12
+            ZIndex: =11
 
     CB_Responsible As combobox:
         BorderColor: =theme.LightBlue
@@ -203,7 +203,7 @@
         Width: =349
         X: =266
         Y: =249
-        ZIndex: =21
+        ZIndex: =20
 
     grpGTLib_MS As group:
         Height: =5
@@ -228,7 +228,7 @@
             Width: =50
             X: =211
             Y: =1048
-            ZIndex: =13
+            ZIndex: =12
 
         Label3_3 As label:
             Align: =Align.Center
@@ -239,7 +239,7 @@
             Width: =126
             X: =175
             Y: =1098
-            ZIndex: =14
+            ZIndex: =13
 
         btnSave_11 As button:
             BorderThickness: =0
@@ -263,80 +263,46 @@
             Width: =129
             X: =172
             Y: =1039
-            ZIndex: =15
+            ZIndex: =14
 
-    grp_SaveReq As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =23
+    lblReqID As label:
+        Color: =RGBA(179, 179, 179, 1)
+        Height: =31
+        Size: =16
+        Text: =txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1)
+        Width: =134
+        X: =39
+        Y: =511
+        ZIndex: =24
 
-        btnSave_7 As button:
-            BorderThickness: =0
-            DisabledColor: =Transparent
-            DisabledFill: =Transparent
-            DisplayMode: =
-            Fill: =theme.AppColor
-            FocusedBorderColor: =Transparent
-            FocusedBorderThickness: =0
-            Height: =94
-            HoverBorderColor: =Transparent
-            HoverColor: =Black
-            HoverFill: =ColorFade(theme.AppColor,.85)
-            OnSelect: |-
-                =Refresh(ReqHeader);
-                Set(NewReqAdded, First(Sort(ReqHeader,ID,SortOrder.Descending)));
-                
-                Patch(ReqHeader, Defaults(ReqHeader),
-                {
-                    Title: txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1),
-                    DeliveryLoc:txtDeliveryLocEnter.Text,
-                    JobNo:txtRJobNoEnter.Text,
-                    Approver: {
-                           '@odata.type':"#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-                           Claims: "i:0#.f|membership|" & CB_Responsible.Selected.Email ,
-                           Department: "",
-                           DisplayName: CB_Responsible.Selected.DisplayName,
-                           Email: CB_Responsible.Selected.Email,
-                           JobTitle: "",
-                           Picture: ""
-                        }
-                }
-                );
-                Patch(ReqDetails,Defaults(ReqDetails),{Title:""});
-                If(varValue="Library",Navigate('Library Screen'))
-            PaddingLeft: =50
-            PressedBorderColor: =Transparent
-            PressedColor: =Transparent
-            PressedFill: =Transparent
-            Size: =24
-            Text: ="Save Req"
-            Tooltip: ="Save Change Records"
-            Visible: =And(!IsBlank(txtDeliveryLocEnter) ,!IsBlank(txtRJobNoEnter) )
-            Width: =262
-            X: =39
-            Y: =405
-            ZIndex: =31
+    rctCurrentReqItems As rectangle:
+        Fill: |-
+            =ColorValue("#ccf5ff")
+        Height: =453
+        Visible: =varShowNewReqDetails
+        Width: =640
+        Y: =89
+        ZIndex: =25
 
-        Image8_3 As image:
-            Height: =60
-            Image: |-
-                ="data:image/svg+xml," & 
-                 EncodeUrl(
-                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
-                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
-                   <path fill='White'
-                d='M1152 1280q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50v-1152h-1115l-165 165v987q0 27 10 50t27.5 40.5t40.5 27.5t50 10h1024zM384 1152v-384h512v384h-512zM896 128v256h-512v-256h128v128h128v-128h256zM1152 1152h-128v-512h-768v512h-128v-933l91 -91h37v384h768v-384h128v1024zM512 1408h-128v640h512v-128h-384v-512zM1920 2048v-1024h-512v128h384v768h-128v128h256zM1349 1792l-162 163l90 90l318 -317l-318 -317l-90 90l162 163h-581v-256h-128v384h709zM1414 1728l-6 5v-10z' />
-                  </g>
-                
-                </svg>"
-                )
-            Visible: =And(!IsBlank(txtDeliveryLocEnter) ,!IsBlank(txtRJobNoEnter) )
-            Width: =60
-            X: =53
-            Y: =422
-            ZIndex: =32
+    imgShowCurrentReqDetails As image:
+        Height: =65
+        Image: |-
+            ="data:image/svg+xml," & 
+             EncodeUrl(
+                "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+              <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+               <path fill='" & theme.AppColorText &"'
+            d='M128 1280v128h1792v-128h-1792zM128 1920h1792v-128h-1792v128zM128 768v128h1792v-128h-1792zM128 256v128h1792v-128h-1792z' />
+              </g>
+            
+            </svg>"
+            )
+        OnSelect: =If(varShowNewReqDetails, Set(varShowNewReqDetails, false),Set(varShowNewReqDetails, true))
+        Tooltip: =If(varShowNewReqDetails, "Hide Details","Show Req Details")
+        Width: =71
+        X: =563
+        Y: =97
+        ZIndex: =26
 
     grp_AddREqDetails As group:
         Height: =5
@@ -373,7 +339,7 @@
             Width: =262
             X: =321
             Y: =405
-            ZIndex: =22
+            ZIndex: =21
 
         Image8_4 As image:
             Height: =60
@@ -392,165 +358,7 @@
             Width: =60
             X: =332
             Y: =422
-            ZIndex: =23
-
-    grpSaveReq As group:
-        Height: =5
-        Width: =5
-        X: =-1225
-        Y: =40
-        ZIndex: =30
-
-        imgGradient_4 As image:
-            DisplayMode: =
-            FocusedBorderColor: =imgGradient_4.BorderColor
-            FocusedBorderThickness: =0
-            Height: =80
-            HoverBorderColor: =ColorFade(imgGradient_4.BorderColor, 20%)
-            HoverFill: =Transparent
-            Image: |-
-                ="data:image/svg+xml;utf8, " & EncodeUrl(
-                    "<svg xmlns='http://www.w3.org/2000/svg'
-                     xmlns:xlink='http://www.w3.org/1999/xlink'> width='" & imgGradient_4.Width & "' height='" & imgGradient_4.Height & ">
-                  <defs>
-                    <linearGradient id='linear-gradient' x1='0.5' x2='0.5' y2='1' gradientUnits='objectBoundingBox'>
-                      <stop offset='0' stop-color='" & theme.AppColorText & "'/>
-                      <stop offset='1' stop-color='" & theme.GradientText & "'/>
-                    </linearGradient>
-                  </defs>
-                  <rect id='Rectangle_1' data-name='Rectangle 1' width='" & imgGradient_4.Width & "' height='" & imgGradient_4.Height & "' rx='10' fill='url(#linear-gradient)'/>
-                </svg>")
-            OnSelect: |-
-                =If(
-                    CountRows(colReqDetails) > 0,
-                    Patch(
-                        ReqDetails,
-                        colReqDetails
-                    );
-                    Notify(
-                        "Success",
-                        NotificationType.Success
-                    )
-                );
-                Clear(colReqDetails)
-            PressedBorderColor: =ColorFade(imgGradient_4.BorderColor, -20%)
-            PressedFill: =Transparent
-            RadiusBottomLeft: =50
-            RadiusBottomRight: =50
-            RadiusTopLeft: =50
-            RadiusTopRight: =50
-            Tooltip: ="Save Change Records"
-            Width: =80
-            X: =535
-            Y: =1039
-            ZIndex: =18
-
-        Icon1_10 As icon.Add:
-            Color: =RGBA(255, 255, 255, 1)
-            DisabledFill: =Transparent
-            DisplayMode: =
-            FocusedBorderColor: =Icon1_10.BorderColor
-            FocusedBorderThickness: =0
-            Height: =50
-            HoverBorderColor: =Transparent
-            HoverColor: =Transparent
-            HoverFill: =Transparent
-            Icon: =Icon.Save
-            OnSelect: |-
-                =If(
-                    CountRows(colReqDetails) > 0,
-                    Patch(
-                        ReqDetails,
-                        colReqDetails
-                    );
-                    Notify(
-                        "Success",
-                        NotificationType.Success
-                    )
-                );
-                Clear(colReqDetails)
-            PressedBorderColor: =ColorFade(Icon1_10.BorderColor, -20%)
-            PressedColor: =Transparent
-            PressedFill: =Transparent
-            Tooltip: ="Save Change Records"
-            Width: =50
-            X: =550
-            Y: =1054
-            ZIndex: =19
-
-        btnSave_9 As button:
-            Color: =Transparent
-            DisabledColor: =Transparent
-            DisabledFill: =Transparent
-            DisplayMode: =
-            Fill: =RGBA(0, 0, 0, 0)
-            FocusedBorderColor: =Transparent
-            FocusedBorderThickness: =0
-            Height: =80
-            HoverBorderColor: =Transparent
-            HoverColor: =Transparent
-            HoverFill: =Transparent
-            OnSelect: |-
-                =If(
-                    CountRows(colReqDetails) > 0,
-                    Patch(
-                        ReqDetails,
-                        colReqDetails
-                    );
-                    Notify(
-                        "Success",
-                        NotificationType.Success
-                    )
-                );
-                Clear(colReqDetails)
-            PressedBorderColor: =Transparent
-            PressedColor: =Transparent
-            PressedFill: =Transparent
-            Text: =""
-            Tooltip: ="Save Change Records"
-            Width: =80
-            X: =535
-            Y: =1033
-            ZIndex: =20
-
-    lblReqID As label:
-        Color: =RGBA(179, 179, 179, 1)
-        Height: =31
-        Size: =16
-        Text: =txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1)
-        Width: =134
-        X: =19
-        Y: =511
-        ZIndex: =33
-
-    rctCurrentReqItems As rectangle:
-        Fill: |-
-            =ColorValue("#ccf5ff")
-        Height: =453
-        Visible: =varShowNewReqDetails
-        Width: =640
-        Y: =89
-        ZIndex: =34
-
-    imgShowCurrentReqDetails As image:
-        Height: =65
-        Image: |-
-            ="data:image/svg+xml," & 
-             EncodeUrl(
-                "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
-              <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
-               <path fill='" & theme.AppColorText &"'
-            d='M128 1280v128h1792v-128h-1792zM128 1920h1792v-128h-1792v128zM128 768v128h1792v-128h-1792zM128 256v128h1792v-128h-1792z' />
-              </g>
-            
-            </svg>"
-            )
-        OnSelect: =If(varShowNewReqDetails, Set(varShowNewReqDetails, false),Set(varShowNewReqDetails, true))
-        Tooltip: =If(varShowNewReqDetails, "Hide Details","Show Req Details")
-        Width: =71
-        X: =563
-        Y: =97
-        ZIndex: =35
+            ZIndex: =22
 
     galAddReqItems As gallery.galleryVertical:
         Height: =464
@@ -559,7 +367,7 @@
         ShowScrollbar: =false
         TemplateSize: =443
         Y: =572
-        ZIndex: =36
+        ZIndex: =27
 
         txtGalPartNo As text:
             BorderThickness: =0
@@ -1113,7 +921,7 @@
         TemplateSize: =44
         Visible: =varShowNewReqDetails
         Y: =205
-        ZIndex: =37
+        ZIndex: =28
 
         Label8 As label:
             Height: =34
@@ -1184,7 +992,7 @@
         Width: =103
         X: =10
         Y: =174
-        ZIndex: =38
+        ZIndex: =29
 
     lblPartNo_2 As label:
         Color: =RGBA(179, 179, 179, 1)
@@ -1195,5 +1003,209 @@
         Width: =305
         X: =160
         Y: =174
-        ZIndex: =39
+        ZIndex: =30
+
+    grpSaveReq As group:
+        Height: =5
+        Width: =5
+        X: =-1225
+        Y: =40
+        ZIndex: =30
+
+        imgGradient_4 As image:
+            DisplayMode: =
+            FocusedBorderColor: =imgGradient_4.BorderColor
+            FocusedBorderThickness: =0
+            Height: =80
+            HoverBorderColor: =ColorFade(imgGradient_4.BorderColor, 20%)
+            HoverFill: =Transparent
+            Image: |-
+                ="data:image/svg+xml;utf8, " & EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg'
+                     xmlns:xlink='http://www.w3.org/1999/xlink'> width='" & imgGradient_4.Width & "' height='" & imgGradient_4.Height & ">
+                  <defs>
+                    <linearGradient id='linear-gradient' x1='0.5' x2='0.5' y2='1' gradientUnits='objectBoundingBox'>
+                      <stop offset='0' stop-color='" & theme.AppColorText & "'/>
+                      <stop offset='1' stop-color='" & theme.GradientText & "'/>
+                    </linearGradient>
+                  </defs>
+                  <rect id='Rectangle_1' data-name='Rectangle 1' width='" & imgGradient_4.Width & "' height='" & imgGradient_4.Height & "' rx='10' fill='url(#linear-gradient)'/>
+                </svg>")
+            OnSelect: |-
+                =If(
+                    CountRows(colReqDetails) > 0,
+                    Patch(
+                        ReqDetails,
+                        colReqDetails
+                    );
+                    Notify(
+                        "Success",
+                        NotificationType.Success
+                    )
+                );
+                Clear(colReqDetails)
+            PressedBorderColor: =ColorFade(imgGradient_4.BorderColor, -20%)
+            PressedFill: =Transparent
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Tooltip: ="Save Change Records"
+            Width: =80
+            X: =535
+            Y: =1039
+            ZIndex: =17
+
+        Icon1_10 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledFill: =Transparent
+            DisplayMode: =
+            FocusedBorderColor: =Icon1_10.BorderColor
+            FocusedBorderThickness: =0
+            Height: =50
+            HoverBorderColor: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            Icon: =Icon.Save
+            OnSelect: |-
+                =If(
+                    CountRows(colReqDetails) > 0,
+                    Patch(
+                        ReqDetails,
+                        colReqDetails
+                    );
+                    Notify(
+                        "Success",
+                        NotificationType.Success
+                    )
+                );
+                Clear(colReqDetails)
+            PressedBorderColor: =ColorFade(Icon1_10.BorderColor, -20%)
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Tooltip: ="Save Change Records"
+            Width: =50
+            X: =550
+            Y: =1054
+            ZIndex: =18
+
+        btnSave_9 As button:
+            Color: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =Transparent
+            FocusedBorderThickness: =0
+            Height: =80
+            HoverBorderColor: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: |-
+                =If(
+                    CountRows(colReqDetails) > 0,
+                    Patch(
+                        ReqDetails,
+                        colReqDetails
+                    );
+                    Notify(
+                        "Success",
+                        NotificationType.Success
+                    )
+                );
+                Clear(colReqDetails)
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Width: =80
+            X: =535
+            Y: =1033
+            ZIndex: =19
+
+    grpAddReq As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =41
+
+        Image8_3 As image:
+            Height: =60
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='" & theme.AppColorText & "'
+                d='M1152 1280q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50v-1152h-1115l-165 165v987q0 27 10 50t27.5 40.5t40.5 27.5t50 10h1024zM384 1152v-384h512v384h-512zM896 128v256h-512v-256h128v128h128v-128h256zM1152 1152h-128v-512h-768v512h-128v-933l91 -91h37v384h768v-384h128v1024zM512 1408h-128v640h512v-128h-384v-512zM1920 2048v-1024h-512v128h384v768h-128v128h256zM1349 1792l-162 163l90 90l318 -317l-318 -317l-90 90l162 163h-581v-256h-128v384h709zM1414 1728l-6 5v-10z' />
+                  </g>
+                
+                </svg>"
+                )
+            Visible: =And(!IsBlank(txtDeliveryLocEnter) ,!IsBlank(txtRJobNoEnter) )
+            Width: =60
+            X: =53
+            Y: =422
+            ZIndex: =23
+
+        Label2 As label:
+            Color: =theme.AppColor
+            Height: =70
+            Size: =21
+            Text: ="Add Req"
+            Visible: =And(!IsBlank(txtDeliveryLocEnter) ,!IsBlank(txtRJobNoEnter) )
+            Width: =170
+            X: =119
+            Y: =417
+            ZIndex: =31
+
+        btnSave_7 As button:
+            BorderColor: =theme.AppColor
+            BorderThickness: =1
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =Transparent
+            FocusedBorderThickness: =0
+            Height: =94
+            HoverBorderColor: =Transparent
+            HoverColor: =Black
+            HoverFill: =Transparent
+            OnSelect: |-
+                =Refresh(ReqHeader);
+                Set(NewReqAdded, First(Sort(ReqHeader,ID,SortOrder.Descending)));
+                
+                Patch(ReqHeader, Defaults(ReqHeader),
+                {
+                    Title: txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1),
+                    DeliveryLoc:txtDeliveryLocEnter.Text,
+                    JobNo:txtRJobNoEnter.Text,
+                    Approver: {
+                           '@odata.type':"#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+                           Claims: "i:0#.f|membership|" & CB_Responsible.Selected.Email ,
+                           Department: "",
+                           DisplayName: CB_Responsible.Selected.DisplayName,
+                           Email: CB_Responsible.Selected.Email,
+                           JobTitle: "",
+                           Picture: ""
+                        }
+                }
+                );
+                Patch(ReqDetails,Defaults(ReqDetails),{Title:""});
+                If(varValue="Library",Navigate('Library Screen'))
+            PaddingLeft: =50
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Size: =24
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Visible: =And(!IsBlank(txtDeliveryLocEnter) ,!IsBlank(txtRJobNoEnter) )
+            Width: =262
+            X: =39
+            Y: =405
+            ZIndex: =32
 
