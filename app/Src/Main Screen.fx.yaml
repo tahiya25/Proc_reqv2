@@ -13,6 +13,7 @@
         Color: =theme.AppColor
         Height: =60
         Icon: =Icon.Add
+        Visible: =IsBlank(Param("ID"))
         Width: =60
         X: =39
         Y: =174
@@ -25,6 +26,7 @@
         Height: =37
         Size: =14
         Text: ="Add New Requisition"
+        Visible: =IsBlank(Param("ID"))
         Width: =185
         X: =102
         Y: =185
@@ -92,6 +94,7 @@
         RadioBorderColor: =theme.AppColor
         RadioSelectionFill: =theme.AppColor
         Size: =21
+        Visible: =IsBlank(Param("ID"))
         Width: =512
         X: =88
         Y: =86
@@ -105,6 +108,7 @@
         Height: =60
         HintText: ="Delivery Location"
         Size: =18
+        Visible: =IsBlank(Param("ID"))
         Width: =576
         X: =39
         Y: =324
@@ -123,6 +127,7 @@
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =18
+        Visible: =IsBlank(Param("ID"))
         Width: =182
         X: =39
         Y: =249
@@ -142,6 +147,7 @@
         SearchItems: =Choices(ReqHeader.Approver,CB_Responsible.SearchText)
         SelectMultiple: =false
         Size: =11
+        Visible: =IsBlank(Param("ID"))
         Width: =349
         X: =266
         Y: =249
