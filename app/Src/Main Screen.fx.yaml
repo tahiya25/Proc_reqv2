@@ -1062,7 +1062,12 @@
                         NotificationType.Success
                     )
                 );
-                Clear(colReqDetails)
+                Clear(colReqDetails);
+                Switch(varNewReqPatch.Status.Value,
+                "New",
+                CostCodeRequisition.Run(varNewReqPatch.Title,varNewReqPatch.JobNo,varNewReqPatch.Created,varNewReqPatch.DeliveryLoc)
+                
+                      )
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent

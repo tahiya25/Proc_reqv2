@@ -1,0 +1,9 @@
+[
+  {
+    "AddinConnectorId": "fb34e6c7-c5b3-4bf6-a40a-4b44ad274eef",
+    "AddinId": "6d1f157d-95bf-406d-b65d-cfd3240f724e",
+    "Name": "CostCodeRequisition",
+    "ServiceKind": "AddinWadl",
+    "Type": "ServiceInfo"
+  }
+]
