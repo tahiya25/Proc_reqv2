@@ -17,3 +17,73 @@ Screen1 As screen:
             Y: =8
             ZIndex: =1
 
+    galAvailableReqItems_1 As gallery.galleryVertical:
+        Height: =261
+        Items: =SortByColumns(Filter(ReqDetails,ReqID=txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1)),"ID",Descending)
+        Layout: =Layout.Vertical
+        TemplateFill: =White
+        TemplateSize: =44
+        Visible: =varShowNewReqDetails
+        Y: =225
+        ZIndex: =2
+
+        Label8_2 As label:
+            Height: =34
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.Title
+            Width: =148
+            Y: =4
+            ZIndex: =1
+
+        Label8_3 As label:
+            Height: =34
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =Proper(ThisItem.ItemDescription)
+            Tooltip: =ThisItem.ItemDescription
+            Width: =334
+            Wrap: =false
+            X: =153
+            Y: =4
+            ZIndex: =2
+
+        imd_DelRec_2 As image:
+            Height: =30
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='" & theme.AppColorText & "'
+                d='M1792 1664h-128v-1472q0 -40 -15 -75t-41 -61t-61 -41t-75 -15h-1024q-40 0 -75 15t-61 41t-41 61t-15 75v1472h-128v128h512v128q0 27 10 50t27.5 40.5t40.5 27.5t50 10h384q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50v-128h512v-128zM768 1792h384v128h-384v-128zM1536 1664h-1152v-1472q0 -26 19 -45t45 -19h1024q26 0 45 19t19 45v1472zM768 384h-128v1024h128v-1024zM1024 384h-128v1024h128v-1024zM1280 384h-128v1024h128v-1024z' />
+                  </g>
+                
+                </svg>"
+                )
+            OnSelect: =Remove(ReqDetails,ThisItem)
+            Width: =30
+            X: =545
+            Y: =8
+            ZIndex: =3
+
+        imd_DelRec_3 As image:
+            Height: =20
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill=' Red'
+                d='M1884 0h-1891l946 1991zM263 171h1351l-675 1422zM1024 1195v-555h-171v555h171zM853 512h171v-171h-171v171z' />
+                  </g>
+                
+                </svg>"
+                )
+            OnSelect: =Remove(ReqDetails,ThisItem)
+            Visible: =ThisItem.ID in colReqDetails.ID
+            Width: =20
+            X: =595
+            Y: =13
+            ZIndex: =4
+

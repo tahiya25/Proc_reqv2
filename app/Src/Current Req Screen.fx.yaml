@@ -153,8 +153,7 @@
     Gallery2 As gallery.galleryVertical:
         Height: =762
         Items: |-
-            =
-            If(
+            =If(
                 !IsBlank(Param("ID")),
                 Filter(
                     ReqDetails,ReqID=(Param("ID"))

@@ -64,6 +64,6 @@ App As appinfo:
     StartScreen: |-
         =If(
             !IsBlank(Param("ID")) ,    
-            'Current Req Screen','Main Screen'
+            'Main Screen','Main Screen'
         )
 
