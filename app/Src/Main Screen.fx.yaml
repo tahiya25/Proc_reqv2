@@ -282,12 +282,12 @@
                 LookUp(ReqHeader,Title=Param("ID"),Title),
             If(!IsBlank(varNewReqPatch),varNewReqPatch.Title,""))
         Width: =116
-        X: =39
-        Y: =511
+        X: =32
+        Y: =If(!IsBlank(Param("ID")),183,511)
         ZIndex: =22
 
     galAddReqItems As gallery.galleryVertical:
-        Height: =464
+        Height: =If(!IsBlank(Param("ID")),928,464)
         Items: |-
             =If(
                 !IsBlank(Param("ID")),
@@ -297,8 +297,8 @@
             SortByColumns(Filter(ReqDetails,ReqID=varNewReqPatch.Title),"ID",Descending))
         Layout: =Layout.Vertical
         ShowScrollbar: =false
-        TemplateSize: =443
-        Y: =572
+        TemplateSize: =449
+        Y: =If(!IsBlank(Param("ID")),232,572)
         ZIndex: =23
 
         txtGalPartNo As text:
@@ -912,8 +912,8 @@
                 LookUp(ReqHeader,Title=Param("ID"),Status.Value),
             If(!IsBlank(varNewReqPatch),varNewReqPatch.Status.Value,""))
         Width: =106
-        X: =508
-        Y: =511
+        X: =501
+        Y: =If(!IsBlank(Param("ID")),183,511)
         ZIndex: =28
 
     lblReqJObNo As label:
@@ -927,8 +927,8 @@
                 LookUp(ReqHeader,Title=Param("ID"),JobNo),
             If(!IsBlank(varNewReqPatch),varNewReqPatch.JobNo,""))
         Width: =89
-        X: =155
-        Y: =511
+        X: =148
+        Y: =If(!IsBlank(Param("ID")),183,511)
         ZIndex: =29
 
     lblReqDescription As label:
@@ -943,8 +943,8 @@
             If(!IsBlank(varNewReqPatch),varNewReqPatch.DeliveryLoc,""))
         Width: =270
         Wrap: =false
-        X: =238
-        Y: =511
+        X: =231
+        Y: =If(!IsBlank(Param("ID")),183,511)
         ZIndex: =30
 
     rctCurrentReqItems As rectangle:

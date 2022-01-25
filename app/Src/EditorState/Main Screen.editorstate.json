@@ -5009,9 +5009,23 @@
       "PressedFill",
       "HoverFill",
       "X",
-      "Y",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "Y",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "Width",
-      "Height",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "Height",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "ZIndex",
       {
         "AFDDataSourceName": "",
@@ -12874,7 +12888,14 @@
       "Align",
       "VerticalAlign",
       "X",
-      "Y",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "183",
+        "InvariantPropertyName": "Y",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "Width",
       "Height",
       "DisplayMode",
@@ -13183,7 +13204,14 @@
       },
       "VerticalAlign",
       "X",
-      "Y",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "183",
+        "InvariantPropertyName": "Y",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "Width",
       "Height",
       "DisplayMode",
@@ -13466,7 +13494,14 @@
       },
       "VerticalAlign",
       "X",
-      "Y",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "183",
+        "InvariantPropertyName": "Y",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "Width",
       "Height",
       "DisplayMode",
@@ -13749,7 +13784,14 @@
       },
       "VerticalAlign",
       "X",
-      "Y",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "183",
+        "InvariantPropertyName": "Y",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "Width",
       "Height",
       "DisplayMode",
