@@ -1261,6 +1261,14 @@
         "InvariantPropertyName": "Default",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
+      },
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "false",
+        "InvariantPropertyName": "OnUncheck",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
       }
     ],
     "HasDynamicProperties": false,
@@ -1469,6 +1477,11 @@
       {
         "Category": "Behavior",
         "PropertyName": "OnCheck",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Behavior",
+        "PropertyName": "OnUncheck",
         "RuleProviderType": "Unknown"
       }
     ],
