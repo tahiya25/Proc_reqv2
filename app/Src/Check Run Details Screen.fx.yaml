@@ -42,7 +42,7 @@
             Height: =23
             OnSelect: =Select(Parent)
             Size: =10
-            Text: =ThisItem.Title
+            Text: =ThisItem.'Company Code'
             Width: =75
             X: =5
             Y: =10
@@ -54,7 +54,7 @@
             OnSelect: =Select(Parent)
             Size: =10
             Text: |
-                =ThisItem.Job_x0020_No
+                =ThisItem.'Job No'
             Width: =75
             X: =80
             Y: =10
@@ -68,7 +68,7 @@
             OnSelect: =Select(Parent)
             Size: =10
             Text: |
-                =ThisItem.Vendor_x0020_Code
+                =ThisItem.'Vendor Code'
             Width: =75
             X: =166
             Y: =10
@@ -80,7 +80,7 @@
             OnSelect: =Select(Parent)
             Size: =10
             Text: |
-                =Proper(ThisItem.Partner_x0020_Name)
+                =Proper(ThisItem.'Partner Name')
             Width: =279
             X: =241
             Y: =10
@@ -92,7 +92,7 @@
             OnSelect: =Select(Parent)
             Size: =10
             Text: |
-                =ThisItem.Invoice_x0020_No
+                =ThisItem.'Invoice No'
             Width: =153
             X: =520
             Y: =10
@@ -116,7 +116,7 @@
             OnSelect: =Select(Parent)
             Size: =10
             Text: |
-                =ThisItem.Due_x0020_Date
+                =ThisItem.'Due Date'
             Width: =106
             X: =829
             Y: =10

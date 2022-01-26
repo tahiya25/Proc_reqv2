@@ -1,0 +1,406 @@
+"'Vendor Screen' As screen":
+    Fill: =RGBA(244, 244, 244, 1)
+
+    grpHeader_VS As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =4
+
+        Rectangle1_3 As rectangle:
+            Fill: =theme.AppColor
+            Height: =86
+            OnSelect: =
+            Width: =1075
+            X: =291
+            ZIndex: =1
+
+        Image1_2 As image:
+            Height: =128
+            Image: ='IPC Resiliency Partners Transparent Logo'
+            Width: =291
+            ZIndex: =2
+
+    grpSearch_1 As group:
+        Height: =5
+        Width: =5
+        X: =-659
+        Y: =-668
+        ZIndex: =6
+
+        txtSearchVendor As text:
+            BorderThickness: =0
+            Default: =
+            FocusedBorderThickness: =0
+            Font: =Font.Lato
+            HintText: ="Search Vendor"
+            PaddingLeft: =40
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =11
+            Width: =403
+            X: =18
+            Y: =145
+            ZIndex: =3
+
+        icnSearch_1 As icon.Search:
+            Color: =theme.AppColor
+            Height: =35
+            Icon: =Icon.Search
+            Width: =22
+            X: =22
+            Y: =151
+            ZIndex: =4
+
+    grpTotalCheckRun_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        lblTimeline_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            FontWeight: =Semibold
+            Height: =46
+            Size: =14
+            Text: |-
+                ="Total Check Run   " & Text(Sum(galVendors.AllItems,Amt),"[$-en-US]$###,###") & " - Total Invoices: " & CountRows(galVendors.AllItems)
+            Width: =449
+            X: =393
+            Y: =20
+            ZIndex: =5
+
+        Image9_1 As image:
+            Height: =35
+            Image: =TotalCheckRun
+            Width: =57
+            X: =336
+            Y: =25
+            ZIndex: =6
+
+    Label1_1 As label:
+        Font: =Font.Lato
+        Height: =452
+        PaddingTop: =20
+        Size: =10
+        Text: =LookUp('Cash Requirement HTML',Title=Text(varCurrentCheck.FileIDNumber),Timeline)
+        VerticalAlign: =VerticalAlign.Top
+        Visible: =varShowVendorTimeline
+        Width: =418
+        X: =948
+        Y: =218
+        ZIndex: =13
+
+    galVendors As gallery.galleryVertical:
+        Height: =514
+        Items: |-
+            =Filter('Cash Requirements', 
+            IsBlank(txtSearchVendor.Text) ||StartsWith('Partner Name',txtSearchVendor.Text))
+        Layout: =Layout.Vertical
+        OnSelect: =Set(varCurrentCheck,ThisItem)
+        TemplateFill: =White
+        TemplateSize: =52
+        Width: =916
+        X: =15
+        Y: =242
+        ZIndex: =14
+
+        Label2 As label:
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.'Vendor Code'
+            Width: =133
+            X: =8
+            Y: =5
+            ZIndex: =1
+
+        Label2_1 As label:
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.'Partner Name'
+            Tooltip: =ThisItem.'Partner Name'
+            Width: =294
+            Wrap: =false
+            X: =141
+            Y: =5
+            ZIndex: =2
+
+        Label2_2 As label:
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.'Invoice No'
+            Width: =133
+            X: =435
+            Y: =5
+            ZIndex: =3
+
+        Label2_3 As label:
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: |-
+                =Text(ThisItem.Amt,"[$-en-US]$###,###")
+            Width: =133
+            X: =571
+            Y: =5
+            ZIndex: =4
+
+        Label2_4 As label:
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.'Job No'
+            Width: =89
+            X: =704
+            Y: =5
+            ZIndex: =5
+
+        Label2_5 As label:
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.FileIDNumber
+            Width: =66
+            X: =822
+            ZIndex: =6
+
+        grpTimeline_GV As group:
+            Height: =5
+            Width: =5
+            X: =-815
+            Y: =40
+            ZIndex: =10
+
+            imgTimeline_1 As image:
+                Height: =30
+                Image: |-
+                    ="data:image/svg+xml," & 
+                     EncodeUrl(
+                        "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                      <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                       <path fill='" & theme.AppColorText & "'
+                    d='M1792 1055q60 -41 107.5 -93.5t80.5 -114t50.5 -130.5t17.5 -141q0 -119 -45.5 -224t-123.5 -183t-183 -123.5t-224 -45.5q-91 0 -176 27.5t-156.5 78t-126 121.5t-84.5 157h-801v1536h256v128h128v-128h896v128h128v-128h256v-865zM256 1792v-256h1408v256h-128v-128h-128v128h-896v-128h-128v128h-128zM899 512q-3 31 -3 64q0 86 24.5 167t72.5 153h-97v128h128v-86q41 51 91.5 90.5t108 67t120.5 42t128 14.5q100 0 192 -33v289h-1408v-896h643zM1472 128q93 0 174.5 35.5t142 96t96 142t35.5 174.5t-35.5 174.5t-96 142t-142 96t-174.5 35.5t-174.5 -35.5t-142 -96t-96 -142t-35.5 -174.5t35.5 -174.5t96 -142t142 -96t174.5 -35.5zM1536 640h192v-128h-320v384h128v-256zM384 1024h128v-128h-128v128zM640 1024h128v-128h-128v128zM640 1280h128v-128h-128v128zM384 768h128v-128h-128v128zM640 768h128v-128h-128v128zM1024 1152h-128v128h128v-128zM1280 1152h-128v128h128v-128zM1536 1152h-128v128h128v-128z' />
+                      </g>
+                    
+                    </svg>"
+                    )
+                Visible: =ThisItem.IsSelected
+                Width: =30
+                X: =858
+                Y: =10
+                ZIndex: =7
+
+            btnTimeline_1 As button:
+                BorderThickness: =0
+                Color: =Transparent
+                DisabledColor: =Transparent
+                DisabledFill: =Transparent
+                DisplayMode: =
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =Transparent
+                FocusedBorderThickness: =0
+                Height: =52
+                HoverBorderColor: =Transparent
+                HoverColor: =Transparent
+                HoverFill: =Transparent
+                OnSelect: |
+                    =If(varShowVendorTimeline,Set(varShowVendorTimeline,false),Set(varShowVendorTimeline,true))
+                PressedBorderColor: =Transparent
+                PressedColor: =Transparent
+                PressedFill: =Transparent
+                Text: =""
+                Tooltip: ="Save Change Records"
+                Visible: =ThisItem.IsSelected
+                Width: =61
+                X: =844
+                ZIndex: =9
+
+    grpGalDetailsHeader As group:
+        Height: =5
+        Width: =5
+        X: =-648
+        Y: =-70
+        ZIndex: =14
+
+        lblgalLocation_1 As label:
+            Font: =Font.Lato
+            Height: =24
+            OnSelect: =
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Vendor Code"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =84
+            X: =18
+            Y: =218
+            ZIndex: =7
+
+        lblgalLocation_2 As label:
+            Font: =Font.Lato
+            Height: =24
+            OnSelect: =
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Vendor Name"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =84
+            X: =169
+            Y: =218
+            ZIndex: =8
+
+        lblgalLocation_3 As label:
+            Font: =Font.Lato
+            Height: =24
+            OnSelect: =
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Invoice No"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =84
+            X: =431
+            Y: =218
+            ZIndex: =9
+
+        lblgalLocation_4 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            Height: =24
+            OnSelect: =
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Inv Amount"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =76
+            X: =592
+            Y: =218
+            ZIndex: =10
+
+        lblgalLocation_5 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            Height: =24
+            OnSelect: =
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Job No"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =49
+            X: =735
+            Y: =218
+            ZIndex: =11
+
+        lblgalLocation_6 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            Height: =24
+            OnSelect: =
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: ="Check Run ID"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =91
+            X: =803
+            Y: =218
+            ZIndex: =12
+
+    Icon2 As icon.BackArrow:
+        Color: =White
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        X: =1283
+        Y: =11
+        ZIndex: =18
+
+    grp_SendEmail As group:
+        Height: =5
+        Width: =5
+        X: =-659
+        Y: =-530
+        ZIndex: =18
+
+        Image8 As image:
+            Height: =30
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                  <path fill='"& theme.AppColorText & "'
+                d='M128 1024q0 -149 46.5 -285.5t131 -249.5t202.5 -197t260 -126v-132q-169 44 -310 138.5t-243 225.5t-158.5 291t-56.5 335q0 141 36.5 272t103.5 244.5t160.5 207t207 160.5t244.5 103.5t272 36.5q135 0 260.5 -33.5t236 -95t203 -148.5t161 -193.5t110 -229.5t50.5 -257l-154 154q-38 148 -120.5 272.5t-197.5 213.5t-255.5 139t-293.5 50q-124 0 -238 -32t-213.5 -90.5t-181.5 -140.5t-140.5 -181.5t-90.5 -214t-32 -237.5zM1024 1536q-106 0 -199 -40.5t-162.5 -110t-110 -162.5t-40.5 -199q0 -103 38.5 -196t111.5 -166l-91 -91q-91 91 -139 208t-48 245q0 88 23 170t64.5 153t100 129.5t129.5 100t153 64.5t170 23q75 0 147 -17.5t137.5 -50.5t122.5 -80.5t102 -107.5h-174q-70 62 -155.5 95t-179.5 33zM1627 1280l421 -421v-859h-1152v1280h731zM1664 1061v-165h165zM1920 128v640h-384v384h-512v-1024h896zM1792 640v-384h-128v384h128zM1152 256v512h128v-512h-128zM1408 256v256h128v-256h-128z' />
+                  </g>
+                
+                </svg>"
+                )
+            Width: =30
+            X: =1176
+            Y: =699
+            ZIndex: =15
+
+        Label2_6 As label:
+            Color: =theme.AppColor
+            Font: =Font.Lato
+            FontWeight: =Bold
+            Height: =27
+            PaddingLeft: =7
+            Size: =11
+            Text: ="Send Report"
+            Width: =120
+            X: =1212
+            Y: =699
+            ZIndex: =16
+
+        btnSave_2 As button:
+            BorderColor: =theme.AppColor
+            BorderThickness: =1
+            Color: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =theme.DarkBlue
+            FocusedBorderThickness: =1
+            Height: =50
+            HoverBorderColor: =theme.Orange
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: =
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Width: =168
+            X: =1164
+            Y: =691
+            ZIndex: =17
+
