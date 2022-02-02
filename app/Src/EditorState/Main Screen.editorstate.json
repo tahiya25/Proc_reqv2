@@ -2087,7 +2087,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Image3",
-    "ParentIndex": 12,
+    "ParentIndex": 13,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -5711,7 +5711,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "txt_comments",
-    "ParentIndex": 13,
+    "ParentIndex": 12,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
