@@ -1084,7 +1084,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "grp_SendEmail",
-    "ParentIndex": 22,
+    "ParentIndex": 24,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -1135,7 +1135,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "grpGalDetailsHeader",
-    "ParentIndex": 21,
+    "ParentIndex": 23,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -1186,7 +1186,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "grpHeader_VS",
-    "ParentIndex": 18,
+    "ParentIndex": 20,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -1237,7 +1237,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "grpSearch_1",
-    "ParentIndex": 19,
+    "ParentIndex": 21,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -1339,7 +1339,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "grpTotalCheckRun_1",
-    "ParentIndex": 20,
+    "ParentIndex": 22,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -2033,7 +2033,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Image2",
-    "ParentIndex": 15,
+    "ParentIndex": 16,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -2262,7 +2262,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Image8",
-    "ParentIndex": 16,
+    "ParentIndex": 17,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -5023,7 +5023,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Label2_6",
-    "ParentIndex": 17,
+    "ParentIndex": 18,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -5312,7 +5312,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Label6",
-    "ParentIndex": 17,
+    "ParentIndex": 19,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {

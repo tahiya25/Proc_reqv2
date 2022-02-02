@@ -259,6 +259,17 @@
             X: =1065
             ZIndex: =9
 
+    txt_comments As label:
+        Font: =Font.Lato
+        Height: =109
+        Size: =10
+        Text: =varCurrentCheck.Comments
+        Visible: =varShowTimeline
+        Width: =274
+        X: =452
+        Y: =473
+        ZIndex: =15
+
     grpVendorScreen As group:
         Height: =5
         Width: =5
@@ -316,15 +327,4 @@
             Width: =159
             X: =796
             ZIndex: =14
-
-    txt_comments As label:
-        Font: =Font.Lato
-        Height: =109
-        Size: =10
-        Text: =varCurrentCheck.Comments
-        Visible: =varShowTimeline
-        Width: =274
-        X: =452
-        Y: =473
-        ZIndex: =15
 

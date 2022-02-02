@@ -332,7 +332,7 @@
     Icon2 As icon.BackArrow:
         Color: =White
         Icon: =Icon.BackArrow
-        OnSelect: =Back()
+        OnSelect: =Navigate('Main Screen')
         X: =1283
         Y: =11
         ZIndex: =18
