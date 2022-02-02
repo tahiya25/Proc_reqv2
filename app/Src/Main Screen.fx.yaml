@@ -202,13 +202,13 @@
 
     Label1 As label:
         Font: =Font.Lato
-        Height: =273
+        Height: =288
         Size: =10
         Text: =varCurrentCheck.Timeline
         Visible: =varShowTimeline
-        Width: =649
-        X: =48
-        Y: =472
+        Width: =1326
+        X: =30
+        Y: =473
         ZIndex: =11
 
     grpTimeline As group:
@@ -316,4 +316,15 @@
             Width: =159
             X: =796
             ZIndex: =14
+
+    txt_comments As label:
+        Font: =Font.Lato
+        Height: =109
+        Size: =10
+        Text: =varCurrentCheck.Comments
+        Visible: =varShowTimeline
+        Width: =274
+        X: =452
+        Y: =473
+        ZIndex: =15
 

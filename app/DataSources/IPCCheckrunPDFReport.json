@@ -1,0 +1,9 @@
+[
+  {
+    "AddinConnectorId": "8cd1fdc7-cf16-4653-b4cf-2a0ea8c6235b",
+    "AddinId": "6d1f157d-95bf-406d-b65d-cfd3240f724e",
+    "Name": "IPCCheckrunPDFReport",
+    "ServiceKind": "AddinWadl",
+    "Type": "ServiceInfo"
+  }
+]
