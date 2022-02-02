@@ -212,7 +212,7 @@
                 HoverColor: =Transparent
                 HoverFill: =Transparent
                 OnSelect: |
-                    =If(varShowVendorTimeline,Set(varShowVendorTimeline,false),Set(varShowVendorTimeline,true))
+                    =If(varShowVendorTimeline,Set(varShowVendorTimeline,false),Set(varShowVendorTimeline,true) && Set(varFileID,Label2_5.Text) && Set(varVendorCode,Label2.Text))
                 PressedBorderColor: =Transparent
                 PressedColor: =Transparent
                 PressedFill: =Transparent
@@ -389,7 +389,7 @@
             HoverBorderColor: =theme.Orange
             HoverColor: =Transparent
             HoverFill: =Transparent
-            OnSelect: =
+            OnSelect: =Set(varshowpreloader,true);Set(varFileLink,IPCCheckrunPDFReport.Run(varVendorCode,varFileID).filelink);Launch(varFileLink);Set(varshowpreloader,false);
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent
@@ -403,4 +403,31 @@
             X: =1164
             Y: =691
             ZIndex: =17
+
+    Grpvarpreloader As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =22
+
+        Image2 As image:
+            Height: =53
+            Image: =autopreloader
+            Visible: =varshowpreloader
+            Width: =55
+            X: =1109
+            Y: =689
+            ZIndex: =20
+
+        Label6 As label:
+            Font: =Font.Lato
+            Height: =30
+            Size: =10
+            Text: ="Sending Report......."
+            Visible: =varshowpreloader
+            Width: =125
+            X: =1002
+            Y: =699
+            ZIndex: =21
 

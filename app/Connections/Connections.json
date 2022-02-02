@@ -1,6 +1,6 @@
 {
   "039d57f1-238d-4998-b0e4-4a42d4a64578": {
-    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/348a480dd44049d89c3c0e16a214f39b",
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/shared-sharepointonl-c1f38d9b-e341-4bb6-959b-e0e6-a57f5982",
     "connectionParameters": {
       "sku": "Enterprise"
     },
@@ -31,5 +31,89 @@
     "dependencies": {},
     "dependents": [],
     "id": "039d57f1-238d-4998-b0e4-4a42d4a64578"
+  },
+  "90a14a94-26c3-46d8-befe-15659e514626": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/363cb5211c124240947bfb2cdbca3a6e",
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1546/1.0.1546.2667/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "fa37de1f-90fb-4cc4-a555-640de81fc379"
+    ],
+    "id": "90a14a94-26c3-46d8-befe-15659e514626"
+  },
+  "be554805-289c-4095-80bb-ff4adb6248f0": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness/connections/db2225930fa74d7a86abd0b2a03b6b92",
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "displayName": "OneDrive for Business",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1546/1.0.1546.2665/onedriveforbusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "fa37de1f-90fb-4cc4-a555-640de81fc379"
+    ],
+    "id": "be554805-289c-4095-80bb-ff4adb6248f0"
+  },
+  "fa37de1f-90fb-4cc4-a555-640de81fc379": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_logicflows/connections/8cd1fdc7cf164653b4cf2a0ea8c6235b-2e503bbc6ccb0a7f",
+    "connectionParameters": {
+      "workFlowCallbackUri": "https://prod-138.westus.logic.azure.com:443/workflows/5eb4beee338f4117bbb4d048eb1a245e/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_INsvUmWolu4-6B02kaXf3f8BkXlzcFiVt4UIraQAgc",
+      "workflowEndpoint": "/subscriptions/34eedfbf-3e33-475d-b510-23537fba3dc9/resourceGroups/3539293e58fa4baba02e18dc57fa9737-64b55deb0b844ff79da9b508c656e87f/providers/Microsoft.Logic/workflows/8cd1fdc7-cf16-4653-b4cf-2a0ea8c6235b",
+      "workflowName": "8cd1fdc7-cf16-4653-b4cf-2a0ea8c6235b",
+      "workflowPath": "/subscriptions/34eedfbf-3e33-475d-b510-23537fba3dc9/resourceGroups/3539293e58fa4baba02e18dc57fa9737-64b55deb0b844ff79da9b508c656e87f/providers/Microsoft.Logic/workflows/8cd1fdc7-cf16-4653-b4cf-2a0ea8c6235b"
+    },
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "90a14a94-26c3-46d8-befe-15659e514626": {
+          "value": "shared_sharepointonline"
+        },
+        "be554805-289c-4095-80bb-ff4adb6248f0": {
+          "value": "shared_onedriveforbusiness"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "8cd1fdc7-cf16-4653-b4cf-2a0ea8c6235b"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_onedriveforbusiness": {
+          "value": "be554805-289c-4095-80bb-ff4adb6248f0"
+        },
+        "shared_sharepointonline": {
+          "value": "90a14a94-26c3-46d8-befe-15659e514626"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "8cd1fdc7-cf16-4653-b4cf-2a0ea8c6235b"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "IPCCheckrunPDFReport"
+    ],
+    "dependencies": {
+      "shared_onedriveforbusiness": "be554805-289c-4095-80bb-ff4adb6248f0",
+      "shared_sharepointonline": "90a14a94-26c3-46d8-befe-15659e514626"
+    },
+    "dependents": [],
+    "id": "fa37de1f-90fb-4cc4-a555-640de81fc379"
   }
 }
