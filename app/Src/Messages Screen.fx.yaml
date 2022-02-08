@@ -87,7 +87,7 @@
 
         Image9 As image:
             Height: =50
-            Image: =ThisItem.'Created By'.Picture
+            Image: =ThisItem.Author.Picture
             OnSelect: =Select(Parent)
             RadiusBottomLeft: =50
             RadiusBottomRight: =50
@@ -100,7 +100,7 @@
 
         Image9_1 As image:
             Height: =50
-            Image: =ThisItem.'Created By'.Picture
+            Image: =ThisItem.Author.Picture
             OnSelect: =Select(Parent)
             RadiusBottomLeft: =50
             RadiusBottomRight: =50

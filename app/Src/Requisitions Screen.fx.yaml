@@ -163,7 +163,17 @@
 
         Rectangle2 As rectangle:
             Fill: |-
-                =Switch(ThisItem.Status.Value,"Pending",ColorValue("#006080"),"Coded",ColorValue("#e64d00"),"Processed",ColorValue("#009933"))
+                =Switch(
+                    ThisItem.Status.Value,
+                    "New",
+                    Green,
+                    "Pending",
+                    ColorValue("#006080"),
+                    "Coded",
+                    ColorValue("#e64d00"),
+                    "Processed",
+                    ColorValue("#009933")
+                )
             Height: =13
             OnSelect: =Select(Parent)
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
@@ -216,9 +226,8 @@
             ZIndex: =11
 
         Body4_4 As label:
-            AutoHeight: =true
             Font: =Font.Lato
-            Height: =Self.Size * 4
+            Height: =31
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -227,7 +236,7 @@
             Text: ="Location"
             VerticalAlign: =VerticalAlign.Top
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
-            Width: =Title5.Width
+            Width: =103
             X: =32
             Y: =122
             ZIndex: =12
@@ -301,7 +310,7 @@
             PaddingRight: =0
             PaddingTop: =0
             Size: =11
-            Text: ="Approved By"
+            Text: ="Cost coded By"
             VerticalAlign: =VerticalAlign.Top
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =103
@@ -311,7 +320,17 @@
 
         Rectangle2_2 As rectangle:
             Fill: |-
-                =Switch(ThisItem.Status.Value,"Pending",ColorValue("#006080"),"Coded",ColorValue("#e64d00"),"Processed",ColorValue("#009933"))
+                =Switch(
+                    ThisItem.Status.Value,
+                    "New",
+                    Green,
+                    "Pending",
+                    ColorValue("#006080"),
+                    "Coded",
+                    ColorValue("#e64d00"),
+                    "Processed",
+                    ColorValue("#009933")
+                )
             Height: =50
             OnSelect: =Select(Parent)
             Visible: =Switch(varShowId,0,true,ThisItem.ID,false)
@@ -421,6 +440,38 @@
             X: =85
             Y: =11
             ZIndex: =23
+
+        Body4_9 As label:
+            Font: =Font.Lato
+            Height: =31
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Send to vendor"
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =158
+            X: =135
+            Y: =122
+            ZIndex: =24
+
+        Body4_10 As label:
+            Font: =Font.Lato
+            Height: =31
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Create PO"
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =158
+            X: =300
+            Y: =122
+            ZIndex: =25
 
     Image2 As image:
         Height: =65

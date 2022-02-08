@@ -109,6 +109,8 @@
         Font: =Font.Lato
         Height: =60
         HintText: ="Delivery Location"
+        HoverFill: |-
+            =ColorValue("#ccf5ff")
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
@@ -130,6 +132,8 @@
         Font: =Font.Lato
         Height: =60
         HintText: ="Job  No"
+        HoverFill: |-
+            =ColorValue("#ccf5ff")
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
@@ -235,11 +239,12 @@
                     "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
                   <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
                    <path fill='" & theme.AppColorText & "'
-                d='M640 256v1536h384v-1536h-384zM768 1664v-1280h128v1280h-128zM128 256v1536h384v-1536h-384zM256 1664v-1280h128v1280h-128zM1491 1815l484 -1450l-346 -116l-484 1450zM1287 1629l412 -1238l134 44l-413 1238z' />
+                d='M1536 1664v-1216q0 -93 -35.5 -174.5t-96 -142t-142 -96t-174.5 -35.5t-174.5 35.5t-142 96t-96 142t-35.5 174.5v1280q0 66 25.5 124t69 101.5t101.5 69t124 25.5t124 -25.5t101.5 -69t69 -101.5t25.5 -124v-1280q0 -40 -15 -75t-41 -61t-61 -41t-75 -15t-75 15t-61 41t-41 61t-15 75v1088h128v-1088q0 -26 19 -45t45 -19t45 19t19 45v1280q0 40 -15 75t-41 61t-61 41t-75 15t-75 -15t-61 -41t-41 -61t-15 -75v-1280q0 -66 25.5 -124t69 -101.5t101.5 -69t124 -25.5t124 25.5t101.5 69t69 101.5t25.5 124v1216h128z' />
                   </g>
                 
                 </svg>"
                 )
+            Visible: =!IsBlank(varNewReqPatch)
             Width: =50
             X: =211
             Y: =1048
@@ -250,7 +255,8 @@
             Color: =theme.AppColor
             Height: =28
             Size: =16
-            Text: ="Library"
+            Text: ="Attach"
+            Visible: =!IsBlank(varNewReqPatch)
             Width: =126
             X: =175
             Y: =1098
@@ -269,12 +275,25 @@
             HoverBorderColor: =Transparent
             HoverColor: =Transparent
             HoverFill: =Transparent
-            OnSelect: =Navigate('Library Screen')
+            OnSelect: |-
+                =Set(varEdit,true);
+                
+                If(varNewReqPatch.'Has attachments', 
+                    Set(varFormStatus, "Edit"); 
+                    EditForm(frmAttachments);
+                    Clear(TempAttachmentsCol)
+                ,
+                    Set(varFormStatus, "New");
+                    NewForm(frmAttachments);
+                    Clear(TempAttachmentsCol)
+                  );
+                Set(varShowAttachments,true)
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent
             Text: =""
             Tooltip: ="Save Change Records"
+            Visible: =!IsBlank(varNewReqPatch)
             Width: =129
             X: =172
             Y: =1039
@@ -319,6 +338,8 @@
             Font: =Font.Lato
             Height: =60
             HintText: =""
+            HoverFill: |-
+                =ColorValue("#ccf5ff")
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -369,6 +390,8 @@
             Font: =Font.Lato
             Height: =115
             HintText: ="Description"
+            HoverFill: |-
+                =ColorValue("#ccf5ff")
             Mode: =TextMode.MultiLine
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
@@ -476,6 +499,8 @@
             Font: =Font.Lato
             Height: =60
             HintText: =""
+            HoverFill: |-
+                =ColorValue("#ccf5ff")
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -531,7 +556,8 @@
             FontWeight: =Normal
             Height: =60
             HoverBorderColor: =ColorFade(drpgalUOM.BorderColor, 15%)
-            HoverFill: =RGBA(242, 242, 242,1)
+            HoverFill: |-
+                =ColorValue("#ccf5ff")
             Items: =["Each", "LF"]
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
@@ -587,7 +613,8 @@
             FontWeight: =Normal
             Height: =60
             HoverBorderColor: =ColorFade(drpgalCostCode.BorderColor, 15%)
-            HoverFill: =RGBA(242, 242, 242,1)
+            HoverFill: |-
+                =ColorValue("#ccf5ff")
             Items: =["Each", "LF"]
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
@@ -643,7 +670,8 @@
             FontWeight: =Normal
             Height: =60
             HoverBorderColor: =ColorFade(drpgalCat.BorderColor, 15%)
-            HoverFill: =RGBA(242, 242, 242,1)
+            HoverFill: |-
+                =ColorValue("#ccf5ff")
             Items: =["M", "C"]
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
@@ -782,6 +810,7 @@
             PressedFill: =theme.AppColor
             SelectionFill: =theme.AppColor
             Size: =18
+            Visible: =false
             Width: =117
             X: =276
             Y: =370
@@ -802,6 +831,7 @@
             Height: =31
             Size: =16
             Text: ="Required"
+            Visible: =false
             Width: =111
             X: =282
             Y: =339
@@ -861,7 +891,7 @@
             Color: =RGBA(179, 179, 179, 1)
             Height: =31
             Size: =16
-            Text: ="Manufacturer"
+            Text: ="Vendor"
             Width: =190
             X: =228
             Y: =12
@@ -1083,6 +1113,7 @@
             ZIndex: =26
 
         btnSave_9 As button:
+            BorderThickness: =0
             Color: =Transparent
             DisabledColor: =Transparent
             DisabledFill: =Transparent
@@ -1198,6 +1229,77 @@
             Y: =13
             ZIndex: =4
 
+    Rectangle1_7 As rectangle:
+        Fill: =theme.AppColor
+        Height: =462
+        OnSelect: =
+        Visible: =varShowAttachments
+        Width: =640
+        Y: =562
+        ZIndex: =37
+
+    frmAttachments As form:
+        DataSource: =ReqHeader
+        DefaultMode: |-
+            =Switch(
+                varFormStatus,
+                 "View", FormMode.View,
+                "New", FormMode.New,
+                "Edit",FormMode.Edit
+            )
+        Fill: |-
+            =ColorValue("#F4F4F4")
+        Height: =235
+        Item: |
+            =Switch(
+                varFormStatus,
+                 "View", varNewReqPatch,
+                "New", Defaults(ReqHeader),
+                "Edit",varNewReqPatch
+            )
+        Visible: =varShowAttachments
+        Width: =521
+        X: =29
+        Y: =592
+        ZIndex: =38
+
+        Attachments_DataCard2 As typedDataCard.attachmentsEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="{Attachments}"
+            Default: =ThisItem.Attachments
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =""
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =209
+            Required: =false
+            Update: =dcAttachments.Attachments
+            Width: =521
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+            dcAttachments As attachments:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =0
+                DisplayMode: =Parent.DisplayMode
+                Fill: |-
+                    =ColorValue("#F4F4F4")
+                Font: =Font.Lato
+                Height: =162
+                IsInDataCard: =true
+                Items: =Parent.Default
+                OnAddFile: =ClearCollect(TempAttachmentsCol, Self.Attachments)
+                OnRemoveFile: =ClearCollect(TempAttachmentsCol, Self.Attachments)
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Size: =18
+                Tooltip: =Parent.DisplayName
+                Width: =514
+                Y: =40
+                ZIndex: =1
+
     grpAddReq As group:
         Height: =5
         Width: =5
@@ -1293,4 +1395,163 @@
             X: =39
             Y: =405
             ZIndex: =25
+
+    grpSaveStatus_4 As group:
+        Height: =5
+        Width: =5
+        X: =-1194
+        Y: =-332
+        ZIndex: =42
+
+        Image8_5 As image:
+            Height: =50
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='White'
+                d='M512 128h1024v-128h-1152v256h-256v1792h859q202 -202 402 -402.5t403 -402.5v-91h-640v512h-640v-1536zM1280 1280h293l-293 293v-293zM384 384v1408h677l-128 128h-677v-1536h128zM1728 794l317 -317l-90 -90l-163 162v-549h-128v549l-163 -162l-90 90zM2048 1024v-128h-640v128h640z' />
+                  </g>
+                
+                </svg>"
+                )
+            Visible: =varShowAttachments
+            Width: =50
+            X: =29
+            Y: =861
+            ZIndex: =39
+
+        Label1_8 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =58
+            Size: =16
+            Text: ="Upload"
+            Visible: =varShowAttachments
+            Width: =200
+            X: =92
+            Y: =857
+            ZIndex: =40
+
+        btnSave_13 As button:
+            BorderThickness: =0
+            Color: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =Transparent
+            FocusedBorderThickness: =0
+            FontWeight: =FontWeight.Bold
+            Height: =35
+            HoverBorderColor: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: |
+                =Switch(
+                    varFormStatus,
+                    "Edit",
+                 //Update the SharePoint List with all the Attachments"
+                 Patch(ReqHeader,LookUp(ReqHeader,ID=varNewReqPatch.ID),
+                 { },frmAttachments.Updates
+                 ),
+                    "New",
+                
+                 //Update the SharePoint List with all the Attachments"
+                 Patch(ReqHeader,LookUp(ReqHeader,ID=varNewReqPatch.ID),
+                 { },frmAttachments.Updates
+                 )
+                )
+                
+                ;ResetForm(frmAttachments);
+                 Set(varFormStatus,"View");
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Visible: =varShowAttachments
+            Width: =111
+            X: =31
+            Y: =865
+            ZIndex: =41
+
+    grpCloseAttach As group:
+        Height: =5
+        Width: =5
+        X: =11
+        Y: =10
+        ZIndex: =45
+
+        Icon1_11 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledFill: =Transparent
+            DisplayMode: =
+            FocusedBorderColor: =Icon1_11.BorderColor
+            FocusedBorderThickness: =0
+            Height: =50
+            HoverBorderColor: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =If(
+                    CountRows(colReqDetails) > 0,
+                    Patch(
+                        ReqDetails,
+                        colReqDetails
+                    );
+                    Notify(
+                        "Success",
+                        NotificationType.Success
+                    )
+                );
+                Clear(colReqDetails)
+            PressedBorderColor: =ColorFade(Icon1_11.BorderColor, -20%)
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Tooltip: ="Save Change Records"
+            Visible: =varShowAttachments
+            Width: =50
+            X: =469
+            Y: =837
+            ZIndex: =42
+
+        Label3_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =27
+            Size: =16
+            Text: ="Close"
+            Visible: =varShowAttachments
+            Width: =100
+            X: =444
+            Y: =887
+            ZIndex: =43
+
+        btnSave_14 As button:
+            BorderThickness: =0
+            Color: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =Transparent
+            FocusedBorderThickness: =0
+            Height: =87
+            HoverBorderColor: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: =Set(varShowAttachments,false)
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Visible: =varShowAttachments
+            Width: =104
+            X: =444
+            Y: =828
+            ZIndex: =44
 
