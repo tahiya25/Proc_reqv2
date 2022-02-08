@@ -1,0 +1,308 @@
+"'Cost Code Screen' As screen":
+    Fill: =RGBA(244, 244, 244, 1)
+
+    lblAddNewReq_1 As label:
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =37
+        Size: =14
+        Text: ="Req No"
+        Visible: =IsBlank(Param("ID"))
+        Width: =116
+        X: =34
+        Y: =119
+        ZIndex: =4
+
+    grp_Header_RS_2 As group:
+        Height: =5
+        Width: =5
+        X: =88
+        Y: =6
+        ZIndex: =4
+
+        Rectangle1_9 As rectangle:
+            Fill: =theme.AppColor
+            Height: =86
+            OnSelect: =
+            Width: =550
+            X: =90
+            ZIndex: =1
+
+        Image1_6 As image:
+            Height: =86
+            Image: =RecProc
+            OnSelect: =Back()
+            Width: =94
+            ZIndex: =2
+
+        Label1_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =83
+            PaddingLeft: =20
+            Size: =21
+            Text: ="Cost Codes"
+            Width: =404
+            X: =188
+            Y: =1
+            ZIndex: =3
+
+    txtDeliveryLocEnter_1 As text:
+        BorderColor: |
+            =ColorValue("#ccf5ff")
+        BorderThickness: =1
+        Default: =""
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        Height: =60
+        HintText: ="Delivery Location"
+        HoverFill: |-
+            =ColorValue("#ccf5ff")
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =18
+        Visible: =IsBlank(Param("ID"))
+        Width: =576
+        X: =64
+        Y: =1006
+        ZIndex: =5
+
+    txtRJobNoEnter_1 As text:
+        Align: =Align.Center
+        BorderColor: |
+            =ColorValue("#ccf5ff")
+        BorderThickness: =1
+        Default: =""
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        Height: =60
+        HintText: ="Job  No"
+        HoverFill: |-
+            =ColorValue("#ccf5ff")
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =18
+        Visible: =IsBlank(Param("ID"))
+        Width: =182
+        X: =64
+        Y: =931
+        ZIndex: =6
+
+    lblReqID_1 As label:
+        Height: =31
+        Size: =16
+        Text: |-
+            =If(
+                !IsBlank(Param("ID")),
+                LookUp(ReqHeader,Title=Param("ID"),Title),
+            If(!IsBlank(varNewReqPatch),varNewReqPatch.Title,""))
+        Width: =116
+        X: =34
+        Y: =156
+        ZIndex: =7
+
+    lblReqIDStatus_1 As label:
+        Align: =Align.Center
+        Height: =31
+        Size: =16
+        Text: |-
+            =If(
+                !IsBlank(Param("ID")),
+                LookUp(ReqHeader,Title=Param("ID"),Status.Value),
+            If(!IsBlank(varNewReqPatch),varNewReqPatch.Status.Value,""))
+        Width: =106
+        X: =499
+        Y: =156
+        ZIndex: =8
+
+    lblReqJObNo_1 As label:
+        Align: =Align.Center
+        Height: =31
+        Size: =16
+        Text: |-
+            =If(
+                !IsBlank(Param("ID")),
+                LookUp(ReqHeader,Title=Param("ID"),JobNo),
+            If(!IsBlank(varNewReqPatch),varNewReqPatch.JobNo,""))
+        Width: =89
+        X: =150
+        Y: =156
+        ZIndex: =9
+
+    lblReqDescription_1 As label:
+        Height: =31
+        Size: =16
+        Text: =If(!IsBlank(varNewReqPatch),varNewReqPatch.DeliveryLoc,"")
+        Tooltip: |-
+            =If(
+                !IsBlank(Param("ID")),
+                LookUp(ReqHeader,Title=Param("ID"),DeliveryLoc),
+            If(!IsBlank(varNewReqPatch),varNewReqPatch.DeliveryLoc,""))
+        Width: =252
+        X: =247
+        Y: =156
+        ZIndex: =10
+
+    lblAddNewReq_2 As label:
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =37
+        Size: =14
+        Text: ="Job No"
+        Visible: =IsBlank(Param("ID"))
+        Width: =116
+        X: =150
+        Y: =119
+        ZIndex: =11
+
+    lblAddNewReq_3 As label:
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =37
+        Size: =14
+        Text: ="Ship Location"
+        Visible: =IsBlank(Param("ID"))
+        Width: =158
+        X: =263
+        Y: =119
+        ZIndex: =12
+
+    lblAddNewReq_4 As label:
+        Align: =Align.Center
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =37
+        Size: =14
+        Text: ="Status"
+        Visible: =IsBlank(Param("ID"))
+        Width: =99
+        X: =499
+        Y: =119
+        ZIndex: =13
+
+    lblPartNo_3 As label:
+        FontWeight: =Bold
+        Height: =31
+        Size: =14
+        Text: ="Part No"
+        Visible: =varShowNewReqDetails
+        Width: =103
+        X: =10
+        Y: =227
+        ZIndex: =14
+
+    lblPartNo_4 As label:
+        FontWeight: =Bold
+        Height: =31
+        Size: =14
+        Text: ="Description"
+        Visible: =varShowNewReqDetails
+        Width: =305
+        X: =160
+        Y: =227
+        ZIndex: =15
+
+    galAvailableReqItems_1 As gallery.galleryVertical:
+        Height: =261
+        Items: |-
+            =If(
+                !IsBlank(Param("ID")),
+                Filter(
+                    ReqDetails,ReqID=(Param("ID"))
+                       ),
+            SortByColumns(Filter(ReqDetails,ReqID=varNewReqPatch.Title),"ID",Descending))
+        Layout: =Layout.Vertical
+        TemplateFill: =White
+        TemplateSize: =44
+        Width: =635
+        X: =5
+        Y: =258
+        ZIndex: =16
+
+        Label8_2 As label:
+            Height: =34
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.Title
+            Width: =148
+            Y: =4
+            ZIndex: =1
+
+        Label8_3 As label:
+            Height: =34
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =Proper(ThisItem.ItemDescription)
+            Tooltip: =ThisItem.ItemDescription
+            Width: =334
+            Wrap: =false
+            X: =153
+            Y: =4
+            ZIndex: =2
+
+        imd_DelRec_2 As image:
+            Height: =30
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='" & theme.AppColorText & "'
+                d='M1792 1664h-128v-1472q0 -40 -15 -75t-41 -61t-61 -41t-75 -15h-1024q-40 0 -75 15t-61 41t-41 61t-15 75v1472h-128v128h512v128q0 27 10 50t27.5 40.5t40.5 27.5t50 10h384q27 0 50 -10t40.5 -27.5t27.5 -40.5t10 -50v-128h512v-128zM768 1792h384v128h-384v-128zM1536 1664h-1152v-1472q0 -26 19 -45t45 -19h1024q26 0 45 19t19 45v1472zM768 384h-128v1024h128v-1024zM1024 384h-128v1024h128v-1024zM1280 384h-128v1024h128v-1024z' />
+                  </g>
+                
+                </svg>"
+                )
+            OnSelect: =Remove(ReqDetails,ThisItem)
+            Width: =30
+            X: =545
+            Y: =8
+            ZIndex: =3
+
+        imd_DelRec_3 As image:
+            Height: =20
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill=' Red'
+                d='M1884 0h-1891l946 1991zM263 171h1351l-675 1422zM1024 1195v-555h-171v555h171zM853 512h171v-171h-171v171z' />
+                  </g>
+                
+                </svg>"
+                )
+            OnSelect: =Remove(ReqDetails,ThisItem)
+            Visible: =ThisItem.ID in colReqDetails.ID
+            Width: =20
+            X: =595
+            Y: =13
+            ZIndex: =4
+
+    lblAddNewReq_5 As label:
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =37
+        Size: =14
+        Text: ="Part No"
+        Visible: =IsBlank(Param("ID"))
+        Width: =116
+        X: =10
+        Y: =227
+        ZIndex: =17
+
+    lblAddNewReq_6 As label:
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Size: =14
+        Text: ="Description"
+        Visible: =IsBlank(Param("ID"))
+        Width: =217
+        X: =171
+        Y: =224
+        ZIndex: =18
+
