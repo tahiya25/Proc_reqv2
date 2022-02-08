@@ -1,5 +1,6 @@
 "'Cost Code Screen' As screen":
     Fill: =RGBA(244, 244, 244, 1)
+    OnVisible: =
 
     Octagon1 As octagon:
         Fill: =theme.Orange
@@ -491,6 +492,98 @@
         Y: =664
         ZIndex: =30
 
+    Rectangle1_10 As rectangle:
+        Fill: =theme.AppColor
+        Height: =434
+        OnSelect: =
+        Visible: =varShowCCAttachements
+        Width: =640
+        Y: =220
+        ZIndex: =31
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =256
+        Items: =MyFiles
+        Layout: =Layout.Vertical
+        TemplateFill: =White
+        TemplateSize: =51
+        Visible: =varShowCCAttachements
+        Width: =545
+        X: =34
+        Y: =316
+        ZIndex: =32
+
+        Image3 As image:
+            Height: =40
+            Image: |-
+                =Switch(Last(Split(ThisItem.DisplayName,".")).Result,
+                "pdf",
+                "data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='#0086b3'
+                d='M1920 384h-128v-384h-1664v384h-128v1024h128v640h1243l421 -421v-219h128v-1024zM1408 1664h165l-165 165v-165zM256 1408h1408v128h-384v384h-1024v-512zM1664 384h-1408v-256h1408v256zM1792 1280h-1664v-768h1664v768zM448 1152q40 0 75 -15t61 -41t41 -61t15 -75t-15 -75t-41 -61t-61 -41t-75 -15h-64v-128h-128v512h192zM448 896q26 0 45 19t19 45t-19 45t-45 19h-64v-128h64zM896 1152q53 0 99.5 -20t81.5 -55t55 -81.5t20 -99.5t-20 -99.5t-55 -81.5t-81.5 -55t-99.5 -20h-128v512h128zM896 768q27 0 50 10t40.5 27.5t27.5 40.5t10 50t-10 50t-27.5 40.5t-40.5 27.5t-50 10v-256zM1280 1152h320v-128h-192v-128h192v-128h-192v-128h-128v512z' />
+                  </g>
+                
+                </svg>"
+                )
+                ,
+                ThisItem.AbsoluteUri)
+            OnSelect: =Select(Parent)
+            Width: =40
+            X: =10
+            Y: =3
+            ZIndex: =1
+
+        Title1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: =ThisItem.DisplayName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image3.Width - 104
+            Wrap: =false
+            X: =70
+            Y: =10
+            ZIndex: =2
+
+        Image3_1 As image:
+            Height: =40
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='#0086b3'
+                d='M1536 1792h384v-384h-128v165l-456 -456l-91 91l456 456h-165v128zM1536 1024l128 128v-768h-1664v1152h1280l-128 -128h-1024v-896h1408v512z' />
+                  </g>
+                
+                </svg>"
+                )
+            OnSelect: =Launch(ThisItem.AbsoluteUri)
+            Width: =40
+            X: =436
+            Y: =3
+            ZIndex: =4
+
+    lblAddNewReq_8 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =37
+        Size: =14
+        Text: ="Attachments"
+        Visible: =varShowCCAttachements
+        Width: =222
+        X: =38
+        Y: =279
+        ZIndex: =33
+
     galCCAttachments As gallery.galleryVertical:
         Height: =74
         Items: |-
@@ -500,11 +593,22 @@
                 Filter(ReqHeader,Title=Param("ID")),
             If(!IsBlank(varNewReqPatch),Filter(ReqHeader,Title=varNewReqPatch.Title)))
         Layout: =Layout.Vertical
+        OnSelect: |-
+            =ClearCollect(
+                MyFiles,
+                First(
+                    Filter(
+                        ReqHeader,
+                        ID = ThisItem.ID
+                    )
+                ).Attachments
+            );
+            Set(varShowCCAttachements, true)
         TemplateSize: =60
         Width: =76
         X: =546
         Y: =135
-        ZIndex: =31
+        ZIndex: =34
 
         lblReqID_2 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -517,12 +621,23 @@
             Y: =8
             ZIndex: =1
 
-    Rectangle1_10 As rectangle:
-        Fill: =theme.AppColor
-        Height: =437
-        OnSelect: =
-        Visible: =varShowAttachments
-        Width: =640
-        Y: =224
-        ZIndex: =32
+    Image4 As image:
+        Height: =42
+        Image: |-
+            ="data:image/svg+xml," & 
+             EncodeUrl(
+                "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+              <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+               <path fill='white'
+            d='M1169 1024l879 -879l-145 -145l-879 879l-879 -879l-145 145l879 879l-879 879l145 145l879 -879l879 879l145 -145z' />
+              </g>
+            
+            </svg>"
+            )
+        OnSelect: =Set(varShowCCAttachements,false)
+        Visible: =varShowCCAttachements
+        Width: =45
+        X: =561
+        Y: =237
+        ZIndex: =35
 
