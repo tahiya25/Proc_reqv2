@@ -1,17 +1,13 @@
 "'Cost Code Screen' As screen":
     Fill: =RGBA(244, 244, 244, 1)
 
-    lblAddNewReq_1 As label:
-        Font: =Font.Lato
-        FontWeight: =Semibold
-        Height: =37
-        Size: =14
-        Text: ="Req No"
-        Visible: =IsBlank(Param("ID"))
-        Width: =116
-        X: =34
-        Y: =119
-        ZIndex: =4
+    Octagon1 As octagon:
+        Fill: =theme.Orange
+        Height: =50
+        Width: =50
+        X: =545
+        Y: =141
+        ZIndex: =1
 
     grp_Header_RS_2 As group:
         Height: =5
@@ -26,14 +22,14 @@
             OnSelect: =
             Width: =550
             X: =90
-            ZIndex: =1
+            ZIndex: =2
 
         Image1_6 As image:
             Height: =86
             Image: =RecProc
             OnSelect: =Back()
             Width: =94
-            ZIndex: =2
+            ZIndex: =3
 
         Label1_4 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -45,9 +41,21 @@
             Width: =404
             X: =188
             Y: =1
-            ZIndex: =3
+            ZIndex: =4
 
-    txtDeliveryLocEnter_1 As text:
+    lblAddNewReq_1 As label:
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =37
+        Size: =14
+        Text: ="Req No"
+        Visible: =IsBlank(Param("ID"))
+        Width: =116
+        X: =34
+        Y: =119
+        ZIndex: =5
+
+    txtDeliveryLoc_CCS As text:
         BorderColor: |
             =ColorValue("#ccf5ff")
         BorderThickness: =1
@@ -67,7 +75,7 @@
         Width: =576
         X: =17
         Y: =849
-        ZIndex: =5
+        ZIndex: =6
 
     lblReqID_1 As label:
         Height: =31
@@ -92,7 +100,7 @@
                 LookUp(ReqHeader,Title=Param("ID"),Status.Value),
             If(!IsBlank(varNewReqPatch),varNewReqPatch.Status.Value,""))
         Width: =106
-        X: =499
+        X: =447
         Y: =156
         ZIndex: =8
 
@@ -157,7 +165,7 @@
         Text: ="Status"
         Visible: =IsBlank(Param("ID"))
         Width: =99
-        X: =499
+        X: =447
         Y: =119
         ZIndex: =13
 
@@ -242,26 +250,6 @@
             Y: =8
             ZIndex: =3
 
-        imd_DelRec_3 As image:
-            Height: =20
-            Image: |-
-                ="data:image/svg+xml," & 
-                 EncodeUrl(
-                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
-                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
-                   <path fill=' Red'
-                d='M1884 0h-1891l946 1991zM263 171h1351l-675 1422zM1024 1195v-555h-171v555h171zM853 512h171v-171h-171v171z' />
-                  </g>
-                
-                </svg>"
-                )
-            OnSelect: =Remove(ReqDetails,ThisItem)
-            Visible: =ThisItem.ID in colReqDetails.ID
-            Width: =20
-            X: =595
-            Y: =13
-            ZIndex: =4
-
         Rectangle1 As rectangle:
             Fill: =theme.AppColor
             Height: =44
@@ -293,7 +281,7 @@
         Y: =224
         ZIndex: =18
 
-    drpgalVendor_1 As dropdown:
+    drpgalVendor_CCS As dropdown:
         AllowEmptySelection: =true
         BorderColor: |-
             =ColorValue("#ccf5ff")
@@ -301,16 +289,16 @@
         ChevronBackground: =theme.AppColor
         ChevronHoverBackground: =theme.AppColor
         Default: =varCurrentCostCode.Vendor
-        FocusedBorderColor: =drpgalVendor_1.BorderColor
+        FocusedBorderColor: =drpgalVendor_CCS.BorderColor
         FocusedBorderThickness: =0
         Font: =Font.Lato
         FontWeight: =Normal
         Height: =60
-        HoverBorderColor: =ColorFade(drpgalVendor_1.BorderColor, 15%)
+        HoverBorderColor: =ColorFade(drpgalVendor_CCS.BorderColor, 15%)
         HoverFill: =RGBA(242, 242, 242,1)
         Items: =["Vendor 1", "Vendor 2"]
         OnChange: =
-        PressedBorderColor: =drpgalVendor_1.HoverBorderColor
+        PressedBorderColor: =drpgalVendor_CCS.HoverBorderColor
         PressedFill: =theme.AppColor
         SelectionFill: =theme.AppColor
         Size: =18
@@ -319,7 +307,7 @@
         Y: =726
         ZIndex: =19
 
-    drpgalCostCode_1 As dropdown:
+    drpgalCostCode_CCS As dropdown:
         AllowEmptySelection: =true
         BorderColor: |-
             =ColorValue("#ccf5ff")
@@ -327,17 +315,17 @@
         ChevronBackground: =theme.AppColor
         ChevronHoverBackground: =theme.AppColor
         Default: =varCurrentCostCode.CostCode
-        FocusedBorderColor: =drpgalCostCode_1.BorderColor
+        FocusedBorderColor: =drpgalCostCode_CCS.BorderColor
         FocusedBorderThickness: =0
         Font: =Font.Lato
         FontWeight: =Normal
         Height: =60
-        HoverBorderColor: =ColorFade(drpgalCostCode_1.BorderColor, 15%)
+        HoverBorderColor: =ColorFade(drpgalCostCode_CCS.BorderColor, 15%)
         HoverFill: |-
             =ColorValue("#ccf5ff")
         Items: =["Each", "LF"]
         OnChange: =
-        PressedBorderColor: =drpgalCostCode_1.HoverBorderColor
+        PressedBorderColor: =drpgalCostCode_CCS.HoverBorderColor
         PressedFill: =theme.AppColor
         SelectionFill: =theme.AppColor
         Size: =18
@@ -346,7 +334,7 @@
         Y: =967
         ZIndex: =20
 
-    drpgalCat_1 As dropdown:
+    drpgalCat_CCS As dropdown:
         AllowEmptySelection: =true
         BorderColor: |-
             =ColorValue("#ccf5ff")
@@ -354,17 +342,17 @@
         ChevronBackground: =theme.AppColor
         ChevronHoverBackground: =theme.AppColor
         Default: =varCurrentCostCode.Category
-        FocusedBorderColor: =drpgalCat_1.BorderColor
+        FocusedBorderColor: =drpgalCat_CCS.BorderColor
         FocusedBorderThickness: =0
         Font: =Font.Lato
         FontWeight: =Normal
         Height: =60
-        HoverBorderColor: =ColorFade(drpgalCat_1.BorderColor, 15%)
+        HoverBorderColor: =ColorFade(drpgalCat_CCS.BorderColor, 15%)
         HoverFill: |-
             =ColorValue("#ccf5ff")
         Items: =["M", "C"]
         OnChange: =
-        PressedBorderColor: =drpgalCat_1.HoverBorderColor
+        PressedBorderColor: =drpgalCat_CCS.HoverBorderColor
         PressedFill: =theme.AppColor
         SelectionFill: =theme.AppColor
         Size: =18
@@ -385,7 +373,7 @@
         Y: =687
         ZIndex: =22
 
-    lblAddNewReq_8 As label:
+    lblDescr_CCS As label:
         Font: =Font.Lato
         FontWeight: =Semibold
         Height: =39
@@ -397,7 +385,7 @@
         Y: =810
         ZIndex: =23
 
-    lblAddNewReq_9 As label:
+    lblCC_CCS As label:
         Font: =Font.Lato
         FontWeight: =Semibold
         Height: =39
@@ -409,7 +397,7 @@
         Y: =928
         ZIndex: =24
 
-    lblAddNewReq_10 As label:
+    lblCat As label:
         Font: =Font.Lato
         FontWeight: =Semibold
         Height: =39
@@ -420,4 +408,112 @@
         X: =239
         Y: =928
         ZIndex: =25
+
+    rctDivider As rectangle:
+        Fill: =theme.AppColor
+        Height: =6
+        OnSelect: =
+        Width: =640
+        Y: =201
+        ZIndex: =29
+
+    grpAddReqDetails As group:
+        Height: =5
+        Width: =5
+        X: =-37
+        Y: =-340
+        ZIndex: =29
+
+        Image8_6 As image:
+            Height: =40
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='" & theme.AppColorText & "'
+                d='M256 1536v-128h-128v128h128zM256 1280v-128h-128v128h128zM256 1024v-128h-128v128h128zM256 768v-128h-128v128h128zM256 512v-128h-128v128h128zM128 256h128v-128h-128v128zM256 0v128h128v-128h-128zM512 0v128h128v-128h-128zM256 1920h-128v128h128v-128zM512 2048v-128h-128v128h128zM768 2048v-128h-128v128h128zM1024 2048v-128h-128v128h128zM1280 2048v-128h-128v128h128zM1536 2048v-128h-128v128h128zM1664 1792h-128v128h128v-128zM1536 1536v128h128v-128h-128zM256 1792v-128h-128v128h128zM1920 1280q26 0 49.5 -10t41 -27.5t27.5 -41t10 -49.5v-1152h-1115l-165 165v987q0 26 10 49.5t27.5 41t41 27.5t49.5 10h1024zM1152 1152v-384h512v384h-512zM1664 128v256h-512v-256h128v128h128v-128h256zM1920 128v1024h-128v-512h-768v512h-128v-933l91 -91h37v384h768v-384h128z' />
+                  </g>
+                
+                </svg>"
+                )
+            Visible: =!IsBlank(varNewReqPatch)
+            Width: =40
+            X: =447
+            Y: =1068
+            ZIndex: =26
+
+        Label2_1 As label:
+            Color: =theme.AppColor
+            PaddingLeft: =10
+            Size: =14
+            Text: ="Update "
+            Visible: =!IsBlank(varNewReqPatch)
+            Width: =118
+            X: =487
+            Y: =1068
+            ZIndex: =27
+
+        btnSave_15 As button:
+            BorderColor: =theme.Blue
+            BorderThickness: =1
+            Color: =theme.AppColor
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =Transparent
+            FocusedBorderColor: =theme.Orange
+            FocusedBorderThickness: =1
+            Height: =71
+            HoverBorderColor: =theme.Orange
+            HoverColor: =theme.AppColor
+            HoverFill: =Transparent
+            OnSelect: |
+                =Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:varNewReqPatch.Title});
+            PaddingLeft: =50
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Size: =20
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Visible: =!IsBlank(varNewReqPatch)
+            Width: =169
+            X: =436
+            Y: =1051
+            ZIndex: =28
+
+    rctDivider_1 As rectangle:
+        Fill: =theme.AppColor
+        Height: =6
+        OnSelect: =
+        Width: =640
+        Y: =664
+        ZIndex: =30
+
+    galCCAttachments As gallery.galleryVertical:
+        Height: =74
+        Items: |-
+            =
+            If(
+                !IsBlank(Param("ID")),
+                Filter(ReqHeader,Title=Param("ID")),
+            If(!IsBlank(varNewReqPatch),Filter(ReqHeader,Title=varNewReqPatch.Title)))
+        Layout: =Layout.Vertical
+        TemplateSize: =60
+        Width: =76
+        X: =546
+        Y: =135
+        ZIndex: =31
+
+        lblReqID_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =31
+            PaddingLeft: =8
+            Size: =16
+            Text: =CountRows(ThisItem.Attachments)
+            Width: =36
+            X: =4
+            Y: =8
+            ZIndex: =1
 

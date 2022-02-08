@@ -3044,19 +3044,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Cost Code Screen.txtDeliveryLocEnter_1.AccessibleLabel"
+                  "fullyQualifiedName": "Cost Code Screen.txtDeliveryLoc_CCS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Cost Code Screen.txtDeliveryLocEnter_1.AccessibleLabel",
+                  "fullyQualifiedName": "Cost Code Screen.txtDeliveryLoc_CCS.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Cost Code Screen",
-                "type": "Cost Code Screen.txtDeliveryLocEnter_1"
+                "type": "Cost Code Screen.txtDeliveryLoc_CCS"
               }
             }
           ],
@@ -3074,19 +3074,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Cost Code Screen.txtDeliveryLocEnter_1.FocusedBorderThickness"
+                  "fullyQualifiedName": "Cost Code Screen.txtDeliveryLoc_CCS.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Cost Code Screen.txtDeliveryLocEnter_1.FocusedBorderThickness",
+                  "fullyQualifiedName": "Cost Code Screen.txtDeliveryLoc_CCS.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "Cost Code Screen",
-                "type": "Cost Code Screen.txtDeliveryLocEnter_1"
+                "type": "Cost Code Screen.txtDeliveryLoc_CCS"
               }
             }
           ],
@@ -3224,49 +3224,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Cost Code Screen.galAvailableReqItems_1.imd_DelRec_3.AccessibleLabel"
+                  "fullyQualifiedName": "Cost Code Screen.galCCAttachments.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Cost Code Screen.galAvailableReqItems_1.imd_DelRec_3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Cost Code Screen",
-                "type": "Cost Code Screen.galAvailableReqItems_1.imd_DelRec_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Cost Code Screen.galAvailableReqItems_1.imd_DelRec_3.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Cost Code Screen.galAvailableReqItems_1.imd_DelRec_3.TabIndex",
+                  "fullyQualifiedName": "Cost Code Screen.galCCAttachments.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Cost Code Screen",
-                "type": "Cost Code Screen.galAvailableReqItems_1.imd_DelRec_3"
+                "type": "Cost Code Screen.galCCAttachments"
               }
             }
           ],
@@ -3284,19 +3254,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Cost Code Screen.drpgalVendor_1.AccessibleLabel"
+                  "fullyQualifiedName": "Cost Code Screen.galCCAttachments.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Cost Code Screen.drpgalVendor_1.AccessibleLabel",
+                  "fullyQualifiedName": "Cost Code Screen.galCCAttachments.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Cost Code Screen",
-                "type": "Cost Code Screen.drpgalVendor_1"
+                "type": "Cost Code Screen.galCCAttachments"
               }
             }
           ],
@@ -3314,19 +3284,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Cost Code Screen.drpgalVendor_1.FocusedBorderThickness"
+                  "fullyQualifiedName": "Cost Code Screen.drpgalVendor_CCS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Cost Code Screen.drpgalVendor_1.FocusedBorderThickness",
+                  "fullyQualifiedName": "Cost Code Screen.drpgalVendor_CCS.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Cost Code Screen",
+                "type": "Cost Code Screen.drpgalVendor_CCS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Cost Code Screen.drpgalVendor_CCS.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Cost Code Screen.drpgalVendor_CCS.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "Cost Code Screen",
-                "type": "Cost Code Screen.drpgalVendor_1"
+                "type": "Cost Code Screen.drpgalVendor_CCS"
               }
             }
           ],
@@ -3344,19 +3344,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Cost Code Screen.drpgalCostCode_1.AccessibleLabel"
+                  "fullyQualifiedName": "Cost Code Screen.drpgalCostCode_CCS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Cost Code Screen.drpgalCostCode_1.AccessibleLabel",
+                  "fullyQualifiedName": "Cost Code Screen.drpgalCostCode_CCS.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Cost Code Screen",
-                "type": "Cost Code Screen.drpgalCostCode_1"
+                "type": "Cost Code Screen.drpgalCostCode_CCS"
               }
             }
           ],
@@ -3374,19 +3374,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Cost Code Screen.drpgalCostCode_1.FocusedBorderThickness"
+                  "fullyQualifiedName": "Cost Code Screen.drpgalCostCode_CCS.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Cost Code Screen.drpgalCostCode_1.FocusedBorderThickness",
+                  "fullyQualifiedName": "Cost Code Screen.drpgalCostCode_CCS.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "Cost Code Screen",
-                "type": "Cost Code Screen.drpgalCostCode_1"
+                "type": "Cost Code Screen.drpgalCostCode_CCS"
               }
             }
           ],
@@ -3404,19 +3404,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Cost Code Screen.drpgalCat_1.AccessibleLabel"
+                  "fullyQualifiedName": "Cost Code Screen.drpgalCat_CCS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Cost Code Screen.drpgalCat_1.AccessibleLabel",
+                  "fullyQualifiedName": "Cost Code Screen.drpgalCat_CCS.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Cost Code Screen",
-                "type": "Cost Code Screen.drpgalCat_1"
+                "type": "Cost Code Screen.drpgalCat_CCS"
               }
             }
           ],
@@ -3434,19 +3434,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Cost Code Screen.drpgalCat_1.FocusedBorderThickness"
+                  "fullyQualifiedName": "Cost Code Screen.drpgalCat_CCS.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Cost Code Screen.drpgalCat_1.FocusedBorderThickness",
+                  "fullyQualifiedName": "Cost Code Screen.drpgalCat_CCS.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "Cost Code Screen",
-                "type": "Cost Code Screen.drpgalCat_1"
+                "type": "Cost Code Screen.drpgalCat_CCS"
               }
             }
           ],
