@@ -101,12 +101,18 @@
         ZIndex: =8
 
     txtDeliveryLocEnter As text:
-        BorderThickness: =0
+        BorderColor: |
+            =ColorValue("#ccf5ff")
+        BorderThickness: =1
         Default: =""
         FocusedBorderThickness: =0
         Font: =Font.Lato
         Height: =60
         HintText: ="Delivery Location"
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
         Size: =18
         Visible: =IsBlank(Param("ID"))
         Width: =576
@@ -116,7 +122,9 @@
 
     txtRJobNoEnter As text:
         Align: =Align.Center
-        BorderThickness: =0
+        BorderColor: |
+            =ColorValue("#ccf5ff")
+        BorderThickness: =1
         Default: =""
         FocusedBorderThickness: =0
         Font: =Font.Lato
@@ -134,7 +142,8 @@
         ZIndex: =16
 
     CB_Responsible As combobox:
-        BorderColor: =theme.LightBlue
+        BorderColor: |
+            =ColorValue("#ccf5ff")
         BorderThickness: =1
         ChevronBackground: =theme.AppColor
         DisplayFields: =["DisplayName"]
@@ -302,7 +311,9 @@
         ZIndex: =23
 
         txtGalPartNo As text:
-            BorderThickness: =0
+            BorderColor: |-
+                =ColorValue("#ccf5ff")
+            BorderThickness: =1
             Default: =ThisItem.Title
             FocusedBorderThickness: =0
             Font: =Font.Lato
@@ -350,7 +361,9 @@
             ZIndex: =1
 
         txtGalDescription As text:
-            BorderThickness: =0
+            BorderColor: |-
+                =ColorValue("#ccf5ff")
+            BorderThickness: =1
             Default: =Proper(ThisItem.ItemDescription)
             FocusedBorderThickness: =0
             Font: =Font.Lato
@@ -400,8 +413,9 @@
 
         drpgalVendor As dropdown:
             AllowEmptySelection: =true
-            BorderColor: =theme.LightBlue
-            BorderThickness: =0
+            BorderColor: |-
+                =ColorValue("#ccf5ff")
+            BorderThickness: =1
             ChevronBackground: =theme.AppColor
             ChevronHoverBackground: =theme.AppColor
             Default: =ThisItem.Vendor
@@ -454,7 +468,9 @@
             ZIndex: =3
 
         txtGalQty As text:
-            BorderThickness: =0
+            BorderColor: |-
+                =ColorValue("#ccf5ff")
+            BorderThickness: =1
             Default: =ThisItem.Quantity
             FocusedBorderThickness: =0
             Font: =Font.Lato
@@ -503,8 +519,9 @@
 
         drpgalUOM As dropdown:
             AllowEmptySelection: =true
-            BorderColor: =theme.LightBlue
-            BorderThickness: =0
+            BorderColor: |-
+                =ColorValue("#ccf5ff")
+            BorderThickness: =1
             ChevronBackground: =theme.AppColor
             ChevronHoverBackground: =theme.AppColor
             Default: =ThisItem.UOM
@@ -558,8 +575,9 @@
 
         drpgalCostCode As dropdown:
             AllowEmptySelection: =true
-            BorderColor: =theme.LightBlue
-            BorderThickness: =0
+            BorderColor: |-
+                =ColorValue("#ccf5ff")
+            BorderThickness: =1
             ChevronBackground: =theme.AppColor
             ChevronHoverBackground: =theme.AppColor
             Default: =ThisItem.CostCode
@@ -613,8 +631,9 @@
 
         drpgalCat As dropdown:
             AllowEmptySelection: =true
-            BorderColor: =theme.LightBlue
-            BorderThickness: =0
+            BorderColor: |-
+                =ColorValue("#ccf5ff")
+            BorderThickness: =1
             ChevronBackground: =theme.AppColor
             ChevronHoverBackground: =theme.AppColor
             Default: =ThisItem.Category
@@ -667,7 +686,9 @@
             ZIndex: =7
 
         dpDalReqDate As datepicker:
-            BorderThickness: =0
+            BorderColor: |-
+                =ColorValue("#ccf5ff")
+            BorderThickness: =1
             DefaultDate: =ThisItem.'Date Required'
             FocusedBorderThickness: =0
             Font: =Font.Lato
@@ -712,8 +733,9 @@
 
         drpgalReq As dropdown:
             AllowEmptySelection: =true
-            BorderColor: =theme.LightBlue
-            BorderThickness: =0
+            BorderColor: |-
+                =ColorValue("#ccf5ff")
+            BorderThickness: =1
             ChevronBackground: =theme.AppColor
             ChevronHoverBackground: =theme.AppColor
             Default: =ThisItem.Required
@@ -868,7 +890,7 @@
             HoverFill: |-
                 =ColorFade(ColorValue("#ccf5ff"),.70)
             OnSelect: |
-                =Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1)});
+                =Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:varNewReqPatch.JobNo & "-" &    Text(NewReqAdded.ID +1)});
             PaddingLeft: =50
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
@@ -1204,11 +1226,12 @@
 
         Label2 As label:
             Color: =theme.AppColor
+            Font: =Font.'Lato Black'
             Height: =70
             Size: =21
             Text: ="Add Req"
             Visible: =And(!IsBlank(txtDeliveryLocEnter) ,!IsBlank(txtRJobNoEnter) )
-            Width: =170
+            Width: =142
             X: =119
             Y: =417
             ZIndex: =24
@@ -1258,11 +1281,15 @@
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
             Size: =24
             Text: =""
             Tooltip: ="Save Change Records"
             Visible: =And(!IsBlank(txtDeliveryLocEnter) ,!IsBlank(txtRJobNoEnter) )
-            Width: =262
+            Width: =227
             X: =39
             Y: =405
             ZIndex: =25
