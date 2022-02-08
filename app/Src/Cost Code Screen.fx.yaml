@@ -517,3 +517,12 @@
             Y: =8
             ZIndex: =1
 
+    Rectangle1_10 As rectangle:
+        Fill: =theme.AppColor
+        Height: =437
+        OnSelect: =
+        Visible: =varShowAttachments
+        Width: =640
+        Y: =224
+        ZIndex: =32
+
