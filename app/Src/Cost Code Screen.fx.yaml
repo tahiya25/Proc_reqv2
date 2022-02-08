@@ -51,7 +51,7 @@
         BorderColor: |
             =ColorValue("#ccf5ff")
         BorderThickness: =1
-        Default: =""
+        Default: =varCurrentCostCode.ItemDescription
         FocusedBorderThickness: =0
         Font: =Font.Lato
         Height: =60
@@ -65,32 +65,9 @@
         Size: =18
         Visible: =IsBlank(Param("ID"))
         Width: =576
-        X: =64
-        Y: =1006
+        X: =17
+        Y: =849
         ZIndex: =5
-
-    txtRJobNoEnter_1 As text:
-        Align: =Align.Center
-        BorderColor: |
-            =ColorValue("#ccf5ff")
-        BorderThickness: =1
-        Default: =""
-        FocusedBorderThickness: =0
-        Font: =Font.Lato
-        Height: =60
-        HintText: ="Job  No"
-        HoverFill: |-
-            =ColorValue("#ccf5ff")
-        RadiusBottomLeft: =0
-        RadiusBottomRight: =0
-        RadiusTopLeft: =0
-        RadiusTopRight: =0
-        Size: =18
-        Visible: =IsBlank(Param("ID"))
-        Width: =182
-        X: =64
-        Y: =931
-        ZIndex: =6
 
     lblReqID_1 As label:
         Height: =31
@@ -207,7 +184,7 @@
         ZIndex: =15
 
     galAvailableReqItems_1 As gallery.galleryVertical:
-        Height: =261
+        Height: =403
         Items: |-
             =If(
                 !IsBlank(Param("ID")),
@@ -216,6 +193,7 @@
                        ),
             SortByColumns(Filter(ReqDetails,ReqID=varNewReqPatch.Title),"ID",Descending))
         Layout: =Layout.Vertical
+        OnSelect: =Set(varCurrentCostCode, ThisItem)
         TemplateFill: =White
         TemplateSize: =44
         Width: =635
@@ -228,7 +206,8 @@
             OnSelect: =Select(Parent)
             Size: =18
             Text: =ThisItem.Title
-            Width: =148
+            Width: =123
+            X: =25
             Y: =4
             ZIndex: =1
 
@@ -283,6 +262,14 @@
             Y: =13
             ZIndex: =4
 
+        Rectangle1 As rectangle:
+            Fill: =theme.AppColor
+            Height: =44
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =13
+            ZIndex: =5
+
     lblAddNewReq_5 As label:
         Font: =Font.Lato
         FontWeight: =Semibold
@@ -291,7 +278,7 @@
         Text: ="Part No"
         Visible: =IsBlank(Param("ID"))
         Width: =116
-        X: =10
+        X: =34
         Y: =227
         ZIndex: =17
 
@@ -305,4 +292,132 @@
         X: =171
         Y: =224
         ZIndex: =18
+
+    drpgalVendor_1 As dropdown:
+        AllowEmptySelection: =true
+        BorderColor: |-
+            =ColorValue("#ccf5ff")
+        BorderThickness: =1
+        ChevronBackground: =theme.AppColor
+        ChevronHoverBackground: =theme.AppColor
+        Default: =varCurrentCostCode.Vendor
+        FocusedBorderColor: =drpgalVendor_1.BorderColor
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        FontWeight: =Normal
+        Height: =60
+        HoverBorderColor: =ColorFade(drpgalVendor_1.BorderColor, 15%)
+        HoverFill: =RGBA(242, 242, 242,1)
+        Items: =["Vendor 1", "Vendor 2"]
+        OnChange: =
+        PressedBorderColor: =drpgalVendor_1.HoverBorderColor
+        PressedFill: =theme.AppColor
+        SelectionFill: =theme.AppColor
+        Size: =18
+        Width: =310
+        X: =17
+        Y: =726
+        ZIndex: =19
+
+    drpgalCostCode_1 As dropdown:
+        AllowEmptySelection: =true
+        BorderColor: |-
+            =ColorValue("#ccf5ff")
+        BorderThickness: =1
+        ChevronBackground: =theme.AppColor
+        ChevronHoverBackground: =theme.AppColor
+        Default: =varCurrentCostCode.CostCode
+        FocusedBorderColor: =drpgalCostCode_1.BorderColor
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        FontWeight: =Normal
+        Height: =60
+        HoverBorderColor: =ColorFade(drpgalCostCode_1.BorderColor, 15%)
+        HoverFill: |-
+            =ColorValue("#ccf5ff")
+        Items: =["Each", "LF"]
+        OnChange: =
+        PressedBorderColor: =drpgalCostCode_1.HoverBorderColor
+        PressedFill: =theme.AppColor
+        SelectionFill: =theme.AppColor
+        Size: =18
+        Width: =190
+        X: =17
+        Y: =967
+        ZIndex: =20
+
+    drpgalCat_1 As dropdown:
+        AllowEmptySelection: =true
+        BorderColor: |-
+            =ColorValue("#ccf5ff")
+        BorderThickness: =1
+        ChevronBackground: =theme.AppColor
+        ChevronHoverBackground: =theme.AppColor
+        Default: =varCurrentCostCode.Category
+        FocusedBorderColor: =drpgalCat_1.BorderColor
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        FontWeight: =Normal
+        Height: =60
+        HoverBorderColor: =ColorFade(drpgalCat_1.BorderColor, 15%)
+        HoverFill: |-
+            =ColorValue("#ccf5ff")
+        Items: =["M", "C"]
+        OnChange: =
+        PressedBorderColor: =drpgalCat_1.HoverBorderColor
+        PressedFill: =theme.AppColor
+        SelectionFill: =theme.AppColor
+        Size: =18
+        Width: =132
+        X: =238
+        Y: =967
+        ZIndex: =21
+
+    lblAddNewReq_7 As label:
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =39
+        Size: =14
+        Text: ="Manufacturer"
+        Visible: =IsBlank(Param("ID"))
+        Width: =213
+        X: =17
+        Y: =687
+        ZIndex: =22
+
+    lblAddNewReq_8 As label:
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =39
+        Size: =14
+        Text: ="Description"
+        Visible: =IsBlank(Param("ID"))
+        Width: =213
+        X: =17
+        Y: =810
+        ZIndex: =23
+
+    lblAddNewReq_9 As label:
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =39
+        Size: =14
+        Text: ="Cost Code"
+        Visible: =IsBlank(Param("ID"))
+        Width: =190
+        X: =17
+        Y: =928
+        ZIndex: =24
+
+    lblAddNewReq_10 As label:
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =39
+        Size: =14
+        Text: ="Category"
+        Visible: =IsBlank(Param("ID"))
+        Width: =131
+        X: =239
+        Y: =928
+        ZIndex: =25
 
