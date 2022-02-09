@@ -235,7 +235,6 @@
             Text: =Proper(ThisItem.ItemDescription)
             Tooltip: =ThisItem.ItemDescription
             Width: =334
-            Wrap: =false
             X: =153
             Y: =4
             ZIndex: =2
@@ -266,29 +265,6 @@
             Visible: =ThisItem.IsSelected
             Width: =13
             ZIndex: =5
-
-    lblAddNewReq_5 As label:
-        Font: =Font.Lato
-        FontWeight: =Semibold
-        Height: =37
-        Size: =14
-        Text: ="Part No"
-        Visible: =IsBlank(Param("ID"))
-        Width: =116
-        X: =34
-        Y: =227
-        ZIndex: =17
-
-    lblAddNewReq_6 As label:
-        Font: =Font.Lato
-        FontWeight: =Semibold
-        Size: =14
-        Text: ="Description"
-        Visible: =IsBlank(Param("ID"))
-        Width: =217
-        X: =171
-        Y: =224
-        ZIndex: =18
 
     drpgalVendor_CCS As dropdown:
         AllowEmptySelection: =true

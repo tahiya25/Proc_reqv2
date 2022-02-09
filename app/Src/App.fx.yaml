@@ -61,6 +61,7 @@ App As appinfo:
         );
         ClearCollect(colReqDetails, ShowColumns(Table(Defaults(ReqDetails)),"ID","Quantity","Vendor","UOM","Title","ItemDescription","CostCode","DateRequired","Required","Category"));
         Clear(colReqDetails);
+        ClearCollect(CostCodes, Filter('Completed Cost Codes', Job="TM01"))
     StartScreen: |-
         =If(
             !IsBlank(Param("ID")) ,    

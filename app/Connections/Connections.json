@@ -89,6 +89,13 @@
       "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
     },
     "datasets": {
+      "https://judlauent.sharepoint.com/sites/InformationandTechnologyArchitecture/LookupData/": {
+        "dataSources": {
+          "Completed Cost Codes": {
+            "tableName": "18430e79-eb8d-453f-ac43-de0bde9c8b45"
+          }
+        }
+      },
       "https://judlauent.sharepoint.com/sites/ITLanding/newRandD": {
         "dataSources": {
           "ReqDetails": {
@@ -110,7 +117,8 @@
       "TCReqLibrary",
       "ReqDetails",
       "ReqHeader",
-      "ReqMessages"
+      "ReqMessages",
+      "Completed Cost Codes"
     ],
     "dependencies": {},
     "dependents": [],

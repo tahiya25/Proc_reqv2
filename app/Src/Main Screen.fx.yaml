@@ -1185,7 +1185,6 @@
             Text: =Proper(ThisItem.ItemDescription)
             Tooltip: =ThisItem.ItemDescription
             Width: =334
-            Wrap: =false
             X: =153
             Y: =4
             ZIndex: =2
