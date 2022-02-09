@@ -717,7 +717,7 @@
             BorderColor: |-
                 =ColorValue("#ccf5ff")
             BorderThickness: =1
-            DefaultDate: =ThisItem.'Date Required'
+            DefaultDate: =ThisItem.DateRequired
             FocusedBorderThickness: =0
             Font: =Font.Lato
             Height: =60

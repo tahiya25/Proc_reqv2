@@ -304,7 +304,7 @@
         HoverBorderColor: =ColorFade(drpgalCostCode_CCS.BorderColor, 15%)
         HoverFill: |-
             =ColorValue("#ccf5ff")
-        Items: =["Each", "LF","083-01-1000","363-01-1000"]
+        Items: =CostCodes.Result
         OnChange: =
         PressedBorderColor: =drpgalCostCode_CCS.HoverBorderColor
         PressedFill: =theme.AppColor
@@ -453,7 +453,7 @@
                         {
                             Vendor: drpgalVendor_CCS.Selected.Value, 
                             ItemDescription:txtDescription_CCS.Text,
-                            CostCode:drpgalCostCode_CCS.Selected.Value,
+                            CostCode:drpgalCostCode_CCS.Selected.Result,
                             Category:drpgalCat_CCS.Selected.Value
                         })
                 

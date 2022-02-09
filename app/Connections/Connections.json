@@ -89,10 +89,13 @@
       "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
     },
     "datasets": {
-      "https://judlauent.sharepoint.com/sites/InformationandTechnologyArchitecture/LookupData/": {
+      "https://judlauent.sharepoint.com/sites/InformationandTechnologyArchitecture/LookupData": {
         "dataSources": {
-          "Completed Cost Codes": {
-            "tableName": "18430e79-eb8d-453f-ac43-de0bde9c8b45"
+          "Final Cost Codes": {
+            "tableName": "33e75ef8-7ed6-4df8-9728-f0d287f49ae8"
+          },
+          "Unit of Measure": {
+            "tableName": "301c25e1-7ceb-4667-912c-9d824c0274fb"
           }
         }
       },
@@ -118,7 +121,8 @@
       "ReqDetails",
       "ReqHeader",
       "ReqMessages",
-      "Completed Cost Codes"
+      "Final Cost Codes",
+      "Unit of Measure"
     ],
     "dependencies": {},
     "dependents": [],
