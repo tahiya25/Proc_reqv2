@@ -424,10 +424,10 @@
             Font: =Font.Lato
             Height: =30
             Size: =10
-            Text: ="Sending Report......."
+            Text: ="Generating Report......."
             Visible: =varshowpreloader
-            Width: =125
-            X: =1002
+            Width: =179
+            X: =948
             Y: =699
             ZIndex: =21
 
