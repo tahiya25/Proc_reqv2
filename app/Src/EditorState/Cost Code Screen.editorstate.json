@@ -2042,7 +2042,23 @@
       "Y",
       "Width",
       "Height",
-      "ZIndex"
+      "ZIndex",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "ShowNavigation",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "ShowScrollbar",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      }
     ],
     "GalleryTemplateChildName": "galleryTemplate1",
     "HasDynamicProperties": false,
@@ -2055,7 +2071,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "galCCAttachments",
-    "ParentIndex": 7,
+    "ParentIndex": 3,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -2176,6 +2192,16 @@
       {
         "Category": "Design",
         "PropertyName": "DisabledBorderColor",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Design",
+        "PropertyName": "ShowNavigation",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Design",
+        "PropertyName": "ShowScrollbar",
         "RuleProviderType": "Unknown"
       }
     ],
@@ -5241,7 +5267,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblAddNewReq_1",
-    "ParentIndex": 3,
+    "ParentIndex": 4,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -5544,7 +5570,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblAddNewReq_2",
-    "ParentIndex": 4,
+    "ParentIndex": 5,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -5847,7 +5873,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblAddNewReq_3",
-    "ParentIndex": 5,
+    "ParentIndex": 6,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -6150,7 +6176,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblAddNewReq_4",
-    "ParentIndex": 6,
+    "ParentIndex": 7,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {

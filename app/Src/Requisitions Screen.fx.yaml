@@ -5,8 +5,9 @@
     "galRequisitions As gallery.'BrowseLayout_Flexible_NewsFeed_ver4.0'":
         Fill: =White
         Height: =1031
-        Items: =ReqHeader
+        Items: =SortByColumns(ReqHeader,"ID",Descending)
         Layout: =Layout.Vertical
+        OnSelect: =Set(varCurrentReqHeader, ThisItem)
         ShowScrollbar: =false
         TemplateFill: =Transparent
         TemplateSize: =790
@@ -17,7 +18,7 @@
 
         Title5 As label:
             Font: =Font.Lato
-            Height: =Self.Size * 1.8
+            Height: =42
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
@@ -27,7 +28,7 @@
                 ="Project No: " & ThisItem.JobNo
             VerticalAlign: =VerticalAlign.Top
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
-            Width: =Parent.TemplateWidth - Image6.Width - 80
+            Width: =268
             X: =32
             Y: =80
             ZIndex: =1
@@ -40,6 +41,7 @@
             TemplatePadding: =0
             TemplateSize: =34
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =621
             Y: =291
             ZIndex: =1
 
@@ -52,8 +54,7 @@
                 Size: =16
                 Text: =Proper(ThisItem.ItemDescription)
                 Tooltip: =Proper(ThisItem.ItemDescription)
-                Width: =371
-                Wrap: =false
+                Width: =321
                 X: =4
                 ZIndex: =1
 
@@ -68,7 +69,7 @@
                 Tooltip: =ThisItem.Title
                 Width: =63
                 Wrap: =false
-                X: =375
+                X: =325
                 ZIndex: =3
 
             Label4_3 As label:
@@ -80,9 +81,9 @@
                 Size: =16
                 Text: =ThisItem.UOM
                 Tooltip: =ThisItem.Title
-                Width: =54
+                Width: =72
                 Wrap: =false
-                X: =438
+                X: =388
                 ZIndex: =4
 
             Label4_4 As label:
@@ -94,9 +95,9 @@
                 Size: =16
                 Text: =ThisItem.CostCode
                 Tooltip: =ThisItem.CostCode
-                Width: =133
+                Width: =165
                 Wrap: =false
-                X: =492
+                X: =460
                 ZIndex: =5
 
         Image6 As image:
@@ -472,6 +473,22 @@
             X: =300
             Y: =122
             ZIndex: =25
+
+        Body4_11 As label:
+            Font: =Font.Lato
+            Height: =31
+            OnSelect: =Set(varCurrentReqHeader, ThisItem); Navigate('Cost Code Screen')
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Details"
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =158
+            X: =274
+            Y: =80
+            ZIndex: =26
 
     Image2 As image:
         Height: =65

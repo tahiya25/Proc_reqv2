@@ -28,7 +28,7 @@
         Image1_6 As image:
             Height: =86
             Image: =RecProc
-            OnSelect: =Back()
+            OnSelect: =Navigate('Requisitions Screen')
             Width: =94
             ZIndex: =3
 
@@ -84,8 +84,8 @@
         Text: |-
             =If(
                 !IsBlank(Param("ID")),
-                LookUp(ReqHeader,Title=Param("ID"),Title),
-            If(!IsBlank(varNewReqPatch),varNewReqPatch.Title,""))
+                LookUp(ReqHeader,Title=Param("ID"),Title)
+            ,varCurrentReqHeader.Title,"")
         Width: =116
         X: =34
         Y: =156
@@ -99,7 +99,7 @@
             =If(
                 !IsBlank(Param("ID")),
                 LookUp(ReqHeader,Title=Param("ID"),Status.Value),
-            If(!IsBlank(varNewReqPatch),varNewReqPatch.Status.Value,""))
+            varCurrentReqHeader.Status.Value,"")
         Width: =106
         X: =447
         Y: =156
@@ -113,7 +113,7 @@
             =If(
                 !IsBlank(Param("ID")),
                 LookUp(ReqHeader,Title=Param("ID"),JobNo),
-            If(!IsBlank(varNewReqPatch),varNewReqPatch.JobNo,""))
+            varCurrentReqHeader.JobNo,"")
         Width: =89
         X: =150
         Y: =156
@@ -122,13 +122,17 @@
     lblReqDescription_1 As label:
         Height: =31
         Size: =16
-        Text: =If(!IsBlank(varNewReqPatch),varNewReqPatch.DeliveryLoc,"")
+        Text: |-
+            =If(
+                !IsBlank(Param("ID")),
+                LookUp(ReqHeader,Title=Param("ID"),DeliveryLoc),
+            varCurrentReqHeader.DeliveryLoc,"")
         Tooltip: |-
             =If(
                 !IsBlank(Param("ID")),
                 LookUp(ReqHeader,Title=Param("ID"),DeliveryLoc),
             If(!IsBlank(varNewReqPatch),varNewReqPatch.DeliveryLoc,""))
-        Width: =252
+        Width: =218
         X: =247
         Y: =156
         ZIndex: =10
@@ -585,7 +589,7 @@
         ZIndex: =33
 
     galCCAttachments As gallery.galleryVertical:
-        Height: =74
+        Height: =98
         Items: |-
             =
             If(
@@ -604,10 +608,11 @@
                 ).Attachments
             );
             Set(varShowCCAttachements, true)
-        TemplateSize: =60
-        Width: =76
-        X: =546
-        Y: =135
+        ShowScrollbar: =false
+        TemplateSize: =92
+        Width: =149
+        X: =490
+        Y: =103
         ZIndex: =34
 
         lblReqID_2 As label:
@@ -617,8 +622,8 @@
             Size: =16
             Text: =CountRows(ThisItem.Attachments)
             Width: =36
-            X: =4
-            Y: =8
+            X: =60
+            Y: =40
             ZIndex: =1
 
     Image4 As image:
