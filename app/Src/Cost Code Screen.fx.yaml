@@ -50,7 +50,6 @@
         Height: =37
         Size: =14
         Text: ="Req No"
-        Visible: =IsBlank(Param("ID"))
         Width: =116
         X: =34
         Y: =119
@@ -147,7 +146,6 @@
         Height: =37
         Size: =14
         Text: ="Job No"
-        Visible: =IsBlank(Param("ID"))
         Width: =116
         X: =150
         Y: =119
@@ -159,7 +157,6 @@
         Height: =37
         Size: =14
         Text: ="Ship Location"
-        Visible: =IsBlank(Param("ID"))
         Width: =158
         X: =263
         Y: =119
@@ -172,7 +169,6 @@
         Height: =37
         Size: =14
         Text: ="Status"
-        Visible: =IsBlank(Param("ID"))
         Width: =99
         X: =447
         Y: =119
@@ -635,4 +631,27 @@
         X: =561
         Y: =237
         ZIndex: =35
+
+    lblAddNewReq_5 As label:
+        Align: =Align.Center
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =37
+        Size: =14
+        Text: ="Part No"
+        Width: =116
+        X: =17
+        Y: =221
+        ZIndex: =36
+
+    lblAddNewReq_6 As label:
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =31
+        Size: =14
+        Text: ="Description"
+        Width: =244
+        X: =177
+        Y: =227
+        ZIndex: =37
 
