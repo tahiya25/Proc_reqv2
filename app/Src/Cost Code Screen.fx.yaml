@@ -277,7 +277,7 @@
         Height: =60
         HoverBorderColor: =ColorFade(drpgalVendor_CCS.BorderColor, 15%)
         HoverFill: =RGBA(242, 242, 242,1)
-        Items: =["Vendor 1", "Vendor 2"]
+        Items: =["Vendor 1", "Vendor 2","POWE12"]
         OnChange: =
         PressedBorderColor: =drpgalVendor_CCS.HoverBorderColor
         PressedFill: =theme.AppColor
@@ -304,13 +304,13 @@
         HoverBorderColor: =ColorFade(drpgalCostCode_CCS.BorderColor, 15%)
         HoverFill: |-
             =ColorValue("#ccf5ff")
-        Items: =["Each", "LF"]
+        Items: =["Each", "LF","083-01-1000","363-01-1000"]
         OnChange: =
         PressedBorderColor: =drpgalCostCode_CCS.HoverBorderColor
         PressedFill: =theme.AppColor
         SelectionFill: =theme.AppColor
         Size: =18
-        Width: =190
+        Width: =262
         X: =17
         Y: =967
         ZIndex: =20
@@ -338,7 +338,7 @@
         SelectionFill: =theme.AppColor
         Size: =18
         Width: =132
-        X: =238
+        X: =309
         Y: =967
         ZIndex: =21
 
@@ -386,7 +386,7 @@
         Text: ="Category"
         Visible: =IsBlank(Param("ID"))
         Width: =131
-        X: =239
+        X: =310
         Y: =928
         ZIndex: =25
 
