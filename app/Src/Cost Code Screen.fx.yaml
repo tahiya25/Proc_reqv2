@@ -473,7 +473,6 @@
             Size: =20
             Text: =""
             Tooltip: ="Save Change Records"
-            Visible: =!IsBlank(varNewReqPatch)
             Width: =169
             X: =436
             Y: =1051

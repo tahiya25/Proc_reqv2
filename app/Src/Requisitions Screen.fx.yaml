@@ -505,7 +505,7 @@
             Fill: =theme.AppColor
             Height: =86
             OnSelect: =
-            Width: =548
+            Width: =552
             X: =88
             Y: =6
             ZIndex: =2
