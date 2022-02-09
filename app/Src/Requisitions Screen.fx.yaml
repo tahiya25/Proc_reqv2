@@ -474,24 +474,25 @@
             Y: =122
             ZIndex: =25
 
-    Image2 As image:
-        Height: =65
-        Image: |-
-            ="data:image/svg+xml," & 
-             EncodeUrl(
-                "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
-              <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
-               <path fill='White'
-            d='M128 1280v128h1792v-128h-1792zM128 1920h1792v-128h-1792v128zM128 768v128h1792v-128h-1792zM128 256v128h1792v-128h-1792z' />
-              </g>
-            
-            </svg>"
-            )
-        OnSelect: =If(varShowMenu, Set(varShowMenu, false),Set(varShowMenu, true))
-        Width: =71
-        X: =553
-        Y: =16
-        ZIndex: =5
+        Image2_2 As image:
+            Height: =50
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='" & theme.AppColorText &"'
+                d='M128 1280v128h1792v-128h-1792zM128 1920h1792v-128h-1792v128zM128 768v128h1792v-128h-1792zM128 256v128h1792v-128h-1792z' />
+                  </g>
+                
+                </svg>"
+                )
+            OnSelect: =If(varShowMenu, Set(varShowMenu, false),Set(varShowMenu, true))
+            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
+            Width: =50
+            X: =441
+            Y: =83
+            ZIndex: =26
 
     grp_Header_RS_1 As group:
         Height: =5
@@ -532,10 +533,149 @@
     rctMenu As rectangle:
         Fill: |-
             =ColorValue("#ccf5ff")
-        Height: =1044
+        Height: =312
         Visible: =varShowMenu
-        Width: =101
-        X: =538
-        Y: =92
+        Width: =639
+        Y: =823
         ZIndex: =6
+
+    grp_SendEmail_1 As group:
+        Height: =5
+        Width: =5
+        X: =-659
+        Y: =-530
+        ZIndex: =8
+
+        Image8_1 As image:
+            Height: =40
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                  <path fill='"& theme.AppColorText & "'
+                d='M1280 1152q-80 0 -149.5 -30t-122 -82.5t-82.5 -122.5t-30 -149q0 -92 -41 -173t-115 -136q65 -33 117.5 -81.5t89.5 -108t57 -128t20 -141.5h-128q0 79 -30 149t-82.5 122.5t-122.5 82.5t-149 30q-80 0 -149.5 -30t-122 -82.5t-82.5 -122.5t-30 -149h-128q0 73 20 141.5t57 128t89.5 108t117.5 81.5q-74 55 -115 136t-41 173q0 79 30 149t82.5 122.5t122 82.5t149.5 30q92 0 173 -41t136 -115q38 75 97 134t134 97q-74 55 -115 136t-41 173q0 79 30 149t82.5 122.5t122 82.5t149.5 30q79 0 149 -30t122.5 -82.5t82.5 -122.5t30 -149q0 -92 -41 -173t-115 -136q65 -33 117.5 -81.5t89.5 -108t57 -128t20 -141.5h-128q0 79 -30 149t-82.5 122.5t-122.5 82.5t-149 30zM1024 1536q0 -53 20 -99.5t55 -81.5t81.5 -55t99.5 -20t99.5 20t81.5 55t55 81.5t20 99.5t-20 99.5t-55 81.5t-81.5 55t-99.5 20t-99.5 -20t-81.5 -55t-55 -81.5t-20 -99.5zM512 512q53 0 99.5 20t81.5 55t55 81.5t20 99.5t-20 99.5t-55 81.5t-81.5 55t-99.5 20t-99.5 -20t-81.5 -55t-55 -81.5t-20 -99.5t20 -99.5t55 -81.5t81.5 -55t99.5 -20zM2048 256h-256v-256h-128v256h-256v128h256v256h128v-256h256v-128z' />
+                  </g>
+                
+                </svg>"
+                )
+            Visible: =varShowMenu
+            Width: =40
+            X: =84
+            Y: =908
+            ZIndex: =7
+
+        Label2_7 As label:
+            Color: =theme.AppColor
+            Font: =Font.Lato
+            FontWeight: =Bold
+            Height: =42
+            PaddingLeft: =7
+            Size: =16
+            Text: ="Send to vendor"
+            Visible: =varShowMenu
+            Width: =120
+            X: =124
+            Y: =913
+            ZIndex: =9
+
+        btnSave_3 As button:
+            BorderColor: =theme.AppColor
+            BorderThickness: =1
+            Color: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =theme.DarkBlue
+            FocusedBorderThickness: =1
+            Height: =68
+            HoverBorderColor: =theme.Orange
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: =Set(varMenu, true)
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Visible: =varShowMenu
+            Width: =168
+            X: =72
+            Y: =900
+            ZIndex: =10
+
+    grp_SendEmail_2 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =12
+
+        Image8_2 As image:
+            Height: =40
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                  <path fill='"& theme.AppColorText & "'
+                d='M2038 560l-124 -51q12 -62 0 -122l124 -51l-49 -119l-124 52q-17 -25 -38.5 -47t-47.5 -39l52 -124l-119 -49l-51 124q-30 -6 -61 -6t-61 6l-51 -124l-119 49l52 124q-51 35 -86 86l-124 -52l-49 119l124 51q-12 61 0 122l-124 51l49 119l124 -52q35 51 86 86l-52 124l119 49l51 -124q62 12 122 0l51 124l119 -49l-52 -124q25 -17 47 -38.5t39 -47.5l124 52zM1673 271q37 15 63.5 42.5t40.5 61.5t14.5 72t-14.5 74q-14 36 -41 63t-63 41q-35 15 -73 15q-39 0 -73 -15q-36 -14 -63 -41t-41 -63q-31 -73 0 -146q14 -36 41 -63t63 -41q73 -31 146 0zM2048 1920v-896h-128v384h-1792v-1024h896v-128h-1024v1664h2048zM1920 1536v256h-1792v-256h1792zM896 640v140q-31 11 -60 34l-121 -69l-64 110l120 70q-3 16 -3 35q0 18 3 35l-120 70l64 110l121 -69q29 23 60 34v140h128v-140q17 -6 31.5 -14.5t28.5 -19.5l121 69l64 -110l-120 -70q3 -17 3 -35q0 -19 -3 -35l120 -70l-64 -110l-121 69q-14 -11 -28.5 -19.5t-31.5 -14.5v-140h-128zM864 960q0 -40 28 -68t68 -28t68 28t28 68t-28 68t-68 28t-68 -28t-28 -68z' />
+                  </g>
+                
+                </svg>"
+                )
+            Visible: =varShowMenu
+            Width: =40
+            X: =291
+            Y: =908
+            ZIndex: =11
+
+        Label2_8 As label:
+            Color: =theme.AppColor
+            Font: =Font.Lato
+            FontWeight: =Bold
+            Height: =42
+            PaddingLeft: =7
+            Size: =16
+            Text: ="Send to CMiC"
+            Visible: =varShowMenu
+            Width: =120
+            X: =331
+            Y: =913
+            ZIndex: =13
+
+        btnSave_4 As button:
+            BorderColor: =theme.AppColor
+            BorderThickness: =1
+            Color: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =theme.DarkBlue
+            FocusedBorderThickness: =1
+            Height: =68
+            HoverBorderColor: =theme.Orange
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: =Set(varMenu, true)
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Visible: =varShowMenu
+            Width: =168
+            X: =279
+            Y: =900
+            ZIndex: =14
 
