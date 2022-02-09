@@ -4924,7 +4924,7 @@
       },
       {
         "Category": "Data",
-        "NameMap": "{\"Value\":\"Value\"}",
+        "NameMap": "{\"Value\":\"Result\"}",
         "PropertyName": "Items",
         "RuleProviderType": "Unknown"
       },
@@ -5793,7 +5793,7 @@
       },
       {
         "Category": "Data",
-        "NameMap": "{\"Value\":\"Value\"}",
+        "NameMap": "{\"Value\":\"Title\"}",
         "PropertyName": "Items",
         "RuleProviderType": "Unknown"
       },

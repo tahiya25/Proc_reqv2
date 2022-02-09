@@ -348,12 +348,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         
                         }),
@@ -362,12 +362,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         })
                 )        
@@ -401,12 +401,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         
                         }),
@@ -415,12 +415,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         })
                 )        
@@ -458,12 +458,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         
                         }),
@@ -472,12 +472,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         })
                 )        
@@ -509,12 +509,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         
                         }),
@@ -523,12 +523,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         })
                 )        
@@ -558,7 +558,7 @@
             HoverBorderColor: =ColorFade(drpgalUOM.BorderColor, 15%)
             HoverFill: |-
                 =ColorValue("#ccf5ff")
-            Items: =["Each", "LF"]
+            Items: ='Unit of Measure'.Code
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -567,12 +567,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         
                         }),
@@ -581,12 +581,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         })
                 )        
@@ -615,7 +615,7 @@
             HoverBorderColor: =ColorFade(drpgalCostCode.BorderColor, 15%)
             HoverFill: |-
                 =ColorValue("#ccf5ff")
-            Items: =["Each", "LF"]
+            Items: =CostCodes.Result
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -624,12 +624,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         
                         }),
@@ -638,12 +638,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         })
                 )        
@@ -681,12 +681,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         
                         }),
@@ -695,12 +695,12 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Value,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         })
                 )        
@@ -788,7 +788,7 @@
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         
                         }),
@@ -802,7 +802,7 @@
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Value,
+                        CostCode:drpgalCostCode.Selected.Result,
                         Category:drpgalCat.Selected.Value
                         })
                 )        
