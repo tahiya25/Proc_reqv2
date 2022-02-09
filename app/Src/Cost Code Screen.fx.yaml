@@ -418,7 +418,6 @@
                 
                 </svg>"
                 )
-            Visible: =!IsBlank(varNewReqPatch)
             Width: =40
             X: =447
             Y: =1064
@@ -429,7 +428,6 @@
             PaddingLeft: =10
             Size: =14
             Text: ="Update  Details"
-            Visible: =!IsBlank(varNewReqPatch)
             Width: =118
             X: =487
             Y: =1068
