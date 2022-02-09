@@ -6,8 +6,8 @@
         Fill: =theme.Orange
         Height: =50
         Width: =50
-        X: =545
-        Y: =141
+        X: =561
+        Y: =137
         ZIndex: =1
 
     grp_Header_RS_2 As group:
@@ -56,7 +56,7 @@
         Y: =119
         ZIndex: =5
 
-    txtDeliveryLoc_CCS As text:
+    txtDescription_CCS As text:
         BorderColor: |
             =ColorValue("#ccf5ff")
         BorderThickness: =1
@@ -85,8 +85,9 @@
             =If(
                 !IsBlank(Param("ID")),
                 LookUp(ReqHeader,Title=Param("ID"),Title)
-            ,varCurrentReqHeader.Title,"")
+            ,varCurrentReqHeader.Title)
         Width: =116
+        Wrap: =false
         X: =34
         Y: =156
         ZIndex: =7
@@ -99,8 +100,9 @@
             =If(
                 !IsBlank(Param("ID")),
                 LookUp(ReqHeader,Title=Param("ID"),Status.Value),
-            varCurrentReqHeader.Status.Value,"")
+            varCurrentReqHeader.Status.Value)
         Width: =106
+        Wrap: =false
         X: =447
         Y: =156
         ZIndex: =8
@@ -113,8 +115,9 @@
             =If(
                 !IsBlank(Param("ID")),
                 LookUp(ReqHeader,Title=Param("ID"),JobNo),
-            varCurrentReqHeader.JobNo,"")
+            varCurrentReqHeader.JobNo)
         Width: =89
+        Wrap: =false
         X: =150
         Y: =156
         ZIndex: =9
@@ -126,13 +129,14 @@
             =If(
                 !IsBlank(Param("ID")),
                 LookUp(ReqHeader,Title=Param("ID"),DeliveryLoc),
-            varCurrentReqHeader.DeliveryLoc,"")
+            varCurrentReqHeader.DeliveryLoc)
         Tooltip: |-
             =If(
                 !IsBlank(Param("ID")),
                 LookUp(ReqHeader,Title=Param("ID"),DeliveryLoc),
             If(!IsBlank(varNewReqPatch),varNewReqPatch.DeliveryLoc,""))
         Width: =218
+        Wrap: =false
         X: =247
         Y: =156
         ZIndex: =10
@@ -204,7 +208,7 @@
                 Filter(
                     ReqDetails,ReqID=(Param("ID"))
                        ),
-            SortByColumns(Filter(ReqDetails,ReqID=varNewReqPatch.Title),"ID",Descending))
+            SortByColumns(Filter(ReqDetails,ReqID=varCurrentReqHeader.Title),"ID",Descending))
         Layout: =Layout.Vertical
         OnSelect: =Set(varCurrentCostCode, ThisItem)
         TemplateFill: =White
@@ -445,14 +449,14 @@
             Visible: =!IsBlank(varNewReqPatch)
             Width: =40
             X: =447
-            Y: =1068
+            Y: =1064
             ZIndex: =26
 
         Label2_1 As label:
             Color: =theme.AppColor
             PaddingLeft: =10
             Size: =14
-            Text: ="Update "
+            Text: ="Update  Details"
             Visible: =!IsBlank(varNewReqPatch)
             Width: =118
             X: =487
@@ -473,8 +477,19 @@
             HoverBorderColor: =theme.Orange
             HoverColor: =theme.AppColor
             HoverFill: =Transparent
-            OnSelect: |
-                =Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:varNewReqPatch.Title});
+            OnSelect: |+
+                =
+                    Patch(ReqDetails,LookUp(ReqDetails,ID=varCurrentCostCode.ID),
+                        {
+                            Vendor: drpgalVendor_CCS.Selected.Value, 
+                            ItemDescription:txtDescription_CCS.Text,
+                            CostCode:drpgalCostCode_CCS.Selected.Value,
+                            Category:drpgalCat_CCS.Selected.Value
+                        })
+                
+                
+                
+                
             PaddingLeft: =50
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
@@ -595,7 +610,7 @@
             If(
                 !IsBlank(Param("ID")),
                 Filter(ReqHeader,Title=Param("ID")),
-            If(!IsBlank(varNewReqPatch),Filter(ReqHeader,Title=varNewReqPatch.Title)))
+            Filter(ReqHeader,Title=varCurrentReqHeader.Title))
         Layout: =Layout.Vertical
         OnSelect: |-
             =ClearCollect(
@@ -611,7 +626,7 @@
         ShowScrollbar: =false
         TemplateSize: =92
         Width: =149
-        X: =490
+        X: =491
         Y: =103
         ZIndex: =34
 
@@ -622,7 +637,7 @@
             Size: =16
             Text: =CountRows(ThisItem.Attachments)
             Width: =36
-            X: =60
+            X: =73
             Y: =40
             ZIndex: =1
 

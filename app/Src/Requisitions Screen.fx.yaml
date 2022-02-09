@@ -7,7 +7,7 @@
         Height: =1031
         Items: =SortByColumns(ReqHeader,"ID",Descending)
         Layout: =Layout.Vertical
-        OnSelect: =Set(varCurrentReqHeader, ThisItem)
+        OnSelect: =Set(varCurrentReqHeader, ThisItem); Navigate('Cost Code Screen')
         ShowScrollbar: =false
         TemplateFill: =Transparent
         TemplateSize: =790
@@ -473,22 +473,6 @@
             X: =300
             Y: =122
             ZIndex: =25
-
-        Body4_11 As label:
-            Font: =Font.Lato
-            Height: =31
-            OnSelect: =Set(varCurrentReqHeader, ThisItem); Navigate('Cost Code Screen')
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Text: ="Details"
-            VerticalAlign: =VerticalAlign.Top
-            Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
-            Width: =158
-            X: =274
-            Y: =80
-            ZIndex: =26
 
     Image2 As image:
         Height: =65

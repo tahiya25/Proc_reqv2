@@ -734,19 +734,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Cost Code Screen.txtDeliveryLoc_CCS.AccessibleLabel"
+                  "fullyQualifiedName": "Cost Code Screen.txtDescription_CCS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Cost Code Screen.txtDeliveryLoc_CCS.AccessibleLabel",
+                  "fullyQualifiedName": "Cost Code Screen.txtDescription_CCS.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Cost Code Screen",
-                "type": "Cost Code Screen.txtDeliveryLoc_CCS"
+                "type": "Cost Code Screen.txtDescription_CCS"
               }
             }
           ],
@@ -764,19 +764,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Cost Code Screen.txtDeliveryLoc_CCS.FocusedBorderThickness"
+                  "fullyQualifiedName": "Cost Code Screen.txtDescription_CCS.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Cost Code Screen.txtDeliveryLoc_CCS.FocusedBorderThickness",
+                  "fullyQualifiedName": "Cost Code Screen.txtDescription_CCS.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "FocusedBorderThickness",
                 "module": "Cost Code Screen",
-                "type": "Cost Code Screen.txtDeliveryLoc_CCS"
+                "type": "Cost Code Screen.txtDescription_CCS"
               }
             }
           ],
@@ -3687,66 +3687,6 @@
                 "member": "TabIndex",
                 "module": "Messages Screen",
                 "type": "Messages Screen.Image1_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Requisitions Screen.galRequisitions.Body4_11.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Requisitions Screen.galRequisitions.Body4_11.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "Requisitions Screen",
-                "type": "Requisitions Screen.galRequisitions.Body4_11"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Requisitions Screen.galRequisitions.Body4_11.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Requisitions Screen.galRequisitions.Body4_11.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Requisitions Screen",
-                "type": "Requisitions Screen.galRequisitions.Body4_11"
               }
             }
           ],
