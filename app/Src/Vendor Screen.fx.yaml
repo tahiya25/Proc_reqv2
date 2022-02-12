@@ -177,7 +177,7 @@
             Font: =Font.Lato
             OnSelect: =Select(Parent)
             Size: =10
-            Text: =LookUp('IPC Invoice Payment Detail Log', 'Invoice Number'=Label2_2.Text).'Check Number'
+            Text: =LookUp('IPC Invoice Payment Detail Log', InvoiceNumber=Label2_2.Text).Check_x0020_Number
             Width: =58
             X: =781
             Y: =5
@@ -440,22 +440,22 @@
         ZIndex: =22
 
         Image2 As image:
-            Height: =53
+            Height: =42
             Image: =autopreloader
             Visible: =varshowpreloader
-            Width: =55
-            X: =1109
-            Y: =689
+            Width: =52
+            X: =1070
+            Y: =710
             ZIndex: =20
 
         Label6 As label:
             Font: =Font.Lato
             Height: =30
             Size: =10
-            Text: ="Generating Report......."
+            Text: ="Generating Report"
             Visible: =varshowpreloader
-            Width: =179
-            X: =948
-            Y: =699
+            Width: =126
+            X: =1025
+            Y: =680
             ZIndex: =21
 
