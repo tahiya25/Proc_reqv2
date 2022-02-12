@@ -91,8 +91,8 @@
         Text: =LookUp('Cash Requirement HTML',Title=Text(varCurrentCheck.FileIDNumber),Timeline)
         VerticalAlign: =VerticalAlign.Top
         Visible: =varShowVendorTimeline
-        Width: =418
-        X: =948
+        Width: =353
+        X: =1013
         Y: =218
         ZIndex: =13
 
@@ -105,7 +105,7 @@
         OnSelect: =Set(varCurrentCheck,ThisItem)
         TemplateFill: =White
         TemplateSize: =52
-        Width: =916
+        Width: =986
         X: =15
         Y: =242
         ZIndex: =14
@@ -148,7 +148,7 @@
             Size: =11
             Text: |-
                 =Text(ThisItem.Amt,"[$-en-US]$###,###")
-            Width: =133
+            Width: =109
             X: =571
             Y: =5
             ZIndex: =4
@@ -159,7 +159,7 @@
             Size: =11
             Text: =ThisItem.'Job No'
             Width: =89
-            X: =704
+            X: =680
             Y: =5
             ZIndex: =5
 
@@ -168,9 +168,20 @@
             OnSelect: =Select(Parent)
             Size: =11
             Text: =ThisItem.FileIDNumber
-            Width: =66
-            X: =822
+            Width: =36
+            X: =855
+            Y: =5
             ZIndex: =6
+
+        Label5 As label:
+            Font: =Font.Lato
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: =LookUp('IPC Invoice Payment Detail Log', 'Invoice Number'=Label2_2.Text).'Check Number'
+            Width: =58
+            X: =781
+            Y: =5
+            ZIndex: =10
 
         grpTimeline_GV As group:
             Height: =5
@@ -194,7 +205,7 @@
                     )
                 Visible: =ThisItem.IsSelected
                 Width: =30
-                X: =858
+                X: =919
                 Y: =10
                 ZIndex: =7
 
@@ -220,7 +231,7 @@
                 Tooltip: ="Save Change Records"
                 Visible: =ThisItem.IsSelected
                 Width: =61
-                X: =844
+                X: =905
                 ZIndex: =9
 
     grpGalDetailsHeader As group:
@@ -308,7 +319,7 @@
             Text: ="Job No"
             VerticalAlign: =VerticalAlign.Top
             Width: =49
-            X: =735
+            X: =707
             Y: =218
             ZIndex: =11
 
@@ -325,7 +336,7 @@
             Text: ="Check Run ID"
             VerticalAlign: =VerticalAlign.Top
             Width: =91
-            X: =803
+            X: =857
             Y: =218
             ZIndex: =12
 
@@ -403,6 +414,23 @@
             X: =1164
             Y: =691
             ZIndex: =17
+
+    lblgalLocation_7 As label:
+        Align: =Align.Center
+        Font: =Font.Lato
+        Height: =24
+        OnSelect: =
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =10
+        Text: ="Check No"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =64
+        X: =778
+        Y: =218
+        ZIndex: =22
 
     Grpvarpreloader As group:
         Height: =5
