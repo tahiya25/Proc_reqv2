@@ -6,7 +6,8 @@
             =ColorValue("#ccf5ff")
         Height: =111
         Width: =639
-        Y: =1024
+        X: =1
+        Y: =1025
         ZIndex: =1
 
     icnAddNewReq As icon.Add:
@@ -348,7 +349,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -362,7 +363,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -401,7 +402,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -415,7 +416,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -458,7 +459,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -472,7 +473,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -485,7 +486,7 @@
             PressedFill: =theme.AppColor
             SelectionFill: =theme.AppColor
             Size: =18
-            Width: =213
+            Width: =378
             X: =228
             Y: =45
             ZIndex: =3
@@ -509,7 +510,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -523,7 +524,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -558,7 +559,7 @@
             HoverBorderColor: =ColorFade(drpgalUOM.BorderColor, 15%)
             HoverFill: |-
                 =ColorValue("#ccf5ff")
-            Items: ='Unit of Measure'.Title
+            Items: ='Unit of Measure'.Code
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -567,7 +568,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -581,7 +582,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -624,7 +625,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -638,7 +639,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -681,7 +682,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -695,7 +696,7 @@
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
                         Vendor:drpgalVendor.Selected.Value,
-                        UOM:drpgalUOM.Selected.Title,
+                        UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -717,7 +718,7 @@
             BorderColor: |-
                 =ColorValue("#ccf5ff")
             BorderThickness: =1
-            DefaultDate: =ThisItem.DateRequired
+            DefaultDate: =ThisItem.'Date Required'
             FocusedBorderThickness: =0
             Font: =Font.Lato
             Height: =60
@@ -955,7 +956,7 @@
 
     lblReqIDStatus As label:
         Align: =Align.Center
-        Color: =RGBA(179, 179, 179, 1)
+        Color: =If(varNewReqPatch.Status.Value="New",Green,   RGBA(179, 179, 179, 1))
         Height: =31
         Size: =16
         Text: |-
