@@ -400,7 +400,10 @@
             HoverBorderColor: =theme.Orange
             HoverColor: =Transparent
             HoverFill: =Transparent
-            OnSelect: =Set(varshowpreloader,true);Set(varFileLink,IPCCheckrunPDFReport.Run(varVendorCode,varFileID).filelink);Launch(varFileLink);Set(varshowpreloader,false);
+            OnSelect: |+
+                =Set(varshowpreloader,true);Set(varFileLink,IPCCheckrunPDFReport.Run(varVendorCode,varFileID,User().Email).filelink);Launch(varFileLink);Set(varshowpreloader,false);
+                
+                
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent

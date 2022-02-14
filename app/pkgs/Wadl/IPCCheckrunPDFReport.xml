@@ -4,9 +4,11 @@
     <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <string name="ManualTriggerInput_Initializevariable-VarVendorCode_Value_def" />
       <string name="ManualTriggerInput_Initializevariable-VarFileID_Value_def" />
+      <string name="ManualTriggerInput_Initializevariable_Value_def" />
       <object name="ManualTriggerInput">
         <property name="Initializevariable-VarVendorCode_Value" type="string" />
         <property name="Initializevariable-VarFileID_Value" type="string" />
+        <property name="Initializevariable_Value" type="string" />
       </object>
       <string name="ResponseActionOutput_filelink_def" />
       <object name="ResponseActionOutput">
@@ -27,6 +29,7 @@
           <representation mediaType="application/json">
             <param style="plain" name="Initializevariable-VarVendorCode_Value" path="/Initializevariable-VarVendorCode_Value" type="xs:string" required="true" />
             <param style="plain" name="Initializevariable-VarFileID_Value" path="/Initializevariable-VarFileID_Value" type="xs:string" required="true" />
+            <param style="plain" name="Initializevariable_Value" path="/Initializevariable_Value" type="xs:string" required="true" />
           </representation>
         </request>
         <response>
