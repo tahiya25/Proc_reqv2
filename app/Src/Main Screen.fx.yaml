@@ -1035,7 +1035,7 @@
         Height: =70
         Size: =21
         Text: ="No Requisition Details available !"
-        Visible: =And(varShowNewReqDetails , CountRows(Filter(ReqDetails,ReqID=txtRJobNoEnter.Text & "-" &    Text(NewReqAdded.ID +1)))=0)
+        Visible: =And(varShowNewReqDetails , CountRows(Filter(ReqDetails,ReqID=varNewReqPatch.Title))=0)
         Width: =493
         X: =39
         Y: =92
@@ -1080,7 +1080,7 @@
             HoverBorderColor: =Transparent
             HoverColor: =Transparent
             HoverFill: =Transparent
-            Icon: =Icon.Save
+            Icon: =Icon.Currency
             OnSelect: |-
                 =If(
                     CountRows(colReqDetails) > 0,
@@ -1099,7 +1099,7 @@
             PressedFill: =Transparent
             Tooltip: ="Save Change Records"
             Width: =50
-            X: =550
+            X: =561
             Y: =1048
             ZIndex: =17
 
@@ -1107,9 +1107,9 @@
             Color: =theme.AppColor
             Height: =27
             Size: =16
-            Text: ="Save Req"
+            Text: ="To Code"
             Width: =100
-            X: =525
+            X: =536
             Y: =1098
             ZIndex: =26
 
@@ -1127,18 +1127,7 @@
             HoverColor: =Transparent
             HoverFill: =Transparent
             OnSelect: |-
-                =If(
-                    CountRows(colReqDetails) > 0,
-                    Patch(
-                        ReqDetails,
-                        colReqDetails
-                    );
-                    Notify(
-                        "Success",
-                        NotificationType.Success
-                    )
-                );
-                Clear(colReqDetails);
+                =
                 Switch(varNewReqPatch.Status.Value,
                 "New",
                 CostCodeRequisition.Run(varNewReqPatch.Title,varNewReqPatch.JobNo,varNewReqPatch.Created,varNewReqPatch.DeliveryLoc)
@@ -1150,7 +1139,7 @@
             Text: =""
             Tooltip: ="Save Change Records"
             Width: =104
-            X: =525
+            X: =536
             Y: =1039
             ZIndex: =27
 
@@ -1554,4 +1543,90 @@
             X: =444
             Y: =828
             ZIndex: =44
+
+    grpSaveReq_1 As group:
+        Height: =5
+        Width: =5
+        X: =11
+        Y: =10
+        ZIndex: =48
+
+        Icon1_12 As icon.Add:
+            Color: =theme.AppColor
+            DisabledFill: =Transparent
+            DisplayMode: =
+            FocusedBorderColor: =Icon1_12.BorderColor
+            FocusedBorderThickness: =0
+            Height: =50
+            HoverBorderColor: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            Icon: =Icon.Save
+            OnSelect: |-
+                =If(
+                    CountRows(colReqDetails) > 0,
+                    Patch(
+                        ReqDetails,
+                        colReqDetails
+                    );
+                    Notify(
+                        "Success",
+                        NotificationType.Success
+                    )
+                );
+                Clear(colReqDetails)
+            PressedBorderColor: =ColorFade(Icon1_12.BorderColor, -20%)
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Tooltip: ="Save Change Records"
+            Width: =50
+            X: =440
+            Y: =1048
+            ZIndex: =45
+
+        Label3_6 As label:
+            Color: =theme.AppColor
+            Height: =27
+            Size: =16
+            Text: ="Save Req"
+            Width: =100
+            X: =415
+            Y: =1098
+            ZIndex: =46
+
+        btnSave_16 As button:
+            BorderThickness: =0
+            Color: =Transparent
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =Transparent
+            FocusedBorderThickness: =0
+            Height: =87
+            HoverBorderColor: =Transparent
+            HoverColor: =Transparent
+            HoverFill: =Transparent
+            OnSelect: |
+                =If(
+                    CountRows(colReqDetails) > 0,
+                    Patch(
+                        ReqDetails,
+                        colReqDetails
+                    );
+                    Notify(
+                        "Success",
+                        NotificationType.Success
+                    )
+                );
+                Clear(colReqDetails);
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Width: =104
+            X: =415
+            Y: =1039
+            ZIndex: =47
 
