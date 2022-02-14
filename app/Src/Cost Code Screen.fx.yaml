@@ -63,7 +63,7 @@
         FocusedBorderThickness: =0
         Font: =Font.Lato
         Height: =60
-        HintText: ="Delivery Location"
+        HintText: =""
         HoverFill: |-
             =ColorValue("#ccf5ff")
         RadiusBottomLeft: =0
