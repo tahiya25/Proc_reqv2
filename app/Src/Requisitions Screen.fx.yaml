@@ -599,7 +599,8 @@
                     {
                         Status:{Value: "Processed" ,
                                 '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference"}
-                    })
+                    });
+                        Refresh(ReqHeader)
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent
@@ -675,7 +676,8 @@
                     {
                         Status:{Value: "Processed" ,
                                 '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference"}
-                    })
+                    });
+                    Refresh(ReqHeader)
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent
