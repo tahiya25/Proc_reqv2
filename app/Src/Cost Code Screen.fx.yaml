@@ -71,7 +71,6 @@
         RadiusTopLeft: =0
         RadiusTopRight: =0
         Size: =18
-        Visible: =IsBlank(Param("ID"))
         Width: =576
         X: =17
         Y: =849
@@ -360,7 +359,6 @@
         Height: =39
         Size: =14
         Text: ="Description"
-        Visible: =IsBlank(Param("ID"))
         Width: =213
         X: =17
         Y: =810
