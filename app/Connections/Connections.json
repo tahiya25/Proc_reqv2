@@ -96,6 +96,9 @@
           },
           "Unit of Measure": {
             "tableName": "301c25e1-7ceb-4667-912c-9d824c0274fb"
+          },
+          "Vendors": {
+            "tableName": "9dd5c527-38ef-4ebf-95b7-8a4507bfa1fe"
           }
         }
       },
@@ -122,7 +125,8 @@
       "ReqHeader",
       "ReqMessages",
       "Final Cost Codes",
-      "Unit of Measure"
+      "Unit of Measure",
+      "Vendors"
     ],
     "dependencies": {},
     "dependents": [],

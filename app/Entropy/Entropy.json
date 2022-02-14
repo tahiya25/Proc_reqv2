@@ -240,7 +240,7 @@
     "txtSearchLibrary": 96
   },
   "FunctionParamsInvariantScripts": {},
-  "HeaderLastSavedDateTimeUTC": "02/14/2022 13:31:47",
+  "HeaderLastSavedDateTimeUTC": "02/14/2022 13:53:34",
   "LocalDatabaseReferencesAsEmpty": false,
   "LocalResourceFileNames": {
     "RecProc": "fc4bcfc2-5661-4822-9055-95628c37eab0.png"
@@ -252,22 +252,23 @@
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
   "OrderDataSource": {
-    "colReqDetails": 12,
+    "colReqDetails": 13,
     "ComboBoxSample": 5,
     "CostCodeRequisition": 1,
-    "CostCodes": 15,
+    "CostCodes": 16,
     "CustomGallerySample": 3,
     "DropDownSample": 9,
     "Final Cost Codes": 10,
-    "MyFiles": 14,
+    "MyFiles": 15,
     "RadioSample": 2,
     "ReqDetails": 6,
     "ReqHeader": 7,
     "ReqMessages": 8,
     "SendRequisitionMessages": 0,
     "TCReqLibrary": 4,
-    "TempAttachmentsCol": 13,
-    "Unit of Measure": 11
+    "TempAttachmentsCol": 14,
+    "Unit of Measure": 11,
+    "Vendors": 12
   },
   "OrderGroupControls": {
     "Group3": {
