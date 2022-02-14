@@ -593,7 +593,13 @@
             HoverBorderColor: =theme.Orange
             HoverColor: =Transparent
             HoverFill: =Transparent
-            OnSelect: =Set(varMenu, true)
+            OnSelect: |
+                =Set(varMenu, true);
+                Patch(ReqHeader, varCurrentReqHeader,
+                    {
+                        Status:{Value: "Processed" ,
+                                '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference"}
+                    })
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent
@@ -663,7 +669,13 @@
             HoverBorderColor: =theme.Orange
             HoverColor: =Transparent
             HoverFill: =Transparent
-            OnSelect: =Set(varMenu, true)
+            OnSelect: |
+                =Set(varMenu, true);
+                Patch(ReqHeader, varCurrentReqHeader,
+                    {
+                        Status:{Value: "Processed" ,
+                                '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference"}
+                    })
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent

@@ -350,7 +350,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -364,7 +364,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -403,7 +403,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -417,7 +417,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -452,7 +452,7 @@
             Height: =60
             HoverBorderColor: =ColorFade(drpgalVendor.BorderColor, 15%)
             HoverFill: =RGBA(242, 242, 242,1)
-            Items: =Vendors.'Business Partner'
+            Items: =Vendors.Title
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -460,7 +460,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -474,7 +474,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -511,7 +511,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -525,7 +525,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -569,7 +569,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -583,7 +583,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -626,7 +626,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -640,7 +640,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -683,7 +683,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -697,7 +697,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -732,7 +732,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -746,7 +746,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -785,7 +785,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
@@ -799,7 +799,7 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,

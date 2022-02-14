@@ -28,7 +28,25 @@
         Image1_6 As image:
             Height: =86
             Image: =RecProc
-            OnSelect: =Navigate('Requisitions Screen')
+            OnSelect: |-
+                =If(
+                    !IsBlank(Param("ID")),
+                    Patch(ReqHeader, LookUp(ReqHeader,Title=Param("ID")),
+                    {
+                        Status:{Value: "Coded" ,
+                                '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference"}
+                    })
+                ,   
+                    Patch(ReqHeader, LookUp(ReqHeader,Title=varCurrentReqHeader.Title),
+                    {
+                        Status:{Value: "Coded" ,
+                                '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference"}
+                    })
+                
+                
+                );
+                
+                Navigate('Requisitions Screen')
             Width: =94
             ZIndex: =3
 
@@ -445,19 +463,21 @@
             HoverBorderColor: =theme.Orange
             HoverColor: =theme.AppColor
             HoverFill: =Transparent
-            OnSelect: |+
-                =
-                    Patch(ReqDetails,LookUp(ReqDetails,ID=varCurrentCostCode.ID),
-                        {
-                            Vendor: drpgalVendor_CCS.Selected.Value, 
-                            ItemDescription:txtDescription_CCS.Text,
-                            CostCode:drpgalCostCode_CCS.Selected.Result,
-                            Category:drpgalCat_CCS.Selected.Value
-                        })
-                
-                
-                
-                
+            OnSelect: |-
+                =Patch(
+                    ReqDetails,
+                    LookUp(
+                        ReqDetails,
+                        ID = varCurrentCostCode.ID
+                    ),
+                    {
+                        Vendor: drpgalVendor_CCS.Selected.Value,
+                        ItemDescription: txtDescription_CCS.Text,
+                        CostCode: drpgalCostCode_CCS.Selected.Result,
+                        Category: drpgalCat_CCS.Selected.Value
+                    }
+                );
+                Set(varCoded,true)
             PaddingLeft: =50
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
