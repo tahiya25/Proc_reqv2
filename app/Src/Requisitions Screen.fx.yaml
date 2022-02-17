@@ -191,7 +191,7 @@
             Height: =74
             HoverFill: |-
                 =ColorValue("#004d66")
-            OnSelect: =If(varShowId=ThisItem.ID, Set(varShowId,0) , Set(varShowId,ThisItem.ID))
+            OnSelect: =If(varShowId=ThisItem.ID, Set(varShowId,0) , Set(varShowId,ThisItem.ID) && Set(varreqid,ThisItem.Title))
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
@@ -600,7 +600,9 @@
                         Status:{Value: "Processed" ,
                                 '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference"}
                     });
-                        Refresh(ReqHeader)
+                        Refresh(ReqHeader);
+                        'POReq-SendVendor'.Run(varreqid,User().FullName);
+                        Notify("Your request was sent to the vendor")
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent

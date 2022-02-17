@@ -1,0 +1,9 @@
+[
+  {
+    "AddinConnectorId": "134212f0-4a5f-4040-8be2-cbbbe4092059",
+    "AddinId": "6d1f157d-95bf-406d-b65d-cfd3240f724e",
+    "Name": "POReq-SendVendor",
+    "ServiceKind": "AddinWadl",
+    "Type": "ServiceInfo"
+  }
+]

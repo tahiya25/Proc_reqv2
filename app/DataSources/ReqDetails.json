@@ -3,7 +3,7 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
     "CdpRevision": {
       "BaseUrl": "/",
-      "LastChangedTimeString": "2022-02-07T17:58:21.4360000Z",
+      "LastChangedTimeString": "2022-02-10T17:56:02.5600000Z",
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
@@ -48,7 +48,7 @@
     "DatasetName": "https://judlauent.sharepoint.com/sites/ITLanding/newRandD",
     "EncodeDataset": true,
     "IsSampleData": false,
-    "IsWritable": true,
+    "IsWritable": false,
     "Name": "ReqDetails",
     "Type": "ConnectedDataSourceInfo"
   }
