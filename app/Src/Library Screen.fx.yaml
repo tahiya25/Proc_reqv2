@@ -168,9 +168,9 @@
                 Collect(colReqDetails,
                     {
                         ID:varReqDetailsIRec.ID,
-                        Title:ThisItem.'Item Code*',
+                        Title:ThisItem.Title,
                         Vendor:ThisItem.Manufacturer,
-                        UOM:ThisItem.'WM*',
+                        UOM:ThisItem.WM_x002a_,
                         Quantity:"0",
                         ItemDescription: ThisItem.Name1,
                         DateRequired:Now(),
@@ -399,10 +399,10 @@
                 =Patch(TCReqLibrary, Defaults(TCReqLibrary),
                 
                 {
-                    'Item Code*':txtItemNoEntry.Text,
+                    Title:txtItemNoEntry.Text,
                     Name1:Left(txtDescriptionEntry.Text,50),
                     Description:txtDescriptionEntry.Text,
-                    'WM*':dd_Revision.Selected.Value
+                    WM_x002a_:dd_Revision.Selected.Value
                 });
                 
                 Reset(txtItemNoEntry);Reset(txtDescriptionEntry);Reset(dd_Revision);

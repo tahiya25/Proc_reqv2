@@ -673,13 +673,18 @@
             HoverColor: =Transparent
             HoverFill: =Transparent
             OnSelect: |
-                =Set(varMenu, true);
+                =Set(varpreloader,true);
+                
+                Set(varMenu, true);
                 Patch(ReqHeader, varCurrentReqHeader,
                     {
                         Status:{Value: "Processed" ,
                                 '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference"}
                     });
-                    Refresh(ReqHeader)
+                    Refresh(ReqHeader);
+                    Set(varfilelink,'POReq-SendCMIC'.Run(varreqid).filelink);Launch(varfilelink);
+                
+                    Set(varpreloader,false);
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent
@@ -694,4 +699,39 @@
             X: =279
             Y: =900
             ZIndex: =14
+
+    Button2 As button:
+        Height: =70
+        OnSelect: |-
+            ='POReq-SendVendor'.Run(varreqid,User().FullName);
+            Notify("Your request was sent to the vendor")
+        Size: =24
+        Text: ="Send to Vendor"
+        Visible: =false
+        Width: =280
+        X: =291
+        Y: =1046
+        ZIndex: =15
+
+    Button3 As button:
+        Height: =70
+        OnSelect: |-
+            =Set(varpreloader,true);
+            Set(varfilelink,'POReq-SendCMIC'.Run(varreqid).filelink);Launch(varfilelink);
+            Set(varpreloader,false);
+        Size: =24
+        Text: ="Send to CMIC"
+        Visible: =false
+        Width: =280
+        Y: =1046
+        ZIndex: =16
+
+    Image2 As image:
+        Height: =73
+        Image: =autopreloader
+        Visible: =varpreloader
+        Width: =120
+        X: =489
+        Y: =913
+        ZIndex: =17
 
