@@ -474,7 +474,8 @@
                         Vendor: drpgalVendor_CCS.Selected.Value,
                         ItemDescription: txtDescription_CCS.Text,
                         CostCode: drpgalCostCode_CCS.Selected.Result,
-                        Category: drpgalCat_CCS.Selected.Value
+                        Category: drpgalCat_CCS.Selected.Value,
+                        ExpectedPrice:txtexpectedprice.Text
                     }
                 );
                 Set(varCoded,true)
@@ -670,4 +671,29 @@
         X: =177
         Y: =227
         ZIndex: =37
+
+    lblCC_CCS_1 As label:
+        Font: =Font.Lato
+        FontWeight: =Semibold
+        Height: =39
+        Size: =14
+        Text: ="Expected Price"
+        Visible: =IsBlank(Param("ID"))
+        Width: =190
+        X: =17
+        Y: =1033
+        ZIndex: =38
+
+    txtexpectedprice As text:
+        BorderColor: |
+            =ColorValue("#ccf5ff")
+        BorderThickness: =1
+        Default: =varCurrentCostCode.ExpectedPrice
+        Font: =Font.Lato
+        Height: =58
+        Size: =18
+        Width: =327
+        X: =17
+        Y: =1072
+        ZIndex: =39
 

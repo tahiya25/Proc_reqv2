@@ -594,13 +594,9 @@
             HoverColor: =Transparent
             HoverFill: =Transparent
             OnSelect: |
-                =Set(varMenu, true);
-                Patch(ReqHeader, varCurrentReqHeader,
-                    {
-                        Status:{Value: "Processed" ,
-                                '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference"}
-                    });
-                        Refresh(ReqHeader);
+                =
+                
+                        
                         'POReq-SendVendor'.Run(varreqid,User().FullName);
                         Notify("Your request was sent to the vendor")
             PressedBorderColor: =Transparent
@@ -675,13 +671,7 @@
             OnSelect: |
                 =Set(varpreloader,true);
                 
-                Set(varMenu, true);
-                Patch(ReqHeader, varCurrentReqHeader,
-                    {
-                        Status:{Value: "Processed" ,
-                                '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference"}
-                    });
-                    Refresh(ReqHeader);
+                
                     Set(varfilelink,'POReq-SendCMIC'.Run(varreqid).filelink);Launch(varfilelink);
                 
                     Set(varpreloader,false);

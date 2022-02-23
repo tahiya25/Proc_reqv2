@@ -32,6 +32,7 @@
       "DateRequired": "Date Required",
       "Editor": "Modified By",
       "Editor#Claims": "Modified By Claims",
+      "ExpectedPrice": "ExpectedPrice",
       "ID": "ID",
       "ItemDescription": "ItemDescription",
       "ItemType": "ItemType",
