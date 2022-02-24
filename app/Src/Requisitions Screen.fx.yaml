@@ -716,12 +716,12 @@
         Y: =1046
         ZIndex: =16
 
-    Image2 As image:
-        Height: =73
+    Preloader As image:
+        Height: =77
         Image: =autopreloader
         Visible: =varpreloader
-        Width: =120
-        X: =489
-        Y: =913
+        Width: =78
+        X: =451
+        Y: =891
         ZIndex: =17
 

@@ -49,7 +49,7 @@
     "DatasetName": "https://judlauent.sharepoint.com/sites/ITLanding/newRandD",
     "EncodeDataset": true,
     "IsSampleData": false,
-    "IsWritable": false,
+    "IsWritable": true,
     "Name": "ReqDetails",
     "Type": "ConnectedDataSourceInfo"
   }
