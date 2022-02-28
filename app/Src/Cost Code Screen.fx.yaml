@@ -90,8 +90,8 @@
         RadiusTopRight: =0
         Size: =18
         Width: =576
-        X: =17
-        Y: =849
+        X: =18
+        Y: =811
         ZIndex: =6
 
     lblReqID_1 As label:
@@ -302,7 +302,7 @@
         Size: =18
         Width: =310
         X: =17
-        Y: =726
+        Y: =709
         ZIndex: =19
 
     drpgalCostCode_CCS As dropdown:
@@ -328,8 +328,8 @@
         SelectionFill: =theme.AppColor
         Size: =18
         Width: =262
-        X: =17
-        Y: =967
+        X: =23
+        Y: =920
         ZIndex: =20
 
     drpgalCat_CCS As dropdown:
@@ -355,8 +355,8 @@
         SelectionFill: =theme.AppColor
         Size: =18
         Width: =132
-        X: =309
-        Y: =967
+        X: =315
+        Y: =920
         ZIndex: =21
 
     lblAddNewReq_7 As label:
@@ -368,7 +368,7 @@
         Visible: =IsBlank(Param("ID"))
         Width: =213
         X: =17
-        Y: =687
+        Y: =670
         ZIndex: =22
 
     lblDescr_CCS As label:
@@ -378,8 +378,8 @@
         Size: =14
         Text: ="Description"
         Width: =213
-        X: =17
-        Y: =810
+        X: =18
+        Y: =772
         ZIndex: =23
 
     lblCC_CCS As label:
@@ -390,8 +390,8 @@
         Text: ="Cost Code"
         Visible: =IsBlank(Param("ID"))
         Width: =190
-        X: =17
-        Y: =928
+        X: =23
+        Y: =881
         ZIndex: =24
 
     lblCat As label:
@@ -402,8 +402,8 @@
         Text: ="Category"
         Visible: =IsBlank(Param("ID"))
         Width: =131
-        X: =310
-        Y: =928
+        X: =316
+        Y: =881
         ZIndex: =25
 
     rctDivider As rectangle:
@@ -436,7 +436,7 @@
                 )
             Width: =40
             X: =447
-            Y: =1064
+            Y: =1034
             ZIndex: =26
 
         Label2_1 As label:
@@ -446,7 +446,7 @@
             Text: ="Update  Details"
             Width: =118
             X: =487
-            Y: =1068
+            Y: =1038
             ZIndex: =27
 
         btnSave_15 As button:
@@ -488,7 +488,7 @@
             Tooltip: ="Save Change Records"
             Width: =169
             X: =436
-            Y: =1051
+            Y: =1021
             ZIndex: =28
 
     rctDivider_1 As rectangle:
@@ -680,8 +680,8 @@
         Text: ="Expected Price"
         Visible: =IsBlank(Param("ID"))
         Width: =190
-        X: =17
-        Y: =1033
+        X: =18
+        Y: =995
         ZIndex: =38
 
     txtexpectedprice As text:
@@ -692,8 +692,8 @@
         Font: =Font.Lato
         Height: =58
         Size: =18
-        Width: =327
-        X: =17
-        Y: =1072
+        Width: =200
+        X: =18
+        Y: =1034
         ZIndex: =39
 

@@ -3590,7 +3590,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Image8_6",
-    "ParentIndex": 34,
+    "ParentIndex": 35,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -4360,7 +4360,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Label2_1",
-    "ParentIndex": 35,
+    "ParentIndex": 36,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -12372,7 +12372,14 @@
       "Align",
       "X",
       "Y",
-      "Width",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "Width",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "Height",
       "DisplayMode",
       "ZIndex",
@@ -12411,7 +12418,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "txtexpectedprice",
-    "ParentIndex": 36,
+    "ParentIndex": 34,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {

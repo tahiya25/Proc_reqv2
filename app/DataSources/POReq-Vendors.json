@@ -1,8 +1,8 @@
 [
   {
-    "AddinConnectorId": "41f1b7c7-f3e9-4978-a43e-f5e58455c0de",
+    "AddinConnectorId": "d08d3be2-fc62-4001-a0ba-82339cae1f12",
     "AddinId": "6d1f157d-95bf-406d-b65d-cfd3240f724e",
-    "Name": "POReq-SendCMIC",
+    "Name": "POReq-Vendors",
     "ServiceKind": "AddinWadl",
     "Type": "ServiceInfo"
   }

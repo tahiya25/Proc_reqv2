@@ -594,11 +594,14 @@
             HoverColor: =Transparent
             HoverFill: =Transparent
             OnSelect: |
-                =
+                =Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
+                Clear(colDataExported);
+                ForAll(galReqDetails.AllItems,
+                Collect(colDataExported, {JobNo: varreqheader.JobNo, Vendor: ThisRecord.Vendor, Description: ThisRecord.ItemDescription, Quantity: ThisRecord.Quantity,UOM:ThisRecord.UOM, PartNo: ThisRecord.Title, Location: varreqheader.DeliveryLoc, Approver: varreqheader.Approver.DisplayName, DateRequired:ThisRecord.'Date Required'}));
+                Set(varFormattedJSON, JSON(colDataExported));
                 
-                        
-                        'POReq-SendVendor'.Run(varreqid,User().FullName);
-                        Notify("Your request was sent to the vendor")
+                'POReq-Vendors'.Run(varFormattedJSON,varreqid);
+                Notify("Your request was sent to the vendor")
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent
@@ -668,13 +671,21 @@
             HoverBorderColor: =theme.Orange
             HoverColor: =Transparent
             HoverFill: =Transparent
-            OnSelect: |
+            OnSelect: |+
                 =Set(varpreloader,true);
                 
+                Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
+                Clear(colDataExported);
+                ForAll(galReqDetails.AllItems,
+                Collect(colDataExported, {ItemType: ThisRecord.ItemType, Item: ThisRecord.Title, ItemName: ThisRecord.ItemDescription, Type: ThisRecord.MaterialType,  Location: varreqheader.DeliveryLoc,WM:ThisRecord.UOM, Quantity: ThisRecord.Quantity, ExpectedPrice: ThisRecord.ExpectedPrice, Dist:"J", JobDept:varreqheader.JobNo, Approver: varreqheader.Approver.DisplayName,CostCode:ThisRecord.CostCode, Category:ThisRecord.Category,Tax1: If(ThisRecord.Category="C","NY")}));
+                Set(varFormattedJSON, JSON(colDataExported));
                 
-                    Set(varfilelink,'POReq-SendCMIC'.Run(varreqid).filelink);Launch(varfilelink);
+                Set(varfilelink,'POReq-ImportCMIC'.Run(varFormattedJSON).filelink);Launch(varfilelink);
                 
-                    Set(varpreloader,false);
+                Set(varpreloader,false);
+                
+                
+                
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent
@@ -689,32 +700,6 @@
             X: =279
             Y: =900
             ZIndex: =14
-
-    Button2 As button:
-        Height: =70
-        OnSelect: |-
-            ='POReq-SendVendor'.Run(varreqid,User().FullName);
-            Notify("Your request was sent to the vendor")
-        Size: =24
-        Text: ="Send to Vendor"
-        Visible: =false
-        Width: =280
-        X: =291
-        Y: =1046
-        ZIndex: =15
-
-    Button3 As button:
-        Height: =70
-        OnSelect: |-
-            =Set(varpreloader,true);
-            Set(varfilelink,'POReq-SendCMIC'.Run(varreqid).filelink);Launch(varfilelink);
-            Set(varpreloader,false);
-        Size: =24
-        Text: ="Send to CMIC"
-        Visible: =false
-        Width: =280
-        Y: =1046
-        ZIndex: =16
 
     Preloader As image:
         Height: =77
