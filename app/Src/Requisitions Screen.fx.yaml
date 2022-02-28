@@ -677,7 +677,7 @@
                 Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
                 Clear(colDataExported);
                 ForAll(galReqDetails.AllItems,
-                Collect(colDataExported, {ItemType: ThisRecord.ItemType, Item: ThisRecord.Title, ItemName: ThisRecord.ItemDescription, Type: ThisRecord.MaterialType,  Location: varreqheader.DeliveryLoc,WM:ThisRecord.UOM, Quantity: ThisRecord.Quantity, ExpectedPrice: ThisRecord.ExpectedPrice, Dist:"J", JobDept:varreqheader.JobNo, Approver: varreqheader.Approver.DisplayName,CostCode:ThisRecord.CostCode, Category:ThisRecord.Category,Tax1: If(ThisRecord.Category="C","NY")}));
+                Collect(colDataExported, {ItemType: ThisRecord.ItemType, Item: ThisRecord.Title, ItemName: ThisRecord.ItemDescription, Type: ThisRecord.MaterialType,  Location: "",WM:ThisRecord.UOM, Quantity: ThisRecord.Quantity, ExpectedPrice: ThisRecord.ExpectedPrice, Dist:"J", JobDept:varreqheader.JobNo, Approver: varreqheader.Approver.DisplayName,CostCode:ThisRecord.CostCode, Category:ThisRecord.Category,Tax1: If(ThisRecord.Category="C","NY")}));
                 Set(varFormattedJSON, JSON(colDataExported));
                 
                 Set(varfilelink,'POReq-ImportCMIC'.Run(varFormattedJSON).filelink);Launch(varfilelink);
