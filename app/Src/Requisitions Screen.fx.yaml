@@ -561,8 +561,8 @@
                 )
             Visible: =varShowMenu
             Width: =40
-            X: =84
-            Y: =908
+            X: =100
+            Y: =953
             ZIndex: =7
 
         Label2_7 As label:
@@ -575,8 +575,8 @@
             Text: ="Send to vendor"
             Visible: =varShowMenu
             Width: =120
-            X: =124
-            Y: =913
+            X: =140
+            Y: =958
             ZIndex: =9
 
         btnSave_3 As button:
@@ -593,15 +593,7 @@
             HoverBorderColor: =theme.Orange
             HoverColor: =Transparent
             HoverFill: =Transparent
-            OnSelect: |
-                =Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
-                Clear(colDataExported);
-                ForAll(galReqDetails.AllItems,
-                Collect(colDataExported, {JobNo: varreqheader.JobNo, Vendor: ThisRecord.Vendor, Description: ThisRecord.ItemDescription, Quantity: ThisRecord.Quantity,UOM:ThisRecord.UOM, PartNo: ThisRecord.Title, Location: varreqheader.DeliveryLoc, Approver: varreqheader.Approver.DisplayName, DateRequired:ThisRecord.'Date Required'}));
-                Set(varFormattedJSON, JSON(colDataExported));
-                
-                'POReq-Vendors'.Run(varFormattedJSON,varreqid);
-                Notify("Your request was sent to the vendor")
+            OnSelect: =Set(varvendorpopup, true)
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent
@@ -613,8 +605,8 @@
             Tooltip: ="Save Change Records"
             Visible: =varShowMenu
             Width: =168
-            X: =72
-            Y: =900
+            X: =88
+            Y: =945
             ZIndex: =10
 
     grp_SendEmail_2 As group:
@@ -639,8 +631,8 @@
                 )
             Visible: =varShowMenu
             Width: =40
-            X: =291
-            Y: =908
+            X: =307
+            Y: =953
             ZIndex: =11
 
         Label2_8 As label:
@@ -653,8 +645,8 @@
             Text: ="Send to CMiC"
             Visible: =varShowMenu
             Width: =120
-            X: =331
-            Y: =913
+            X: =347
+            Y: =958
             ZIndex: =13
 
         btnSave_4 As button:
@@ -697,8 +689,8 @@
             Tooltip: ="Save Change Records"
             Visible: =varShowMenu
             Width: =168
-            X: =279
-            Y: =900
+            X: =295
+            Y: =945
             ZIndex: =14
 
     Preloader As image:
@@ -709,4 +701,165 @@
         X: =451
         Y: =891
         ZIndex: =17
+
+    GrpVendorPopup As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =31
+
+        transrect As rectangle:
+            Fill: =RGBA(0, 0, 0, .5)
+            Height: =1130
+            Visible: =varvendorpopup
+            Width: =631
+            X: =6
+            Y: =5
+            ZIndex: =18
+
+        grayrect As rectangle:
+            Fill: =RGBA(244, 244, 244, 1)
+            Height: =382
+            Visible: =varvendorpopup
+            Width: =588
+            X: =27
+            Y: =336
+            ZIndex: =19
+
+        Rectangle6 As rectangle:
+            Fill: =theme.AppColor
+            Height: =51
+            Visible: =varvendorpopup
+            Width: =588
+            X: =27
+            Y: =336
+            ZIndex: =20
+
+        Image2 As image:
+            Height: =51
+            Image: ='outlook-icon'
+            Visible: =varvendorpopup
+            Width: =61
+            X: =27
+            Y: =336
+            ZIndex: =21
+
+        Label3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =51
+            Size: =18
+            Text: ="Send an Email to Vendor"
+            Visible: =varvendorpopup
+            Width: =400
+            X: =100
+            Y: =336
+            ZIndex: =22
+
+        txtemail As text:
+            BorderColor: =LightGray
+            BorderThickness: =1
+            Default: =
+            Font: =Font.Lato
+            Height: =46
+            HintText: ="Email Address"
+            Italic: =true
+            Size: =15
+            Visible: =varvendorpopup
+            Width: =550
+            X: =39
+            Y: =434
+            ZIndex: =23
+
+        txtbody As text:
+            BorderColor: =LightGray
+            Default: =
+            Font: =Font.Lato
+            Height: =122
+            HintText: ="Body"
+            Italic: =true
+            Mode: =TextMode.MultiLine
+            Size: =16
+            Visible: =varvendorpopup
+            Width: =554
+            X: =39
+            Y: =509
+            ZIndex: =24
+
+        Image5 As image:
+            Height: =49
+            Image: =ic_send_128_28719
+            OnSelect: |-
+                =Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
+                Clear(colDataExported);
+                ForAll(galReqDetails.AllItems,
+                Collect(colDataExported, {JobNo: varreqheader.JobNo, Vendor: ThisRecord.Vendor, Description: ThisRecord.ItemDescription, Quantity: ThisRecord.Quantity,UOM:ThisRecord.UOM, PartNo: ThisRecord.Title, Location: varreqheader.DeliveryLoc, Approver: varreqheader.Approver.DisplayName, DateRequired:ThisRecord.'Date Required'}));
+                Set(varFormattedJSON, JSON(colDataExported));
+                
+                
+                'Copyof-Vendors-POReq'.Run(varFormattedJSON,varreqid, txtbody.Text,txtemail.Text);
+                Notify("Your request was sent to the vendor");
+                Set(varvendorpopup,false)
+            Visible: =varvendorpopup
+            Width: =49
+            X: =451
+            Y: =653
+            ZIndex: =25
+
+        Label6 As label:
+            Font: =Font.Lato
+            Height: =54
+            Size: =16
+            Text: ="Send"
+            Visible: =varvendorpopup
+            Width: =101
+            X: =514
+            Y: =650
+            ZIndex: =26
+
+        Icon1 As icon.Cancel:
+            Color: =RGBA(255, 0, 0, 1)
+            Height: =61
+            Icon: =Icon.Cancel
+            OnSelect: =Set(varvendorpopup,false)
+            Visible: =varvendorpopup
+            Width: =46
+            X: =295
+            Y: =646
+            ZIndex: =27
+
+        Label7 As label:
+            Font: =Font.Lato
+            Height: =47
+            Size: =16
+            Text: ="Cancel"
+            Visible: =varvendorpopup
+            Width: =79
+            X: =347
+            Y: =655
+            ZIndex: =28
+
+        Label9 As label:
+            Font: =Font.Lato
+            Height: =33
+            Size: =14
+            Text: ="Contact Email Address"
+            Visible: =varvendorpopup
+            Width: =291
+            X: =39
+            Y: =394
+            ZIndex: =29
+
+        Label10 As label:
+            Color: =RGBA(255, 0, 0, 1)
+            Font: =Font.Lato
+            Height: =33
+            Size: =16
+            Text: ="Use ; when multiple emails "
+            Visible: =varvendorpopup
+            Width: =333
+            X: =260
+            Y: =394
+            ZIndex: =30
 
