@@ -790,7 +790,7 @@
         Image5 As image:
             Height: =49
             Image: =ic_send_128_28719
-            OnSelect: |-
+            OnSelect: |+
                 =Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
                 Clear(colDataExported);
                 ForAll(galReqDetails.AllItems,
@@ -798,9 +798,14 @@
                 Set(varFormattedJSON, JSON(colDataExported));
                 
                 
-                'Copyof-Vendors-POReq'.Run(varFormattedJSON,varreqid, txtbody.Text,txtemail.Text);
+                'POReq-Vendors'.Run(varFormattedJSON,varreqid, txtbody.Text,txtemail.Text);
                 Notify("Your request was sent to the vendor");
-                Set(varvendorpopup,false)
+                Set(varvendorpopup,false);
+                Reset(txtbody);
+                Reset(txtemail)
+                
+                
+                
             Visible: =varvendorpopup
             Width: =49
             X: =451
@@ -859,7 +864,7 @@
             Text: ="Use ; when multiple emails "
             Visible: =varvendorpopup
             Width: =333
-            X: =260
+            X: =240
             Y: =394
             ZIndex: =30
 

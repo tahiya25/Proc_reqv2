@@ -1,12 +1,16 @@
 <application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="POReq-Vendors" xmlns="http://wadl.dev.java.net/2009/02">
-  <doc title="PO Req-Vendors" />
+  <doc title="POReq-Vendors" />
   <grammars>
     <jsonTypes targetNamespace="https://msmanaged-na.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
-      <string name="ManualTriggerInput_Content_Inputs_def" />
-      <string name="ManualTriggerInput_Initializevariable_Value_def" />
+      <string name="ManualTriggerInput_Compose_Inputs_def" />
+      <string name="ManualTriggerInput_Initializevariable-varreqno_Value_def" />
+      <string name="ManualTriggerInput_Initializevariable-varbody_Value_def" />
+      <string name="ManualTriggerInput_Initializevariable-varemail_Value_def" />
       <object name="ManualTriggerInput">
-        <property name="Content_Inputs" type="string" />
-        <property name="Initializevariable_Value" type="string" />
+        <property name="Compose_Inputs" type="string" />
+        <property name="Initializevariable-varreqno_Value" type="string" />
+        <property name="Initializevariable-varbody_Value" type="string" />
+        <property name="Initializevariable-varemail_Value" type="string" />
       </object>
     </jsonTypes>
   </grammars>
@@ -20,8 +24,10 @@
             <doc title="The api version" />
           </param>
           <representation mediaType="application/json">
-            <param style="plain" name="Content_Inputs" path="/Content_Inputs" type="xs:string" required="true" />
-            <param style="plain" name="Initializevariable_Value" path="/Initializevariable_Value" type="xs:string" required="true" />
+            <param style="plain" name="Compose_Inputs" path="/Compose_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="Initializevariable-varreqno_Value" path="/Initializevariable-varreqno_Value" type="xs:string" required="true" />
+            <param style="plain" name="Initializevariable-varbody_Value" path="/Initializevariable-varbody_Value" type="xs:string" required="true" />
+            <param style="plain" name="Initializevariable-varemail_Value" path="/Initializevariable-varemail_Value" type="xs:string" required="true" />
           </representation>
         </request>
       </method>
