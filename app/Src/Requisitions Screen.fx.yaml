@@ -792,9 +792,10 @@
             Image: =ic_send_128_28719
             OnSelect: |+
                 =Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
+                ClearCollect(colemails, Split(txtemail.Text,";"));
                 Clear(colDataExported);
                 ForAll(galReqDetails.AllItems,
-                Collect(colDataExported, {JobNo: varreqheader.JobNo, Vendor: ThisRecord.Vendor, Description: ThisRecord.ItemDescription, Quantity: ThisRecord.Quantity,UOM:ThisRecord.UOM, PartNo: ThisRecord.Title, Location: varreqheader.DeliveryLoc, Approver: varreqheader.Approver.DisplayName, DateRequired:ThisRecord.'Date Required'}));
+                Collect(colDataExported, {JobNo: varreqheader.JobNo, Vendor: ThisRecord.Vendor, Description: ThisRecord.ItemDescription, Quantity: ThisRecord.Quantity,UOM:ThisRecord.UOM, PartNo: ThisRecord.Title, Location: varreqheader.DeliveryLoc, Approver: varreqheader.Approver.DisplayName, 'Date Required':ThisRecord.'Date Required'}));
                 Set(varFormattedJSON, JSON(colDataExported));
                 
                 
