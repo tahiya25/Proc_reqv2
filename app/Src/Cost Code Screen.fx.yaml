@@ -232,24 +232,23 @@
         ZIndex: =16
 
         Label8_2 As label:
-            Height: =34
+            Height: =38
             OnSelect: =Select(Parent)
-            Size: =18
+            Size: =12
             Text: =ThisItem.Title
-            Width: =123
-            X: =25
-            Y: =4
+            Width: =111
+            X: =36
             ZIndex: =1
 
         Label8_3 As label:
-            Height: =34
+            Font: =Font.Lato
+            Height: =38
             OnSelect: =Select(Parent)
-            Size: =18
+            Size: =12
             Text: =Proper(ThisItem.ItemDescription)
             Tooltip: =ThisItem.ItemDescription
-            Width: =334
+            Width: =362
             X: =153
-            Y: =4
             ZIndex: =2
 
         imd_DelRec_2 As image:
@@ -294,7 +293,7 @@
         Height: =60
         HoverBorderColor: =ColorFade(drpgalVendor_CCS.BorderColor, 15%)
         HoverFill: =RGBA(242, 242, 242,1)
-        Items: =["Vendor 1", "Vendor 2","POWE12"]
+        Items: =["Vendor 1", "Vendor 2","POWE12", "CATA01"]
         OnChange: =
         PressedBorderColor: =drpgalVendor_CCS.HoverBorderColor
         PressedFill: =theme.AppColor

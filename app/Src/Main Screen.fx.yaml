@@ -720,7 +720,7 @@
             BorderColor: |-
                 =ColorValue("#ccf5ff")
             BorderThickness: =1
-            DefaultDate: =ThisItem.'Date Required'
+            DefaultDate: =ThisItem.DateRequired
             FocusedBorderThickness: =0
             Font: =Font.Lato
             Height: =60
@@ -1547,6 +1547,58 @@
             X: =444
             Y: =828
             ZIndex: =44
+
+    cbogalvendor As combobox:
+        BorderColor: |-
+            =ColorValue("#ccf5ff")
+        BorderThickness: =1
+        ChevronBackground: =theme.AppColor
+        DisplayFields: =["Title"]
+        Height: =70
+        HoverFill: =RGBA(242, 242, 242,1)
+        Items: =SortByColumns(Vendors.'Business Partner',"Title",Ascending)
+        OnChange: |-
+            =If(ThisItem.ID in colReqDetails.ID,
+            Update(colReqDetails,
+            LookUp(colReqDetails,ID=ThisItem.ID),
+                {
+                    ID:ThisItem.ID,
+                    Title:txtGalPartNo.Text,
+                    Vendor:drpgalVendor.Selected.'Business Partner',
+                    UOM:drpgalUOM.Selected.Title,
+                    Quantity:txtGalQty.Text,
+                    ItemDescription:txtGalDescription.Text,
+                    Required:drpgalReq.Selected.Value,
+                    DateRequired:dpDalReqDate.SelectedDate,
+                    CostCode:drpgalCostCode.Selected.Result,
+                    Category:drpgalCat.Selected.Value
+                    
+                    }),
+            Collect(colReqDetails,
+                {
+                    ID:ThisItem.ID,
+                    Title:txtGalPartNo.Text,
+                    Vendor:drpgalVendor.Selected.'Business Partner',
+                    UOM:drpgalUOM.Selected.Title,
+                    Quantity:txtGalQty.Text,
+                    ItemDescription:txtGalDescription.Text,
+                    Required:drpgalReq.Selected.Value,
+                    DateRequired:dpDalReqDate.SelectedDate,
+                    CostCode:drpgalCostCode.Selected.Result,
+                    Category:drpgalCat.Selected.Value
+                    })
+            )        
+        PressedFill: =theme.AppColor
+        SearchFields: =["Title"]
+        SearchItems: =Search(SortByColumns(Vendors.'Business Partner',"Title",Ascending),cbogalvendor.SearchText,"Title")
+        SelectionColor: =theme.AppColor
+        SelectionFill: =Self.HoverFill
+        SelectMultiple: =false
+        Size: =21
+        Width: =339
+        X: =276
+        Y: =939
+        ZIndex: =48
 
     grpSaveReq_1 As group:
         Height: =5
