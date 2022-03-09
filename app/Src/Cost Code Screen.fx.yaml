@@ -1,6 +1,8 @@
 "'Cost Code Screen' As screen":
     Fill: =RGBA(244, 244, 244, 1)
-    OnVisible: =
+    OnVisible: |-
+        =Set(vendorcccombobox,false);Set(vendortxtinput,true);Set(vendorcostcodepen,false);Set(cancelvendorcode,false);
+        Set(costcodecbbox,false); Set(costcodetxtinput,true);Set(costcodepen,false);Set(cancelcostcode,false)
 
     Octagon1 As octagon:
         Fill: =theme.Orange
@@ -223,7 +225,9 @@
                        ),
             SortByColumns(Filter(ReqDetails,ReqID=varCurrentReqHeader.Title),"ID",Descending))
         Layout: =Layout.Vertical
-        OnSelect: =Set(varCurrentCostCode, ThisItem)
+        OnSelect: |-
+            =Set(varCurrentCostCode, ThisItem);Set(vendorcccombobox,false);Set(vendortxtinput,true);Set(vendorcostcodepen,true);
+            Set(costcodecbbox,false);Set(costcodetxtinput,true);Set(costcodepen,true)
         TemplateFill: =White
         TemplateSize: =44
         Width: =635
@@ -278,59 +282,6 @@
             Width: =13
             ZIndex: =5
 
-    drpgalVendor_CCS As dropdown:
-        AllowEmptySelection: =true
-        BorderColor: |-
-            =ColorValue("#ccf5ff")
-        BorderThickness: =1
-        ChevronBackground: =theme.AppColor
-        ChevronHoverBackground: =theme.AppColor
-        Default: =varCurrentCostCode.Vendor
-        FocusedBorderColor: =drpgalVendor_CCS.BorderColor
-        FocusedBorderThickness: =0
-        Font: =Font.Lato
-        FontWeight: =Normal
-        Height: =60
-        HoverBorderColor: =ColorFade(drpgalVendor_CCS.BorderColor, 15%)
-        HoverFill: =RGBA(242, 242, 242,1)
-        Items: =["Vendor 1", "Vendor 2","POWE12", "CATA01"]
-        OnChange: =
-        PressedBorderColor: =drpgalVendor_CCS.HoverBorderColor
-        PressedFill: =theme.AppColor
-        SelectionFill: =theme.AppColor
-        Size: =18
-        Width: =310
-        X: =17
-        Y: =709
-        ZIndex: =19
-
-    drpgalCostCode_CCS As dropdown:
-        AllowEmptySelection: =true
-        BorderColor: |-
-            =ColorValue("#ccf5ff")
-        BorderThickness: =1
-        ChevronBackground: =theme.AppColor
-        ChevronHoverBackground: =theme.AppColor
-        Default: =varCurrentCostCode.CostCode
-        FocusedBorderColor: =drpgalCostCode_CCS.BorderColor
-        FocusedBorderThickness: =0
-        Font: =Font.Lato
-        FontWeight: =Normal
-        Height: =60
-        HoverBorderColor: =ColorFade(drpgalCostCode_CCS.BorderColor, 15%)
-        HoverFill: |-
-            =ColorValue("#ccf5ff")
-        Items: =CostCodes.Result
-        OnChange: =
-        PressedBorderColor: =drpgalCostCode_CCS.HoverBorderColor
-        PressedFill: =theme.AppColor
-        SelectionFill: =theme.AppColor
-        Size: =18
-        Width: =262
-        X: =23
-        Y: =920
-        ZIndex: =20
-
     drpgalCat_CCS As dropdown:
         AllowEmptySelection: =true
         BorderColor: |-
@@ -354,7 +305,7 @@
         SelectionFill: =theme.AppColor
         Size: =18
         Width: =132
-        X: =315
+        X: =390
         Y: =920
         ZIndex: =21
 
@@ -401,8 +352,8 @@
         Text: ="Category"
         Visible: =IsBlank(Param("ID"))
         Width: =131
-        X: =316
-        Y: =881
+        X: =387
+        Y: =882
         ZIndex: =25
 
     rctDivider As rectangle:
@@ -470,14 +421,23 @@
                         ID = varCurrentCostCode.ID
                     ),
                     {
-                        Vendor: drpgalVendor_CCS.Selected.Value,
+                        Vendor: drpgalVendor_CCS.Selected.'Business Partner',
                         ItemDescription: txtDescription_CCS.Text,
                         CostCode: drpgalCostCode_CCS.Selected.Result,
                         Category: drpgalCat_CCS.Selected.Value,
                         ExpectedPrice:txtexpectedprice.Text
                     }
                 );
-                Set(varCoded,true)
+                Set(varCoded,true);
+                Set(vendortxtinput,true);
+                Set(vendorcostcodepen,true);
+                Set(vendorcccombobox,false);
+                Set(cancelvendorcode,false);
+                Set(costcodetxtinput,true);
+                Set(costcodepen,true);
+                Set(costcodecbbox,false);
+                Set(cancelcostcode,false);
+                Set(varCurrentCostCode, LookUp(ReqDetails,ID=varCurrentCostCode.ID))
             PaddingLeft: =50
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
@@ -679,7 +639,7 @@
         Text: ="Expected Price"
         Visible: =IsBlank(Param("ID"))
         Width: =190
-        X: =18
+        X: =28
         Y: =995
         ZIndex: =38
 
@@ -692,7 +652,117 @@
         Height: =58
         Size: =18
         Width: =200
-        X: =18
-        Y: =1034
+        X: =28
+        Y: =1038
         ZIndex: =39
+
+    drpgalVendor_CCS As combobox:
+        BorderColor: |-
+            =ColorValue("#ccf5ff")
+        BorderThickness: =1
+        ChevronBackground: =theme.AppColor
+        DefaultSelectedItems: =Filter(ReqDetails,ID=varCurrentCostCode.ID).Vendor
+        DisplayFields: =["Title"]
+        Font: =Font.Lato
+        Height: =52
+        Items: =SortByColumns(Vendors.'Business Partner',"Title",Ascending)
+        SearchFields: =["Title"]
+        SearchItems: =Search(SortByColumns(Vendors.'Business Partner',"Title",Ascending),drpgalVendor_CCS.SearchText,"Title")
+        SelectMultiple: =false
+        Size: =14
+        Visible: =vendorcccombobox
+        Width: =263
+        X: =23
+        Y: =714
+        ZIndex: =40
+
+    vendortextinput As text:
+        BorderColor: |
+            =ColorValue("#ccf5ff")
+        BorderThickness: =1
+        Default: =varCurrentCostCode.Vendor
+        DisplayMode: =DisplayMode.View
+        Font: =Font.Lato
+        Height: =66
+        Size: =18
+        Visible: =vendortxtinput
+        Width: =243
+        X: =20
+        Y: =707
+        ZIndex: =41
+
+    vendorpen As image:
+        Height: =63
+        Image: ='1024px-Blue_pen_icon.svg'
+        OnSelect: =Set(vendortxtinput,false);Set(vendorcostcodepen,false);Set(vendorcccombobox,true);Set(cancelvendorcode,true)
+        Visible: =vendorcostcodepen
+        Width: =73
+        X: =266
+        Y: =708
+        ZIndex: =42
+
+    drpgalCostCode_CCS As combobox:
+        BorderColor: |-
+            =ColorValue("#ccf5ff")
+        BorderThickness: =1
+        ChevronBackground: =theme.AppColor
+        DisplayFields: =["Result"]
+        Font: =Font.Lato
+        Height: =62
+        Items: =CostCodes.Result
+        SearchFields: =["Result"]
+        SearchItems: =Search(CostCodes.Result,drpgalCostCode_CCS.SearchText,"Result")
+        Size: =14
+        Visible: =costcodecbbox
+        Width: =273
+        X: =24
+        Y: =920
+        ZIndex: =43
+
+    ccpen As image:
+        Height: =60
+        Image: ='1024px-Blue_pen_icon.svg'
+        OnSelect: =Set(costcodetxtinput,false);Set(costcodepen,false);Set(costcodecbbox,true);Set(cancelcostcode,true)
+        Visible: =costcodepen
+        X: =263
+        Y: =920
+        ZIndex: =44
+
+    cctxtinput As text:
+        BorderColor: =LightGray
+        BorderThickness: =1
+        Default: =varCurrentCostCode.CostCode
+        DisplayMode: =DisplayMode.View
+        Font: =Font.Lato
+        Height: =58
+        Size: =18
+        Visible: =costcodetxtinput
+        Width: =253
+        X: =22
+        Y: =923
+        ZIndex: =45
+
+    canccostcode As icon.Cancel:
+        Color: =theme.AppColor
+        Height: =45
+        Icon: =Icon.Cancel
+        OnSelect: =Set(costcodetxtinput,true);Set(costcodepen,true);Set(costcodecbbox,false);Set(cancelcostcode,false)
+        Tooltip: ="Cacel"
+        Visible: =cancelcostcode
+        Width: =40
+        X: =311
+        Y: =930
+        ZIndex: =46
+
+    canvencode As icon.Cancel:
+        Color: =theme.AppColor
+        Height: =45
+        Icon: =Icon.Cancel
+        OnSelect: =Set(vendortxtinput,true);Set(vendorcostcodepen,true);Set(vendorcccombobox,false);Set(cancelvendorcode,false)
+        Tooltip: ="Cacel"
+        Visible: =cancelvendorcode
+        Width: =40
+        X: =307
+        Y: =714
+        ZIndex: =47
 
