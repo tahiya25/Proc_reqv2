@@ -350,8 +350,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -364,8 +364,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -403,8 +403,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -417,8 +417,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -455,8 +455,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -469,8 +469,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -505,7 +505,7 @@
             HoverBorderColor: =ColorFade(drpgalUOM.BorderColor, 15%)
             HoverFill: |-
                 =ColorValue("#ccf5ff")
-            Items: ='Unit of Measure'.Code
+            Items: ='Unit of Measure'.Title
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -513,8 +513,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -527,8 +527,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -570,8 +570,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -584,8 +584,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -619,8 +619,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -633,8 +633,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -672,8 +672,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -686,8 +686,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -795,7 +795,7 @@
             DisplayFields: =["Title"]
             Font: =Font.Lato
             Height: =62
-            Items: =SortByColumns(Vendors.'Business Partner',"Title",Ascending)
+            Items: =SortByColumns(Vendors.Title,"Title",Ascending)
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -803,8 +803,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -817,8 +817,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -829,7 +829,7 @@
                 )        
             OnSelect: =Select(Parent)
             SearchFields: =["Title"]
-            SearchItems: =Search(SortByColumns(Vendors.'Business Partner',"Title",Ascending),drpgalVendor.SearchText,"Title")
+            SearchItems: =Search(SortByColumns(Vendors.Title,"Title",Ascending),drpgalVendor.SearchText,"Title")
             SelectMultiple: =false
             Size: =16
             Visible: =varvendorcombobox
@@ -854,8 +854,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
@@ -868,8 +868,8 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
-                        UOM:drpgalUOM.Selected.Code,
+                        Vendor:drpgalVendor.Selected.Title,
+                        UOM:drpgalUOM.Selected.Title,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
