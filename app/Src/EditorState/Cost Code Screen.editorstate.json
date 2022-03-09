@@ -6726,7 +6726,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblAddNewReq_6",
-    "ParentIndex": 18,
+    "ParentIndex": 16,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -8840,7 +8840,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblPartNo_3",
-    "ParentIndex": 16,
+    "ParentIndex": 17,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -9136,7 +9136,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblPartNo_4",
-    "ParentIndex": 17,
+    "ParentIndex": 18,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {

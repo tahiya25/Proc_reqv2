@@ -247,8 +247,8 @@
             Size: =12
             Text: =Proper(ThisItem.ItemDescription)
             Tooltip: =ThisItem.ItemDescription
-            Width: =362
-            X: =153
+            Width: =422
+            X: =111
             ZIndex: =2
 
         imd_DelRec_2 As image:
@@ -363,7 +363,7 @@
         FontWeight: =Semibold
         Height: =39
         Size: =14
-        Text: ="Manufacturer"
+        Text: ="Vendor"
         Visible: =IsBlank(Param("ID"))
         Width: =213
         X: =17
@@ -656,7 +656,7 @@
         Size: =14
         Text: ="Part No"
         Width: =116
-        X: =17
+        X: =5
         Y: =221
         ZIndex: =36
 
@@ -667,8 +667,8 @@
         Size: =14
         Text: ="Description"
         Width: =244
-        X: =177
-        Y: =227
+        X: =143
+        Y: =224
         ZIndex: =37
 
     lblCC_CCS_1 As label:

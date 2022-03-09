@@ -51,7 +51,7 @@
                 Font: =Font.Lato
                 Height: =30
                 OnSelect: =Select(Parent)
-                Size: =10
+                Size: =16
                 Text: =Proper(ThisItem.ItemDescription)
                 Tooltip: =Proper(ThisItem.ItemDescription)
                 Width: =617

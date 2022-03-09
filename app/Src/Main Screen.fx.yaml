@@ -783,7 +783,7 @@
             Size: =16
             Text: ="Vendor"
             Width: =190
-            X: =228
+            X: =260
             Y: =12
             ZIndex: =19
 
@@ -832,6 +832,7 @@
             SearchItems: =Search(SortByColumns(Vendors.'Business Partner',"Title",Ascending),drpgalVendor.SearchText,"Title")
             SelectMultiple: =false
             Size: =16
+            Visible: =varvendorcombobox
             Width: =294
             X: =240
             Y: =43
@@ -882,10 +883,39 @@
             SearchItems: =Search(CostCodes.Result,drpgalCostCode.SearchText,"Result")
             SelectMultiple: =false
             Size: =16
-            Width: =268
+            Visible: =varcostcodecombobox
+            Width: =247
             X: =327
             Y: =270
             ZIndex: =21
+
+        varvendortxtinput As text:
+            BorderColor: =LightGray
+            BorderThickness: =1
+            Default: =LookUp(ReqDetails,ID=ThisItem.ID).Vendor
+            DisplayMode: =DisplayMode.View
+            Height: =62
+            OnSelect: =Select(Parent)
+            Size: =21
+            Visible: =vartxtinputvendor
+            Width: =254
+            X: =256
+            Y: =43
+            ZIndex: =22
+
+        txtcostcodeinput As text:
+            BorderColor: =LightGray
+            BorderThickness: =1
+            Default: =LookUp(ReqDetails,ID=ThisItem.ID).CostCode
+            DisplayMode: =DisplayMode.View
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =21
+            Visible: =vartxtinputcc
+            Width: =247
+            X: =327
+            Y: =270
+            ZIndex: =23
 
     grp_AddREqDetails As group:
         Height: =5
@@ -909,8 +939,10 @@
             HoverColor: =theme.AppColor
             HoverFill: |-
                 =ColorFade(ColorValue("#ccf5ff"),.70)
-            OnSelect: |
+            OnSelect: |+
                 =Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:varNewReqPatch.JobNo & "-" &    Text(NewReqAdded.ID +1)});
+                Set(varvendorcombobox,true);Set(varvendorpen,false);Set(vartxtinputvendor,false);Set(varcostcodecombobox,true);Set(varcostcodepen,false);Set(vartxtinputcc,false)
+                
             PaddingLeft: =50
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
@@ -1535,6 +1567,17 @@
             Y: =828
             ZIndex: =44
 
+    imgvendorpen As image:
+        Height: =61
+        Image: ='1024px-Blue_pen_icon.svg'
+        OnSelect: =Set(varvendorpen,false);Set(varvendorcombobox,true);Set(vartxtinputvendor,false)
+        Tooltip: ="Edit Vendor"
+        Visible: =varvendorpen
+        Width: =81
+        X: =534
+        Y: =606
+        ZIndex: =48
+
     grpSaveReq_1 As group:
         Height: =5
         Width: =5
@@ -1611,6 +1654,12 @@
                     )
                 );
                 Clear(colReqDetails);
+                Set(varvendorcombobox,false);
+                Set(varvendorpen,true);
+                Set(vartxtinputvendor,true);
+                Set(varcostcodecombobox,false);
+                Set(varcostcodepen,true);
+                Set(vartxtinputcc,true);
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent
@@ -1620,4 +1669,15 @@
             X: =415
             Y: =1039
             ZIndex: =47
+
+    Image11 As image:
+        Height: =63
+        Image: ='1024px-Blue_pen_icon.svg'
+        OnSelect: =Set(varcostcodepen,false);Set(varcostcodecombobox,true);Set(vartxtinputcc,false)
+        Tooltip: ="Edit CostCode"
+        Visible: =varcostcodepen
+        Width: =59
+        X: =581
+        Y: =837
+        ZIndex: =49
 
