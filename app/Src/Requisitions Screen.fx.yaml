@@ -51,7 +51,7 @@
                 Font: =Font.Lato
                 Height: =30
                 OnSelect: =Select(Parent)
-                Size: =16
+                Size: =10
                 Text: =Proper(ThisItem.ItemDescription)
                 Tooltip: =Proper(ThisItem.ItemDescription)
                 Width: =617
@@ -669,7 +669,7 @@
                 Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
                 Clear(colDataExported);
                 ForAll(galReqDetails.AllItems,
-                Collect(colDataExported, {ItemType: ThisRecord.ItemType, Item: ThisRecord.Title, ItemName: ThisRecord.ItemDescription, Type: ThisRecord.MaterialType,  Location: "",WM:ThisRecord.UOM, Quantity: ThisRecord.Quantity, ExpectedPrice: ThisRecord.ExpectedPrice, Dist:"J", JobDept:varreqheader.JobNo, Approver: varreqheader.Approver.DisplayName,CostCode:ThisRecord.CostCode, Category:ThisRecord.Category,Tax1: If(ThisRecord.Category="C","NY")}));
+                Collect(colDataExported, {ItemType: ThisRecord.ItemType, Item: ThisRecord.Title, ItemName: ThisRecord.ItemDescription, Type: ThisRecord.MaterialType,  Location: "",WM:ThisRecord.UOM, Quantity: ThisRecord.Quantity, ExpectedPrice: ThisRecord.ExpectedPrice, Dist:"J", JobDept:varreqheader.JobNo,CostCode:ThisRecord.CostCode, Approver: varreqheader.Approver.DisplayName, Category:ThisRecord.Category,Tax1: If(ThisRecord.Category="C" || ThisRecord.Category="E","NY"), Expected:ThisRecord.'Date Required'}));
                 Set(varFormattedJSON, JSON(colDataExported));
                 
                 Set(varfilelink,'POReq-ImportCMIC'.Run(varFormattedJSON).filelink);Launch(varfilelink);

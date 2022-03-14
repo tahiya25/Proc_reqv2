@@ -1,6 +1,6 @@
 "'Main Screen' As screen":
     Fill: =RGBA(244, 244, 244, 1)
-    OnVisible: =Set(varNewReqPatch,Blank())
+    OnVisible: =Set(varNewReqPatch,Blank());Set(varvendorpen,false);Set(varcostcodepen,false)
 
     rctFooter_MS As rectangle:
         Fill: |-
@@ -562,7 +562,7 @@
             HoverBorderColor: =ColorFade(drpgalCat.BorderColor, 15%)
             HoverFill: |-
                 =ColorValue("#ccf5ff")
-            Items: =["M", "C"]
+            Items: =["M", "C", "S","E"]
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
