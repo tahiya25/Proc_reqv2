@@ -4340,7 +4340,14 @@
       },
       "DateTimeZone",
       "Format",
-      "InputTextPlaceholder",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))",
+        "InvariantPropertyName": "InputTextPlaceholder",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "StartYear",
       "EndYear",
       "StartOfWeek",
@@ -5223,11 +5230,20 @@
         "IsLockable": false,
         "NameMapSourceSchema": "?"
       },
+      "Visible",
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "true",
-        "InvariantPropertyName": "Visible",
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "DefaultSelectedItems",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "false",
+        "InvariantPropertyName": "Reset",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
       }
@@ -5273,6 +5289,16 @@
       {
         "Category": "Data",
         "PropertyName": "SearchItems",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Data",
+        "PropertyName": "DefaultSelectedItems",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Data",
+        "PropertyName": "Reset",
         "RuleProviderType": "Unknown"
       },
       {
@@ -6459,11 +6485,20 @@
         "IsLockable": false,
         "NameMapSourceSchema": "?"
       },
+      "Visible",
       {
         "AFDDataSourceName": "",
         "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "true",
-        "InvariantPropertyName": "Visible",
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "DefaultSelectedItems",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "false",
+        "InvariantPropertyName": "Reset",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
       }
@@ -6509,6 +6544,16 @@
       {
         "Category": "Data",
         "PropertyName": "SearchItems",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Data",
+        "PropertyName": "DefaultSelectedItems",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Data",
+        "PropertyName": "Reset",
         "RuleProviderType": "Unknown"
       },
       {

@@ -226,8 +226,8 @@
             SortByColumns(Filter(ReqDetails,ReqID=varCurrentReqHeader.Title),"ID",Descending))
         Layout: =Layout.Vertical
         OnSelect: |-
-            =Set(varCurrentCostCode, ThisItem);Set(vendorcccombobox,false);Set(vendortxtinput,true);Set(vendorcostcodepen,true);
-            Set(costcodecbbox,false);Set(costcodetxtinput,true);Set(costcodepen,true)
+            =Set(varCurrentCostCode, ThisItem);
+            ClearCollect(colvendors,Filter(ReqDetails,ID=varCurrentCostCode.ID).Vendor);ClearCollect(colcostcode,Filter(ReqDetails,ID=varCurrentCostCode.ID).CostCode)
         TemplateFill: =White
         TemplateSize: =44
         Width: =635
@@ -298,7 +298,7 @@
         HoverBorderColor: =ColorFade(drpgalCat_CCS.BorderColor, 15%)
         HoverFill: |-
             =ColorValue("#ccf5ff")
-        Items: =["M", "C"]
+        Items: =["M", "C","S","E"]
         OnChange: =
         PressedBorderColor: =drpgalCat_CCS.HoverBorderColor
         PressedFill: =theme.AppColor
@@ -421,7 +421,7 @@
                         ID = varCurrentCostCode.ID
                     ),
                     {
-                        Vendor: drpgalVendor_CCS.Selected.Title,
+                        Vendor: drpgalVendor_CCS.Selected.'Business Partner',
                         ItemDescription: txtDescription_CCS.Text,
                         CostCode: drpgalCostCode_CCS.Selected.Result,
                         Category: drpgalCat_CCS.Selected.Value,
@@ -429,15 +429,9 @@
                     }
                 );
                 Set(varCoded,true);
-                Set(vendortxtinput,true);
-                Set(vendorcostcodepen,true);
-                Set(vendorcccombobox,false);
-                Set(cancelvendorcode,false);
-                Set(costcodetxtinput,true);
-                Set(costcodepen,true);
-                Set(costcodecbbox,false);
-                Set(cancelcostcode,false);
-                Set(varCurrentCostCode, LookUp(ReqDetails,ID=varCurrentCostCode.ID))
+                
+                Set(varCurrentCostCode, LookUp(ReqDetails,ID=varCurrentCostCode.ID));
+                Notify("Your item has been updated.")
             PaddingLeft: =50
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
@@ -661,7 +655,7 @@
             =ColorValue("#ccf5ff")
         BorderThickness: =1
         ChevronBackground: =theme.AppColor
-        DefaultSelectedItems: =Filter(ReqDetails,ID=varCurrentCostCode.ID).Vendor
+        DefaultSelectedItems: =ForAll(colvendors,Vendor)
         DisplayFields: =["Title"]
         Font: =Font.Lato
         Height: =52
@@ -670,99 +664,27 @@
         SearchItems: =Search(SortByColumns(Vendors.'Business Partner',"Title",Ascending),drpgalVendor_CCS.SearchText,"Title")
         SelectMultiple: =false
         Size: =14
-        Visible: =vendorcccombobox
         Width: =263
         X: =23
         Y: =714
         ZIndex: =40
-
-    vendortextinput As text:
-        BorderColor: |
-            =ColorValue("#ccf5ff")
-        BorderThickness: =1
-        Default: =varCurrentCostCode.Vendor
-        DisplayMode: =DisplayMode.View
-        Font: =Font.Lato
-        Height: =66
-        Size: =18
-        Visible: =vendortxtinput
-        Width: =243
-        X: =20
-        Y: =707
-        ZIndex: =41
-
-    vendorpen As image:
-        Height: =63
-        Image: ='1024px-Blue_pen_icon.svg'
-        OnSelect: =Set(vendortxtinput,false);Set(vendorcostcodepen,false);Set(vendorcccombobox,true);Set(cancelvendorcode,true)
-        Visible: =vendorcostcodepen
-        Width: =73
-        X: =266
-        Y: =708
-        ZIndex: =42
 
     drpgalCostCode_CCS As combobox:
         BorderColor: |-
             =ColorValue("#ccf5ff")
         BorderThickness: =1
         ChevronBackground: =theme.AppColor
+        DefaultSelectedItems: =ForAll(colcostcode,CostCode)
         DisplayFields: =["Result"]
         Font: =Font.Lato
         Height: =62
         Items: =CostCodes.Result
         SearchFields: =["Result"]
         SearchItems: =Search(CostCodes.Result,drpgalCostCode_CCS.SearchText,"Result")
+        SelectMultiple: =false
         Size: =14
-        Visible: =costcodecbbox
         Width: =273
         X: =24
         Y: =920
         ZIndex: =43
-
-    ccpen As image:
-        Height: =60
-        Image: ='1024px-Blue_pen_icon.svg'
-        OnSelect: =Set(costcodetxtinput,false);Set(costcodepen,false);Set(costcodecbbox,true);Set(cancelcostcode,true)
-        Visible: =costcodepen
-        X: =263
-        Y: =920
-        ZIndex: =44
-
-    cctxtinput As text:
-        BorderColor: =LightGray
-        BorderThickness: =1
-        Default: =varCurrentCostCode.CostCode
-        DisplayMode: =DisplayMode.View
-        Font: =Font.Lato
-        Height: =58
-        Size: =18
-        Visible: =costcodetxtinput
-        Width: =253
-        X: =22
-        Y: =923
-        ZIndex: =45
-
-    canccostcode As icon.Cancel:
-        Color: =theme.AppColor
-        Height: =45
-        Icon: =Icon.Cancel
-        OnSelect: =Set(costcodetxtinput,true);Set(costcodepen,true);Set(costcodecbbox,false);Set(cancelcostcode,false)
-        Tooltip: ="Cacel"
-        Visible: =cancelcostcode
-        Width: =40
-        X: =311
-        Y: =930
-        ZIndex: =46
-
-    canvencode As icon.Cancel:
-        Color: =theme.AppColor
-        Height: =45
-        Icon: =Icon.Cancel
-        OnSelect: =Set(vendortxtinput,true);Set(vendorcostcodepen,true);Set(vendorcccombobox,false);Set(cancelvendorcode,false)
-        Tooltip: ="Cacel"
-        Visible: =cancelvendorcode
-        Width: =40
-        X: =307
-        Y: =714
-        ZIndex: =47
 
