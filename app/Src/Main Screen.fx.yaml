@@ -892,34 +892,6 @@
             Y: =270
             ZIndex: =21
 
-        varvendortxtinput As text:
-            BorderColor: =LightGray
-            BorderThickness: =1
-            Default: =LookUp(ReqDetails,ID=ThisItem.ID).Vendor
-            DisplayMode: =DisplayMode.View
-            Height: =62
-            OnSelect: =Select(Parent)
-            Size: =21
-            Visible: =vartxtinputvendor
-            Width: =254
-            X: =256
-            Y: =43
-            ZIndex: =22
-
-        txtcostcodeinput As text:
-            BorderColor: =LightGray
-            BorderThickness: =1
-            Default: =LookUp(ReqDetails,ID=ThisItem.ID).CostCode
-            DisplayMode: =DisplayMode.View
-            Height: =60
-            OnSelect: =Select(Parent)
-            Size: =21
-            Visible: =vartxtinputcc
-            Width: =247
-            X: =327
-            Y: =270
-            ZIndex: =23
-
     grp_AddREqDetails As group:
         Height: =5
         Width: =5
