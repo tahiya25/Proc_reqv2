@@ -221,7 +221,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "btnSave_15",
-    "ParentIndex": 33,
+    "ParentIndex": 32,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -702,7 +702,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "drpgalCat_CCS",
-    "ParentIndex": 31,
+    "ParentIndex": 35,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -722,7 +722,7 @@
       },
       {
         "Category": "Data",
-        "NameMap": "{\"Value\":\"Value\"}",
+        "NameMap": "{\"Value\":\"Category\"}",
         "PropertyName": "Items",
         "RuleProviderType": "Unknown"
       },
@@ -1070,7 +1070,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "drpgalCostCode_CCS",
-    "ParentIndex": 30,
+    "ParentIndex": 27,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -3455,7 +3455,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Image8_6",
-    "ParentIndex": 34,
+    "ParentIndex": 33,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -4225,7 +4225,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Label2_1",
-    "ParentIndex": 36,
+    "ParentIndex": 34,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -7493,7 +7493,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblCat",
-    "ParentIndex": 29,
+    "ParentIndex": 30,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -7789,7 +7789,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblCC_CCS",
-    "ParentIndex": 28,
+    "ParentIndex": 26,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -8085,7 +8085,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblCC_CCS_1",
-    "ParentIndex": 32,
+    "ParentIndex": 31,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -8381,7 +8381,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblDescr_CCS",
-    "ParentIndex": 26,
+    "ParentIndex": 28,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -11961,7 +11961,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "txtDescription_CCS",
-    "ParentIndex": 27,
+    "ParentIndex": 29,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -12262,7 +12262,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "txtexpectedprice",
-    "ParentIndex": 35,
+    "ParentIndex": 36,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {

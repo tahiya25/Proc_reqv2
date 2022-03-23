@@ -61,7 +61,9 @@ App As appinfo:
         );
         ClearCollect(colReqDetails, ShowColumns(Table(Defaults(ReqDetails)),"ID","Quantity","Vendor","UOM","Title","ItemDescription","CostCode","DateRequired","Required","Category"));
         Clear(colReqDetails);
-        ClearCollect(CostCodes, Distinct(Filter('Final Cost Codes', Job="TM01"),CostCode))
+        ClearCollect(CostCodes, Distinct(Filter('Final Cost Codes', Job="TM01"),CostCode));
+        ClearCollect(NewCostCodes, Filter('Final Cost Codes', Job="TM01"));
+        ClearCollect(ColCostcodes,Distinct(AddColumns(NewCostCodes, "CostCodedescription", CostCode & "-" & Proper(Description)),CostCodedescription));
     StartScreen: |-
         =If(
             !IsBlank(Param("ID")) ,    

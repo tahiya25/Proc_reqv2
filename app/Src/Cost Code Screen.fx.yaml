@@ -90,8 +90,8 @@
         RadiusTopRight: =0
         Size: =18
         Width: =576
-        X: =18
-        Y: =811
+        X: =16
+        Y: =931
         ZIndex: =6
 
     lblReqID_1 As label:
@@ -225,7 +225,8 @@
         Layout: =Layout.Vertical
         OnSelect: |-
             =Set(varCurrentCostCode, ThisItem);
-            ClearCollect(colvendors,Filter(ReqDetails,ID=varCurrentCostCode.ID).Vendor);ClearCollect(colcostcode,Filter(ReqDetails,ID=varCurrentCostCode.ID).CostCode)
+            ClearCollect(colvendors,Filter(ReqDetails,ID=varCurrentCostCode.ID).Vendor);ClearCollect(colcostcode,Filter(ReqDetails,ID=varCurrentCostCode.ID).CostCode);
+            Collect(colcategory,Filter(ReqDetails,ID=varCurrentCostCode.ID).Category)
         TemplateFill: =White
         TemplateSize: =44
         Width: =635
@@ -296,15 +297,15 @@
         HoverBorderColor: =ColorFade(drpgalCat_CCS.BorderColor, 15%)
         HoverFill: |-
             =ColorValue("#ccf5ff")
-        Items: =["M", "C","S","E"]
+        Items: =Filter('Final Cost Codes',Job="TM01" && CostCode=drpgalCostCode_CCS.Selected.CostCode).Category
         OnChange: =
         PressedBorderColor: =drpgalCat_CCS.HoverBorderColor
         PressedFill: =theme.AppColor
         SelectionFill: =theme.AppColor
         Size: =18
         Width: =132
-        X: =390
-        Y: =920
+        X: =19
+        Y: =1041
         ZIndex: =21
 
     lblAddNewReq_7 As label:
@@ -325,8 +326,8 @@
         Size: =14
         Text: ="Description"
         Width: =213
-        X: =18
-        Y: =772
+        X: =16
+        Y: =892
         ZIndex: =23
 
     lblCC_CCS As label:
@@ -336,8 +337,8 @@
         Size: =14
         Text: ="Cost Code"
         Width: =190
-        X: =23
-        Y: =881
+        X: =16
+        Y: =781
         ZIndex: =24
 
     lblCat As label:
@@ -347,8 +348,8 @@
         Size: =14
         Text: ="Category"
         Width: =131
-        X: =387
-        Y: =882
+        X: =16
+        Y: =1003
         ZIndex: =25
 
     rctDivider As rectangle:
@@ -418,8 +419,8 @@
                     {
                         Vendor: drpgalVendor_CCS.Selected.'Business Partner',
                         ItemDescription: txtDescription_CCS.Text,
-                        CostCode: drpgalCostCode_CCS.Selected.Result,
-                        Category: drpgalCat_CCS.Selected.Value,
+                        CostCode: drpgalCostCode_CCS.Selected.CostCode,
+                        Category: drpgalCat_CCS.Selected.Category,
                         ExpectedPrice:txtexpectedprice.Text
                     }
                 );
@@ -627,8 +628,8 @@
         Size: =14
         Text: ="Expected Price"
         Width: =190
-        X: =28
-        Y: =995
+        X: =206
+        Y: =1003
         ZIndex: =38
 
     txtexpectedprice As text:
@@ -640,8 +641,8 @@
         Height: =58
         Size: =18
         Width: =200
-        X: =28
-        Y: =1038
+        X: =206
+        Y: =1046
         ZIndex: =39
 
     drpgalVendor_CCS As combobox:
@@ -658,6 +659,7 @@
         SearchItems: =Search(SortByColumns(Vendors.'Business Partner',"Title",Ascending),drpgalVendor_CCS.SearchText,"Title")
         SelectMultiple: =false
         Size: =14
+        Template: =ListItemTemplate.Double
         Width: =263
         X: =23
         Y: =714
@@ -669,16 +671,17 @@
         BorderThickness: =1
         ChevronBackground: =theme.AppColor
         DefaultSelectedItems: =ForAll(colcostcode,CostCode)
-        DisplayFields: =["Result"]
+        DisplayFields: =["CostCode","Description"]
         Font: =Font.Lato
         Height: =62
-        Items: =CostCodes.Result
-        SearchFields: =["Result"]
-        SearchItems: =Search(CostCodes.Result,drpgalCostCode_CCS.SearchText,"Result")
+        Items: =NewCostCodes
+        SearchFields: =["Description"]
+        SearchItems: =Search(NewCostCodes,drpgalCostCode_CCS.SearchText,"Description")
         SelectMultiple: =false
         Size: =14
-        Width: =273
-        X: =24
-        Y: =920
+        Template: =ListItemTemplate.Double
+        Width: =493
+        X: =17
+        Y: =820
         ZIndex: =43
 
