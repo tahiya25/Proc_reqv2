@@ -1,8 +1,6 @@
 "'Cost Code Screen' As screen":
     Fill: =RGBA(244, 244, 244, 1)
-    OnVisible: |-
-        =Set(vendorcccombobox,false);Set(vendortxtinput,true);Set(vendorcostcodepen,false);Set(cancelvendorcode,false);
-        Set(costcodecbbox,false); Set(costcodetxtinput,true);Set(costcodepen,false);Set(cancelcostcode,false)
+    OnVisible: =
 
     Octagon1 As octagon:
         Fill: =theme.Orange
@@ -315,7 +313,6 @@
         Height: =39
         Size: =14
         Text: ="Vendor"
-        Visible: =IsBlank(Param("ID"))
         Width: =213
         X: =17
         Y: =670
@@ -338,7 +335,6 @@
         Height: =39
         Size: =14
         Text: ="Cost Code"
-        Visible: =IsBlank(Param("ID"))
         Width: =190
         X: =23
         Y: =881
@@ -350,7 +346,6 @@
         Height: =39
         Size: =14
         Text: ="Category"
-        Visible: =IsBlank(Param("ID"))
         Width: =131
         X: =387
         Y: =882
@@ -631,7 +626,6 @@
         Height: =39
         Size: =14
         Text: ="Expected Price"
-        Visible: =IsBlank(Param("ID"))
         Width: =190
         X: =28
         Y: =995
