@@ -223,10 +223,10 @@
                        ),
             SortByColumns(Filter(ReqDetails,ReqID=varCurrentReqHeader.Title),"ID",Descending))
         Layout: =Layout.Vertical
-        OnSelect: |-
+        OnSelect: |
             =Set(varCurrentCostCode, ThisItem);
             ClearCollect(colvendors,Filter(ReqDetails,ID=varCurrentCostCode.ID).Vendor);ClearCollect(colcostcode,Filter(ReqDetails,ID=varCurrentCostCode.ID).CostCode);
-            Collect(colcategory,Filter(ReqDetails,ID=varCurrentCostCode.ID).Category)
+            ClearCollect(colcategory,Filter(ReqDetails,ID=varCurrentCostCode.ID).Category)
         TemplateFill: =White
         TemplateSize: =44
         Width: =635
@@ -297,8 +297,9 @@
         HoverBorderColor: =ColorFade(drpgalCat_CCS.BorderColor, 15%)
         HoverFill: |-
             =ColorValue("#ccf5ff")
-        Items: =Filter('Final Cost Codes',Job="TM01" && CostCode=drpgalCostCode_CCS.Selected.CostCode).Category
+        Items: =colcategory
         OnChange: =
+        OnSelect: =
         PressedBorderColor: =drpgalCat_CCS.HoverBorderColor
         PressedFill: =theme.AppColor
         SelectionFill: =theme.AppColor
@@ -675,6 +676,7 @@
         Font: =Font.Lato
         Height: =62
         Items: =NewCostCodes
+        OnChange: =ClearCollect(colcategory,Filter('Final Cost Codes',Job="TM01" && CostCode=drpgalCostCode_CCS.Selected.CostCode).Category)
         SearchFields: =["Description"]
         SearchItems: =Search(NewCostCodes,drpgalCostCode_CCS.SearchText,"Description")
         SelectMultiple: =false
