@@ -98,9 +98,9 @@
   },
   "ScreenOrder": [
     "Main Screen",
+    "Cost Code Screen",
     "Requisitions Screen",
     "Library Screen",
-    "Messages Screen",
-    "Cost Code Screen"
+    "Messages Screen"
   ]
 }
