@@ -416,7 +416,7 @@
                         ID = varCurrentCostCode.ID
                     ),
                     {
-                        Vendor: drpgalVendor_CCS.Selected.Title,
+                        Vendor: drpgalVendor_CCS.Selected.'Business Partner',
                         ItemDescription: txtDescription_CCS.Text,
                         CostCode: drpgalCostCode_CCS.Selected.Result,
                         Category: drpgalCat_CCS.Selected.Value,
