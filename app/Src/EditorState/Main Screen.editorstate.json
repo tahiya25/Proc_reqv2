@@ -4896,7 +4896,7 @@
       },
       {
         "Category": "Data",
-        "NameMap": "{\"Value\":\"Value\"}",
+        "NameMap": "{\"Value\":\"Category\"}",
         "PropertyName": "Items",
         "RuleProviderType": "Unknown"
       },
@@ -6501,6 +6501,14 @@
         "InvariantPropertyName": "Reset",
         "IsLockable": false,
         "NameMapSourceSchema": "?"
+      },
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "false",
+        "InvariantPropertyName": "IsSearchable",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
       }
     ],
     "HasDynamicProperties": false,
@@ -6554,6 +6562,11 @@
       {
         "Category": "Data",
         "PropertyName": "Reset",
+        "RuleProviderType": "Unknown"
+      },
+      {
+        "Category": "Data",
+        "PropertyName": "IsSearchable",
         "RuleProviderType": "Unknown"
       },
       {

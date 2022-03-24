@@ -350,28 +350,28 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         
                         }),
                 Collect(colReqDetails,
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         })
                 )        
             RadiusBottomLeft: =0
@@ -403,28 +403,28 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         
                         }),
                 Collect(colReqDetails,
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         })
                 )        
             RadiusBottomLeft: =0
@@ -455,28 +455,28 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         
                         }),
                 Collect(colReqDetails,
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         })
                 )        
             RadiusBottomLeft: =0
@@ -513,28 +513,28 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         
                         }),
                 Collect(colReqDetails,
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         })
                 )        
             PressedBorderColor: =drpgalUOM.HoverBorderColor
@@ -553,7 +553,7 @@
             BorderThickness: =1
             ChevronBackground: =theme.AppColor
             ChevronHoverBackground: =theme.AppColor
-            Default: =ThisItem.Category
+            Default: =Concat(colcategory,Category)
             FocusedBorderColor: =drpgalCat.BorderColor
             FocusedBorderThickness: =0
             Font: =Font.Lato
@@ -562,7 +562,7 @@
             HoverBorderColor: =ColorFade(drpgalCat.BorderColor, 15%)
             HoverFill: |-
                 =ColorValue("#ccf5ff")
-            Items: =["M", "C", "S","E"]
+            Items: =colcategory
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -570,28 +570,28 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         
                         }),
                 Collect(colReqDetails,
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         })
                 )        
             PressedBorderColor: =drpgalCat.HoverBorderColor
@@ -620,28 +620,28 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         
                         }),
                 Collect(colReqDetails,
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         })
                 )        
             Size: =21
@@ -673,28 +673,28 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         
                         }),
                 Collect(colReqDetails,
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         })
                 )        
             PressedBorderColor: =drpgalReq.HoverBorderColor
@@ -794,10 +794,10 @@
             BorderThickness: =1
             ChevronBackground: =theme.AppColor
             DefaultSelectedItems: =ForAll(colvendors,Vendor)
-            DisplayFields: =["Title"]
+            DisplayFields: =["Title","Name1"]
             Font: =Font.Lato
             Height: =62
-            Items: =SortByColumns(Vendors.'Business Partner',"Title",Ascending)
+            Items: =colvendors
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -805,36 +805,37 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         
                         }),
                 Collect(colReqDetails,
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         })
                 )        
             OnSelect: =Select(Parent)
             Reset: =
-            SearchFields: =["Title"]
-            SearchItems: =Search(SortByColumns(Vendors.'Business Partner',"Title",Ascending),drpgalVendor.SearchText,"Title")
+            SearchFields: =["Name1"]
+            SearchItems: =Search(colvendors,drpgalVendor.SearchText,"Name1")
             SelectMultiple: =false
-            Size: =16
+            Size: =12
+            Template: =ListItemTemplate.Double
             Width: =294
             X: =240
             Y: =43
@@ -846,10 +847,10 @@
             BorderThickness: =1
             ChevronBackground: =theme.AppColor
             DefaultSelectedItems: =ForAll(colcostcode,CostCode)
-            DisplayFields: =["Result"]
+            DisplayFields: =["CostCode","Description"]
             Font: =Font.Lato
             Height: =60
-            Items: =CostCodes.Result
+            Items: =NewCostCodes
             OnChange: |-
                 =If(ThisItem.ID in colReqDetails.ID,
                 Update(colReqDetails,
@@ -857,36 +858,38 @@
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         
                         }),
                 Collect(colReqDetails,
                     {
                         ID:ThisItem.ID,
                         Title:txtGalPartNo.Text,
-                        Vendor:drpgalVendor.Selected.'Business Partner',
+                        Vendor:drpgalVendor.Selected.Title,
                         UOM:drpgalUOM.Selected.Code,
                         Quantity:txtGalQty.Text,
                         ItemDescription:txtGalDescription.Text,
                         Required:drpgalReq.Selected.Value,
                         DateRequired:dpDalReqDate.SelectedDate,
-                        CostCode:drpgalCostCode.Selected.Result,
-                        Category:drpgalCat.Selected.Value
+                        CostCode:drpgalCostCode.Selected.CostCode,
+                        Category:drpgalCat.Selected.Category
                         })
-                )        
+                );
+                ClearCollect(colcategory,Filter('Final Cost Codes',Job="TM01" && CostCode=drpgalCostCode.Selected.CostCode).Category)      
             OnSelect: =Select(Parent)
             Reset: =
-            SearchFields: =["Result"]
-            SearchItems: =Search(CostCodes.Result,drpgalCostCode.SearchText,"Result")
+            SearchFields: =["Description"]
+            SearchItems: =Search(NewCostCodes,drpgalCostCode.SearchText,"Description")
             SelectMultiple: =false
-            Size: =16
+            Size: =12
+            Template: =ListItemTemplate.Double
             Width: =247
             X: =327
             Y: =270
@@ -916,7 +919,7 @@
                 =ColorFade(ColorValue("#ccf5ff"),.70)
             OnSelect: |+
                 =Patch(ReqDetails,Defaults(ReqDetails),{Title:"", ReqID:varNewReqPatch.JobNo & "-" &    Text(NewReqAdded.ID +1)});
-                Clear(colvendors);Clear(colcostcode)
+                Clear(colvendors);Clear(colcostcode);ClearCollect(colvendors,Vendors)
                 
             PaddingLeft: =50
             PressedBorderColor: =Transparent
@@ -1632,7 +1635,8 @@
                 
                 
                 ClearCollect(colvendors,Filter(ReqDetails,ID=galAddReqItems.Selected.ID).Vendor);
-                ClearCollect(colcostcode,Filter(ReqDetails,ID=galAddReqItems.Selected.ID).CostCode)
+                ClearCollect(colcostcode,Filter(ReqDetails,ID=galAddReqItems.Selected.ID).CostCode);
+                ClearCollect(colcategory,Filter(ReqDetails,ID=galAddReqItems.Selected.ID).Category)
             PressedBorderColor: =Transparent
             PressedColor: =Transparent
             PressedFill: =Transparent

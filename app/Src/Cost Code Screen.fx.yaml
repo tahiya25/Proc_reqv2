@@ -418,7 +418,7 @@
                         ID = varCurrentCostCode.ID
                     ),
                     {
-                        Vendor: drpgalVendor_CCS.Selected.'Business Partner',
+                        Vendor: drpgalVendor_CCS.Selected.Title,
                         ItemDescription: txtDescription_CCS.Text,
                         CostCode: drpgalCostCode_CCS.Selected.CostCode,
                         Category: drpgalCat_CCS.Selected.Category,
@@ -652,12 +652,12 @@
         BorderThickness: =1
         ChevronBackground: =theme.AppColor
         DefaultSelectedItems: =ForAll(colvendors,Vendor)
-        DisplayFields: =["Title"]
+        DisplayFields: =["Title","Name1"]
         Font: =Font.Lato
         Height: =52
-        Items: =SortByColumns(Vendors.'Business Partner',"Title",Ascending)
+        Items: =colvendors
         SearchFields: =["Title"]
-        SearchItems: =Search(SortByColumns(Vendors.'Business Partner',"Title",Ascending),drpgalVendor_CCS.SearchText,"Title")
+        SearchItems: =Search(colvendors,drpgalVendor_CCS.SearchText,"Title")
         SelectMultiple: =false
         Size: =14
         Template: =ListItemTemplate.Double
@@ -682,8 +682,179 @@
         SelectMultiple: =false
         Size: =14
         Template: =ListItemTemplate.Double
-        Width: =493
+        Width: =370
         X: =17
         Y: =820
         ZIndex: =43
+
+    Image12 As image:
+        Height: =82
+        Image: =TAC_Service_icons_circle_CALL
+        OnSelect: =Set(vendordialog,true)
+        Tooltip: ="Contact Vendor"
+        Width: =104
+        X: =314
+        Y: =699
+        ZIndex: =45
+
+    Grpvendordialog As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =60
+
+        Rectangle3 As rectangle:
+            Fill: =RGBA(0, 0, 0, .5)
+            Height: =1136
+            Visible: =vendordialog
+            Width: =640
+            ZIndex: =46
+
+        Rectangle4 As rectangle:
+            Fill: =RGBA(244, 244, 244, 1)
+            Height: =499
+            Visible: =vendordialog
+            Width: =612
+            X: =16
+            Y: =383
+            ZIndex: =47
+
+        Rectangle5 As rectangle:
+            Fill: =theme.AppColor
+            Height: =65
+            Visible: =vendordialog
+            Width: =618
+            X: =10
+            Y: =378
+            ZIndex: =48
+
+        Label11 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =65
+            Size: =21
+            Text: ="Send an email to Vendor"
+            Visible: =vendordialog
+            Width: =441
+            X: =94
+            Y: =378
+            ZIndex: =49
+
+        Image13 As image:
+            Height: =65
+            Image: ='outlook-icon'
+            Visible: =vendordialog
+            Width: =94
+            Y: =378
+            ZIndex: =50
+
+        Label12 As label:
+            Font: =Font.Lato
+            Height: =70
+            Italic: =true
+            Size: =16
+            Text: ="Email"
+            Visible: =vendordialog
+            Width: =62
+            X: =23
+            Y: =443
+            ZIndex: =51
+
+        Label13 As label:
+            Color: =RGBA(255, 0, 0, 1)
+            Font: =Font.Lato
+            Height: =70
+            Size: =16
+            Text: ="Use ; if multiple emails"
+            Visible: =vendordialog
+            Width: =458
+            X: =88
+            Y: =442
+            ZIndex: =52
+
+        TextInput1 As text:
+            BorderColor: =LightGray
+            BorderThickness: =1
+            Default: =
+            Font: =Font.Lato
+            Height: =58
+            HintText: ="Enter email address"
+            HoverFill: =Transparent
+            Italic: =true
+            Size: =16
+            Visible: =vendordialog
+            Width: =584
+            X: =28
+            Y: =499
+            ZIndex: =53
+
+        Label12_1 As label:
+            Font: =Font.Lato
+            Height: =70
+            Italic: =true
+            Size: =16
+            Text: ="Body"
+            Visible: =vendordialog
+            Width: =62
+            X: =23
+            Y: =567
+            ZIndex: =54
+
+        TextInput2 As text:
+            BorderColor: =LightGray
+            BorderThickness: =1
+            Default: =
+            Font: =Font.Lato
+            Height: =116
+            HintText: ="Enter message here"
+            Italic: =true
+            Mode: =TextMode.MultiLine
+            Visible: =vendordialog
+            Width: =589
+            X: =23
+            Y: =623
+            ZIndex: =55
+
+        Image14 As image:
+            Height: =87
+            Image: =ic_send_128_28719
+            Visible: =vendordialog
+            Width: =66
+            X: =408
+            Y: =765
+            ZIndex: =56
+
+        Label14 As label:
+            Font: =Font.Lato
+            Height: =47
+            Size: =21
+            Text: ="Send"
+            Visible: =vendordialog
+            Width: =106
+            X: =474
+            Y: =786
+            ZIndex: =57
+
+        Icon2 As icon.Cancel:
+            Color: =RGBA(255, 0, 0, 1)
+            Height: =56
+            Icon: =Icon.Cancel
+            OnSelect: =Set(vendordialog,false)
+            Visible: =vendordialog
+            Width: =54
+            X: =218
+            Y: =782
+            ZIndex: =58
+
+        Label15 As label:
+            Font: =Font.Lato
+            Height: =70
+            Size: =21
+            Text: ="Cancel"
+            Visible: =vendordialog
+            Width: =95
+            X: =280
+            Y: =774
+            ZIndex: =59
 
