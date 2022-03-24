@@ -795,7 +795,7 @@
                 ClearCollect(colemails, Split(txtemail.Text,";"));
                 Clear(colDataExported);
                 ForAll(galReqDetails.AllItems,
-                Collect(colDataExported, {JobNo: varreqheader.JobNo, Vendor: ThisRecord.Vendor, Description: ThisRecord.ItemDescription, Quantity: ThisRecord.Quantity,UOM:ThisRecord.UOM, PartNo: ThisRecord.Title, Location: varreqheader.DeliveryLoc, Approver: varreqheader.Approver.DisplayName, 'Date Required':ThisRecord.'Date Required'}));
+                Collect(colDataExported, {JobNo: varreqheader.JobNo, Vendor: ThisRecord.Vendor, Description: ThisRecord.ItemDescription, Quantity: ThisRecord.Quantity,UOM:ThisRecord.UOM, PartNo: ThisRecord.Title, Location: varreqheader.DeliveryLoc, Approver: varreqheader.Approver.DisplayName, 'Date Required':ThisRecord.'Date Required', User: User().FullName, Useremail: User().Email}));
                 Set(varFormattedJSON, JSON(colDataExported));
                 
                 

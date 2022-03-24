@@ -2,13 +2,32 @@
     Fill: =RGBA(244, 244, 244, 1)
     OnVisible: =
 
+    Image17 As image:
+        Height: =78
+        Image: ='1714870'
+        OnSelect: |-
+            =Set(varcsvimport,true);
+            
+            Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
+            ClearCollect(colDataExported, {ItemType:varCurrentCostCode.ItemType, Item:varCurrentCostCode.Title,ItemName: varCurrentCostCode.ItemDescription,Type: varCurrentCostCode.MaterialType, Location: "", WM:varCurrentCostCode.UOM, Quantity: varCurrentCostCode.Quantity, ExpectedPrice: txtexpectedprice.Text, Dist:"J",JobDept:lblReqJObNo_1.Text, CostCode:drpgalCostCode_CCS.Selected.CostCode,Approver: varreqheader.Approver.DisplayName, Category: drpgalCat_CCS.Selected.Category,Tax1:If(drpgalCat_CCS.Selected.Category="C" || drpgalCat_CCS.Selected.Category="E","NY"), Expected:varCurrentCostCode.'Date Required' });
+            Set(varFormattedJSON, JSON(colDataExported));
+            
+            Set(varfilelink,'POReq-ImportCMIC'.Run(varFormattedJSON).filelink);Launch(varfilelink);
+            
+            Set(varcsvimport,false);
+        Tooltip: ="Import CSV"
+        Width: =106
+        X: =429
+        Y: =703
+        ZIndex: =1
+
     Octagon1 As octagon:
         Fill: =theme.Orange
         Height: =50
         Width: =50
         X: =561
         Y: =137
-        ZIndex: =1
+        ZIndex: =2
 
     grp_Header_RS_2 As group:
         Height: =5
@@ -23,7 +42,7 @@
             OnSelect: =
             Width: =550
             X: =90
-            ZIndex: =2
+            ZIndex: =3
 
         Image1_6 As image:
             Height: =86
@@ -48,7 +67,7 @@
                 
                 Navigate('Requisitions Screen')
             Width: =94
-            ZIndex: =3
+            ZIndex: =4
 
         Label1_4 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -60,7 +79,7 @@
             Width: =404
             X: =188
             Y: =1
-            ZIndex: =4
+            ZIndex: =5
 
     lblAddNewReq_1 As label:
         Font: =Font.Lato
@@ -71,7 +90,7 @@
         Width: =116
         X: =34
         Y: =119
-        ZIndex: =5
+        ZIndex: =6
 
     txtDescription_CCS As text:
         BorderColor: |
@@ -92,7 +111,7 @@
         Width: =576
         X: =16
         Y: =931
-        ZIndex: =6
+        ZIndex: =7
 
     lblReqID_1 As label:
         Height: =31
@@ -106,7 +125,7 @@
         Wrap: =false
         X: =34
         Y: =156
-        ZIndex: =7
+        ZIndex: =8
 
     lblReqIDStatus_1 As label:
         Align: =Align.Center
@@ -121,7 +140,7 @@
         Wrap: =false
         X: =447
         Y: =156
-        ZIndex: =8
+        ZIndex: =9
 
     lblReqJObNo_1 As label:
         Align: =Align.Center
@@ -136,7 +155,7 @@
         Wrap: =false
         X: =150
         Y: =156
-        ZIndex: =9
+        ZIndex: =10
 
     lblReqDescription_1 As label:
         Height: =31
@@ -155,7 +174,7 @@
         Wrap: =false
         X: =247
         Y: =156
-        ZIndex: =10
+        ZIndex: =11
 
     lblAddNewReq_2 As label:
         Font: =Font.Lato
@@ -166,7 +185,7 @@
         Width: =116
         X: =150
         Y: =119
-        ZIndex: =11
+        ZIndex: =12
 
     lblAddNewReq_3 As label:
         Font: =Font.Lato
@@ -177,7 +196,7 @@
         Width: =158
         X: =263
         Y: =119
-        ZIndex: =12
+        ZIndex: =13
 
     lblAddNewReq_4 As label:
         Align: =Align.Center
@@ -189,7 +208,7 @@
         Width: =99
         X: =447
         Y: =119
-        ZIndex: =13
+        ZIndex: =14
 
     lblPartNo_3 As label:
         FontWeight: =Bold
@@ -200,7 +219,7 @@
         Width: =103
         X: =10
         Y: =227
-        ZIndex: =14
+        ZIndex: =15
 
     lblPartNo_4 As label:
         FontWeight: =Bold
@@ -211,7 +230,7 @@
         Width: =305
         X: =160
         Y: =227
-        ZIndex: =15
+        ZIndex: =16
 
     galAvailableReqItems_1 As gallery.galleryVertical:
         Height: =403
@@ -226,13 +245,13 @@
         OnSelect: |
             =Set(varCurrentCostCode, ThisItem);
             ClearCollect(colvendors,Filter(ReqDetails,ID=varCurrentCostCode.ID).Vendor);ClearCollect(colcostcode,Filter(ReqDetails,ID=varCurrentCostCode.ID).CostCode);
-            ClearCollect(colcategory,Filter(ReqDetails,ID=varCurrentCostCode.ID).Category)
+            ClearCollect(colcategory,Filter(ReqDetails,ID=varCurrentCostCode.ID).Category);ClearCollect(colloadvendors,Vendors)
         TemplateFill: =White
         TemplateSize: =44
         Width: =635
         X: =5
         Y: =258
-        ZIndex: =16
+        ZIndex: =17
 
         Label8_2 As label:
             Height: =38
@@ -297,7 +316,7 @@
         HoverBorderColor: =ColorFade(drpgalCat_CCS.BorderColor, 15%)
         HoverFill: |-
             =ColorValue("#ccf5ff")
-        Items: =colcategory
+        Items: =colloadcategory
         OnChange: =
         OnSelect: =
         PressedBorderColor: =drpgalCat_CCS.HoverBorderColor
@@ -307,7 +326,7 @@
         Width: =132
         X: =19
         Y: =1041
-        ZIndex: =21
+        ZIndex: =18
 
     lblAddNewReq_7 As label:
         Font: =Font.Lato
@@ -318,7 +337,7 @@
         Width: =213
         X: =17
         Y: =670
-        ZIndex: =22
+        ZIndex: =19
 
     lblDescr_CCS As label:
         Font: =Font.Lato
@@ -329,7 +348,7 @@
         Width: =213
         X: =16
         Y: =892
-        ZIndex: =23
+        ZIndex: =20
 
     lblCC_CCS As label:
         Font: =Font.Lato
@@ -340,7 +359,7 @@
         Width: =190
         X: =16
         Y: =781
-        ZIndex: =24
+        ZIndex: =21
 
     lblCat As label:
         Font: =Font.Lato
@@ -351,7 +370,7 @@
         Width: =131
         X: =16
         Y: =1003
-        ZIndex: =25
+        ZIndex: =22
 
     rctDivider As rectangle:
         Fill: =theme.AppColor
@@ -359,87 +378,7 @@
         OnSelect: =
         Width: =640
         Y: =201
-        ZIndex: =29
-
-    grpAddReqDetails As group:
-        Height: =5
-        Width: =5
-        X: =-37
-        Y: =-340
-        ZIndex: =29
-
-        Image8_6 As image:
-            Height: =40
-            Image: |-
-                ="data:image/svg+xml," & 
-                 EncodeUrl(
-                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
-                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
-                   <path fill='" & theme.AppColorText & "'
-                d='M256 1536v-128h-128v128h128zM256 1280v-128h-128v128h128zM256 1024v-128h-128v128h128zM256 768v-128h-128v128h128zM256 512v-128h-128v128h128zM128 256h128v-128h-128v128zM256 0v128h128v-128h-128zM512 0v128h128v-128h-128zM256 1920h-128v128h128v-128zM512 2048v-128h-128v128h128zM768 2048v-128h-128v128h128zM1024 2048v-128h-128v128h128zM1280 2048v-128h-128v128h128zM1536 2048v-128h-128v128h128zM1664 1792h-128v128h128v-128zM1536 1536v128h128v-128h-128zM256 1792v-128h-128v128h128zM1920 1280q26 0 49.5 -10t41 -27.5t27.5 -41t10 -49.5v-1152h-1115l-165 165v987q0 26 10 49.5t27.5 41t41 27.5t49.5 10h1024zM1152 1152v-384h512v384h-512zM1664 128v256h-512v-256h128v128h128v-128h256zM1920 128v1024h-128v-512h-768v512h-128v-933l91 -91h37v384h768v-384h128z' />
-                  </g>
-                
-                </svg>"
-                )
-            Width: =40
-            X: =447
-            Y: =1034
-            ZIndex: =26
-
-        Label2_1 As label:
-            Color: =theme.AppColor
-            PaddingLeft: =10
-            Size: =14
-            Text: ="Update  Details"
-            Width: =118
-            X: =487
-            Y: =1038
-            ZIndex: =27
-
-        btnSave_15 As button:
-            BorderColor: =theme.Blue
-            BorderThickness: =1
-            Color: =theme.AppColor
-            DisabledColor: =Transparent
-            DisabledFill: =Transparent
-            DisplayMode: =
-            Fill: =Transparent
-            FocusedBorderColor: =theme.Orange
-            FocusedBorderThickness: =1
-            Height: =71
-            HoverBorderColor: =theme.Orange
-            HoverColor: =theme.AppColor
-            HoverFill: =Transparent
-            OnSelect: |-
-                =Patch(
-                    ReqDetails,
-                    LookUp(
-                        ReqDetails,
-                        ID = varCurrentCostCode.ID
-                    ),
-                    {
-                        Vendor: drpgalVendor_CCS.Selected.Title,
-                        ItemDescription: txtDescription_CCS.Text,
-                        CostCode: drpgalCostCode_CCS.Selected.CostCode,
-                        Category: drpgalCat_CCS.Selected.Category,
-                        ExpectedPrice:txtexpectedprice.Text
-                    }
-                );
-                Set(varCoded,true);
-                
-                Set(varCurrentCostCode, LookUp(ReqDetails,ID=varCurrentCostCode.ID));
-                Notify("Your item has been updated.")
-            PaddingLeft: =50
-            PressedBorderColor: =Transparent
-            PressedColor: =Transparent
-            PressedFill: =Transparent
-            Size: =20
-            Text: =""
-            Tooltip: ="Save Change Records"
-            Width: =169
-            X: =436
-            Y: =1021
-            ZIndex: =28
+        ZIndex: =26
 
     rctDivider_1 As rectangle:
         Fill: =theme.AppColor
@@ -447,7 +386,7 @@
         OnSelect: =
         Width: =640
         Y: =664
-        ZIndex: =30
+        ZIndex: =27
 
     Rectangle1_10 As rectangle:
         Fill: =theme.AppColor
@@ -456,7 +395,7 @@
         Visible: =varShowCCAttachements
         Width: =640
         Y: =220
-        ZIndex: =31
+        ZIndex: =28
 
     "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
         Height: =256
@@ -468,7 +407,7 @@
         Width: =545
         X: =34
         Y: =316
-        ZIndex: =32
+        ZIndex: =29
 
         Image3 As image:
             Height: =40
@@ -528,6 +467,86 @@
             Y: =3
             ZIndex: =4
 
+    grpAddReqDetails As group:
+        Height: =5
+        Width: =5
+        X: =-37
+        Y: =-340
+        ZIndex: =29
+
+        Image8_6 As image:
+            Height: =40
+            Image: |-
+                ="data:image/svg+xml," & 
+                 EncodeUrl(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 2068 2048'>
+                  <g transform='matrix(1 0 0 -1 0 2048),rotate(0,1034,1024)'>
+                   <path fill='" & theme.AppColorText & "'
+                d='M256 1536v-128h-128v128h128zM256 1280v-128h-128v128h128zM256 1024v-128h-128v128h128zM256 768v-128h-128v128h128zM256 512v-128h-128v128h128zM128 256h128v-128h-128v128zM256 0v128h128v-128h-128zM512 0v128h128v-128h-128zM256 1920h-128v128h128v-128zM512 2048v-128h-128v128h128zM768 2048v-128h-128v128h128zM1024 2048v-128h-128v128h128zM1280 2048v-128h-128v128h128zM1536 2048v-128h-128v128h128zM1664 1792h-128v128h128v-128zM1536 1536v128h128v-128h-128zM256 1792v-128h-128v128h128zM1920 1280q26 0 49.5 -10t41 -27.5t27.5 -41t10 -49.5v-1152h-1115l-165 165v987q0 26 10 49.5t27.5 41t41 27.5t49.5 10h1024zM1152 1152v-384h512v384h-512zM1664 128v256h-512v-256h128v128h128v-128h256zM1920 128v1024h-128v-512h-768v512h-128v-933l91 -91h37v384h768v-384h128z' />
+                  </g>
+                
+                </svg>"
+                )
+            Width: =40
+            X: =447
+            Y: =1034
+            ZIndex: =23
+
+        Label2_1 As label:
+            Color: =theme.AppColor
+            PaddingLeft: =10
+            Size: =14
+            Text: ="Update  Details"
+            Width: =118
+            X: =487
+            Y: =1038
+            ZIndex: =24
+
+        btnSave_15 As button:
+            BorderColor: =theme.Blue
+            BorderThickness: =1
+            Color: =theme.AppColor
+            DisabledColor: =Transparent
+            DisabledFill: =Transparent
+            DisplayMode: =
+            Fill: =Transparent
+            FocusedBorderColor: =theme.Orange
+            FocusedBorderThickness: =1
+            Height: =71
+            HoverBorderColor: =theme.Orange
+            HoverColor: =theme.AppColor
+            HoverFill: =Transparent
+            OnSelect: |-
+                =Patch(
+                    ReqDetails,
+                    LookUp(
+                        ReqDetails,
+                        ID = varCurrentCostCode.ID
+                    ),
+                    {
+                        Vendor: drpgalVendor_CCS.Selected.Title,
+                        ItemDescription: txtDescription_CCS.Text,
+                        CostCode: drpgalCostCode_CCS.Selected.CostCode,
+                        Category: drpgalCat_CCS.Selected.Category,
+                        ExpectedPrice:txtexpectedprice.Text
+                    }
+                );
+                Set(varCoded,true);
+                
+                Set(varCurrentCostCode, LookUp(ReqDetails,ID=varCurrentCostCode.ID));
+                Notify("Your item has been updated.")
+            PaddingLeft: =50
+            PressedBorderColor: =Transparent
+            PressedColor: =Transparent
+            PressedFill: =Transparent
+            Size: =20
+            Text: =""
+            Tooltip: ="Save Change Records"
+            Width: =169
+            X: =436
+            Y: =1021
+            ZIndex: =25
+
     lblAddNewReq_8 As label:
         Color: =RGBA(255, 255, 255, 1)
         Font: =Font.Lato
@@ -539,7 +558,7 @@
         Width: =222
         X: =38
         Y: =279
-        ZIndex: =33
+        ZIndex: =30
 
     galCCAttachments As gallery.galleryVertical:
         Height: =98
@@ -566,7 +585,7 @@
         Width: =149
         X: =491
         Y: =103
-        ZIndex: =34
+        ZIndex: =31
 
         lblReqID_2 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -597,7 +616,7 @@
         Width: =45
         X: =561
         Y: =237
-        ZIndex: =35
+        ZIndex: =32
 
     lblAddNewReq_5 As label:
         Align: =Align.Center
@@ -609,7 +628,7 @@
         Width: =116
         X: =5
         Y: =221
-        ZIndex: =36
+        ZIndex: =33
 
     lblAddNewReq_6 As label:
         Font: =Font.Lato
@@ -620,7 +639,7 @@
         Width: =244
         X: =143
         Y: =224
-        ZIndex: =37
+        ZIndex: =34
 
     lblCC_CCS_1 As label:
         Font: =Font.Lato
@@ -631,7 +650,7 @@
         Width: =190
         X: =206
         Y: =1003
-        ZIndex: =38
+        ZIndex: =35
 
     txtexpectedprice As text:
         BorderColor: |
@@ -644,7 +663,7 @@
         Width: =200
         X: =206
         Y: =1046
-        ZIndex: =39
+        ZIndex: =36
 
     drpgalVendor_CCS As combobox:
         BorderColor: |-
@@ -655,16 +674,17 @@
         DisplayFields: =["Title","Name1"]
         Font: =Font.Lato
         Height: =52
-        Items: =colvendors
+        IsSearchable: =false
+        Items: =colloadvendors
         SearchFields: =["Title"]
-        SearchItems: =Search(colvendors,drpgalVendor_CCS.SearchText,"Title")
+        SearchItems: =[]
         SelectMultiple: =false
         Size: =14
         Template: =ListItemTemplate.Double
         Width: =263
         X: =23
         Y: =714
-        ZIndex: =40
+        ZIndex: =37
 
     drpgalCostCode_CCS As combobox:
         BorderColor: |-
@@ -676,7 +696,7 @@
         Font: =Font.Lato
         Height: =62
         Items: =NewCostCodes
-        OnChange: =ClearCollect(colcategory,Filter('Final Cost Codes',Job="TM01" && CostCode=drpgalCostCode_CCS.Selected.CostCode).Category)
+        OnChange: =ClearCollect(colloadcategory,Filter('Final Cost Codes',Job="TM01" && CostCode=drpgalCostCode_CCS.Selected.CostCode).Category)
         SearchFields: =["Description"]
         SearchItems: =Search(NewCostCodes,drpgalCostCode_CCS.SearchText,"Description")
         SelectMultiple: =false
@@ -685,7 +705,7 @@
         Width: =370
         X: =17
         Y: =820
-        ZIndex: =43
+        ZIndex: =38
 
     Image12 As image:
         Height: =82
@@ -695,7 +715,35 @@
         Width: =104
         X: =314
         Y: =699
-        ZIndex: =45
+        ZIndex: =39
+
+    Grppreloader As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =56
+
+        Preloader_1 As image:
+            Height: =67
+            Image: =autopreloader
+            Visible: =varcsvimport
+            Width: =61
+            X: =423
+            Y: =815
+            ZIndex: =54
+
+        Label16 As label:
+            Color: =RGBA(255, 0, 0, 1)
+            Font: =Font.Lato
+            Height: =70
+            Size: =16
+            Text: ="Importing...."
+            Visible: =varcsvimport
+            Width: =134
+            X: =502
+            Y: =812
+            ZIndex: =55
 
     Grpvendordialog As group:
         Height: =5
@@ -709,7 +757,7 @@
             Height: =1136
             Visible: =vendordialog
             Width: =640
-            ZIndex: =46
+            ZIndex: =40
 
         Rectangle4 As rectangle:
             Fill: =RGBA(244, 244, 244, 1)
@@ -718,7 +766,7 @@
             Width: =612
             X: =16
             Y: =383
-            ZIndex: =47
+            ZIndex: =41
 
         Rectangle5 As rectangle:
             Fill: =theme.AppColor
@@ -727,7 +775,7 @@
             Width: =618
             X: =10
             Y: =378
-            ZIndex: =48
+            ZIndex: =42
 
         Label11 As label:
             Color: =RGBA(255, 255, 255, 1)
@@ -739,7 +787,7 @@
             Width: =441
             X: =94
             Y: =378
-            ZIndex: =49
+            ZIndex: =43
 
         Image13 As image:
             Height: =65
@@ -747,7 +795,7 @@
             Visible: =vendordialog
             Width: =94
             Y: =378
-            ZIndex: =50
+            ZIndex: =44
 
         Label12 As label:
             Font: =Font.Lato
@@ -759,7 +807,7 @@
             Width: =62
             X: =23
             Y: =443
-            ZIndex: =51
+            ZIndex: =45
 
         Label13 As label:
             Color: =RGBA(255, 0, 0, 1)
@@ -771,9 +819,9 @@
             Width: =458
             X: =88
             Y: =442
-            ZIndex: =52
+            ZIndex: =46
 
-        TextInput1 As text:
+        txt_costcodeemail As text:
             BorderColor: =LightGray
             BorderThickness: =1
             Default: =
@@ -785,9 +833,9 @@
             Size: =16
             Visible: =vendordialog
             Width: =584
-            X: =28
-            Y: =499
-            ZIndex: =53
+            X: =17
+            Y: =504
+            ZIndex: =47
 
         Label12_1 As label:
             Font: =Font.Lato
@@ -799,9 +847,9 @@
             Width: =62
             X: =23
             Y: =567
-            ZIndex: =54
+            ZIndex: =48
 
-        TextInput2 As text:
+        txt_costcodebody As text:
             BorderColor: =LightGray
             BorderThickness: =1
             Default: =
@@ -814,16 +862,31 @@
             Width: =589
             X: =23
             Y: =623
-            ZIndex: =55
+            ZIndex: =49
 
         Image14 As image:
             Height: =87
             Image: =ic_send_128_28719
+            OnSelect: |-
+                =Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
+                Clear(colDataExported);
+                
+                
+                Collect(colDataExported, {JobNo: lblReqJObNo_1.Text, Vendor: drpgalVendor_CCS.Selected.'Business Partner', Description: txtDescription_CCS.Text,
+                 Quantity: varCurrentCostCode.Quantity, UOM: varCurrentCostCode.UOM, PartNo: varCurrentCostCode.Title, Location: lblReqDescription_1.Text, Approver: varreqheader.Approver.DisplayName, 
+                'Date Required':varCurrentCostCode.'Date Required', User: User().FullName, Useremail: User().Email});
+                Set(varFormattedJSON, JSON(colDataExported));
+                
+                'POReq-Vendors'.Run(varFormattedJSON,varreqid, txt_costcodebody.Text,txt_costcodeemail.Text);
+                Notify("Your request was sent to the vendor");
+                Set(vendordialog,false);
+                Reset(txt_costcodebody);
+                Reset(txt_costcodeemail)
             Visible: =vendordialog
             Width: =66
             X: =408
             Y: =765
-            ZIndex: =56
+            ZIndex: =50
 
         Label14 As label:
             Font: =Font.Lato
@@ -834,7 +897,7 @@
             Width: =106
             X: =474
             Y: =786
-            ZIndex: =57
+            ZIndex: =51
 
         Icon2 As icon.Cancel:
             Color: =RGBA(255, 0, 0, 1)
@@ -845,7 +908,7 @@
             Width: =54
             X: =218
             Y: =782
-            ZIndex: =58
+            ZIndex: =52
 
         Label15 As label:
             Font: =Font.Lato
@@ -856,5 +919,5 @@
             Width: =95
             X: =280
             Y: =774
-            ZIndex: =59
+            ZIndex: =53
 
