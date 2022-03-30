@@ -168,9 +168,9 @@
                 Collect(colReqDetails,
                     {
                         ID:varReqDetailsIRec.ID,
-                        Title:ThisItem.Title,
+                        Title:ThisItem.'Item Code*',
                         Vendor:ThisItem.Manufacturer,
-                        UOM:ThisItem.WM_x002a_,
+                        UOM:ThisItem.'WM*',
                         Quantity:"0",
                         ItemDescription: ThisItem.Name1,
                         DateRequired:Now(),
