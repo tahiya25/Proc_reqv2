@@ -1130,7 +1130,7 @@
                 =
                 Switch(varNewReqPatch.Status.Value,
                 "New",
-                CostCodeRequisition.Run(varNewReqPatch.Title,varNewReqPatch.JobNo,varNewReqPatch.Created,varNewReqPatch.DeliveryLoc)
+                RequistionCostCode.Run(varNewReqPatch.Title,varNewReqPatch.JobNo,varNewReqPatch.Created,varNewReqPatch.DeliveryLoc)
                 
                       );
                 Refresh(ReqHeader)      ; Navigate('Requisitions Screen')
