@@ -218,7 +218,8 @@
     "datasets": {},
     "dataSources": [
       "ReqDetails",
-      "Vendors"
+      "Vendors",
+      "ReqHeader"
     ],
     "dependencies": {},
     "dependents": [
