@@ -180,7 +180,7 @@
             =Set(varcsvimport,true);
             
             Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
-            ClearCollect(colDataExported, {ItemType:varCurrentCostCode.ItemType, Item:varCurrentCostCode.Title,ItemName: varCurrentCostCode.ItemDescription,Type: varCurrentCostCode.MaterialType, Location: "", WM:varCurrentCostCode.UOM, Quantity: varCurrentCostCode.Quantity, ExpectedPrice: txtexpectedprice.Text, Dist:"J",JobDept:lblReqJObNo_1.Text, CostCode:drpgalCostCode_CCS.Selected.CostCode,Approver: varreqheader.Approver.DisplayName, Category: drpgalCat_CCS.Selected.Category,Tax1:If(drpgalCat_CCS.Selected.Category="C" || drpgalCat_CCS.Selected.Category="E","NY"), Expected:varCurrentCostCode.'Date Required' });
+            ClearCollect(colDataExported, {ItemType:varCurrentCostCode.ItemType, Item:varCurrentCostCode.Title,ItemName: varCurrentCostCode.ItemDescription,Type: varCurrentCostCode.MaterialType, Location: "", WM:varCurrentCostCode.UOM, Quantity: varCurrentCostCode.Quantity, ExpectedPrice: txtexpectedprice.Text, Dist:"J",JobDept:lblReqJObNo_1.Text, CostCode:varCurrentCostCode.CostCode,Approver: varreqheader.Approver.DisplayName, Category: varCurrentCostCode.Category,Tax1:If(drpgalCat_CCS.Selected.Category="C" || drpgalCat_CCS.Selected.Category="E","NY"), Expected:varCurrentCostCode.'Date Required' });
             Set(varFormattedJSON, JSON(colDataExported));
             
             Set(varfilelink,'POReq-ImportCMIC'.Run(varFormattedJSON).filelink);Launch(varfilelink);
@@ -843,23 +843,24 @@
         ZIndex: =56
 
         Preloader_1 As image:
-            Height: =67
+            Height: =87
             Image: =autopreloader
             Visible: =varcsvimport
-            Width: =30
-            X: =515
-            Y: =613
+            Width: =61
+            X: =540
+            Y: =597
             ZIndex: =62
 
         Label16 As label:
             Color: =RGBA(255, 0, 0, 1)
             Font: =Font.Lato
             Height: =70
-            Text: ="Importing..."
+            Size: =15
+            Text: ="Importing"
             Visible: =varcsvimport
-            Width: =67
-            X: =554
-            Y: =610
+            Width: =103
+            X: =518
+            Y: =651
             ZIndex: =63
 
     Grpvendordialog As group:
