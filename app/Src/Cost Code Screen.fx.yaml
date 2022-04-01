@@ -535,7 +535,7 @@
                 =Patch(ReqHeader,
                 LookUp(
                     ReqHeader,
-                    ID=varCurrentReqHeader.ID
+                    Title=lblReqID_1.Text
                 ),
                 {PONum:txt_ponum.Text
                 
@@ -550,7 +550,7 @@
                         ID = varCurrentCostCode.ID
                     ),
                     {
-                        Vendor: drpgalVendor_CCS.Selected.'Business Partner',
+                        Vendor: drpgalVendor_CCS.Selected.Title,
                         ItemDescription: txtDescription_CCS.Text,
                         CostCode: drpgalCostCode_CCS.Selected.CostCode,
                         Category: drpgalCat_CCS.Selected.Category,
@@ -1016,7 +1016,7 @@
                 Clear(colDataExported);
                 
                 
-                Collect(colDataExported, {JobNo: lblReqJObNo_1.Text, Vendor: drpgalVendor_CCS.Selected.'Business Partner', Description: txtDescription_CCS.Text,
+                Collect(colDataExported, {JobNo: lblReqJObNo_1.Text, Vendor: drpgalVendor_CCS.Selected.Title, Description: txtDescription_CCS.Text,
                  Quantity: varCurrentCostCode.Quantity, UOM: varCurrentCostCode.UOM, PartNo: varCurrentCostCode.Title, Location: lblReqDescription_1.Text, Approver: varreqheader.Approver.DisplayName, 
                 'Date Required':varCurrentCostCode.'Date Required', User: User().FullName, Useremail: User().Email});
                 Set(varFormattedJSON, JSON(colDataExported));
