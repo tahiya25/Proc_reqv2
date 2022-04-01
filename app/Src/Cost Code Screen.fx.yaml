@@ -1000,11 +1000,11 @@
                 =Switch(
                     varVendorFormStatus,
                     "Edit",
-                    Patch(ReqHeader, varCurrentReqHeader,
+                    Patch(ReqHeader, LookUp(ReqHeader, Title=lblReqID_1.Text),
                     { }, FrmAttachments.Updates
                     ),
                     "New",
-                    Patch(ReqHeader, varCurrentReqHeader,
+                    Patch(ReqHeader, LookUp(ReqHeader, Title=lblReqID_1.Text),
                     { }, FrmAttachments.Updates
                     )
                 );
