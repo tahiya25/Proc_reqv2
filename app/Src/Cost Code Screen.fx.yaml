@@ -36,7 +36,7 @@
         Font: =Font.Lato
         Height: =57
         Items: ='Unit of Measure'.Code
-        Size: =12
+        Size: =16
         Width: =179
         X: =194
         Y: =726
@@ -180,7 +180,7 @@
             =Set(varcsvimport,true);
             
             Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
-            ClearCollect(colDataExported, {ItemType:varCurrentCostCode.ItemType, Item:varCurrentCostCode.Title,ItemName: varCurrentCostCode.ItemDescription,Type: varCurrentCostCode.MaterialType, Location: "", WM:varCurrentCostCode.UOM, Quantity: varCurrentCostCode.Quantity, ExpectedPrice: txtexpectedprice.Text, Dist:"J",JobDept:lblReqJObNo_1.Text, CostCode:varCurrentCostCode.CostCode,Approver: varreqheader.Approver.DisplayName, Category: varCurrentCostCode.Category,Tax1:If(drpgalCat_CCS.Selected.Category="C" || drpgalCat_CCS.Selected.Category="E","NY"), Expected:varCurrentCostCode.DateRequired });
+            ClearCollect(colDataExported, {ItemType:varCurrentCostCode.ItemType, Item:varCurrentCostCode.Title,ItemName: varCurrentCostCode.ItemDescription,Type: varCurrentCostCode.MaterialType, Location: "", WM:varCurrentCostCode.UOM, Quantity: varCurrentCostCode.Quantity, ExpectedPrice: txtexpectedprice.Text, Dist:"J",JobDept:lblReqJObNo_1.Text, CostCode:varCurrentCostCode.CostCode,Approver: varreqheader.Approver.DisplayName, Category: varCurrentCostCode.Category,Tax1:If(drpgalCat_CCS.Selected.Category="C" || drpgalCat_CCS.Selected.Category="E","NY"), Expected:varCurrentCostCode.'Date Required' });
             Set(varFormattedJSON, JSON(colDataExported));
             
             Set(varfilelink,'POReq-ImportCMIC'.Run(varFormattedJSON).filelink);Launch(varfilelink);
@@ -422,7 +422,7 @@
         txt_ponum As text:
             BorderColor: =LightGray
             BorderThickness: =1
-            Default: =ThisItem.PONo
+            Default: =varCurrentReqHeader.PONum
             Font: =Font.Lato
             Height: =34
             OnSelect: =Select(Parent)
@@ -550,15 +550,15 @@
                         ID = varCurrentCostCode.ID
                     ),
                     {
-                        Vendor: drpgalVendor_CCS.Selected.Title,
+                        Vendor: drpgalVendor_CCS.Selected.'Business Partner',
                         ItemDescription: txtDescription_CCS.Text,
                         CostCode: drpgalCostCode_CCS.Selected.CostCode,
                         Category: drpgalCat_CCS.Selected.Category,
                         ExpectedPrice:txtexpectedprice.Text,
                         Title: txt_partno.Text,
                         Quantity:txt_qty.Text,
-                        UOM:dd_ccuom.Selected.Title,
-                        DateRequired:dp_cced.SelectedDate,
+                        UOM:dd_ccuom.Selected.Code,
+                        'Date Required':dp_cced.SelectedDate,
                         PONo:txt_ponum.Text
                         
                     }
@@ -1016,9 +1016,9 @@
                 Clear(colDataExported);
                 
                 
-                Collect(colDataExported, {JobNo: lblReqJObNo_1.Text, Vendor: drpgalVendor_CCS.Selected.Title, Description: txtDescription_CCS.Text,
+                Collect(colDataExported, {JobNo: lblReqJObNo_1.Text, Vendor: drpgalVendor_CCS.Selected.'Business Partner', Description: txtDescription_CCS.Text,
                  Quantity: varCurrentCostCode.Quantity, UOM: varCurrentCostCode.UOM, PartNo: varCurrentCostCode.Title, Location: lblReqDescription_1.Text, Approver: varreqheader.Approver.DisplayName, 
-                'Date Required':varCurrentCostCode.DateRequired, User: User().FullName, Useremail: User().Email});
+                'Date Required':varCurrentCostCode.'Date Required', User: User().FullName, Useremail: User().Email});
                 Set(varFormattedJSON, JSON(colDataExported));
                 
                 'POReq-Vendors'.Run(varFormattedJSON,lblReqID_1.Text, txt_costcodebody.Text,txt_costcodeemail.Text);
