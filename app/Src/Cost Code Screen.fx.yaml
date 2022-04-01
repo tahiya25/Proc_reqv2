@@ -550,14 +550,14 @@
                         ID = varCurrentCostCode.ID
                     ),
                     {
-                        Vendor: drpgalVendor_CCS.Selected.Title,
+                        Vendor: drpgalVendor_CCS.Selected.'Business Partner',
                         ItemDescription: txtDescription_CCS.Text,
                         CostCode: drpgalCostCode_CCS.Selected.CostCode,
                         Category: drpgalCat_CCS.Selected.Category,
                         ExpectedPrice:txtexpectedprice.Text,
                         Title: txt_partno.Text,
                         Quantity:txt_qty.Text,
-                        UOM:dd_ccuom.Selected.Code,
+                        UOM:dd_ccuom.Selected.Title,
                         'Date Required':dp_cced.SelectedDate,
                         PONo:txt_ponum.Text
                         
@@ -1016,7 +1016,7 @@
                 Clear(colDataExported);
                 
                 
-                Collect(colDataExported, {JobNo: lblReqJObNo_1.Text, Vendor: drpgalVendor_CCS.Selected.Title, Description: txtDescription_CCS.Text,
+                Collect(colDataExported, {JobNo: lblReqJObNo_1.Text, Vendor: drpgalVendor_CCS.Selected.'Business Partner', Description: txtDescription_CCS.Text,
                  Quantity: varCurrentCostCode.Quantity, UOM: varCurrentCostCode.UOM, PartNo: varCurrentCostCode.Title, Location: lblReqDescription_1.Text, Approver: varreqheader.Approver.DisplayName, 
                 'Date Required':varCurrentCostCode.'Date Required', User: User().FullName, Useremail: User().Email});
                 Set(varFormattedJSON, JSON(colDataExported));
