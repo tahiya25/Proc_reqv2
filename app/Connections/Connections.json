@@ -267,7 +267,7 @@
     "id": "b8ccc885-4a22-4efb-aa12-0b903e5e2e5a"
   },
   "bb25bbd6-af15-460e-a594-060e56060a5f": {
-    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_logicflows/connections/617e7c46cc9a4aa68e4c0bf911139387-2e503bbc6ccb0a7f",
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_logicflows/connections/617e7c46-cc9a-4aa6-8e4c-0bf911139387",
     "connectionParameters": {
       "workFlowCallbackUri": "https://prod-85.westus.logic.azure.com:443/workflows/9cb8d0b9c7554bb5823b9b5bb6dee4e4/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mhCRi8Gi4m9F3iUm28pVknh4LhuSazcSLcP97AAM0YU",
       "workflowEndpoint": "/subscriptions/34eedfbf-3e33-475d-b510-23537fba3dc9/resourceGroups/3539293e58fa4baba02e18dc57fa9737-64b55deb0b844ff79da9b508c656e87f/providers/Microsoft.Logic/workflows/617e7c46-cc9a-4aa6-8e4c-0bf911139387",
