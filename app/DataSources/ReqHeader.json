@@ -32,6 +32,7 @@
       "DeliveryLoc": "DeliveryLoc",
       "Editor": "Modified By",
       "Editor#Claims": "Modified By Claims",
+      "ExpectedDate": "ExpectedDate",
       "ID": "ID",
       "JobNo": "JobNo",
       "Modified": "Modified",

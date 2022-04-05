@@ -5,7 +5,16 @@
     "galRequisitions As gallery.'BrowseLayout_Flexible_NewsFeed_ver4.0'":
         Fill: =White
         Height: =949
-        Items: =SortByColumns(ReqHeader,"ID",Descending)
+        Items: |+
+            =If(galfiters.Selected.value="Urgent",
+            Filter(ReqHeader, ExpectedDate<=DateAdd(Now(), 2,Days)),
+            If(galfiters.Selected.value="3-5 Days",
+            Filter(ReqHeader, ExpectedDate>=DateAdd(Now(),3,Days) && ExpectedDate<=DateAdd(Now(),5,Days)),
+            If(galfiters.Selected.value="Due > 7 Days",
+            Filter(ReqHeader, ExpectedDate>=DateAdd(Now(), 7,Days)),
+            If(galfiters.Selected.value="All",
+            SortByColumns(ReqHeader, "ID",Descending)))))
+            
         Layout: =Layout.Vertical
         OnSelect: =Set(varCurrentReqHeader, ThisItem); Navigate('Cost Code Screen')
         ShowScrollbar: =false
@@ -134,7 +143,7 @@
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =Text(ThisItem.Created,ShortDate)
+            Text: =Text(ThisItem.ExpectedDate,ShortDate)
             VerticalAlign: =VerticalAlign.Top
             Visible: =Switch(varShowId,0,false,ThisItem.ID,true)
             Width: =147
@@ -695,7 +704,7 @@
                 Set(varreqheader, LookUp(ReqHeader, Title=varreqid));
                 Clear(colDataExported);
                 ForAll(galReqDetails.AllItems,
-                Collect(colDataExported, {ItemType: ThisRecord.ItemType, Item: ThisRecord.Title, ItemName: ThisRecord.ItemDescription, Type: ThisRecord.MaterialType,  Location: "",WM:ThisRecord.UOM, Quantity: ThisRecord.Quantity, ExpectedPrice: ThisRecord.ExpectedPrice, Dist:"J", JobDept:varreqheader.JobNo,CostCode:ThisRecord.CostCode, Approver: varreqheader.Approver.DisplayName, Category:ThisRecord.Category,Tax1: If(ThisRecord.Category="C" || ThisRecord.Category="E","NY"), Expected:ThisRecord.'Date Required'}));
+                Collect(colDataExported, {ItemType: ThisRecord.ItemType, Item: ThisRecord.Title, ItemName: ThisRecord.ItemDescription, Type: ThisRecord.MaterialType,  Location: "",WM:ThisRecord.UOM, Quantity: ThisRecord.Quantity, ExpectedPrice: ThisRecord.ExpectedPrice, Dist:"J", JobDept:varreqheader.JobNo,CostCode:ThisRecord.CostCode, Approver: varreqheader.Approver.DisplayName, Category:ThisRecord.Category,Tax1: If(ThisRecord.Category="C" || ThisRecord.Category="E","NY"), Expected:ThisRecord.DateRequired}));
                 Set(varFormattedJSON, JSON(colDataExported));
                 
                 Set(varfilelink,'POReq-ImportCMIC'.Run(varFormattedJSON).filelink);Launch(varfilelink);
@@ -727,17 +736,6 @@
         X: =495
         Y: =940
         ZIndex: =17
-
-    Label19 As label:
-        Font: =Font.Lato
-        FontWeight: =FontWeight.Bold
-        Height: =70
-        Size: =14
-        Text: ="Status"
-        Width: =73
-        X: =27
-        Y: =104
-        ZIndex: =31
 
     GrpVendorPopup As group:
         Height: =5
@@ -832,7 +830,7 @@
                 ClearCollect(colemails, Split(txtemail.Text,";"));
                 Clear(colDataExported);
                 ForAll(galReqDetails.AllItems,
-                Collect(colDataExported, {JobNo: varreqheader.JobNo, Vendor: ThisRecord.Vendor, Description: ThisRecord.ItemDescription, Quantity: ThisRecord.Quantity,UOM:ThisRecord.UOM, PartNo: ThisRecord.Title, Location: varreqheader.DeliveryLoc, Approver: varreqheader.Approver.DisplayName, 'Date Required':ThisRecord.'Date Required', User: User().FullName, Useremail: User().Email}));
+                Collect(colDataExported, {JobNo: varreqheader.JobNo, Vendor: ThisRecord.Vendor, Description: ThisRecord.ItemDescription, Quantity: ThisRecord.Quantity,UOM:ThisRecord.UOM, PartNo: ThisRecord.Title, Location: varreqheader.DeliveryLoc, Approver: varreqheader.Approver.DisplayName, 'Date Required':ThisRecord.DateRequired, User: User().FullName, Useremail: User().Email}));
                 Set(varFormattedJSON, JSON(colDataExported));
                 
                 
@@ -906,17 +904,20 @@
             Y: =394
             ZIndex: =30
 
-    Gallery1 As gallery.galleryHorizontal:
+    galfiters As gallery.galleryHorizontal:
         Height: =73
         Items: =Fiters
         ShowScrollbar: =false
-        TemplateSize: =163
-        Width: =493
-        X: =100
-        Y: =104
+        TemplateSize: =149
+        Width: =619
+        X: =21
+        Y: =102
         ZIndex: =32
 
         Button5 As button:
+            BorderColor: |
+                =ColorValue("#ccf5ff")
+            BorderThickness: =1
             Color: |-
                 =If(
                     ThisItem.IsSelected,
@@ -930,6 +931,7 @@
                     White
                 )
             Font: =Font.Lato
+            FontWeight: =FontWeight.Normal
             Height: =43
             OnSelect: =Select(Parent)
             RadiusBottomLeft: =14
@@ -938,7 +940,7 @@
             RadiusTopRight: =14
             Size: =14
             Text: =ThisItem.value
-            Width: =150
+            Width: =135
             Y: =9
             ZIndex: =1
 

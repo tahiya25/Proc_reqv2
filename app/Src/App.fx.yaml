@@ -65,7 +65,7 @@ App As appinfo:
         ClearCollect(NewCostCodes, Filter('Final Cost Codes', Job="TM01"));
         ClearCollect(ColCostcodes,Distinct(AddColumns(NewCostCodes, "CostCodedescription", CostCode & "-" & Proper(Description)),CostCodedescription));
         ClearCollect(colvendors,Vendors);
-        ClearCollect(Fiters,{value:"Urgent"},{value:"3-5 Days"},{value:"Due > 7 Days"});
+        ClearCollect(Fiters,{value:"Urgent"},{value:"3-5 Days"},{value:"Due > 7 Days"},{value: "All"});
     StartScreen: |-
         =If(
             !IsBlank(Param("ID")) ,    
